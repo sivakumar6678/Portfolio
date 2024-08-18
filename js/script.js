@@ -1,12 +1,18 @@
-const roles = ["Sivakumar", "Aspiring Web Developer", "Tech Enthusiast", "Lifelong Learner"];
+const roles = ["C Siva Kumar", "Aspiring Full Stack Web Developer", "Tech Enthusiast", "Lifelong Learner"];
 let index = 0;
 let letterIndex = 0;
 let currentRole = '';
 let isDeleting = false;
-const dynamicTextElement = document.getElementById('dynamic-text');
+const typingSpeed = 100; // Speed for typing
+const deletingSpeed = 50; // Speed for deleting
+const pauseTime = 1000; // Pause before starting deletion
 
 function type() {
+    const dynamicTextElement = document.getElementById('dynamic-text');
+    if (!dynamicTextElement) return; // Exit if the element is not found
+
     const currentFullRole = roles[index];
+    
     if (isDeleting) {
         currentRole = currentFullRole.substring(0, letterIndex--);
     } else {
@@ -16,13 +22,16 @@ function type() {
     dynamicTextElement.innerHTML = currentRole;
 
     if (!isDeleting && letterIndex === currentFullRole.length) {
-        setTimeout(() => isDeleting = true, 1000); // Pause before deleting
+        setTimeout(() => isDeleting = true, pauseTime); // Pause before deleting
     } else if (isDeleting && letterIndex === 0) {
         isDeleting = false;
         index = (index + 1) % roles.length;
     }
 
-    setTimeout(type, isDeleting ? 50 : 100); // Faster when deleting
+    // Adjust timing based on whether we are typing or deleting
+    setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
 }
 
-document.addEventListener("DOMContentLoaded", type);
+document.addEventListener("DOMContentLoaded", function() {
+    type(); // Start the typing animation when the document is loaded
+});

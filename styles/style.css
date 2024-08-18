@@ -1,3 +1,9 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Total sedtion */
 .container-fluid {
     border: 2px solid black;
 }
@@ -19,6 +25,14 @@ nav.navbar {
 
 .main {
     padding: 1rem;
+    background-color: #f8f9fa;
+}
+/* About section */
+#about{
+    min-height: 90vh;
+    align-content: center;
+    justify-items: center;
+    /* background: red; */
 }
 
 .aboutsection {
@@ -30,7 +44,7 @@ nav.navbar {
 
 .aboutsection img {
     width: 20vw;
-    max-width: 200px;
+    max-width: 500px;
     height: auto;
     border-radius: 50%;
 }
@@ -38,9 +52,126 @@ nav.navbar {
 .aboutsection .aboutme {
     margin: 1rem;
     flex-grow: 1;
+    /* padding: 50px 20px; */
     text-align: center;
 }
+.aboutme h1, .aboutme h2 {
+    padding-left:50px;
+    text-align: start;
+}
+#dynamic-text{
+    color:#ff9900;
+}
 
+/* From Uiverse.io by aguerquin */ 
+.button-icon {
+    display: flex;
+    border: 3px #fff solid;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+  }
+  
+  .icon {
+    background-color: #fff;
+    padding: 10px 10px 5px 10px;
+  }
+  
+  .icon svg {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .cube {
+    transition: all 0.4s;
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 20px;
+  }
+  
+  .button-icon:hover {
+    border-color: #ff98a2;
+  }
+  
+  .button-icon:hover .cube {
+    transform: rotateX(90deg);
+  }
+.side {
+    position: absolute;
+    height: 47px;
+    width: 200px;
+    display: flex;
+    font-size: 0.8em;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+  }
+  
+  .top {
+    background: #ff98a2;
+    color: #fff;
+    transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+  }
+  
+  .front {
+    background: #222229;
+    color: #fff;
+    transform: translate3d(0, 0, 1em);
+  }
+
+  
+button {
+    background-color: #fff;
+    border: 1px solid #0077b5;
+    padding: 5px;
+    position: relative;
+    width: 7.2em;
+    height: 2em;
+    transition: 0.5s;
+    font-size: 17px;
+    border-radius: 0.4em;
+  }
+  .linedinbutton:hover, .button-icon:hover {
+    background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);   
+    box-shadow: 0 0 15px #bcbebe; /* Glowing shadow effect */
+  }
+  button p {
+    position: absolute;
+    top: 0.4em;
+    left: 1.2em;
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+    color: #0077b5;
+  }
+  
+  button svg {
+    position: absolute;
+    top: 0.45em;
+    right: 0.5em;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: 0.5s;
+    height: 1em;
+    fill: #fff
+  }
+  
+  button:hover p {
+    left: 0.6em;
+    color: #fff
+  }
+  
+  button:hover svg {
+    opacity: 1;
+  }
+  
+  button:hover {
+    background-color: #0077b5;
+  }
+  
 span.aboutcontent {
     font-size: 1.25rem;
     margin: 1rem;
@@ -60,7 +191,7 @@ span.aboutcontent {
 #connectwithme .links {
     list-style-type: none;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     gap: 1.5rem;
     padding: 0;
     flex-wrap: wrap;
@@ -69,17 +200,29 @@ span.aboutcontent {
 #connectwithme .links li {
     display: flex;
     align-items: center;
-    background-color: #f2f2f2;
-    border: 2px solid #ddd;
+    /* background-color: #f2f2f2; */
+    /* border: 2px solid #ddd; */
     border-radius: 8px;
     padding: 0.5rem 1rem;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); */
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
+#connectwithme .links .linedinbutton{
+    width: 200px;
+    height: 45px;
+    /* background: #000; */
+    text-align: center;
+}
+#connectwithme .links .linedinbutton p{
+    font: 1.2rem sans-serif;
+}
+#connectwithme .links .linedinbutton svg{
+    width: 3vh;
+    height: 3vh;
+}
 #connectwithme .links li:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 1px rgba(0, 0, 0, 0.2); */
 }
 
 #connectwithme .links li img {

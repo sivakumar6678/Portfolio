@@ -1,0 +1,397 @@
+/* About Section Styles */
+#about {
+    min-height: 90vh;
+    align-content: center;
+    justify-items: center;
+    /* background: gainsboro; */
+    margin:0rem -8px;
+    background: rgb(240,159,13);
+    background: linear-gradient(90deg, rgba(240,159,13,1) 0%, rgba(250,205,12,0.8253502084427521) 35%, rgba(250,212,10,0.7245098723082983) 71%, rgba(251,255,0,1) 100%); 
+}
+
+.aboutsection {
+    margin: 0 10rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.aboutsection img {
+    width: 20vw;
+    max-width: 500px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.aboutsection .aboutme {
+    margin: 1rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.aboutme h1, .aboutme h2 {
+    padding-left: 50px;
+    text-align: start;
+}
+.aboutcontent p {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#dynamic-text {
+    color: #2b00ff;
+}
+
+.aboutmore {
+    margin: 2rem;
+    text-align: right;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+#connectwithme {
+    margin-top: 2rem;
+}
+
+#connectwithme .links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+#connectwithme .links li {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#connectwithme .links .linedinbutton {
+    width: 200px;
+    height: 45px;
+    text-align: center;
+}
+
+#connectwithme .links .linedinbutton p {
+    font: 1.2rem sans-serif;
+}
+
+#connectwithme .links .linedinbutton svg {
+    width: 3vh;
+    height: 3vh;
+}
+
+#connectwithme .links li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+#connectwithme .links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+#connectwithme .links li:hover {
+    transform: scale(1.05);
+}
+
+#connectwithme .links li:hover a {
+    color: #ff9900;
+}
+
+button p {
+    position: absolute;
+    top: 0.4em;
+    left: 1.2em;
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+    color: #0077b5;
+}
+
+button svg {
+    position: absolute;
+    top: 0.45em;
+    right: 0.5em;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: 0.5s;
+    height: 1em;
+    fill: #fff;
+}
+
+button:hover p {
+    left: 0.6em;
+    color: #fff;
+}
+
+button:hover svg {
+    opacity: 1;
+}
+
+button:hover {
+    background-color: #0077b5;
+}
+.button-icon {
+    display: flex;
+    border: 3px #fff solid;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.icon {
+    background-color: #fff;
+    padding: 10px 10px 5px 10px;
+}
+
+.icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+.cube {
+    transition: all 0.4s;
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 20px;
+}
+
+.button-icon:hover {
+    border-color: #ff98a2;
+}
+
+.button-icon:hover .cube {
+    transform: rotateX(90deg);
+}
+
+.side {
+    position: absolute;
+    height: 47px;
+    width: 200px;
+    display: flex;
+    font-size: 0.8em;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+}
+
+.top {
+    background: #ff98a2;
+    color: #fff;
+    transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+}
+
+.front {
+    background: #222229;
+    color: #fff;
+    transform: translate3d(0, 0, 1em);
+}
+
+button {
+    background-color: #fff;
+    border: 1px solid #0077b5;
+    padding: 5px;
+    position: relative;
+    width: 7.2em;
+    height: 2em;
+    transition: 0.5s;
+    font-size: 17px;
+    border-radius: 0.4em;
+}
+
+.linedinbutton:hover, .button-icon:hover {
+    background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);
+    box-shadow: 0 0 15px #bcbebe; /* Glowing shadow effect */
+}
+
+.knoememore{
+    display: flex;
+justify-content: center;
+
+}
+/* From Uiverse.io by JkHuger */ 
+.wave-menu {
+    border: 4px solid #545FE5;
+    border-radius: 50px;
+    width: 200px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: ease 0.2s;
+    position: relative;
+    background: #fff;
+  }
+  
+  .wave-menu li {
+    list-style: none;
+    height: 30px;
+    width: 4px;
+    border-radius: 10px;
+    background: #545FE5;
+    margin: 0 6px;
+    padding: 0;
+    animation-name: wave1;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: ease 0.2s;
+  }
+  
+  .wave-menu:hover > li {
+    background: #fff;
+  }
+  
+  .wave-menu:hover {
+    background: #545FE5;
+  }
+  
+  .wave-menu li:nth-child(2) {
+    animation-name: wave2;
+    animation-delay: 0.2s;
+  }
+  
+  .wave-menu li:nth-child(3) {
+    animation-name: wave3;
+    animation-delay: 0.23s;
+    animation-duration: 0.4s;
+  }
+  
+  .wave-menu li:nth-child(4) {
+    animation-name: wave4;
+    animation-delay: 0.1s;
+    animation-duration: 0.3s;
+  }
+  
+  .wave-menu li:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  
+  .wave-menu li:nth-child(6) {
+    animation-name: wave2;
+    animation-duration: 0.5s;
+  }
+  
+  .wave-menu li:nth-child(8) {
+    animation-name: wave4;
+    animation-delay: 0.4s;
+    animation-duration: 0.25s;
+  }
+  
+  .wave-menu li:nth-child(9) {
+    animation-name: wave3;
+    animation-delay: 0.15s;
+  }
+  
+  @keyframes wave1 {
+    from {
+      transform: scaleY(1);
+    }
+  
+    to {
+      transform: scaleY(0.5);
+    }
+  }
+  
+  @keyframes wave2 {
+    from {
+      transform: scaleY(0.3);
+    }
+  
+    to {
+      transform: scaleY(0.6);
+    }
+  }
+  
+  @keyframes wave3 {
+    from {
+      transform: scaleY(0.6);
+    }
+  
+    to {
+      transform: scaleY(0.8);
+    }
+  }
+  
+  @keyframes wave4 {
+    from {
+      transform: scaleY(0.2);
+    }
+  
+    to {
+      transform: scaleY(0.5);
+    }
+  }
+  
+/* Responsive Styles for About Section */
+@media (max-width: 1200px) {
+    .aboutsection {
+        margin: 0 5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .aboutsection {
+        margin: 0 3rem;
+    }
+
+    .aboutsection img {
+        width: 25vw;
+        max-width: 150px;
+    }
+
+    .aboutsection .aboutme {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutsection {
+        margin: 0 2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .aboutsection img {
+        width: 40vw;
+        max-width: 150px;
+        margin-bottom: 1rem;
+    }
+
+    .aboutsection .aboutme {
+        margin: 1rem 0;
+    }
+
+    .aboutmore {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .aboutsection {
+        margin: 0 1rem;
+    }
+
+    .aboutsection img {
+        width: 50vw;
+        max-width: 120px;
+    }
+
+    .aboutsection .aboutme {
+        margin: 0.5rem 0;
+    }
+}

@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/about.css">
 </head>
 <body>
 <section id="about">
@@ -59,47 +59,25 @@
         <p>I thrive on learning new technologies and tackling complex challenges. Whether it's front-end design or back-end functionality, I am driven by the excitement of problem-solving and continuous growth in the tech world.</p>
         <p>I'm always eager to contribute to exciting projects and collaborate with others to drive meaningful advancements in technology.</p>
     </div>
+    <div class="knoememore">
+        <ul class="wave-menu">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+    </div>
 </section>
 
 <!-- Include the script for typewriter effect here -->
-<script>
-    const roles = ["C Siva Kumar", "Aspiring Full Stack Web Developer", "Tech Enthusiast", "Lifelong Learner"];
-    let index = 0;
-    let letterIndex = 0;
-    let currentRole = '';
-    let isDeleting = false;
-    const typingSpeed = 100; // Speed for typing
-    const deletingSpeed = 50; // Speed for deleting
-    const pauseTime = 1000; // Pause before starting deletion
-
-    function type() {
-        const dynamicTextElement = document.getElementById('dynamic-text');
-        if (!dynamicTextElement) return; // Exit if the element is not found
-
-        const currentFullRole = roles[index];
-        
-        if (isDeleting) {
-            currentRole = currentFullRole.substring(0, letterIndex--);
-        } else {
-            currentRole = currentFullRole.substring(0, letterIndex++);
-        }
-
-        dynamicTextElement.innerHTML = currentRole;
-
-        if (!isDeleting && letterIndex === currentFullRole.length) {
-            setTimeout(() => isDeleting = true, pauseTime); // Pause before deleting
-        } else if (isDeleting && letterIndex < 0) {
-            isDeleting = false;
-            index = (index + 1) % roles.length;
-            setTimeout(type, pauseTime); // Pause before starting next role
-        }
-
-        setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        type();
-    });
+<script src="js/script.js">
+   
 </script>
 </body>
 </html>

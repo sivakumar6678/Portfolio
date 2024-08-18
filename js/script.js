@@ -23,15 +23,15 @@ function type() {
 
     if (!isDeleting && letterIndex === currentFullRole.length) {
         setTimeout(() => isDeleting = true, pauseTime); // Pause before deleting
-    } else if (isDeleting && letterIndex === 0) {
+    } else if (isDeleting && letterIndex < 0) {
         isDeleting = false;
         index = (index + 1) % roles.length;
+        setTimeout(type, pauseTime); // Pause before starting next role
     }
 
-    // Adjust timing based on whether we are typing or deleting
     setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    type(); // Start the typing animation when the document is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    type();
 });

@@ -1,0 +1,7 @@
+.light-mode .aboutsection {
+    background: linear-gradient(to bottom, #fff9c4, #ffe0b2);
+}
+
+.dark-mode .cube {
+    background: #f5f5f5;
+}

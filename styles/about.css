@@ -5,8 +5,9 @@
     justify-items: center;
     /* background: gainsboro; */
     margin:0rem -8px;
-    background: rgb(240,159,13);
-    background: linear-gradient(90deg, rgba(240,159,13,1) 0%, rgba(250,205,12,0.8253502084427521) 35%, rgba(250,212,10,0.7245098723082983) 71%, rgba(251,255,0,1) 100%); 
+    background: linear-gradient(to bottom, #fff9c4, #ffe0b2); 
+    color: #1a1a2e; 
+
 }
 
 .aboutsection {
@@ -30,6 +31,14 @@
 }
 
 .aboutme h1, .aboutme h2 {
+    color:#1a1a2e;
+    padding-left: 50px;
+    text-align: start;
+}
+.aboutme h2 {
+    color: #1a1a2e;
+    font-size: 2rem;
+    font-weight: bold;
     padding-left: 50px;
     text-align: start;
 }
@@ -159,7 +168,8 @@ button:hover {
 }
 
 .cube {
-    transition: all 0.4s;
+
+    transition: all 0.9s;
     transform-style: preserve-3d;
     width: 200px;
     height: 20px;
@@ -175,7 +185,7 @@ button:hover {
 
 .side {
     position: absolute;
-    height: 47px;
+    height: 40px;
     width: 200px;
     display: flex;
     font-size: 0.8em;
@@ -187,9 +197,10 @@ button:hover {
 }
 
 .top {
+    height: 45px;
     background: #ff98a2;
     color: #fff;
-    transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+    transform: rotateX(-90deg) translate3d(0, 10px, 2em);
 }
 
 .front {

@@ -24,11 +24,6 @@ body {
     background: #222229;
 }
 
-/* Dark mode */
-
-
-
-
 .dark-mode h1, .dark-mode h2 {
     color: #f5f5f5;
 }
@@ -45,7 +40,6 @@ button#theme-toggle {
     border: none;
     border-radius: 5px;
 }
-/* From Uiverse.io by EddyBel */ 
 /* The switch - the box around the slider */
 .switch {
     font-size: 17px;

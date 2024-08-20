@@ -1,4 +1,4 @@
-const roles = ["C Siva Kumar", "Aspiring Full Stack Web Developer", "Tech Enthusiast", "Lifelong Learner"];
+const roles = ["Aspiring Full Stack Web Developer", "Tech Enthusiast", "Lifelong Learner"];
 let index = 0;
 let letterIndex = 0;
 let currentRole = '';

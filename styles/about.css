@@ -2,7 +2,7 @@
     align-content: center;
     justify-items: center;
     margin: 0rem -8px;
-    background: linear-gradient(to bottom, #fff9c4, #ffe0b2); 
+    /* background: linear-gradient(to bottom, #fff9c4, #ffe0b2);  */
     color: #1a1a2e; 
 }
 
@@ -16,7 +16,8 @@
 }
 
 .aboutsection img {
-    width: 20vw;
+    border:2px solid blue;
+    width: 30vw;
     max-width: 500px;
     height: auto;
     border-radius: 50%;
@@ -395,8 +396,9 @@ button {
     }
 
     .aboutsection img {
-        width: 40vw;
-        max-width: 150px;
+        margin:2rem 0;
+        width: 80vw;
+        max-width: 900px;
         margin-bottom: 1rem;
     }
 
@@ -413,11 +415,10 @@ button {
     .aboutsection {
         margin: 0 1rem;
     }
-
-    .aboutsection img {
-        width: 50vw;
-        max-width: 120px;
+    .aboutme h1{
+        font-size:2.5rem;
     }
+    
 
     .aboutsection .aboutme {
         margin: 0.5rem 0;

@@ -1,11 +1,7 @@
 body.dark-mode {
     background: linear-gradient(to bottom,  #2f4f7f,#7a288a);
-
     /* background: linear-gradient(155deg, #03055b, #4169e1); */
-
     /* background: linear-gradient(to bottom, #4169e1, #00274d); */
-
-
     color: #f5f5f5;
 }
 body.dark-mode .aboutme h2 {
@@ -22,16 +18,20 @@ body.dark-mode #dynamic-text{
 body.dark-mode .aboutcontent > p {
     color: #dad8d8bc; 
 }
-
+body.dark-mode #navbar-item{
+    color:#77cdef;
+}
 body.dark-mode #about{
-    background: linear-gradient(to bottom,  #2f4f7f,#7a288a);
+    /* background: linear-gradient(to bottom,  #2f4f7f,#7a288a); */
     /* background: linear-gradient(155deg, #03055b, #4169e1); */
 }
 
 body.dark-mode .aboutsection img {
-    border: 20px solid #f5f5f5;
+    /* border: 20px solid #f5f5f5; */
 }
-
+body.dark-mode .navbar-brand {
+    color: #f7a500; /* Sunset Gold */
+}
 body.dark-mode .aboutmore h2 {
     color: #d1c4ff; 
 }
@@ -39,3 +39,18 @@ body.dark-mode .aboutmore h2 {
 body.dark-mode .aboutmore p {
     color: #b0a1cc; 
 }
+body.dark-mode .navbar-toggler {
+    background-color: #f7a500; /* Sunset Gold for Dark Mode */
+    color: #000; /* Dark Icon Color */
+}
+body.dark-mode #navbar-item{
+    color:rgb(0, 206, 172);
+      border-bottom: 3px solid transparent; /* Set initial border to transparent */
+      transition: border 1s ease-in-out, color 0.5s ease-in-out;
+  
+  }
+body.dark-mode #navbar-item:hover{
+    color:rgb(0, 206, 172);
+    border-bottom: 1px solid rgb(17, 255, 0);
+  
+  }

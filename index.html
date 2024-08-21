@@ -19,19 +19,21 @@
 <body>
 
         <div class="container-fluid" >
-            <nav class="navbar navbar-expand-lg navbar justify-content-center">
+            <nav class="navbar navbar-expand-md justify-content-center navbar-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon">
+
+                    </span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
                     <a class="navbar-brand" href="#">CSK</a>
                     <ul class="navbar-nav">
-                        <li class="nav-item p-4"><a href="#about" class="nav-link" data-file="about.html">About Me</a></li>
-                        <li class="nav-item p-4"><a href="#skills" class="nav-link" data-file="skills.html">Skills</a></li>
-                        <li class="nav-item p-4"><a href="#certify" class="nav-link" data-file="certify.html">Certifications & Achievements</a></li>
-                        <li class="nav-item p-4"><a href="#projects" class="nav-link" data-file="projects.html">Projects</a></li>
-                        <li class="nav-item p-4"><a href="#passionandint" class="nav-link" data-file="passionandint.html">Passion & Interests</a></li>
-                        <li class="nav-item p-4"><a href="#futuregoals" class="nav-link" data-file="futuregoals.html">Future Goals</a></li>
+                        <li class="nav-item p-4"><a id="navbar-item" href="#about" class="nav-link" data-file="about.html">About Me</a></li>
+                        <li class="nav-item p-4"><a id="navbar-item" href="#skills" class="nav-link" data-file="skills.html">Skills</a></li>
+                        <li class="nav-item p-4"><a id="navbar-item" href="#certify" class="nav-link" data-file="certify.html">Certifications & Achievements</a></li>
+                        <li class="nav-item p-4"><a id="navbar-item" href="#projects" class="nav-link" data-file="projects.html">Projects</a></li>
+                        <li class="nav-item p-4"><a id="navbar-item" href="#passionandint" class="nav-link" data-file="passionandint.html">Passion & Interests</a></li>
+                        <li class="nav-item p-4"><a id="navbar-item" href="#futuregoals" class="nav-link" data-file="futuregoals.html">Future Goals</a></li>
                     </ul>
                     <!-- <button id="toggle-mode" class="btn btn-outline-dark">Toggle </button> -->
                 </div>
@@ -41,7 +43,8 @@
                         </span>
                 </label>
             </nav>
-    </div>
+            
+        </div>
 
     <main id="content">
         <div class="container-fluid main">
@@ -89,8 +92,8 @@
                 });
             }
             // Load all content on page load
-            loadContent('about.html', '#about');
             loadContent('skills.html', '#skills');
+            loadContent('about.html', '#about');
             loadContent('certify.html', '#certify');
             loadContent('projects.html', '#projects');
             loadContent('passionandint.html', '#passionandint');

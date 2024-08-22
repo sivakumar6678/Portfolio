@@ -1,0 +1,114 @@
+/* General styling */
+#skills h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.skills-section {
+    /* border: 2px dashed black; */
+    padding: 2rem;
+}
+
+.skill-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem; 
+    text-align: center;
+}
+
+.skill-category {
+    flex: 1 1 calc(50% - 2rem); /* Flexbox ensures two items per row */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    background:linear-gradient( 135deg, #fff6a9, #f9d6a1);
+}
+
+.skill-category:hover {
+    transform: translateY(-10px); /* Add hover effect for better interactivity */
+}
+.skill-category h3{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.skill-category ul {
+    padding: 0;
+}
+
+
+
+.skill-category li {
+    list-style: none;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: left;
+    position: relative;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+    overflow: hidden; /* Ensure the progress is constrained within the element */
+    /* animation : scroll1 2s ease-in-out; */
+}
+@keyframes scroll1 {
+    0% {
+        /* transform: translateY(-50%); */
+        opacity: 0;
+        background-size: 0;
+    }
+
+    100% {
+        /* transform: translateY(0); */
+        opacity: 1;
+        background-size: 100%;
+    }
+    
+}
+
+.skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #007bffbb; /* Progress bar color */
+    z-index: -1;
+    transition: width 12s ease-in-out; /* Smooth transition for progress */
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill-category {
+        flex: 1 1 100%; /* Full width on smaller screens */
+    }
+    .skills-section {
+        /* border: 2px dashed black; */
+        padding: 0;
+    }
+    .skill-category li{
+        padding:5px;
+    }
+}

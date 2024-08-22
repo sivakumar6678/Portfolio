@@ -2,18 +2,47 @@
 body {
     font-family: Arial, sans-serif;
     transition: background-color 0.3s, color 0.3s;
-    background: linear-gradient(to bottom, #fff9c4, #ffe0b2); 
+    background: linear-gradient(to bottom, #fff9c4, #ffe0b2,#fff9c4,#ffe0b2); 
     transition: background-color 3s ease;
 }
 .navbar-nav li a {
     font-size: 1.2rem;
     font-weight: bold;
+}
+.sections{
+  margin:1rem 0;
+}
+.main #about{
+  animation: fade-in 2s ease-in-out;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
   }
+
+  100% {
+    opacity: 1;
+  }
+}
+.nav-item{
+  padding:1.5rem;
+}
 #navbar-item{
   color:rgb(0, 0, 206);
-    border-bottom: 3px solid transparent; /* Set initial border to transparent */
-    transition: border 1s ease-in-out, color 0.5s ease-in-out;
-
+  border-bottom: 3px solid transparent; /* Set initial border to transparent */
+  transition: border 1s ease-in-out, color 0.5s ease-in-out;
+  animation: down 1s ease-in-out;
+}
+@keyframes down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
 }
 .light-mode h1, .light-mode h2 {
     color: #1a1a2e;
@@ -30,8 +59,20 @@ body {
 #navbar-item:hover{
   color:rgb(10, 52, 246);
   border-bottom: 1px solid blue;
-
 }
+.navbar-toggler {
+  background-color: #0077b5;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+button.navbar-toggler {
+  background-color: #0077b5;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
 
 /* Other specific styles (including buttons, links, etc.) */
 button#theme-toggle {
@@ -43,8 +84,6 @@ button#theme-toggle {
     border: none;
     border-radius: 5px;
 }
-/* The switch - the box around the slider */
-/* The switch - the box around the slider */
 .switch {
   font-size: 17px;
   position: sticky; /* Changed from absolute to fixed */
@@ -135,11 +174,17 @@ button#theme-toggle {
 
 @media screen and (max-width: 768px) {
   .switch {
-        position: absolute;
-       
-      
+      position: absolute;
   }
-#collapsibleNavbar{
+  .navbar-brand{
+    margin:1rem 0;
+    padding:1rem;
+    text-align: center;
+  }
+  .nav-item{
+    padding:0.5rem;
+  }
+  #collapsibleNavbar{
       text-align: center;
   }
 }

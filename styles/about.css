@@ -137,6 +137,19 @@
     transform: scale(1.05);
 }
 
+#connectwithme .links li {
+    animation:leftswipe 1.5s ease-in;
+}
+@keyframes leftswipe {
+    0% {
+        transform: translateX(-30%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    
+}
+
 button p {
     position: absolute;
     top: 0.4em;
@@ -422,7 +435,7 @@ button {
         font-size:2.5rem;
     }
     #connectwithme .links li {
-        padding: 0.5rem 0.5rem;
+        padding: 0.5rem 0rem;
         
     }
 

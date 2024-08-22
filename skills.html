@@ -3,24 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Skills</title>
+    <link rel="stylesheet" href="styles/skills.css">
 </head>
 <body>
     <div class="container-fluid">
-        <div class="skills">
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
+        <section id="skills" class="skills-section">
+            <h1>Skills</h1>
+            <div class="skill-list">
+
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li class="skill" data-level="90">HTML</li>
+                        <li class="skill" data-level="75">CSS</li>
+                        <li class="skill" data-level="65">JavaScript</li>
+                        <li class="skill" data-level="85">Bootstrap</li>
+                        <li class="skill" data-level="50">React</li>
+                        <li class="skill" data-level="65">Angular</li>
+                        <li class="skill" data-level="50">TypeScript</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li class="skill" data-level="70">Python</li>
+                        <li class="skill" data-level="30">Django</li>
+                        <li class="skill" data-level="35">Flask</li>
+                        <li class="skill" data-level="60">PHP</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Database</h3>
+                    <ul>
+                        <li class="skill" data-level="85">MySQL</li>
+                        <li class="skill" data-level="30">Oracle</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li class="skill" data-level="80">Git</li>
+                        <li class="skill" data-level="85">GitHub</li>
+                        <li class="skill" data-level="90">VS Code</li>
+                        <li class="skill" data-level="70">Canva</li>
+                        <li class="skill" data-level="65">Photoshop</li>
+                        <li class="skill" data-level="75">Linux</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
     </div>
+
+ 
+    <script>
+        let skillsclicked = false;
+    
+        // Function to handle animation
+        function animateSkills(skill) {
+            const level = skill.getAttribute('data-level');
+            skill.classList.add('progress');
+            skill.style.setProperty('--progress-width', `${level}%`);
+        }
+    
+        // Function to handle scroll and navigation-triggered animations
+        function onScroll(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting || skillsclicked === true) {
+                    console.log("entry is ",entry);
+                    console.log("Skills clicked",skillsclicked);
+                    const skill = entry.target;
+                    const level = skill.getAttribute('data-level');
+                    skill.style.background = `linear-gradient(90deg, #007bffbb 0%, #fff 0%)`; // Start with 0% gradient
+    
+                    setTimeout(() => {
+                        skill.style.transition = 'background-size 2s ease-in-out';
+                        skill.style.animation = 'scroll1 3s ease-in';
+                        skill.style.background = `linear-gradient(90deg, #007bffbb ${level}%, #fff ${level}%)`;
+                    }, 100); // Delay to trigger the animation
+                    
+                    observer.unobserve(skill); // Stop observing once animation is triggered
+                }
+            });
+        }
+    
+        const observer = new IntersectionObserver(onScroll, {
+            threshold: 0.5 // Trigger when 50% of the element is in view
+        });
+    
+        // Observe each skill element
+        document.querySelectorAll('.skill').forEach(skill => {
+            observer.observe(skill);
+        });
+    
+        // Function to animate skills on navigation click
+        function animateSkillsOnNavigationClick(targetElement) {
+            if (targetElement && targetElement.querySelector('.skill')) {
+                targetElement.querySelectorAll('.skill').forEach(skill => {
+                    animateSkills(skill);
+                });
+            }
+        }
+    
+        // Handle navigation clicks
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+    
+                // Scroll to the target element smoothly
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+    
+                // Trigger the animation if the skills section is clicked
+                console.log("id is ",targetId);
+                if (targetId === '#skills') {
+                    skillsclicked = true;
+                } else {
+                    skillsclicked = false; // Reset if other sections are clicked
+                }
+    
+                // Trigger animation for the target element
+                animateSkillsOnNavigationClick(targetElement);
+            });
+        });
+    
+        // Reset the `skillsclicked` flag when the user scrolls away from the skills section
+        window.addEventListener('scroll1', () => {
+            const skillsSection = document.querySelector('#skills');
+            if (skillsSection && !skillsSection.getBoundingClientRect().top < window.innerHeight) {
+                skillsclicked = false;
+            }
+        });
+    </script>
+    
+    
+    
 </body>
 </html>

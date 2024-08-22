@@ -1,9 +1,26 @@
+/* Index .html files styles */
 body.dark-mode {
-    background: linear-gradient(to bottom,  #2f4f7f,#7a288a);
+    background: linear-gradient(to bottom,  #2f4f7f,#7a288a,#2f4f7f,#7a288a);
     /* background: linear-gradient(155deg, #03055b, #4169e1); */
     /* background: linear-gradient(to bottom, #4169e1, #00274d); */
     color: #f5f5f5;
 }
+body.dark-mode .navbar-toggler {
+    background-color: #f7a500; /* Sunset Gold for Dark Mode */
+    color: #000; /* Dark Icon Color */
+}
+body.dark-mode #navbar-item{
+    color:rgb(0, 206, 172);
+      border-bottom: 3px solid transparent; /* Set initial border to transparent */
+      transition: border 1s ease-in-out, color 0.5s ease-in-out;
+  
+}
+body.dark-mode #navbar-item:hover{
+    color:rgb(0, 206, 172);
+    border-bottom: 1px solid rgb(17, 255, 0);
+}
+
+/* About .html or about.css styles  */
 body.dark-mode .aboutme h2 {
     color: #b0b0b0; /* Light Gray */
 }
@@ -39,18 +56,14 @@ body.dark-mode .aboutmore h2 {
 body.dark-mode .aboutmore p {
     color: #b0a1cc; 
 }
-body.dark-mode .navbar-toggler {
-    background-color: #f7a500; /* Sunset Gold for Dark Mode */
-    color: #000; /* Dark Icon Color */
+
+/* For skills.html  */
+body.dark-mode .skills-section {
+    border: 2px dashed #f5f5f5;
 }
-body.dark-mode #navbar-item{
-    color:rgb(0, 206, 172);
-      border-bottom: 3px solid transparent; /* Set initial border to transparent */
-      transition: border 1s ease-in-out, color 0.5s ease-in-out;
-  
-  }
-body.dark-mode #navbar-item:hover{
-    color:rgb(0, 206, 172);
-    border-bottom: 1px solid rgb(17, 255, 0);
-  
-  }
+body.dark-mode .skill-category h3{
+    color:wheat;
+}
+body.dark-mode .skill-category {
+    background: none;
+}

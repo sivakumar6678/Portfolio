@@ -61,6 +61,7 @@
 
  
     <script>
+        // Declare `skillsclicked` variable
         let skillsclicked = false;
     
         // Function to handle animation
@@ -74,8 +75,6 @@
         function onScroll(entries, observer) {
             entries.forEach(entry => {
                 if (entry.isIntersecting || skillsclicked === true) {
-                    console.log("entry is ",entry);
-                    console.log("Skills clicked",skillsclicked);
                     const skill = entry.target;
                     const level = skill.getAttribute('data-level');
                     skill.style.background = `linear-gradient(90deg, #007bffbb 0%, #fff 0%)`; // Start with 0% gradient
@@ -120,7 +119,6 @@
                 targetElement.scrollIntoView({ behavior: 'smooth' });
     
                 // Trigger the animation if the skills section is clicked
-                console.log("id is ",targetId);
                 if (targetId === '#skills') {
                     skillsclicked = true;
                 } else {
@@ -133,13 +131,14 @@
         });
     
         // Reset the `skillsclicked` flag when the user scrolls away from the skills section
-        window.addEventListener('scroll1', () => {
+        window.addEventListener('scroll', () => {
             const skillsSection = document.querySelector('#skills');
             if (skillsSection && !skillsSection.getBoundingClientRect().top < window.innerHeight) {
                 skillsclicked = false;
             }
         });
     </script>
+    
     
     
     

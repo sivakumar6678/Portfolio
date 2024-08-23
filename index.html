@@ -70,9 +70,9 @@
             // Set default mode based on system preference
             const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
             if (prefersDarkScheme) {
-                $('body').addClass('light-mode');
-            } else {
                 $('body').addClass('dark-mode');
+            } else {
+                $('body').addClass('light-mode');
             }
             function loadContent(file, target) {
                 $.ajax({

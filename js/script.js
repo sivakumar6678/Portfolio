@@ -3,8 +3,8 @@ let index = 0;
 let letterIndex = 0;
 let currentRole = '';
 let isDeleting = false;
-const typingSpeed = 100; // Speed for typing
-const deletingSpeed = 50; // Speed for deleting
+const typingSpeed = 200; // Speed for typing
+const deletingSpeed = 100; // Speed for deleting
 const pauseTime = 1000; // Pause before starting deletion
 
 function type() {

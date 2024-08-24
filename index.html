@@ -68,7 +68,7 @@
             });
         
             // Set default mode based on system preference
-            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: light)").matches;
             if (prefersDarkScheme) {
                 $('body').addClass('dark-mode');
             } else {

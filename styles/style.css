@@ -10,8 +10,11 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
 }
+
 .sections{
   margin:1rem 0;
+  /* border:1px solid black; */
+  min-width: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }
 .main #about{

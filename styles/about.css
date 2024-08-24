@@ -444,21 +444,15 @@ button {
     }
 }
 @media (max-width: 505px) {
-    #connectwithme .links {
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    #connectwithme .links .linedinbutton {
+        width:150px;
+        text-align: left;
     }
-    #connectwithme .links li {
-      width: 45%;
-      margin: 0 5px;
+    #connectwithme .links .linedinbutton p {
+        margin:0;
+        padding:0;
+        font-size: 15px;
     }
-    #connectwithme .links li:last-child {
-      margin-right: 0;
-    }
-    .button-icon {
-      width: 100%;
-      padding: 0;
-      margin: 0;
-    }
+
+    
   }

@@ -69,4 +69,20 @@ body.dark-mode .skill-category h3{
 }
 body.dark-mode .skill-category {
     background: none;
+    box-shadow: 0 0 4px 6px rgba(0, 0, 0, 0.1) inset;
+}
+.dark-mode #frontend {
+    border-color: #20B2AA; /* Lighter Teal */
+}
+
+.dark-mode #backend {
+    border-color: #9370DB; /* Medium Purple */
+}
+
+.dark-mode #db {
+    border-color: #3CB371; /* Medium Sea Green */
+}
+
+.dark-mode #tools {
+    border-color: #FFA07A; /* Light Salmon */
 }

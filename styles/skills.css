@@ -19,7 +19,7 @@
 }
 
 .skill-category {
-    flex: 1 1 calc(50% - 2rem); 
+    flex: 1 1 calc(50% - 2rem); /* Flexbox ensures two items per row */
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -40,14 +40,28 @@
 .skill-category ul {
     padding: 0;
 }
-
-
+#frontend li{
+    box-shadow: 0 0 4px 2px  #008080 inset;
+    border:2px solid #add8e6b3;
+}
+#backend li{
+    box-shadow: 0 0 4px 2px  #6A0DAD inset;
+    border:2px solid #6A0DAD;
+}
+#tools li{
+    box-shadow: 0 0 4px 2px  #FF8C00 inset;
+    border:2px solid #FF8C00;
+}
+#db li{
+    box-shadow: 0 0 4px 2px  #2E8B57 inset;
+    border:2px solid #2E8B57;
+}
 
 .skill-category li {
     list-style: none;
     margin: 0.5rem 0;
     padding: 0.1rem 1rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
     text-align: left;
     position: relative;
@@ -98,51 +112,6 @@
     }
 }
 
-/* Categorize colors */
-#frontend{
-    background-color: #d82121; /* Light Gray */
-    border: 2px solid #008080; /* Teal */
-}
-#frontend h3{
-    /* border:2px solid #008080; */
-  /* background: #F5F5F5; */
-}
-#frontend ul li{
-  border:2px solid #008080;
-  box-shadow: 0 0 4px 2px #008080 inset;
-}
-#backend{
-    border: 2px solid #6A0DAD; /* Purple */
-}
-
-#backend ul li{
-  border:2px solid #6A0DAD;
-  box-shadow: 0 0 4px 2px #6A0DAD inset;
-}   
-#db{
-    border: 2px solid #2E8B57; /* Green */
-}
-#db ul li{
-  border:2px solid #F0FFF0;
-  box-shadow: 0 0 4px 3px #2E8B57 inset;
-}
-#tools{
-    border: 2px solid #FF8C00; /* Orange */
-}
-#tools ul li{
-  border:2px solid #F08080;
-  box-shadow: 0 0 4px 3px #F08080 inset;
-}
-/* Skill levels */
-.beginner{
-    background-color: #D3D3D3; 
-}
-.intermediate{
-    background-color: #4682B4; 
-}
-.advanced{
-    background-color: #006400; 
-}
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .skill-category {

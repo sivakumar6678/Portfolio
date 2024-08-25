@@ -10,11 +10,8 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
 }
-
 .sections{
   margin:1rem 0;
-  /* border:1px solid black; */
-  min-width: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }
 .main #about{
@@ -191,28 +188,5 @@ button#theme-toggle {
   }
   #collapsibleNavbar{
       text-align: center;
-  }
-  .sections {
-    padding: 1rem 2rem; /* Add padding for spacing */
-    text-align: center;
-}
-.about h1, .about h2 {
-    font-size: 1.5rem; /* Adjust font size for readability */
-}
-.about p {
-    font-size: 1rem;
-}
-}
-@media (max-width: 576px) {
-  .aboutsection {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .aboutsection img,
-  .aboutsection .aboutme {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 1rem;
   }
 }

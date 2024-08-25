@@ -430,11 +430,9 @@ button {
 }
 
 @media (max-width: 576px) {
-
+    
     .aboutsection {
-        /* margin: 0 1rem; */
-        max-width: 100%;
-        width: fit-content;
+        margin: 0 1rem;
     }
     .aboutme h1{
         font-size:2rem;

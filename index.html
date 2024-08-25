@@ -50,8 +50,8 @@
         <div class="container-fluid main">
             <div class="sections" id="about"></div>
             <div class="sections" id="skills"></div>
-            <div class="sections" id="certify"></div>
             <div class="sections" id="projects"></div>
+            <div class="sections" id="certify"></div>
             <div class="sections" id="passionandint"></div>
             <div class="sections" id="futuregoals"></div>
         </div>
@@ -68,7 +68,7 @@
             });
         
             // Set default mode based on system preference
-            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: light)").matches;
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: light-mode)").matches;
             if (prefersDarkScheme) {
                 $('body').addClass('dark-mode');
             } else {

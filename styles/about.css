@@ -430,6 +430,7 @@ button {
 }
 
 @media (max-width: 576px) {
+    
     .aboutsection {
         margin: 0 1rem;
     }

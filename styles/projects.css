@@ -91,5 +91,5 @@
 .col-md-4 .card img{
   width:50vw;
   height:30vh;
-  /* object-fit: cover; */
+  object-fit: cover;
 }

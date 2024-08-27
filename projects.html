@@ -217,7 +217,7 @@
                     <img src="" id="projectImage" class="img-fluid mb-3" alt="Project Image">
                     <p id="projectDescription"></p>
                     <p><strong>Technologies:</strong> <span id="projectTechnologies"></span></p>
-                    <p><b>Project Link</b> : <span id="projectlink"></span> </p>
+                    <p><b>Project Link</b> : <a href="" id="projectlink"></a> </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -240,8 +240,9 @@
             modal.find('#projectDescription').text(description);
             modal.find('#projectImage').attr('src', image);
             modal.find('#projectTechnologies').text(technologies);
+             modal.find('#projectLink').attr('href', projectlink);  // This sets the 'View Project' button's link
+            modal.find('#projectlink').text(projectlink);  // This sets the text of the project link in the modal body
             modal.find('#projectlink').attr('href', projectlink);
-            // Add the link to the project if needed
         });
     </script>
 </body>

@@ -18,7 +18,8 @@ body {
   animation: fade-in 2s ease-in-out;
 }
 nav{
-  background:  linear-gradient(to bottom, #fff9c4,#ffe0b2);
+  position: fixed;
+  /* background:  linear-gradient(to bottom, #fff9c4,#ffe0b2); */
 }
 @keyframes fade-in {
   0% {

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <div class="projects" id="projects">
@@ -36,29 +39,50 @@
 
             <div class="tab-content">
                 <!-- Major Projects Section -->
-                <div id="major-projects" class="container-fluid">
+                <div id="major-projects" class="container-fluid tab-pane fade show active"><br>
                     <h3>Major Projects</h3>
                     <div id="projectCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <!-- Project 1 -->
                             <div class="carousel-item active">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="resume-generator-large.jpg" class="d-block w-100 img-thumbnail" alt="Resume Generator Image">
+                                    <div class="col-md-6 proj-image">
+                                        <img src="images/resugen.png" class=" img-thumbnail" alt="Resume Generator Image">
                                     </div>
                                     <div class="col-md-6">
                                         <div class="project-content">
-                                            <h5 class="card-title mt-3">Resume Generator</h5>
-                                            <p class="card-text">A web-based resume generator with customizable templates.</p>
-                                            <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal1">More Details</button>
+                                            <h5 class="card-title mt-3">Online Resume Generator</h5>
+                                            <p class="card-text"><b>Description:</b> A web application that allows users to create professional resumes using customizable templates. The tool is user-friendly, enabling users to input their details, select a template, and download their resume in PDF format without watermarks.</p>
+                                            <p class="card-text">Resume Gene is a straightforward resume builder that focuses on simplicity and efficiency, helping users quickly generate professional resumes without unnecessary complications.</p>
+                                            <p class="card-text"><b>Features:</b></p>
+                                            <ul>
+                                                <li>Basic resume generator with template selection and PDF download without watermarks. Designed for educational purposes, not professional use.</li>
+                                                <li>User-friendly interface, accessible to users of all skill levels.</li>
+                                                <li>Responsive design, ensuring compatibility with various devices.</li>
+                                                <li>Resume generation in PDF format based on user input.</li>
+                                            </ul>
+                                            <p class="card-text"><b>Languages Used:</b></p>
+                                            <div class="language-icons">
+                                                <img src="images/html.png" alt="HTML" class="languages">
+                                                <img src="images/css.png" alt="CSS" class="languages">
+                                                <img src="images/javascript.png" alt="JavaScript" class="languages">
+                                                <img src="images/bootstrap-framework.png" alt="Bootstrap" class="languages">
+                                                <!-- Add more images as needed -->
+                                            </div>
+                                            <div class="site_links">
+                                                <b>Github Repository :- </b> <a   class="card-link" href="https://github.com/sivakumar6678/Resume-Generator.git"> https://github.com/sivakumar6678/Resume-Generator.git </a> <br>
+                                                <b>View Website :-</b> <a  class="card-link" href="https://resume-gene.netlify.app/"> https://resume-gene.netlify.app/</a> <br>
+                                            </div>
+                                            <button class="btn btn-primary justify-content-center" data-toggle="modal" data-target="#projectModal1">More Details</button>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                             <!-- Project 2 -->
                             <div class="carousel-item">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 proj-image">
                                         <img src="jvd-payment-site-large.jpg" class="d-block w-100 img-thumbnail" alt="JVD Payment Storing Site Image">
                                     </div>
                                     <div class="col-md-6">
@@ -72,7 +96,7 @@
                             </div>
                             <div class="carousel-item ">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 proj-image">
                                         <img src="resume-generator-large.jpg" class="d-block w-100 img-thumbnail" alt="Resume Generator Image">
                                     </div>
                                     <div class="col-md-6">
@@ -86,7 +110,7 @@
                             </div>
                             <div class="carousel-item ">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 proj-image">
                                         <img src="resume-generator-large.jpg" class="d-block w-100 img-thumbnail" alt="Resume Generator Image">
                                     </div>
                                     <div class="col-md-6">
@@ -100,11 +124,13 @@
                             </div>                        </div>
                         <!-- Carousel Controls -->
                         <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-prev-icon " aria-hidden="true"> <i class="fa fa-arrow-left" id="lefticon" style="font-size:36px"></i>
+
+                            </span>
                             <span class="sr-only">Previous</span>
                         </a>
                         <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-next-icon" aria-hidden="true"><i class="fa fa-arrow-right" id="lefticon" style="font-size:36px"></i></span>
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
@@ -171,7 +197,8 @@
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal"
                                         data-title="Cryptocurrency Price Tracker"
                                         data-description="Part of the Slash Mark internship, this tool tracks live cryptocurrency prices  A dynamic web application that tracks live cryptocurrency prices. It offers real-time data updates, allowing users to monitor the fluctuating values of various cryptocurrencies. This project was part of an internship and was built with a focus on responsive design and API integration.."
-                                        data-image="todo-list-large.jpg" data-technologies="React, CSS">More
+                                        data-image="todo-list-large.jpg" data-technologies="React, CSS"
+                                        data-projectlink="https://github.com/sivakumar6678/CryptoApp.git">More
                                         Details</button>
                                 </div>
                             </div>
@@ -200,7 +227,7 @@
                                     <p class="card-text">A Netflix homepage clone developed as part of the Bharat Intern internship.</p>
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal"
                                         data-title="Simple Netflix Homepage"
-                                        data-description="A Netflix homepage clone developed as part of the Bharat Intern internship A front-end clone of the Netflix homepage, designed to replicate the layout, styling, and responsiveness of the original site. This project showcases proficiency in HTML, CSS, and React, and was developed during an internship to demonstrate an understanding of modern web design practices.."
+                                        data-description="A Netflix homepage clone developed as part of the Bharat Intern internship A front-end clone of the Netflix homepage, designed to replicate the layout, styling, and responsiveness of the original site. This project showcases proficiency in HTML, CSS and was developed during an internship to demonstrate an understanding of modern web design practices.."
                                         data-image="images/netflixhome.png" data-technologies="Html, CSS"
                                         data-projectlink="https://github.com/sivakumar6678/netflixhomepageclone"
                                         >More
@@ -268,6 +295,7 @@
             </div>
         </div>
     </div>
+
     <script>
         $('#projectModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);

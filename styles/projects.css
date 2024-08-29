@@ -1,6 +1,7 @@
 /* From Uiverse.io by boryanakrasteva */ 
 .projects{
     padding: 2rem;
+    font-family: 'Roboto', sans-serif;
 
 }
 #projects>.card {
@@ -110,7 +111,83 @@
   border:2px solid black;
   transition: background-color 2s ease-in-out,border 2s linear;
 }
-.major-card{
-  width:100%;
-  background: red;
+.carousel-item{
+  /* border: 2px solid red; */
+  /* height: 50vh; */
+  width: 100%;
+  object-fit: cover;
 }
+#major-projects{
+  padding:1rem;
+  width:100%;
+  /* background: red; */
+}
+#major-projects h3,#minor-projects h3{
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+.project-content{
+  padding:1rem 2rem;
+}
+.project-content .card-title{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+.project-content .btn{
+  margin:1rem 0;
+  width:200px;
+  height:auto;
+ 
+}
+.proj-image{
+  padding:10px 10px 10px 50px;
+}
+.proj-image img{
+  margin:0 2rem;
+  width:100%;
+  height:max-content;
+  object-fit: cover;
+}
+.card-text{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  /* font-family: 'Lato', sans-serif;  */
+}
+.language-icons .languages{
+  width: 6vh;
+}
+.site_links {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #333; /* Dark gray for text */
+  margin-top: 1rem;
+}
+#lefticon{
+  color:black;
+}
+.site_links b {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem; /* Slightly larger for labels */
+  color: #000; /* Black for bold labels */
+}
+
+.site_links a.card-link {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #007bff; /* Primary link color */
+  text-decoration: underline; /* Underline links */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.site_links a.card-link:hover {
+  color: #0056b3; /* Darker color on hover */
+  text-decoration: none; /* Remove underline on hover if desired */
+}
+

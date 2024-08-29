@@ -191,3 +191,17 @@
   text-decoration: none; /* Remove underline on hover if desired */
 }
 
+@media (max-width:768px) {
+  .projects{
+    padding: 0;
+    margin:0;
+
+  }
+  .card{
+    margin:0;
+  }
+  .proj-image{
+    padding: 0;
+  }
+  
+}

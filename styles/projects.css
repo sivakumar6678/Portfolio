@@ -14,7 +14,24 @@
     overflow: hidden;
     display: flex;
   }
-  
+  .nav {
+    margin:1rem 0;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* padding: 1rem; */
+    /* background: #f0f0f0; */
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px 2px #f0f0f0; */
+  }
+  .nav .nav-item {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
   .circles,
   .browser {
     height: 30px;
@@ -146,14 +163,11 @@
   padding:10px 10px 10px 50px;
 }
 .proj-image img{
-  margin:0 2rem;
-  /* width:75%; */
-  height:max-content;
-  object-fit: cover;
+  width:100%;
 }
-
-
-
+#morebutton{
+  display: flex;
+}
 .card-text{
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -199,7 +213,110 @@
 #rightarrow{
   width: 5rem;
   transform-origin: center;
-  transform: rotate(180deg);}
+  transform: rotate(180deg);
+}
+.btn-group-horizantal .btn{
+  margin: 5px;
+  font-size: 1.1rem;
+  width:fit-content;
+  text-wrap: wrap;
+  font-weight: bold;
+}
+.modal-content{
+  background:linear-gradient( 135deg, #fff6a9, #f9d6a1);
+  color: #000;
+  border-color: #3a3a3a;
+}
+
+
+.modal-content .modal-header h5{
+  text-align: center;
+  color: navy;
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+.modal-content .modal-header button{
+  color: #fff;
+}
+.modal-footer .btn-secondary{
+  background-color: maroon;
+  border-color: maroon;
+  height: fit-content;
+}
+.modal-footer .btn-secondary:hover{
+  background-color: #cc1818;
+  transition: background-color 2s ease-in-out;
+}
+
+
+
+/* From Uiverse.io by satyamchaudharydev */ 
+.button {
+  /* position: relative; */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+
+
+.button:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
 @media (max-width:768px) {
   .projects{
     padding: 0;
@@ -230,8 +347,20 @@
     padding:0;
     margin:0;
   }
-  .card-title{
-    font-size: 10em;
+  #projects>.card {
+    margin:0;
+  }
+  #minor-projects {
+    margin:0;
+    padding: 0;
+  }
+  .col-md-4 .card img{
+    width:100%;
+    height:30vh;
+  }
+  .nav .nav-item {
+    padding: 0.1rem;
+    font-size: 1rem;
   }
 }
 
@@ -271,6 +400,6 @@
     padding: 0;
   }
   .card-text {
-    font-size: 1.1rem;
+    /* font-size: 1.1rem; */
   }
 }

@@ -138,3 +138,15 @@
     }
     
 }
+@media screen and (max-width: 400px) {
+    .skill-category {
+        flex: 1 1 100%; /* Full width on smaller screens */
+    }
+    .skills-section {
+        padding: 0;
+    }
+    .skill-category ul li{
+        padding:0;
+    }
+    
+}

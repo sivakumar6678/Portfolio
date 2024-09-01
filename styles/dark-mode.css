@@ -86,3 +86,67 @@ body.dark-mode .skill-category {
 .dark-mode #tools {
     border-color: #FFA07A; /* Light Salmon */
 }
+/* projects section */
+.dark-mode #minor-projects .card{
+    background: #2f4f7f;
+    box-shadow: 1px 1px 3px 1px #ffcc80 inset, 0 0 1px 1px gray;
+}
+.dark-mode #projects  ul li a{
+    color: wheat;
+}
+.dark-mode .nav-tabs .nav-item.show .nav-link, .dark-mode .nav-tabs .nav-link.active{
+    background: rgb(18, 42, 129);
+}
+/* .dark-mode .modal h5{
+    background: #2f4f7f;
+}
+.dark-mode .modal-content{
+    background: #242424;
+    color:#e0e0e0;
+}
+.dark-mode .modal-content .modal-header{
+    background: #2f4f7f;
+} */
+.dark-mode .modal-content {
+    background:linear-gradient( 135deg, #2f4f7f,#2f4f7f, #6b207a);
+    color: #e0e0e0;
+    border-color: #3a3a3a;
+}
+
+.dark-mode .modal-header, .modal-footer {
+    border-bottom: 1px solid #444;
+    border-top: 1px solid #444;
+}
+
+.dark-mode .modal-title {
+    color: #ffffff;
+}
+
+.dark-mode .btn-primary {
+    background-color: #4caf50;
+    border-color: #4caf50;
+    color: #ffffff;
+}
+
+.dark-mode .btn-primary:hover {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+}
+
+.dark-mode .btn-secondary {
+    background-color: #9b2222;
+    border-color: #9a2121;
+    color: #ffffff;
+}
+
+.dark-mode .btn-secondary:hover {
+    background-color: #c81414;
+    border-color: #cc1818;
+    transition: background-color 1s ease-in-out;
+}
+.dark-mode .modal-body a{
+    color: #f7a500;
+}
+.dark-mode .modal-content .modal-header h5{
+    color: #f7a500;
+}

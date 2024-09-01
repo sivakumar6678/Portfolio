@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="projects" id="projects">
-        <div class="card">
+        <div class="card" id="maincard">
             <div class="circles">
                 <div class="c"></div>
                 <div class="c"></div>
@@ -25,7 +25,6 @@
                     <h2>Projects</h2>
                 </div>
             </div>
-
             <div>
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
@@ -36,7 +35,6 @@
                     </li>
                 </ul>
             </div>
-
             <div class="tab-content">
                 <!-- Major Projects Section -->
                 <div id="major-projects" class="container-fluid tab-pane fade show active"><br>
@@ -46,141 +44,312 @@
                             <!-- Project 1 -->
                             <div class="carousel-item active">
                                 <div class="row">
-                                    <div class="col-md-6 proj-image">
-                                        <img src="images/resugen.png" class=" img-thumbnail" alt="Resume Generator Image">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5 proj-image d-flex align-items-center">
+                                        <img src="images/resugen.png" class="img-thumbnail" alt="Resume Generator Image">
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-5 align-items-center">
                                         <div class="project-content">
-                                            <h5 class="card-title mt-3">Online Resume Generator</h5>
-                                            <p class="card-text"><b>Description:</b> A web application that allows users to create professional resumes using customizable templates. The tool is user-friendly, enabling users to input their details, select a template, and download their resume in PDF format without watermarks.</p>
-                                            <p class="card-text">Resume Gene is a straightforward resume builder that focuses on simplicity and efficiency, helping users quickly generate professional resumes without unnecessary complications.</p>
-                                            <p class="card-text"><b>Features:</b></p>
-                                            <ul>
-                                                <li>Basic resume generator with template selection and PDF download without watermarks. Designed for educational purposes, not professional use.</li>
-                                                <li>User-friendly interface, accessible to users of all skill levels.</li>
-                                                <li>Responsive design, ensuring compatibility with various devices.</li>
-                                                <li>Resume generation in PDF format based on user input.</li>
-                                            </ul>
-                                            <p class="card-text"><b>Languages Used:</b></p>
-                                            <div class="language-icons">
-                                                <img src="images/html.png" alt="HTML" class="languages">
-                                                <img src="images/css.png" alt="CSS" class="languages">
-                                                <img src="images/javascript.png" alt="JavaScript" class="languages">
-                                                <img src="images/bootstrap-framework.png" alt="Bootstrap" class="languages">
-                                                <!-- Add more images as needed -->
-                                            </div>
+                                            <h3 class="card-title mt-3">Online Resume Generator</h3>
+                                            <p class="card-text"> The Online Resume Generator is a web application designed to help users create professional resumes effortlessly. By offering a range of customizable templates, this tool allows users to input their personal details, choose a preferred template, and download their resume in PDF format. The application emphasizes simplicity and user-friendliness, ensuring a smooth experience for users of all skill levels.</p>
+                                            <p><b>Key Features:</b></p>
+                                                <div class="btn-group-horizantal">
+                                                    <button type="button" class="btn btn-info">Customizable Templates</button>
+                                                    <button type="button" class="btn btn-info">PDF Download Without Watermarks</button>
+                                                    <button type="button" class="btn btn-info">User-Friendly Interface</button>
+                                                    <button type="button" class="btn btn-info">Responsive Design</button>
+                                                </div>
                                             <div class="site_links">
-                                                <b>Github Repository :- </b> <a   class="card-link" href="https://github.com/sivakumar6678/Resume-Generator.git"> https://github.com/sivakumar6678/Resume-Generator.git </a> <br>
-                                                <b>View Website :-</b> <a  class="card-link" href="https://resume-gene.netlify.app/"> https://resume-gene.netlify.app/</a> <br>
+                                                <b>Github Repository :- </b> <a class="card-link" href="https://github.com/sivakumar6678/Resume-Generator.git">https://github.com/sivakumar6678/Resume-Generator.git</a> <br>
                                             </div>
-                                            <button class="btn btn-primary justify-content-center" data-toggle="modal" data-target="#projectModal1">More Details</button>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal1">More Details</button>
                                         </div>
                                     </div>
-                                    
+                                    <div class="col-md-1"></div>
                                 </div>
                             </div>
                             <!-- Project 2 -->
                             <div class="carousel-item">
                                 <div class="row">
-                                    <div class="col-md-6 proj-image">
-                                        <img src="jvd-payment-site-large.jpg" class="d-block w-100 img-thumbnail" alt="JVD Payment Storing Site Image">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5 proj-image d-flex align-items-center">
+                                        <img src="images/jdvsite.png" class="d-block w-100 img-thumbnail" alt="JVD Payment Storing Site Image">
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-5">
                                         <div class="project-content">
-                                            <h5 class="card-title mt-3">JVD Payment Data Storing System</h5>
-                                            <p class="card-text">The Results Declaration System is a web-based application that allows students to view their academic results online. This system eliminates the need for students to visit the college office physically to obtain their results. Students can securely log in to the system to view their scores, while administrators have the ability to upload results and manage student data efficiently.</p>
-                                            <p class="card-text"><b>Features</b></p>
-                                            <ul>
-                                                <li><b>Student Login:</b> Students can log in to view their results for various subjects and academic years.</li>
-                                                <li><b>Admin Login:</b> Administrators can log in to manage and upload student results.</li>
-                                                <li><b>CSV Upload:</b> Results can be uploaded in bulk through CSV files.</li>
-                                                <li><b>Results Management:</b> Admins can update or edit student results as needed.</li>
-                                                <li><b>Secure Access:</b> Both students and admins have secure login access to the system.</li>
-                                                <li><b>Responsive Design:</b> The application is accessible across various devices with a responsive interface.</li>
-                                            </ul>
-                                            <p class="card-text"><b>Languages Used:</b></p>
-                                            <div class="language-icons">
-                                                <img src="images/html.png" alt="HTML" class="languages">
-                                                <img src="images/css.png" alt="CSS" class="languages">
-                                                <img src="images/javascript.png" alt="JavaScript" class="languages">
-                                                <img src="images/bootstrap-framework.png" alt="Bootstrap" class="languages">
-                                                <img src="images/mysql.png" alt="Mysql" class="languages">
+                                            <h3 class="card-title mt-3">JVD Payment Data Storing System</h3>
+                                            <p class="card-text"><b>Description:</b> The JVD Payment Data Storing System is a comprehensive web-based solution designed for efficient management and storage of payment data. This system caters to both students and administrators by providing a secure, easy-to-use platform for viewing and managing payment information.</p>
+                                            <p class="card-text">For students, the system offers a secure login where they can access their payment history, view transaction details, and track fees for different academic years. Administrators have a robust dashboard to manage student data, update payment records, and handle bulk uploads through CSV files. This application simplifies the process of managing and retrieving payment information, ensuring transparency and efficiency.</p>
+                                            <p><b>Key Features:</b></p>
+                                            <div class="btn-group-horizantal">
+                                                <button type="button" class="btn btn-info">Student Login</button>
+                                                <button type="button" class="btn btn-info">Admin Login</button>
+                                                <button type="button" class="btn btn-info">CSV Upload</button>
+                                                <button type="button" class="btn btn-info">Results Management</button>
+                                                <button type="button" class="btn btn-info">Secure Access</button>
+                                                <button type="button" class="btn btn-info">Responsive Design</button>
+                                            </div>
+                                            
+                                            <div class="site_links">
+                                                <b>Github Repository:</b> <a class="card-link" href="https://github.com/sivakumar6678/JVD-Payment-Data-Storing.git">https://github.com/sivakumar6678/JVD-Payment-Data-Storing.git</a>
                                             </div>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal2">More Details</button>
                                         </div>
                                     </div>
+                                    <div class="col-md-1"></div>
                                 </div>
                             </div>
-                            <div class="carousel-item ">
-                                <div class="row">
-                                    <div class="col-md-6 proj-image">
-                                        <img src="images/resutsdeclaration.png" class="d-block w-100 img-thumbnail" alt="Resume Generator Image">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="project-content">
-                                            <h5 class="card-title mt-3">Exam Results Declaration</h5>
-                                            <p class="card-text">A web-based application for managing and announcing examination results efficiently, designed with a secure admin dashboard and a student portal.</p>
-                                            <p class="card-text">The Results Declaration System is an efficient platform for educational institutions to release examination results online. Students can easily access their results via institution-provided links formatted for specific exams, such as "I B.Tech I Sem (R23) Supplementary Examination." The system also includes an admin panel where administrators can generate result links, manage student data, and upload results via CSV files. Additionally, the system features a student performance block for viewing overall performance based on roll number.</p>
-                                            <p class="card-text"><b>Features:</b></p>
-                                            <ul>
-                                                <li><b>Student Portal:</b>
-                                                    <ul>
-                                                        <li>Access examination results via specific institution-generated links.                                                    </li>
-                                                        <li> View results for different academic years and courses.                                                    </li>
-                                                    </ul>
-                                                </li>
-                                                <li><b>Admin Panel:</b>
-                                                    <ul>
-                                                        <li>Generate result links based on examination type and format.</li>
-                                                        <li>Manage student data, including name, date of birth, and phone number</li>
-                                                        <li>Upload student results using CSV files.</li>
-                                                        <li>View overall student performance by entering the roll number.</li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <p class="card-text"><b>Languages Used:</b></p>
-                                            <div class="language-icons">
-                                                <img src="images/html.png" alt="HTML" class="languages">
-                                                <img src="images/css.png" alt="CSS" class="languages">
-                                                <img src="images/javascript.png" alt="JavaScript" class="languages">
-                                                <img src="images/bootstrap-framework.png" alt="Bootstrap" class="languages">
-                                                <img src="images/mysql.png" alt="Mysql" class="languages">
-                                            </div>
-                                            <div class="site_links">
-                                                <b>Github Repository :- </b> <a   class="card-link" href="https://github.com/sivakumar6678/Results_Declaration.git"> https://github.com/sivakumar6678/Results_Declaration.git </a> <br>
-                                                <!-- <b>View Website :-</b> <a  class="card-link" href="https://resume-gene.netlify.app/"> https://resume-gene.netlify.app/</a> <br> -->
-                                            </div>
-                                            <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal1">More Details</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item ">
-                                <div class="row">
-                                    <div class="col-md-6 proj-image">
-                                        <img src="resume-generator-large.jpg" class="d-block w-100 img-thumbnail" alt="Resume Generator Image">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="project-content">
-                                            <h5 class="card-title mt-3">EduHub (Tema Project)</h5>
-                                            <p class="card-text">A collaborative project developed during an internship at Infosys. Contributed 85% of the frontend development.</p>
-                                            <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal1">More Details</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                        </div>
-                        <!-- Carousel Controls -->
-                        <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon " aria-hidden="true"> <i class="fa fa-arrow-left" id="lefticon" style="font-size:36px"></i>
 
-                            </span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"><i class="fa fa-arrow-right" id="lefticon" style="font-size:36px"></i></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <!-- Project 3 -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5 proj-image d-flex align-items-center">
+                                        <img src="images/resutsdeclaration.png" class="d-block w-100 img-thumbnail" alt="Results Declaration Image">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="project-content">
+                                            <h3 class="card-title mt-3">Exam Results Declaration</h3>
+                                            <p class="card-text"><b>Description:</b> The Exam Results Declaration system is a web-based application developed to streamline the process of releasing and managing examination results. This platform provides a seamless experience for both students and administrators.</p>
+                                            <p class="card-text">Students can access their examination results via secure institution-provided links formatted for specific exams, such as "I B.Tech I Sem (R23) Supplementary Examination." The admin panel allows for the efficient generation of result links, management of student data, and bulk uploading of results through CSV files. Additionally, administrators can view and analyze overall student performance based on roll numbers, ensuring a comprehensive overview of academic results.</p>
+                                            <p><b>Key Features:</b></p>
+                                            <div class="btn-group-horizantal">
+                                                <button type="button" class="btn btn-info">Student Portal</button>
+                                                <button type="button" class="btn btn-info">Admin Panel</button>
+                                                <button type="button" class="btn btn-info">Generate Result Links</button>
+                                                <button type="button" class="btn btn-info">Manage Student Data</button>
+                                                <button type="button" class="btn btn-info">CSV Upload</button>
+                                                <button type="button" class="btn btn-info">View Performance</button>
+                                            </div>
+                                            
+                                            <div class="site_links">
+                                                <b>Github Repository:</b> <a class="card-link" href="https://github.com/sivakumar6678/Results_Declaration.git">https://github.com/sivakumar6678/Results_Declaration.git</a>
+                                            </div>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal3">More Details</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                            </div>
+
+                        <!-- Project 4 -->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5 proj-image d-flex align-items-center">
+                                        <img src="images/eduhub.jpg" class="d-block w-100 img-thumbnail" alt="EduHub Image">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="project-content">
+                                            <h3 class="card-title mt-3">EduHub - Online Learning Platform</h3>
+                                            <p class="card-text"><b>Description:</b> EduHub is a robust online learning platform designed to offer a diverse range of courses and learning resources. It caters to learners of various disciplines by providing a flexible, interactive, and user-friendly educational environment.</p>
+                                            <p class="card-text">Developed as a collaborative project during an internship at Infosys, EduHub features functionalities such as course enrollment, progress tracking, and interactive quizzes. The platform is designed to enhance the learning experience with its intuitive interface and seamless navigation, allowing users to manage their learning journey effectively.</p>                                        <p><b>Key Features:</b></p>
+                                            <div class="btn-group-horizantal">
+                                                <button type="button" class="btn btn-info">Course Catalog</button>
+                                                <button type="button" class="btn btn-info">Progress Tracking</button>
+                                                <button type="button" class="btn btn-info">Authentication</button>
+                                                <button type="button" class="btn btn-info">User Profiles</button>
+                                                <button type="button" class="btn btn-info">Course Management</button>
+                                                <button type="button" class="btn btn-info">Enrollment Section</button>
+                                            </div>
+                                            
+                                            <div class="site_links">
+                                                <b>Github Repository:</b> <a class="card-link" href="https://github.com/sivakumar6678/Eduhub.git">https://github.com/sivakumar6678/Eduhub.git</a>
+                                            </div>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal4">More Details</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                            <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
+
+                                <span class="sr-only">Previous
+                                    
+                                </span>
+                                <img src="images/Left Arrow.png" id="leftarrwo" alt="">
+
+                            </a>
+                            <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next">
+                                <span class="sr-only">Next</span>
+                                <img src="images/Left Arrow.png" id="rightarrow" alt="">
+                            </a>
                     </div>
+                    
+                    <!-- Modal for Project 1 -->
+                    <div class="modal fade" id="projectModal1" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="projectModalLabel1">Online Resume Generator</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>A web application that allows users to create professional resumes using customizable templates. The tool is user-friendly, enabling users to input their details, select a template, and download their resume in PDF format without watermarks.</p>
+                                    <p>Resume Gene is a straightforward resume builder that focuses on simplicity and efficiency, helping users quickly generate professional resumes without unnecessary complications.</p>
+                                    <p><b>Features:</b></p>                                    
+                                    <ul>
+                                        <li>Basic resume generator with template selection and PDF download without watermarks. Designed for educational purposes, not professional use.</li>
+                                        <li>User-friendly interface, accessible to users of all skill levels.</li>
+                                        <li>Responsive design, ensuring compatibility with various devices.</li>
+                                        <li>Resume generation in PDF format based on user input.</li>
+                                    </ul>
+                                    <p><b>Languages Used:</b></p>
+                                    <div class="language-icons">
+                                        <img src="images/html.png" alt="HTML" class="languages">
+                                        <img src="images/css.png" alt="CSS" class="languages">
+                                        <img src="images/javascript.png" alt="JavaScript" class="languages">
+                                        <img src="images/bootstrap-framework.png" alt="Bootstrap" class="languages">
+                                    </div>
+                                    <p><b>Github Repository:</b> <a href="https://github.com/sivakumar6678/Resume-Generator.git">https://github.com/sivakumar6678/Resume-Generator.git</a></p>
+                                    <p><b>View Website:</b> <a href="https://resume-gene.netlify.app/">https://resume-gene.netlify.app/</a></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal for Project 2 -->
+                    <div class="modal fade" id="projectModal2" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel2" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="projectModalLabel2">JVD Payment Data Storing System</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>The Results Declaration System is a web-based application that allows students to view their academic results online. This system eliminates the need for students to visit the college office physically to obtain their results. Students can securely log in to the system to view their scores, while administrators have the ability to upload results and manage student data efficiently.</p>
+                                    <p><b>Features:</b></p>
+                                    <ul>
+                                        <li><b>Student Login:</b> Students can log in to view their results for various subjects and academic years.</li>
+                                        <li><b>Admin Login:</b> Administrators can log in to manage and upload student results.</li>
+                                        <li><b>CSV Upload:</b> Results can be uploaded in bulk through CSV files.</li>
+                                        <li><b>Results Management:</b> Admins can update or edit student results as needed.</li>
+                                        <li><b>Secure Access:</b> Both students and admins have secure login access to the system.</li>
+                                        <li><b>Responsive Design:</b> The application is accessible across various devices with a responsive interface.</li>
+                                    </ul>
+                                    <p><b>Languages Used:</b></p>
+                                    <div class="language-icons">
+                                        <img src="images/html.png" alt="HTML" class="languages">
+                                        <img src="images/css.png" alt="CSS" class="languages">
+                                        <img src="images/javascript.png" alt="JavaScript" class="languages">
+                                        <img src="images/bootstrap-framework.png" alt="Bootstrap" class="languages">
+                                        <img src="images/mysql.png" alt="MySQL" class="languages">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-primary" href="https://github.com/sivakumar6678/JVD-Payment-Data-Storing.git" target="_blank">Github Repository</a>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal for Project 3 -->
+                    <div class="modal fade" id="projectModal3" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel3" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="projectModalLabel3">Exam Results Declaration</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>A web-based application for managing and announcing examination results efficiently, designed with a secure admin dashboard and a student portal.</p>
+                                    <p>The Results Declaration System is an efficient platform for educational institutions to release examination results online. Students can easily access their results via institution-provided links formatted for specific exams, such as "I B.Tech I Sem (R23) Supplementary Examination." The system also includes an admin panel where administrators can generate result links, manage student data, and upload results via CSV files. Additionally, the system features a student performance block for viewing overall performance based on roll number.</p>
+                                    <p><b>Features:</b></p>
+                                    <ul>
+                                        <li><b>Student Portal:</b>
+                                            <ul>
+                                                <li>Access examination results via specific institution-generated links.</li>
+                                                <li>View results for different academic years and courses.</li>
+                                            </ul>
+                                        </li>
+                                        <li><b>Admin Panel:</b>
+                                            <ul>
+                                                <li>Generate result links based on examination type and format.</li>
+                                                <li>Manage student data, including name, date of birth, and phone number.</li>
+                                                <li>Upload student results using CSV files.</li>
+                                                <li>View overall student performance by entering the roll number.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <p><b>Languages Used:</b></p>
+                                    <div class="language-icons">
+                                        <img src="images/html.png" alt="HTML" class="languages">
+                                        <img src="images/css.png" alt="CSS" class="languages">
+                                        <img src="images/javascript.png" alt="JavaScript" class="languages">
+                                        <img src="images/bootstrap-framework.png" alt="Bootstrap" class="languages">
+                                        <img src="images/mysql.png" alt="MySQL" class="languages">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-primary" href="https://github.com/sivakumar6678/Results-Declaration-System.git" target="_blank">Github Repository</a>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal for Project 4 -->
+                    <div class="modal fade" id="projectModal4" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel4" aria-hidden="true">
+                        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="projectModalLabel4">Eduhub</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Eduhub is an online learning platform designed to offer a comprehensive learning experience through features like course enrollment, progress tracking, and interactive quizzes. Developed as a collaborative project during an internship at Infosys, I contributed 85% of the frontend development.</p>
+                                    <p>Eduhub provides a flexible and interactive learning environment with a user-friendly interface. Key features include:</p>
+                                    <ul>
+                                        <li><b>Course Catalog:</b> Explore and enroll in various courses across different industries.</li>
+                                        <li><b>Progress Tracking:</b> Keep track of your progress and completion status for enrolled courses.</li>
+                                        <li><b>User Profiles:</b> Create and manage your user profile with personalized settings.</li>
+                                        <li><b>Authentication:</b> Secure sign-up, login, verification, and session management.</li>
+                                        <li><b>Category Management:</b> Courses are organized into categories for easy navigation.</li>
+                                        <li><b>Course Management:</b> Includes structured modules and content with progress tracking.</li>
+                                        <li><b>Enrollment System:</b> Allows students to enroll in courses and track their progress.</li>
+                                    </ul>
+                                    <p><b>Website Structure:</b></p>
+                                    <ul>
+                                        <li><b>Home Page:</b> Menu options for easy navigation, About section, footer with social media links, contact information, and more.</li>
+                                        <li><b>Category Page:</b> Displays course categories for users to search and select from.</li>
+                                        <li><b>Enrollment Page:</b> Shows available modules for each course; enrollment restricted to logged-in users.</li>
+                                        <li><b>Dashboard Page:</b> Displays all courses a user has enrolled in and completed.</li>
+                                        <li><b>Register & Login Pages:</b> Handles user registration and login, ensuring secure access.</li>
+                                        <li><b>Reset Password Page:</b> Allows users to update their password if forgotten.</li>
+                                    </ul>
+                                    <p><b>Languages Used:</b></p>
+                                    <div class="language-icons">
+                                        <img src="images/angular.png" alt="Angular" class="languages">
+                                        <img src="images/typescript.png" alt="TypeScript" class="languages">
+                                        <img src="images/java.png" alt="Java" class="languages">
+                                        <img src="images/springboot.png" alt="Spring Boot" class="languages">
+                                        <img src="images/mysql.png" alt="MySQL" class="languages">
+                                        <img src="images/github.png" alt="Git" class="languages">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-primary" href="https://github.com/sivakumar6678/Eduhub.git" target="_blank">Github Repository</a>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
                 <!-- Modal for Project 1 -->
                 <div class="modal fade" id="projectModal1" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel1" aria-hidden="true">
@@ -200,6 +369,7 @@
                                     <a class="carousel-control-prev" href="#projectImagesCarousel1" role="button" data-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
+
                                     </a>
                                     <a class="carousel-control-next" href="#projectImagesCarousel1" role="button" data-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>

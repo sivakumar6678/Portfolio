@@ -1,0 +1,162 @@
+/* Experience & Education Section */
+#experience-education {
+    /* background-color: #f9f9f9; */
+    background:  linear-gradient(45deg, #fff9c4, #ffe0b2, #fff9c4, #ffe0b2);
+    /* background: none; */
+}
+
+#experience-education h2 {
+    font-weight: 700;
+    color: #333;
+}
+#experience-education .nav li a{
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#experience-education .nav li a:hover{
+    background-color: #dedee54c;
+}
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    list-style: none;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #dee2e6;
+    transform: translateX(-50%);
+}
+
+.timeline > li {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline > li:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.timeline > li .timeline-badge {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: #6c63ff;
+    border-radius: 50%;
+    z-index: 100;
+    transform: translateX(-50%);
+}
+
+.timeline > li .timeline-panel {
+    position: relative;
+    width: 45%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.timeline > li .timeline-panel:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.timeline > li:nth-child(odd) .timeline-panel {
+    float: left;
+    left: 0;
+}
+
+.timeline > li:nth-child(odd) .timeline-panel:before {
+    right: -15px;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.timeline > li:nth-child(even) .timeline-panel {
+    float: right;
+    right: 0;
+}
+
+.timeline > li:nth-child(even) .timeline-panel:before {
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+.timeline .timeline-heading h4 {
+    margin-top: 0;
+    color: #6c63ff;
+    font-weight: 600;
+}
+
+.timeline .timeline-heading p {
+    margin-bottom: 10px;
+    color: #999;
+}
+
+.timeline .timeline-body p {
+    margin-bottom: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .timeline:before {
+        left: 90px;
+    }
+    .timeline > li .timeline-panel {
+        width: calc(100% - 120px);
+    }
+    .timeline > li:nth-child(odd) .timeline-panel,
+    .timeline > li:nth-child(even) .timeline-panel {
+        float: none;
+        left: 120px;
+    }
+    .timeline > li .timeline-badge {
+        left: 90px;
+        top: 15px;
+        margin-left: 0;
+    }
+}
+@media (max-width: 576px) {
+    #experience-education .nav li a{
+        font-size: 0.8rem;
+    }
+    #experience-education {
+        margin:0;
+        padding:0;
+    }
+    #experience-education h2 {
+        font-size: 1.5rem;
+    }
+    #experience-education .nav li a{
+        font-size: 1rem;
+    }
+    .timeline {
+        padding: 0;
+    }
+    .timeline:before {
+        left: 40px;
+    }
+    
+}

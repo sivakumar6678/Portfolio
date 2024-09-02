@@ -19,7 +19,7 @@
 <body>
 
         <div class="container-fluid" >
-            <nav class="navbar navbar-expand-md justify-content-center navbar-light ">
+            <nav class="navbar fixed-top navbar-expand-md justify-content-center navbar-light ">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon">
 
@@ -31,7 +31,7 @@
                         <li class="nav-item "><a id="navbar-item" href="#about" class="nav-link" data-file="about.html">About Me</a></li>
                         <li class="nav-item "><a id="navbar-item" href="#skills" class="nav-link" data-file="skills.html">Skills</a></li>
                         <li class="nav-item "><a id="navbar-item" href="#projects" class="nav-link" data-file="projects.html">Projects</a></li>
-                        <li class="nav-item "><a id="navbar-item" href="#futuregoals" class="nav-link" data-file="futuregoals.html">Experiences</a></li>
+                        <li class="nav-item "><a id="navbar-item" href="#experience" class="nav-link" data-file="experience.html">Experiences</a></li>
                         <li class="nav-item "><a id="navbar-item" href="#certify" class="nav-link" data-file="certify.html">Certifications</a></li>
                         <li class="nav-item "><a id="navbar-item" href="#passionandint" class="nav-link" data-file="passionandint.html">Interests & Future Goals</a></li>
                     </ul>
@@ -51,9 +51,9 @@
             <div class="sections" id="about"></div>
             <div class="sections" id="skills"></div>
             <div class="sections" id="projects"></div>
+            <div class="sections" id="experience"></div>
             <div class="sections" id="certify"></div>
             <div class="sections" id="passionandint"></div>
-            <div class="sections" id="futuregoals"></div>
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -97,7 +97,7 @@
             loadContent('certify.html', '#certify');
             loadContent('projects.html', '#projects');
             loadContent('passionandint.html', '#passionandint');
-            loadContent('futuregoals.html', '#futuregoals');
+            loadContent('experience.html', '#experience');
         
                   // Event handler for navigation links
                   $('.nav-link').on('click', function(event) {

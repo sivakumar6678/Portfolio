@@ -150,3 +150,32 @@ body.dark-mode .skill-category {
 .dark-mode .modal-content .modal-header h5{
     color: #f7a500;
 }
+/* for experience section */
+.dark-mode #experience-education  {
+    color: #dad8d8bc; 
+    background: linear-gradient(45deg, #2f4f7f, #7a288a, #2f4f7f, #7a288a);
+}
+.dark-mode #experience-education h2 {
+    color: wheat; 
+}
+.dark-mode #experience-education .nav li a{
+    color: lightcyan; 
+}
+.dark-mode #experience-education .timeline .timeline-panel {
+    background-color: rgba(76, 97, 128, 0.442); /* Main background color */
+    border-left: 3px solid rgba(122, 40, 138, 0.7); /* Optional highlight border */
+    color: #e0e0e0; /* Light text color for contrast */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.dark-mode #experience-education .timeline .timeline-panel h4 {
+    color: #f7a500ce; 
+}
+.dark-mode #experience-education .timeline .timeline-panel p{
+    color:rgba(245, 245, 245, 0.819);
+}
+
+.dark-mode #experience-education .timeline .timeline-panel  #mutedtext{
+    color:rgb(190, 182, 182)
+}

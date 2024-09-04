@@ -183,3 +183,30 @@ body.dark-mode .skill-category {
 .dark-mode #experience-education .timeline .timeline-panel  #mutedtext{
     color:rgb(190, 182, 182)
 }
+/* for cerfication and achievements */
+.dark-mode #achievements {
+    background: linear-gradient(to bottom,  #2f4f7f,#7a288a);
+    /* background: linear-gradient(155deg, #03055b, #4169e1); */
+    /* background: linear-gradient(to bottom, #4169e1, #00274d); */
+    color: #f5f5f5;
+}
+.dark-mode #achievements h2 {
+    color: #b0b0b0; /* Light Gray */
+}
+.dark-mode #achievements h1 {
+    color: #e0e0e0; /* Off-White */
+}
+.dark-mode .card-certify{
+    border:none;
+    background: linear-gradient(170deg, rgba(253, 200, 27, 0.22) 0%, #ff522f3d 10%);
+}
+.dark-mode .container-certify{
+    /* background: linear-gradient(to bottom,  #2f4f7f,#7a288a); */
+    color: #f5f5f5;
+}
+.dark-mode .card-cert h4 {
+    color: #ebe6e6; 
+}
+.dark-mode .card-cert p {
+    color: rgb(144, 240, 247); 
+}

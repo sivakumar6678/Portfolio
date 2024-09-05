@@ -1,55 +1,224 @@
-.pirata-one-regular {
-    font-family: "Pirata One", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }
-.passionandint h2{
-    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-    font-family: 'Pirata One', cursive;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-  .passions-interests-section {
-  background-color: #f4f4f9;
-  padding: 50px 20px;
+#passionandint {
+  /* background-color: #f0f8ff; */
+  background: rgba(255, 255, 255, 0.9); /* Soft overlay for readability */
+  padding:40px 20px;
+  border-radius: 10px;
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); Subtle shadow for depth */
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.5em;
+h2.text-center {
+  font-family: 'Pirata One', cursive;
+  font-size: 3rem;
   color: #333;
-  margin-bottom: 20px;
+  /* margin-bottom: 30px; */
 }
 
-.content {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #555;
-  max-width: 800px;
-  margin: 0 auto;
+.interest-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
 }
 
-.content p {
-  margin-bottom: 15px;
+.interest-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  background-color: #f2f2f2;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.interest-card h4 {
+  font-family: 'Pirata One', cursive;
+  font-size: 2rem;
+  color: #444;
+}
+
+.interest-card h4 i {
+  margin-right: 10px;
+  color: #ff5722;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.interest-card h4 i:hover {
+  color: #2f4f7f;
+}
+
+.interest-card p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
-  .passions-interests-section {
-    padding: 30px 15px;
+  h2.text-center {
+      font-size: 2.5rem;
   }
 
-  .section-title {
-    font-size: 2em;
+  .interest-card h4 {
+      font-size: 1.5rem;
   }
 
-  .content {
-    font-size: 1em;
+  .interest-card p {
+      font-size: 1rem;
+  }
+
+  .col-md-6 {
+      flex-basis: 100%;
+      max-width: 100%;
   }
 }
+
+
+/* web devlopment */
+/* From Uiverse.io by ZacharyCrespin */
+#loader-img{
+  display: block;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  width: 100%;
+} 
+@keyframes square-animation {
+  0% {
+   left: 0;
+   top: 0;
+  }
+ 
+  10.5% {
+   left: 0;
+   top: 0;
+  }
+ 
+  12.5% {
+   left: 32px;
+   top: 0;
+  }
+ 
+  23% {
+   left: 32px;
+   top: 0;
+  }
+ 
+  25% {
+   left: 64px;
+   top: 0;
+  }
+ 
+  35.5% {
+   left: 64px;
+   top: 0;
+  }
+ 
+  37.5% {
+   left: 64px;
+   top: 32px;
+  }
+ 
+  48% {
+   left: 64px;
+   top: 32px;
+  }
+ 
+  50% {
+   left: 32px;
+   top: 32px;
+  }
+ 
+  60.5% {
+   left: 32px;
+   top: 32px;
+  }
+ 
+  62.5% {
+   left: 32px;
+   top: 64px;
+  }
+ 
+  73% {
+   left: 32px;
+   top: 64px;
+  }
+ 
+  75% {
+   left: 0;
+   top: 64px;
+  }
+ 
+  85.5% {
+   left: 0;
+   top: 64px;
+  }
+ 
+  87.5% {
+   left: 0;
+   top: 32px;
+  }
+ 
+  98% {
+   left: 0;
+   top: 32px;
+  }
+ 
+  100% {
+   left: 0;
+   top: 0;
+  }
+ }
+ .loading-animation{
+   justify-content: center;
+
+ }
+ .loader {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  transform: rotate(45deg);
+  align-items: center;
+ }
+ 
+ .loader-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  margin: 2px;
+  border-radius: 0px;
+  /* background: rgb(164, 159, 159); */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: square-animation 10s ease-in-out infinite both;
+ }
+ 
+ .loader-square:nth-of-type(0) {
+  animation-delay: 0s;
+ }
+ 
+ .loader-square:nth-of-type(1) {
+  animation-delay: -1.4285714286s;
+ }
+ 
+ .loader-square:nth-of-type(2) {
+  animation-delay: -2.8571428571s;
+ }
+ 
+ .loader-square:nth-of-type(3) {
+  animation-delay: -4.2857142857s;
+ }
+ 
+ .loader-square:nth-of-type(4) {
+  animation-delay: -5.7142857143s;
+ }
+ 
+ .loader-square:nth-of-type(5) {
+  animation-delay: -7.1428571429s;
+ }
+ 
+ .loader-square:nth-of-type(6) {
+  animation-delay: -8.5714285714s;
+ }
+ 
+ .loader-square:nth-of-type(7) {
+  animation-delay: -10s;
+ }

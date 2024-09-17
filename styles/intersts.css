@@ -1,9 +1,6 @@
 #passionandint {
-  /* background-color: #f0f8ff; */
-  /* background: rgba(255, 255, 255, 0.9); Soft overlay for readability */
   padding:40px 20px;
   border-radius: 10px;
-  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); Subtle shadow for depth */
 }
 
 h2.text-center {
@@ -27,6 +24,7 @@ h2.text-center {
   transform: translateY(-10px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   background-color: #f2f2f2;
+  cursor:pointer;
 }
 
 .interest-card h4 {

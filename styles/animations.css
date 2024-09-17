@@ -156,7 +156,7 @@
   /* For Tech enthutiash */
   .loader-tech {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     z-index: 10;
     width: 160px;
@@ -459,12 +459,12 @@
     position: absolute;
     left: 50%;
     margin-left: -100px;
-    top: 50%;
+    top: 70%;
     margin-top: -100px;
   }
   
   .hex-brick {
-    background: #ABF8FF;
+    background: #0e29f5;
     width: 30px;
     height: 17px;
     position: absolute;
@@ -778,15 +778,15 @@
   
   @keyframes fade {
     0% {
-      background: #ABF8FF;
+      background: #052eff;
     }
   
     50% {
-      background: #90BBBF;
+      background: #424fca;
     }
   
     100% {
-      background: #ABF8FF;
+      background: #0856ff;
     }
   }
   
@@ -827,6 +827,7 @@
     width: 216px;
     display: flex;
     justify-content: space-between;
+
   }
   .loader-creative::after,
   .loader-creative::before {
@@ -834,7 +835,7 @@
     display: inline-block;
     width: 96px;
     height: 96px;
-    background-color: #8ddb10;
+    background-color: #e5e8df;
     background-image: radial-gradient(circle 20px, #060606 100%, transparent 0);
     background-repeat: no-repeat;
     border-radius: 50%;
@@ -844,6 +845,7 @@
     0%,
     10% {
       background-position: 0px 0px;
+
     }
     13%,
     40% {
@@ -860,6 +862,7 @@
     93%,
     100% {
       background-position: 0px 0px;
+
     }
   }
   @keyframes blink {
@@ -893,41 +896,48 @@
   
 /* For active lifestyle */ 
 .loader-lifestyle {
-    width: 106px;
-    height: 56px;
-    display: block;
-    margin: 30px auto;
-    background-image: linear-gradient(#d22020 50px, transparent 0), linear-gradient(#e1e1e1 50px, transparent 0), linear-gradient(#e1e1e1 50px, transparent 0), linear-gradient(#e1e1e1 50px, transparent 0), radial-gradient(circle 14px, #e1e1e1 100%, transparent 0);
-    background-size: 48px 15px , 15px 35px, 15px 35px, 25px 15px, 28px 28px;
-    background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
-    background-repeat: no-repeat;
-    position: relative;
-    transform: rotate(-45deg);
-    box-sizing: border-box;
-  }
-  
-  .loader-lifestyle::after,
-  .loader-lifestyle::before {
-    content: '';
-    position: absolute;
-    width: 56px;
-    height: 56px;
-    border: 6px solid #e1e1e1;
-    border-radius: 50%;
-    left: -45px;
-    top: -10px;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(#f51f1f 64px, transparent 0), linear-gradient(#e1e1e1 66px, transparent 0), radial-gradient(circle 4px, #e1e1e1 100%, transparent 0);
-    background-size: 40px 1px , 1px 40px, 8px 8px;
-    background-position: center center;
-    box-sizing: border-box;
-    animation: bike 0.3s linear infinite;
-  }
-  
-  .loader-lifestyle::before {
-    left: 25px;
-    top: 60px;
-  }
+  width: 125px;
+  height: 65px;
+  display: block;
+  margin: 40px auto;
+  background-image: linear-gradient(#ff8a00 50px, transparent 0), 
+                    linear-gradient(#5dcf70 50px, transparent 0), 
+                    linear-gradient(#00c4ff 50px, transparent 0), 
+                    linear-gradient(#ff7cbf 50px, transparent 0), 
+                    radial-gradient(circle 14px, #ffa400 100%, transparent 0);
+  background-size: 48px 15px, 15px 35px, 15px 35px, 25px 15px, 28px 28px;
+  background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
+  background-repeat: no-repeat;
+  position: relative;
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+
+/* Cycle Wheels & Body */
+.loader-lifestyle::after,
+.loader-lifestyle::before {
+  content: '';
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  border: 6px solid #0f38dd;
+  border-radius: 50%;
+  left: -45px;
+  top: -10px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#ff4444 64px, transparent 0), 
+                    linear-gradient(#d4fc00 66px, transparent 0), 
+                    radial-gradient(circle 4px, #0080ff 100%, transparent 0);
+  background-size: 40px 1px, 1px 40px, 8px 8px;
+  background-position: center center;
+  box-sizing: border-box;
+  animation: bike 0.4s linear infinite;
+}
+
+.loader-lifestyle::before {
+  left: 25px;
+  top: 60px;
+}
   
   @keyframes bike {
     0% {

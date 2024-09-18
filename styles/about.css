@@ -183,9 +183,6 @@ button:hover svg {
     opacity: 1;
 }
 
-button:hover {
-    background-color: #0077b5;
-}
 
 .button-icon {
     display: flex;

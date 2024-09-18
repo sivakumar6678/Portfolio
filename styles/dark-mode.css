@@ -5,9 +5,8 @@ body.dark-mode {
     /* background: linear-gradient(to bottom, #4169e1, #00274d); */
     color: #f5f5f5;
 }
-body.dark-mode .navbar-toggler {
-    background-color: #f7a500; /* Sunset Gold for Dark Mode */
-    color: #000; /* Dark Icon Color */
+body.dark-mode button.navbar-toggler {
+    color: gold;
 }
 body.dark-mode #navbar-item{
     color:rgb(0, 206, 172);
@@ -40,15 +39,14 @@ body.dark-mode #navbar-item{
 }
 body.dark-mode nav{
     background: linear-gradient(to bottom,  #2f4f7f,#7a288a);
-
 }
-body.dark-mode #about{
-    /* background: linear-gradient(to bottom,  #2f4f7f,#7a288a); */
-    /* background: linear-gradient(155deg, #03055b, #4169e1); */
+body.dark-mode   button.navbar-toggler{
+    background-color: #7a288a; /* Deep purple */
+    border-color: #e1dfdf;
 }
 
 body.dark-mode .aboutsection img {
-    /* border: 20px solid #f5f5f5; */
+    /* border: 20   px solid #f5f5f5; */
 }
 body.dark-mode .navbar-brand {
     color: #ffb116; /* Sunset Gold */
@@ -59,15 +57,14 @@ body.dark-mode .aboutmore h2 {
 
 body.dark-mode .aboutmore p {
     color: #b0a1cc; 
-}body.dark-mode .aboutmore p:last-child {
+}
+body.dark-mode .aboutmore p:last-child {
     color: #d0c2e9; 
     font-size: 1.5rem;
     font-family: 'Times New Roman', Times, serif;
 }
 
 /* For skills.html  */
-body.dark-mode .skills-section {
-}
 body.dark-mode .skill-category h3{
     color:wheat;
 }
@@ -159,7 +156,7 @@ body.dark-mode .skill-category {
     color: #dad8d8bc; 
     background: linear-gradient(45deg, #2f4f7f, #7a288a, #2f4f7f, #7a288a);
 }
-.dark-mode #experience-education h2 {
+.dark-mode .sections h2.text-center , .dark-mode #experience-education h2 , .dark-mode #achievements h2{
     color: wheat; 
 }
 .dark-mode #experience-education .nav li a{
@@ -190,9 +187,7 @@ body.dark-mode .skill-category {
     /* background: linear-gradient(to bottom, #4169e1, #00274d); */
     color: #f5f5f5;
 }
-.dark-mode #achievements h2 {
-    color: #b0b0b0; /* Light Gray */
-}
+
 .dark-mode #achievements h1 {
     color: #e0e0e0; /* Off-White */
 }
@@ -222,10 +217,10 @@ body.dark-mode .skill-category {
     color: #faf7f7bc; 
 }
 .dark-mode .interest-card h4 {
-    color: #dad8d8bc; 
+    color: #f0ececbc; 
 }
 .dark-mode .interest-card p {
-    color: #f4f0f0bc; 
+    color: #f4f0f0ec; 
 }
 .dark-mode .interest-card h4 i {
     color: #ff5722; 
@@ -234,7 +229,8 @@ body.dark-mode .skill-category {
     color: #2f4f7f; 
 }
 .dark-mode .interest-card:hover{
-    background-color: #6130bd;
+    /* background:linear-gradient( 135deg, #2f4f7f,#2f4f7f, #6b207a); */
+    background-color: #2f4f7f;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
     transition: 2s background-color ease-in-out;
 }

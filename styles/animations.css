@@ -509,6 +509,7 @@
   }
   
   .c1 {
+    content: "aa";
     margin-left: -47px;
     margin-top: -15px;
   }
@@ -951,10 +952,14 @@
 
   @media (max-width: 575px) {
     .interest-card{
-      min-height: 50vh;
+      height:max-content;
+      /* min-height:; */
     }
     .techenthutiash{
       min-height: 65vh;
+    }
+    .interest-card.creative{
+      min-height: 45vh;
     }
     .problemsolving{
       min-height: 55vh;
@@ -971,5 +976,4 @@
     #passionandint{
       padding: 0px;
     }
-    
   }

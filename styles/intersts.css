@@ -18,7 +18,7 @@ h2.text-center {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 20px;
   min-height: 40vh;
-  height: auto;
+  height: max-content;
 }
 
 .interest-card:hover {
@@ -50,12 +50,24 @@ h2.text-center {
   color: #666;
   margin-top: 10px;
 }
-
+@media (min-width:992px) and (max-width:1500px) {
+  .interest-card {
+    flex-basis: 100%;
+    max-width: 100%;
+    height: max-content;
+    min-height: 40vh;
+  }
+  
+}
 @media (max-width: 768px) {
   h2.text-center {
       font-size: 2.5rem;
   }
-
+ .interest-card {
+    flex-basis: 100%;
+    max-width: 100%;
+    height: 55vh;
+  }
   .interest-card h4 {
       font-size: 1.5rem;
   }

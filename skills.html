@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills</title>
+    <title>Skills with Hexagons</title>
     <link rel="stylesheet" href="styles/skills.css">
 </head>
 <body>
@@ -11,158 +11,149 @@
         <section id="skills" class="skills-section">
             <h2 class="text-center">Skills</h2>
             <div class="skill-list">
-
+                <!-- Frontend Skills -->
                 <div class="skill-category" id="frontend">
                     <h3>Frontend</h3>
-                    <ul >
-                        <li class="skill" id="advanced" data-level="90">HTML</li>
-                        <li class="skill" id="intermediate" data-level="75">CSS</li>
-                        <li class="skill" id="intermediate" data-level="65">JavaScript</li>
-                        <li class="skill" id="advanced" data-level="85">Bootstrap</li>
-                        <li class="skill" id="intermediate" data-level="50">React</li>
-                        <li class="skill" id="intermediate" data-level="65">Angular</li>
-                        <li class="skill" id="beginner" data-level="40">TypeScript</li>
+                    <ul class="hex-grid">
+                        <div class="hex-wrapper">
+                            <li class="hex" data-level="90">
+                                <div class="hex-in">
+                                    <span>HTML</span>
+                                </div>
+                            </li>
+                            <span class="percentage-below">90%</span>
+                            <div class="percentage-bar">
+                                <div class="fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        
+                        
+                        <li class="hex" data-level="75">
+                            <div class="hex-in">
+                                <span>CSS</span>
+                                
+                            </div>
+                        </li>
+                        <li class="hex" data-level="65">
+                            <div class="hex-in">
+                                <span>JavaScript</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="90">
+                            <div class="hex-in">
+                                <span>Bootstrap</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="50">
+                            <div class="hex-in">
+                                <span>React</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="75">
+                            <div class="hex-in">
+                                <span>Angular</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="50">
+                            <div class="hex-in">
+                                <span>Typescript</span>
+                            </div>
+                        </li>
+                        
                     </ul>
                 </div>
-
+                
+                <!-- Backend Skills -->
                 <div class="skill-category" id="backend">
                     <h3>Backend</h3>
-                    <ul>
-                        <li class="skill"  id="intermediate" data-level="70">Python</li>
-                        <li class="skill" id="beginner" data-level="30">Django</li>
-                        <li class="skill" id="beginner" data-level="35">Flask</li>
-                        <li class="skill" id="intermediate" data-level="60">PHP</li>
+                    <ul class="hex-grid">
+                        <li class="hex" data-level="60">
+                            <div class="hex-in">
+                                <span>Python</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="40">
+                            <div class="hex-in">
+                                <span>Django</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="30">
+                            <div class="hex-in">
+                                <span>Flask</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="50">
+                            <div class="hex-in">
+                                <span>PHP</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
+                <!-- Database Skills -->
                 <div class="skill-category" id="db">
                     <h3>Database</h3>
-                    <ul>
-                        <li class="skill" id="advanced" data-level="85">MySQL</li>
-                        <li class="skill" id="beginner" data-level="30">Oracle</li>
+                    <ul class="hex-grid">
+                        <li class="hex" data-level="70">
+                            <div class="hex-in">
+                                <span>MySQL</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="30">
+                            <div class="hex-in">
+                                <span>Oracle</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
+                <!-- Tools Skills -->
                 <div class="skill-category" id="tools">
                     <h3>Tools</h3>
-                    <ul>
-                        <li class="skill" id="advanced" data-level="80">Git</li>
-                        <li class="skill" id="advanced" data-level="85">GitHub</li>
-                        <li class="skill" id="advanced" data-level="90">VS Code</li>
-                        <li class="skill" id="intermediate" data-level="70">Canva</li>
-                        <li class="skill" id="intermediate" data-level="65">Photoshop</li>
-                        <li class="skill" id="intermediate" data-level="75">Linux</li>
+                    <ul class="hex-grid">
+                        <li class="hex" data-level="80">
+                            <div class="hex-in">
+                                <span>Git</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="80">
+                            <div class="hex-in">
+                                <span>GitHub</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="90">
+                            <div class="hex-in">
+                                <span>VS Code</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="75">
+                            <div class="hex-in">
+                                <span>Linux</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="65">
+                            <div class="hex-in">
+                                <span>Adobe Photoshop</span>
+                            </div>
+                        </li>
+                        <li class="hex" data-level="70">
+                            <div class="hex-in">
+                                <span>Canva</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-
             </div>
         </section>
     </div>
 
- 
     <script>
-        // Declare `skillsclicked` variable
-        let skillsclicked = false;
-    
-        // Function to handle animation
-        function animateSkills(skill) {
-            const level = skill.getAttribute('data-level');
-            skill.classList.add('progress');
-            skill.style.setProperty('--progress-width', `${level}%`);
-        }
-    
-        // Function to check if dark mode is active
-        function isDarkMode() {
-            return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        }
-    
-        // Function to handle scroll and navigation-triggered animations
-        function onScroll(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting || skillsclicked === true) {
-                    const skill = entry.target;
-                    const level = skill.getAttribute('data-level');
-                    const darkMode = isDarkMode();
-    
-                    setTimeout(() => {
-                        skill.style.transition = 'background-size 2s ease-in-out';
-                        skill.style.animation = 'scroll1 3s ease-in';
-    
-                        // Apply colors based on dark or light mode
-                        if(skill.id === 'beginner'){
-                            skill.style.background = darkMode
-                                ? `linear-gradient(90deg, #aacdd8b3 ${level}%, #fff ${level}%)`
-                                : `linear-gradient(90deg, #c6dee6b3 ${level}%, #fff ${level}%)`;
-                        } else if(skill.id === 'intermediate'){
-                            skill.style.background = darkMode
-                                ? `linear-gradient(90deg, #5DADE2 ${level}%, #fff ${level}%)`
-                                : `linear-gradient(90deg, #4682B4 ${level}%, #fff ${level}%)`;
-                        } else if(skill.id === 'advanced') {
-                            skill.style.background = darkMode
-                                ? `linear-gradient(90deg, #2874A6 ${level}%, #fff ${level}%)`
-                                : `linear-gradient(90deg, #1E90FF ${level}%, #fff ${level}%)`;
-                        }
-    
-                    }, 100); // Delay to trigger the animation
-                    
-                    observer.unobserve(skill); // Stop observing once animation is triggered
-                }
-            });
-        }
-    
-        const observer = new IntersectionObserver(onScroll, {
-            threshold: 0.5 // Trigger when 50% of the element is in view
+        // Script to dynamically set hexagon borders based on skill levels
+        document.querySelectorAll('.hex').forEach(hex => {
+            const level = hex.getAttribute('data-level');
+            hex.style.setProperty('--border-percent', `${level}%`);
         });
-    
-        // Observe each skill element
-        document.querySelectorAll('.skill').forEach(skill => {
-            observer.observe(skill);
-        });
-    
-        // Function to animate skills on navigation click
-        function animateSkillsOnNavigationClick(targetElement) {
-            if (targetElement && targetElement.querySelector('.skill')) {
-                targetElement.querySelectorAll('.skill').forEach(skill => {
-                    animateSkills(skill);
-                });
-            }
-        }
-    
-        // Handle navigation clicks
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-    
-                // Scroll to the target element smoothly
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-    
-                // Trigger the animation if the skills section is clicked
-                if (targetId === '#skills') {
-                    skillsclicked = true;
-                } else {
-                    skillsclicked = false; // Reset if other sections are clicked
-                }
-    
-                // Trigger animation for the target element
-                animateSkillsOnNavigationClick(targetElement);
-            });
-        });
-    
-        // Reset the `skillsclicked` flag when the user scrolls away from the skills section
-        window.addEventListener('scroll', () => {
-            const skillsSection = document.querySelector('#skills');
-            if (skillsSection && !skillsSection.getBoundingClientRect().top < window.innerHeight) {
-                skillsclicked = false;
-            }
-        });
+        
     </script>
-    
-    
-    
-    
-    
-    
 </body>
 </html>

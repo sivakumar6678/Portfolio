@@ -19,7 +19,7 @@
 }
 
 .skill-category {
-    flex: 1 1 calc(50% - 2rem); /* Flexbox ensures two items per row */
+    flex: 1 1 calc(50% - 2rem);
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -40,7 +40,7 @@
 .skill-category ul {
     padding: 0;
 }
-#frontend li{
+/* #frontend li{
     box-shadow: 0 0 4px 2px  #008080 inset;
     border:2px solid #add8e6b3;
 }
@@ -55,13 +55,12 @@
 #db li{
     box-shadow: 0 0 4px 2px  #2E8B57 inset;
     border:2px solid #2E8B57;
-}
+} */
 
 .skill-category li {
     list-style: none;
     margin: 0.5rem 0;
     padding: 0.1rem 1rem;
-    /* border: 1px solid black; */
     border-radius: 5px;
     text-align: left;
     position: relative;
@@ -71,35 +70,169 @@
     text-align: center;
     font-size: 1.2rem;
     overflow: hidden; /* Ensure the progress is constrained within the element */
-    /* animation : scroll1 2s ease-in-out; */
+    animation : scroll 2s ease;
+    
 }
-@keyframes scroll1 {
+@keyframes scroll {
     0% {
-        /* transform: translateY(-50%); */
+        transform: translateY(-50%);
         opacity: 0;
         background-size: 0;
     }
 
     100% {
-        /* transform: translateY(0); */
+        transform: translateY(0);
         opacity: 1;
         background-size: 100%;
     }
     
 }
-
-.skill::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background-color: #007bffbb; /* Progress bar color */
-    z-index: -1;
-    transition: width 12s ease-in-out; /* Smooth transition for progress */
+.skill-category li:hover {
+    background: linear-gradient(135deg, #ff000088, #00ff00db, #0000ffa8); 
+    background-size: 200% 200%; 
+    animation: gradient-shift 2s ease infinite; 
+    transition: background 0.6s ease;
 }
 
+/* Keyframe animation for the gradient shift */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.hex-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.hex {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: transform 0.3s ease;
+    border: 5px solid transparent;
+}
+
+.hex-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-weight: bold;
+}
+.hex:hover {
+    transform: scale(1.05);
+}
+
+/* Hexagon Grid Layout */
+.hex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.percentage-below {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+/* Percentage bar container */
+.percentage-bar {
+    width: 100px; 
+    height: 8px;
+    background-color: #e0e0e0; 
+    border-radius: 5px;
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Bar fill showing percentage */
+.fill {
+    height: 100%;
+    width: 100%; 
+    background-color: #3498db; /* Color of the bar */
+    border-radius: 5px;
+    animation: fill-bar 2s ease forwards; /* Animation that fills the bar */
+}
+
+    @keyframes fill-bar {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 90%; 
+        }
+    }
+
+.hex[data-level="100"] {
+    border-color: #2ECC71; /* Green for 100% */
+}
+
+.hex[data-level="90"] {
+    border-color: #3498DB; /* Blue for 90% */
+}
+
+.hex[data-level="85"] {
+    border-color: #43f312; /* Bright green for 85% */
+}
+
+.hex[data-level="80"] {
+    border-color: royalblue; /* Royal blue for 80% */
+}
+
+.hex[data-level="75"] {
+    border-color: #F39C12; /* Orange for 75% */
+}
+
+.hex[data-level="70"] {
+    border-color: purple; /* Purple for 70% */
+}
+
+.hex[data-level="65"] {
+    border-color: #E67E22; /* Light orange for 65% */
+}
+
+.hex[data-level="60"] {
+    border-color: blue; /* Blue for 60% */
+}
+
+.hex[data-level="50"] {
+    border-color: #E74C3C; /* Red for 50% */
+}
+
+.hex[data-level="40"] {
+    border-color: gray; /* Gray for 40% */
+}
+
+.hex[data-level="30"] {
+    border-color: #C0392B; /* Dark red for 30% */
+}
+
+
+
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill-category {
+        flex: 1 1 100%;
+    }
+}
 @keyframes fade-in {
     0% {
         opacity: 0;

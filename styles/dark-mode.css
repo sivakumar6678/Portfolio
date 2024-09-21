@@ -70,7 +70,7 @@ body.dark-mode .skill-category h3{
 }
 body.dark-mode .skill-category {
     background: none;
-    box-shadow: 0 0 4px 6px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 0 px wheat, 0 0 5px 3px #7a288a inset ;
 }
 .dark-mode #frontend {
     border-color: #20B2AA; /* Lighter Teal */
@@ -179,6 +179,9 @@ body.dark-mode .skill-category {
 
 .dark-mode #experience-education .timeline .timeline-panel  #mutedtext{
     color:rgb(190, 182, 182)
+}
+.dark-mode .timeline:before {
+    background: linear-gradient(to bottom, #7f8c8d, #f1c40f, #7f8c8d, #f1c40f);
 }
 /* for cerfication and achievements */
 .dark-mode #achievements {

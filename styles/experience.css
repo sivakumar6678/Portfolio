@@ -21,6 +21,7 @@
     position: relative;
     padding: 20px 0;
     list-style: none;
+    height: 100%;
 }
 
 .timeline:before {
@@ -29,9 +30,25 @@
     top: 0;
     bottom: 0;
     left: 50%;
-    width: 2px;
-    background-color: #dee2e6;
+    width: 5px;
+    background: linear-gradient(to bottom, #5bdb34, #f1690f, #4ef009, #f4770a);
     transform: translateX(-50%);
+    animation:dropdown 3s ease-in-out;
+}
+@keyframes dropdown {
+    0% {
+        transform: translateY(-5%);
+        /* width:10px; */
+        opacity: 0;
+        background-size: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        background-size: 100%;
+    }
+    
 }
 
 .timeline > li {
@@ -69,6 +86,19 @@
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    animation:sweep 2s ease;
+}
+@keyframes sweep {
+    0% {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
 }
 
 .timeline > li .timeline-panel:before {

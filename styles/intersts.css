@@ -55,7 +55,7 @@ h2.text-center {
     flex-basis: 100%;
     max-width: 100%;
     height: max-content;
-    min-height: 40vh;
+    min-height: 50vh;
   }
   
 }

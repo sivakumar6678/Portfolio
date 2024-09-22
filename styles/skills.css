@@ -169,48 +169,17 @@
     width: 0%; 
     transition: width 2s ease;
 }
-.hex[data-level="100"] {
-    border-color: #2ECC71; /* Green for 100% */
+#frontend .hex{
+    border-color: blue;
 }
-
-.hex[data-level="90"] {
-    border-color: #3498DB; /* Blue for 90% */
+#backend .hex{
+    border-color: #6A0DAD;
 }
-
-.hex[data-level="85"] {
-    border-color: #43f312; /* Bright green for 85% */
+#tools .hex{
+    border-color: #FF8C00;
 }
-
-.hex[data-level="80"] {
-    border-color: royalblue; /* Royal blue for 80% */
-}
-
-.hex[data-level="75"] {
-    border-color: #F39C12; /* Orange for 75% */
-}
-
-.hex[data-level="70"] {
-    border-color: purple; /* Purple for 70% */
-}
-
-.hex[data-level="65"] {
-    border-color: #E67E22; /* Light orange for 65% */
-}
-
-.hex[data-level="60"] {
-    border-color: blue; /* Blue for 60% */
-}
-
-.hex[data-level="50"] {
-    border-color: #E74C3C; /* Red for 50% */
-}
-
-.hex[data-level="40"] {
-    border-color: gray; /* Gray for 40% */
-}
-
-.hex[data-level="30"] {
-    border-color: #C0392B; /* Dark red for 30% */
+#db .hex{
+    border-color: #2E8B57;
 }
 /* Responsive adjustments */
 @media (max-width: 768px) {

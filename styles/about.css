@@ -1,11 +1,10 @@
 #about {
-    align-content: center;
-    justify-items: center;
-    margin: 0rem -8px;
-    /* background: linear-gradient(to bottom, #fff9c4, #ffe0b2);  */
-    color: #1a1a2e; 
+    justify-content: center; /* Center align */
+    align-items: center; /* Center vertically */
+    margin: 0 -8px;
+    color: #1a1a2e;
+    /* Consider adding a subtle background color for better contrast */
 }
-
 .aboutsection {
     margin: 12rem 10rem 0rem 10rem;
     display: flex;
@@ -64,7 +63,23 @@
     line-height: 1.6;
     margin: 0 0 10px 0;
 }
-
+.aboutme .get-in-touch{
+    
+    margin-top: 5rem;
+}
+.aboutme .get-in-touch h2{
+    font-size: 1.75rem;;
+    color: #555555; /* Slate Gray */
+    font-weight: bolder;
+    text-align: center;
+}
+.aboutme .get-in-touch p{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 550;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+}
 #dynamic-text {
     color: #2b00ff;
 }

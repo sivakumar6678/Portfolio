@@ -1,15 +1,12 @@
 /* From Uiverse.io by boryanakrasteva */ 
 .projects{
     padding: 2rem;
-    font-family: 'Roboto', sans-serif;
 
 }
 #projects>.card {
     padding:1rem;
     width: 100%;
     min-height: 100vh;
-    /* height: 100%; */
-    /* background: linear-gradient(145deg, #ffffff, #f0f0f0); */
     background: none;
     overflow: hidden;
     display: flex;
@@ -17,12 +14,8 @@
   .nav {
     margin:1rem 0;
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
-    /* padding: 1rem; */
-    /* background: #f0f0f0; */
     border-radius: 10px;
-    /* box-shadow: 0 0 10px 2px #f0f0f0; */
   }
   .nav .nav-item {
     padding: 1rem;
@@ -66,7 +59,6 @@
   
   .browser {
     width: 100%;
-    /* padding: 5px; */
     display: flex;
     gap: 10px;
   }
@@ -103,9 +95,7 @@
   padding:1rem 0.5rem;
 }
 .col-md-4 .card{
-  /* margin:2rem 0; */
   background: #fff3e0;
-  /* border:2px solid #ffcc80; */
   box-shadow: 1px 1px 3px 1px #ffcc80 inset, 0 0 1px 1px gray;
   height: 100%;
 }
@@ -129,19 +119,15 @@
   transition: background-color 2s ease-in-out,border 2s linear;
 }
 .carousel-item{
-  /* border: 2px solid red; */
-  /* height: 50vh; */
   width: 100%;
   object-fit: cover;
 }
 #major-projects{
   padding:1rem;
   width:100%;
-  /* background: red; */
 }
 #major-projects h3,#minor-projects h3{
   text-align: center;
-  font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   font-weight: bolder;
 }
@@ -149,7 +135,6 @@
   padding:1rem 2rem;
 }
 .project-content .card-title{
-    font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 1.25rem;
 }
@@ -169,10 +154,8 @@
   display: flex;
 }
 .card-text{
-  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  /* font-family: 'Lato', sans-serif;  */
 }
 .language-icons .languages{
   width: 6vh;
@@ -188,14 +171,12 @@
   color:black;
 }
 .site_links b {
-  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 1.125rem; /* Slightly larger for labels */
   color: #000; /* Black for bold labels */
 }
 
 .site_links a.card-link {
-  font-family: 'Lato', sans-serif;
   font-weight: 500;
   font-size: 0.875rem;
   color: #007bff; /* Primary link color */
@@ -233,7 +214,6 @@
   text-align: center;
   color: navy;
   font-size: 1.5rem;
-  font-family: 'Raleway', sans-serif;
   font-weight: 700;
 }
 .modal-content .modal-header button{
@@ -248,12 +228,7 @@
   background-color: #cc1818;
   transition: background-color 2s ease-in-out;
 }
-
-
-
-/* From Uiverse.io by satyamchaudharydev */ 
 .button {
-  /* position: relative; */
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   padding-block: 0.5rem;
@@ -271,9 +246,6 @@
   overflow: hidden;
   font-size: 15px;
 }
-
-
-
 .button:hover {
   transform: scale(1.05);
   border-color: #fff9;
@@ -321,7 +293,6 @@
   .projects{
     padding: 0;
     margin:0;
-
   }
   .card{
     margin:0;
@@ -398,8 +369,5 @@
   }
   .project-content {
     padding: 0;
-  }
-  .card-text {
-    /* font-size: 1.1rem; */
   }
 }

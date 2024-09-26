@@ -1,4 +1,4 @@
-const roles = ["Aspiring Full Stack Web Developer", "Tech Enthusiast", "Lifelong Learner"];
+const roles = ["Aspiring Full Stack Web Developer ", "Tech Enthusiast ", "LifeTime Learner "];
 let index = 0;
 let letterIndex = 0;
 let currentRole = '';
@@ -12,7 +12,7 @@ function type() {
     if (!dynamicTextElement) return; // Exit if the element is not found
 
     const currentFullRole = roles[index];
-    
+
     if (isDeleting) {
         currentRole = currentFullRole.substring(0, letterIndex--);
     } else {
@@ -21,18 +21,24 @@ function type() {
 
     dynamicTextElement.innerHTML = currentRole;
 
+    // Adjust the typing/deleting speed
+    let timeout = isDeleting ? deletingSpeed : typingSpeed;
+
+    // If the entire role is typed, pause, then start deleting
     if (!isDeleting && letterIndex === currentFullRole.length) {
-        setTimeout(() => isDeleting = true, pauseTime); // Pause before deleting
-    } else if (isDeleting && letterIndex < 0) {
+        timeout = pauseTime;
+        isDeleting = true;
+    }
+    // If the role is fully deleted, switch to the next role
+    else if (isDeleting && letterIndex < 0) {
         isDeleting = false;
         index = (index + 1) % roles.length;
-        setTimeout(type, pauseTime); // Pause before starting next role
+        timeout = pauseTime;
     }
 
-    setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+    setTimeout(type, timeout);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     type();
 });
-

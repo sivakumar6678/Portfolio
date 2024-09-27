@@ -87,7 +87,13 @@ body.dark-mode .aboutmore p:last-child {
     font-size: 1.5rem;
     font-family: 'Times New Roman', Times, serif;
 }
-
+.dark-mode #imgbg{
+    background-color: rgba(7, 234, 234, 0.6); 
+}
+.dark-mode  .profileimg:hover #imgbg {
+    background-color: rgba(0, 255, 255, 0.7); /* Bright cyan on hover */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
 /* For skills.html  */
 body.dark-mode .skill-category h3{
     color:wheat;

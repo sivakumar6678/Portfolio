@@ -24,18 +24,20 @@
     max-width: 500px;
     height: 60vh;
     /* border-radius: 5%; */
-    border-radius: 23% 77% 24% 76% / 91% 15% 85% 9% ; 
 }
 
 .profileimg {
     position: relative;
     display: inline-block;
 }
+/* Updated border-radius */
+.aboutsection img, .img-style, #imgbg {
+    border-radius:76% 24% 25% 75% / 79% 53% 47% 21% ;
+}
 
 .img-style {
     width: 25vw;
     height: 40vh;
-    border-radius: 23% 77% 24% 76% / 91% 15% 85% 9% ; 
     transition: transform 0.3s ease-in-out;
 }
 #imgbg {
@@ -44,19 +46,14 @@
     left: 0;
     width: 25vw;
     height: 40vh;
-    border-radius: 23% 77% 24% 76% / 91% 15% 85% 9% ;   
-    background-color: rgba(32, 57, 199, 0.711);
-    z-index: -1;
+    background-color: rgba(173, 216, 230, 0.6);    z-index: -1;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .profileimg:hover #imgbg {
-    background-color: rgba(0, 150, 255, 0.5);
-    box-shadow: 0 0 20px rgba(0, 150, 255, 0.7);
+    background-color: rgba(92, 209, 225, 0.7); 
+    box-shadow: 0 0 20px rgba(92, 209, 225, 0.7);
 }
 
-.profileimg:hover .img-style {
-    /* transform: scale(1.1);  */
-}
 
 .aboutme {
     padding-top: 10%;

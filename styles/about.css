@@ -5,33 +5,74 @@
     color: #1a1a2e;
     /* Consider adding a subtle background color for better contrast */
 }
+.about{
+    padding: 3rem 0;
+}
 .aboutsection {
-    margin: 12rem 10rem 0rem 10rem;
+    margin: 2rem 10rem 0rem 10rem;
     display: flex;
     justify-items: center;
     align-content: center;
-    min-height: 85vh;
+    /* min-height: 85vh; */
     flex-direction: row; 
 }
 
+
 .aboutsection img {
-    border:2px solid blue;
-    width: 30vw;
+    /* border:2px solid blue; */
+    width: 25vw;
     max-width: 500px;
-    height: auto;
-    border-radius: 50%;
+    height: 60vh;
+    /* border-radius: 5%; */
+    border-radius: 23% 77% 24% 76% / 91% 15% 85% 9% ; 
 }
 
-.aboutsection .aboutme {
+.profileimg {
+    position: relative;
+    display: inline-block;
+}
+
+.img-style {
+    width: 25vw;
+    height: 40vh;
+    border-radius: 23% 77% 24% 76% / 91% 15% 85% 9% ; 
+    transition: transform 0.3s ease-in-out;
+}
+#imgbg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25vw;
+    height: 40vh;
+    border-radius: 23% 77% 24% 76% / 91% 15% 85% 9% ;   
+    background-color: rgba(32, 57, 199, 0.711);
+    z-index: -1;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.profileimg:hover #imgbg {
+    background-color: rgba(0, 150, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.7);
+}
+
+.profileimg:hover .img-style {
+    /* transform: scale(1.1);  */
+}
+
+.aboutme {
+    padding-top: 10%;
+    text-align: center;
+}
+.aboutme {
+    vertical-align: center;
     margin: 1rem;
     flex-grow: 1;
     text-align: center;
 }
+
 .aboutme h2:first-child{
     font-size: 2rem;
     font-weight: 300;
     color:#555555;
-    /* background: red; */
 }
 .aboutme h1  {
     color: #333333;
@@ -63,11 +104,11 @@
     line-height: 1.6;
     margin: 0 0 10px 0;
 }
-.aboutme .get-in-touch{
-    
-    margin-top: 5rem;
-}
-.aboutme .get-in-touch h2{
+.get-in-touch{
+    text-align: center;
+    margin:0 5rem;
+    }
+.get-in-touch h2{
     font-size: 1.75rem;;
     color: #555555; /* Slate Gray */
     font-weight: bolder;
@@ -165,6 +206,7 @@
     }
     
 }
+
 
 button p {
     position: absolute;

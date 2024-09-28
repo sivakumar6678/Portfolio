@@ -34,22 +34,29 @@
 .aboutsection img, .img-style, #imgbg {
     border-radius:76% 24% 25% 75% / 79% 53% 47% 21% ;
 }
-
 .img-style {
-    width: 25vw;
-    height: 40vh;
+    width: 100%; 
+    max-width: 300px;
+    height: auto; 
     transition: transform 0.3s ease-in-out;
 }
-#imgbg {
+
+/* Use ::after for the background */
+.profileimg::after {
+    content: "";
+    border-radius: 76% 24% 25% 75% / 79% 53% 47% 21%;
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 25vw;
-    height: 40vh;
-    background-color: rgba(173, 216, 230, 0.6);    z-index: -1;
+    width: 100%; /* Full width for responsiveness */
+    height: 70%; /* Full height for responsiveness */
+    background-color: rgba(173, 216, 230, 0.6);
+    z-index: -1;
+    /* border-radius: inherit;  */
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-.profileimg:hover #imgbg {
+
+.profileimg:hover::after {
     background-color: rgba(92, 209, 225, 0.7); 
     box-shadow: 0 0 20px rgba(92, 209, 225, 0.7);
 }
@@ -455,12 +462,11 @@ button {
     }
 
     .aboutsection img {
-        margin:2rem 0;
-        width: 50vw;
+        margin:-75px 0 0 20px;
+        width: 100%;
         max-width: 500px;
         margin-bottom: 1rem;
     }
-
     .aboutsection .aboutme {
         margin: 1rem 0;
     }
@@ -485,7 +491,9 @@ button {
         padding: 0.5rem 0rem;
         
     }
-
+    .img-style {
+        border-radius: 30% 15% 10% 35% / 35% 25% 25% 15%; /* Adjust as needed */
+    }
     .aboutsection .aboutme {
         margin: 0.5rem 0;
     }

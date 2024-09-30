@@ -1,176 +1,190 @@
+/* Container for the achievements section */
 #achievements {
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  #achievements h2 {
-    text-align: center;
-    color: #333;
-    padding: 1rem;
-    margin: 1rem;
-    font-weight: bold;
-  }
-  .card-certify{
-    /* background: #f9f9f9; */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s ease;
-  }
-  .certification-section h3{
-    margin-top : 1rem;
-    padding: 1rem 0;
-    font-size: 1.7rem;
-    font-weight: bold;
-    
-    /* background: #000; */
-  }
-  .container-certify {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow-x: auto;
-  
-  }
-  
-  .card_box-certify {
-    width: 98%;
-    height: fit-content;
-    /* background: linear-gradient(170deg, rgba(253, 200, 27, 0.409) 0%, rgba(249, 175, 16, 0.585) 100%); */
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1) ;
-  }
-  
-  .card_box-certify span {
-    position: absolute;
-    overflow: hidden;
-    width: 150px;
-    height: 150px;
-    top: -10px;
-    left: -10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .card_box-certify span::before {
-    content: 'Certificates';
-    position: absolute;
-    width: 150%;
-    height: 40px;
-    background-image: linear-gradient(45deg, #fa5a3a 0%, #ffb144 51%, #ff7053 100%);
-    transform: rotate(-45deg) translateY(-20px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
-  }
-  
-  .card_box-certify span::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    bottom: 0;
-    left: 0;
-    height: 10px;
-    z-index: -1;
-    box-shadow: 140px -140px #cc3f47;
-    background-image: linear-gradient(45deg, #ff522fca 0%, #f09619ad 51%, #ff522fac 100%);
-  }
-  
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles for the achievements section */
+#achievements h2 {
+  text-align: center;
+  color: #333;
+  padding: 1rem;
+  margin: 1rem;
+  font-weight: bold;
+}
+
+/* Card styles for the certification section */
+.card-certify {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Heading styles for the certification section */
+.certification-section h3 {
+  margin-top: 1rem;
+  padding: 1rem 0;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+/* Container for the certification cards */
+.container-certify {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+/* Box styles for each certification card */
+.card_box-certify {
+  width: 98%;
+  height: fit-content;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Decorative span for the certification card */
+.card_box-certify span {
+  position: absolute;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  top: -10px;
+  left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text inside the decorative span */
+.card_box-certify span::before {
+  content: 'Certificates';
+  position: absolute;
+  width: 150%;
+  height: 40px;
+  background-image: linear-gradient(45deg, #fa5a3a 0%, #ffb144 51%, #ff7053 100%);
+  transform: rotate(-45deg) translateY(-20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
+}
+
+/* Decorative shadow for the span */
+.card_box-certify span::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  bottom: 0;
+  left: 0;
+  height: 10px;
+  z-index: -1;
+  box-shadow: 140px -140px #cc3f47;
+  background-image: linear-gradient(45deg, #ff522fca 0%, #f09619ad 51%, #ff522fac 100%);
+}
+
+/* Container for the certification cards */
+.card-container-certify {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+/* Individual certification card styles */
+.card-cert {
+  background: linear-gradient(170deg, rgba(253, 200, 27, 0.22) 0%, #ff522f3d 10%);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for certification cards */
+.card-cert:hover {
+  transform: translateY(-5px);
+  background-color: #ff522f3e;
+  border: 1px solid black;
+  box-shadow: 0 0 5px 1px gray inset;
+  transition: background-color 3s linear, border 3s linear;
+}
+
+/* Heading styles for individual certification cards */
+.card-cert h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #222121;
+}
+
+/* Paragraph styles for individual certification cards */
+.card-cert p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+  color: rgb(16, 34, 118);
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
   .card-container-certify {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 10px;
-    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: auto;
   }
-  
-  .card-cert {
-    background: linear-gradient(170deg, rgba(253, 200, 27, 0.22) 0%, #ff522f3d 10%);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  
-  .card-cert:hover {
-    transform: translateY(-5px);
-    background-color:  #ff522f3e;
-    border:1px solid black;
-    box-shadow:  0 0 5px 1px gray inset;
-    /* background: linear-gradient(170deg, rgba(253, 200, 27, 0.369) 0%, #ff522f64 10%); */
-    transition:   background-color 3s linear, border 3s linear;
-  }
-  
-  .card-cert h4 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #222121;
-  }
-  
-  .card-cert p {
-    margin: 10px 0 0;
+
+  .card-certify .bg ul li {
     font-size: 1rem;
-    color: rgb(16, 34, 118);
   }
-  
-  @media (max-width: 768px) {
-    .card-container-certify {
-      grid-template-columns: repeat(2, 1fr);
-      overflow-x: auto;
-    }
-    
-    .card-certify .bg ul li {
-      font-size: 1rem;
-    }
+}
+
+@media (max-width: 576px) {
+  #achievements {
+    margin: 0;
+    padding: 0;
   }
-  
-  @media (max-width: 576px) {
-    #achievements {
-      margin: 0;
-      padding: 0;
-    }
-  
-    #achievements h2 {
-      padding: 10px 0;
-      margin: 10px 0;
-      font-size: 1.75rem;
-    }
-  
-    .certification-section h3 {
-      padding: 1rem 0;
-    }
-  
-    .card-container-certify {
-      grid-template-columns: repeat(5, minmax(100%, 1fr));    overflow-x: auto;
-      padding: 10px;
-    }
-    .card-certify .bg ul li {
-      list-style-type: square;
-      font-size: 0.8rem;
-    }
-    .card-certify {
-      height: auto;
-    }
-  
-    .card-cert h4 {
-      font-size: 1rem;
-    }
-  
-    .card-cert p {
-      font-size: 0.8rem;
-    }
+
+  #achievements h2 {
+    padding: 10px 0;
+    margin: 10px 0;
+    font-size: 1.75rem;
   }
-  
+
+  .certification-section h3 {
+    padding: 1rem 0;
+  }
+
+  .card-container-certify {
+    grid-template-columns: repeat(5, minmax(100%, 1fr));
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .card-certify .bg ul li {
+    list-style-type: square;
+    font-size: 0.8rem;
+  }
+
+  .card-certify {
+    height: auto;
+  }
+
+  .card-cert h4 {
+    font-size: 1rem;
+  }
+
+  .card-cert p {
+    font-size: 0.8rem;
+  }
+}

@@ -16,12 +16,10 @@ body {
 @keyframes colorfade1 {
   0% {
       opacity: 0;
-      /* background: linear-gradient(to bottom, #fff9c4, #ffe0b2,#fff9c4,#ffe0b2); */
   }
   
   100% {
       opacity: 1;
-      /* background: linear-gradient(to bottom,  #2f4f7f,#7a288a,#2f4f7f,#7a288a); */
   }
 }
 .navbar-nav li a {
@@ -261,8 +259,6 @@ radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
     background-color: #ffac40a5; /* Soft orange */
     border-color: #ff6f43d5;
   }
-  
-
   #collapsibleNavbar{
       text-align: center;
   }
@@ -280,5 +276,4 @@ radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
     font-size: 1.5em;
     
   }
-  
 }

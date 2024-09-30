@@ -1,32 +1,37 @@
-/* Experience & Education Section */
+/* Experience & Education Section Styles */
 #experience-education {
-    /* background-color: #f9f9f9; */
-    background:  linear-gradient(45deg, #fff9c4, #ffe0b2, #fff9c4, #ffe0b2);
-    /* background: none; */
+    /* Background gradient for the section */
+    background: linear-gradient(45deg, #fff9c4, #ffe0b2, #fff9c4, #ffe0b2);
 }
 
 #experience-education h2 {
+    /* Heading styles */
     font-weight: 700;
     color: #333;
 }
 
-#experience-education .nav li a{
+#experience-education .nav li a {
+    /* Navigation link styles */
     display: flex;
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-#experience-education .nav li a:hover{
+
+#experience-education .nav li a:hover {
+    /* Hover effect for navigation links */
     background-color: #dedee54c;
 }
+
 /* Timeline Styles */
 .timeline {
+    /* Timeline container styles */
     position: relative;
     padding: 20px 0;
     list-style: none;
-    /* height: 100%; */
 }
 
 .timeline:before {
+    /* Vertical line in the center of the timeline */
     content: '';
     position: absolute;
     top: 0;
@@ -36,37 +41,39 @@
     margin-left: -2px;
     background: linear-gradient(to bottom, #5bdb34, #f1690f, #4ef009, #f4770a);
     transform: translateX(-50%);
-    animation:dropdown 3s ease-in-out;
+    animation: dropdown 3s ease-in-out;
 }
+
 @keyframes dropdown {
+    /* Animation for the vertical line */
     0% {
         transform: translateY(-5%);
-        /* width:10px; */
         opacity: 0;
         background-size: 0;
     }
-
     100% {
         transform: translateY(0);
         opacity: 1;
         background-size: 100%;
     }
-    
 }
 
 .timeline > li {
+    /* Timeline item styles */
     position: relative;
     min-height: 50px;
     margin-bottom: 50px;
 }
 
 .timeline > li:after {
+    /* Clearfix for timeline items */
     content: '';
     display: table;
     clear: both;
 }
 
 .timeline .timeline-badge {
+    /* Badge styles for timeline items */
     color: #fff;
     width: 50px;
     height: 50px;
@@ -81,94 +88,112 @@
     border-radius: 50%;
     z-index: 100;
 }
+
 .timeline .timeline-panel {
+    /* Panel styles for timeline items */
     position: relative;
     width: 46%;
     padding: 20px;
     border-radius: 2px;
     background: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    animation:sweep 2s ease;
+    animation: sweep 2s ease;
 }
 
 @keyframes sweep {
+    /* Animation for the timeline panels */
     0% {
         transform: translateX(-10%);
         opacity: 0;
     }
-
     100% {
         transform: translateX(0);
         opacity: 1;
     }
-    
 }
+
 .timeline > li:nth-child(odd) .timeline-panel {
+    /* Positioning for odd timeline panels */
     left: 0;
 }
 
 .timeline > li:nth-child(even) .timeline-panel {
+    /* Positioning for even timeline panels */
     left: 54%;
 }
 
 .timeline .timeline-heading h4 {
+    /* Heading styles within timeline panels */
     margin-top: 0;
     color: #007bff;
 }
 
 .timeline .timeline-heading p {
+    /* Paragraph styles within timeline headings */
     margin: 0;
     color: #999;
 }
 
 .timeline .timeline-body p {
+    /* Paragraph styles within timeline bodies */
     margin: 10px 0 0;
 }
-
 
 /* Responsive Styles */
 @media (max-width: 767px) {
     .timeline:before {
-        margin-left:-10%;
+        /* Adjust vertical line for small screens */
+        margin-left: -10%;
         left: 20px;
         width: 2px;
     }
 
     .timeline .timeline-badge {
+        /* Adjust badge size for small screens */
         left: 0;
-        margin-left: -20px;        width: 30px;
+        margin-left: -20px;
+        width: 30px;
         height: 30px;
         line-height: 30px;
         font-size: 1.2rem;
     }
 
     .timeline > li .timeline-panel {
+        /* Adjust panel width for small screens */
         width: calc(100% - 40px);
         left: 40px !important;
     }
 }
 
-
 @media (max-width: 576px) {
-    #experience-education .nav li a{
+    #experience-education .nav li a {
+        /* Adjust font size for very small screens */
         font-size: 0.8rem;
     }
+
     #experience-education {
-        margin:0;
-        padding:0;
-    }
-    #experience-education h2 {
-        font-size: 1.5rem;
-    }
-    #experience-education .nav li a{
-        font-size: 1rem;
-    }
-    .timeline {
+        /* Remove margin and padding for very small screens */
+        margin: 0;
         padding: 0;
     }
+
+    #experience-education h2 {
+        /* Adjust heading font size for very small screens */
+        font-size: 1.5rem;
+    }
+
+    #experience-education .nav li a {
+        /* Adjust font size for very small screens */
+        font-size: 1rem;
+    }
+
+    .timeline {
+        /* Remove padding for very small screens */
+        padding: 0;
+    }
+
     .timeline:before {
-        /* margin-left:60%; */
+        /* Adjust vertical line position for very small screens */
         left: 40px;
     }
-    
 }

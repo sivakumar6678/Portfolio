@@ -31,39 +31,49 @@
 .profileimg {
     position: relative;
     display: inline-block;
+    max-width: 100%;
+    
 }
 
 /* Updated border-radius for images */
 .aboutsection img, .img-style, #imgbg {
-    border-radius: 76% 24% 25% 75% / 79% 53% 47% 21%;
+    border-radius: 25% 80% 45% 45%; 
 }
 
 /* Styles for the image */
 .img-style {
     width: 100%; 
-    max-width: 300px;
+    max-width: 315px;
     height: auto; 
     transition: transform 0.3s ease-in-out;
 }
 
 /* Background for the profile image */
 .profileimg::after {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/laptop.webp'); /* Your tech-related image (e.g., laptop, code, gadgets) */
+    background-position: center;
+    background-size: cover;
+    filter: blur(1.1px); /* Blur the background */
+    border-radius: 25% 75% 50% 50%; 
+    border: 5px solid rgba(255, 255, 255, 0.6); /* Semi-transparent border */
+    overflow: hidden; 
     content: "";
-    border-radius: 76% 24% 25% 75% / 79% 53% 47% 21%;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 70%;
-    background-color: rgba(173, 216, 230, 0.6);
-    z-index: -1;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    height: 80%;
+    z-index: -1; 
+    /* background: radial-gradient(circle, #00eaff, #0033cc); */
+    /* background: linear-gradient(135deg, #00aaff, #00ffaa); */
+    transition: border 3s linear;
 }
 
 /* Hover effect for the profile image background */
 .profileimg:hover::after {
-    background-color: rgba(92, 209, 225, 0.7); 
-    box-shadow: 0 0 20px rgba(92, 209, 225, 0.7);
+    box-shadow: 0 0 20px rgba(4, 0, 253, 0.959);
 }
 
 /* Container for the about me text */
@@ -513,9 +523,22 @@ button {
     }
     .aboutsection img {
         margin: -75px 0 0 20px;
-        width: 100%;
+        width: 35vw;
         max-width: 500px;
         margin-bottom: 1rem;
+    }
+    .profileimg {
+        text-align: center;
+        position: relative; /* Ensure relative positioning for child elements */
+    }
+    .profileimg::after {
+        content: ""; 
+        position: absolute;
+        bottom: 0;
+        left: 50%; /* Start from the left center */
+        transform: translateX(-50%); /* Center it horizontally */
+        width: 33vw; /* Adjust width */
+        
     }
     .aboutsection .aboutme {
         margin: 1rem 0;
@@ -527,6 +550,7 @@ button {
         text-align: center;
     }
 }
+
 
 @media (max-width: 576px) {
     .aboutsection {

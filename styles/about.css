@@ -523,7 +523,7 @@ button {
     }
     .aboutsection img {
         margin: -75px 0 0 20px;
-        width: 35vw;
+        width: 15rem;
         max-width: 500px;
         margin-bottom: 1rem;
     }
@@ -537,7 +537,7 @@ button {
         bottom: 0;
         left: 50%; /* Start from the left center */
         transform: translateX(-50%); /* Center it horizontally */
-        width: 33vw; /* Adjust width */
+        width: 15rem; /* Adjust width */
         
     }
     .aboutsection .aboutme {

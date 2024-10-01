@@ -1002,10 +1002,13 @@
   }
   @media (max-width:400px) {
     .techenthutiash{
-      min-height: 75vh;
+      min-height: 85vh;
     }
     .interest-card.creative{
-      min-height: 50vh;
+      min-height: 55vh;
+    }
+    .interest-card.problemsolving {
+      min-height: 70vh;
     }
     
   }

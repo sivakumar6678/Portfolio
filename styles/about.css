@@ -22,8 +22,8 @@
 
 /* Styles for the profile image */
 .aboutsection img {
-    width: 20vw;
-    max-width: 500px;
+    width: 23vw;
+    max-width: 450px;
     height: 60vh;
 }
 
@@ -42,9 +42,6 @@
 
 /* Styles for the image */
 .img-style {
-    width: 100%; 
-    max-width: 315px;
-    height: auto; 
     transition: transform 0.3s ease-in-out;
 }
 
@@ -516,14 +513,15 @@ button {
 }
 
 @media (max-width: 768px) {
+    
     .aboutsection {
         margin: 0 2rem;
         flex-direction: column;
         text-align: center;
     }
     .aboutsection img {
-        margin: -75px 0 0 20px;
-        width: 15rem;
+        width: 20rem;
+        height: 50vh;
         max-width: 500px;
         margin-bottom: 1rem;
     }
@@ -537,7 +535,7 @@ button {
         bottom: 0;
         left: 50%; /* Start from the left center */
         transform: translateX(-50%); /* Center it horizontally */
-        width: 15rem; /* Adjust width */
+        width: 19rem; /* Adjust width */
         
     }
     .aboutsection .aboutme {

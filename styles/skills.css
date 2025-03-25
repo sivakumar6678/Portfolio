@@ -74,9 +74,6 @@
     transition: transform 0.3s ease;
 }
 
-[aria-expanded="false"] .btn-link i {
-    transform: rotate(-180deg);
-}
 
 /* Collapse Animation */
 .collapse {
@@ -187,4 +184,21 @@
     .btn-link {
         padding: 0.25rem;
     }
+}
+
+    
+/* Add this to your existing CSS */
+
+/* Transition for hiding the icon title */
+.skills-icon-title {
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and transform */
+
+}
+
+/* Hidden class with rotation */
+.hidden {
+    opacity: 0; 
+    animation: slide-up 0.3s ease-in-out;
+    transform: translateY(-10px) rotate(-15deg); /* Slightly move it up and rotate */
+    pointer-events: none; /* Prevent interaction when hidden */
 }

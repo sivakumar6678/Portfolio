@@ -83,15 +83,34 @@
                                 <div class="skill-item"><div class="skill-icon">🐙</div><div class="skill-name">GitHub</div><div class="skill-progress"><div class="skill-progress-bar" style="--progress-width: 80%"></div></div><div class="skill-percentage">80%</div></div>
                                 <div class="skill-item"><div class="skill-icon">💻</div><div class="skill-name">VS Code</div><div class="skill-progress"><div class="skill-progress-bar" style="--progress-width: 90%"></div></div><div class="skill-percentage">90%</div></div>
                                 <div class="skill-item"><div class="skill-icon">🐧</div><div class="skill-name">Linux</div><div class="skill-progress"><div class="skill-progress-bar" style="--progress-width: 75%"></div></div><div class="skill-percentage">75%</div></div>
+                                <div class="skill-item"><div class="skill-icon">🎨</div><div class="skill-name">Photoshop</div><div class="skill-progress"><div class="skill-progress-bar" style="--progress-width: 70%"></div></div><div class="skill-percentage">70%</div></div>
+                                <div class="skill-item"><div class="skill-icon">✨</div><div class="skill-name">Canva</div><div class="skill-progress"><div class="skill-progress-bar" style="--progress-width: 85%"></div></div><div class="skill-percentage">85%</div></div>
+                                <div class="skill-item"><div class="skill-icon">🔍</div><div class="skill-name">Postman</div><div class="skill-progress"><div class="skill-progress-bar" style="--progress-width: 75%"></div></div><div class="skill-percentage">75%</div></div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Design & Testing Tools -->
+                
             </div>
         </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+    <script>
+        $(document).ready(function() {
+            // When the collapse is shown
+            $('.collapse').on('show.bs.collapse', function() {
+                $(this).prev().find('.skills-icon-title').addClass('hidden'); // Hide icon title
+            });
+            // When the collapse is hidden
+            $('.collapse').on('hide.bs.collapse', function() {
+                $(this).prev().find('.skills-icon-title').removeClass('hidden'); // Show icon title
+            });
+    
+        });
+    </script>
 </body>
 </html>

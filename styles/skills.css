@@ -1,344 +1,141 @@
-/* General styles for the skills section */
+/* General Section Styling */
 .skills-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+/* Container */
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Skill Card */
+.skill-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #dee2e6;
 }
 
-/* Container for the skill categories */
-.skill-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem; 
-    text-align: center;
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Individual skill category styles */
-.skill-category {
-    flex: 1 1 calc(50% - 2rem);
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    background: linear-gradient(135deg, #fff6a9, #f9d6a1);
-    animation: fade-in 0.3s ease-out forwards;
-}
-
-/* Hover effect for skill categories */
-.skill-category:hover {
-    transform: translateY(-10px); /* Add hover effect for better interactivity */
-}
-
-/* Heading styles for skill categories */
-.skill-category h3 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-/* Remove default padding for unordered lists */
-.skill-category ul {
-    padding: 0;
-}
-
-/* Styles for individual skill items */
-.skill-category li {
-    list-style: none;
-    margin: 0.5rem 0;
-    padding: 0.1rem 1rem;
-    border-radius: 5px;
-    text-align: left;
-    position: relative;
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.2rem;
-    overflow: hidden; /* Ensure the progress is constrained within the element */
-    animation: scroll 2s ease;
-}
-
-
-/* Animation for skill items */
-@keyframes scroll {
-    0% {
-        transform: translateY(50%);
-        opacity: 0;
-        background-size: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-        background-size: 100%;
-    }
-}
-
-/* Hover effect for skill items */
-.skill-category li:hover {
-    background: linear-gradient(135deg, #ff000088, #00ff00db, #0000ffa8); 
-    background-size: 200% 200%; 
-    animation: gradient-shift 2s ease infinite; 
-    transition: background 0.6s ease;
-}
-
-/* Keyframe animation for the gradient shift */
-@keyframes gradient-shift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Wrapper for hexagon elements */
-.hex-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.2s ease;
-}
-
-.hex-wrapper:hover {
-    transform: translateY(-3px);
-}
-
-/* Hexagon shape styles */
-.hex {
-    position: relative;
-    width: 70px;
-    height: 70px;
-    background-color: transparent;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    transition: all 0.2s ease;
-    border: 2px solid transparent;
-    box-shadow: 0 0 8px rgba(154, 232, 246, 0.5) inset;
-}
-
-.hex:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 12px rgba(154, 232, 246, 0.7) inset;
-}
-
-/* Inner content of hexagon */
-.hex-in {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    font-weight: 500;
-    font-size: 0.85rem;
+/* Skill Category Title */
+.skill-category-title {
     color: #333;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Percentage bar styles */
-.percentage-bar {
+.skill-category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 70px;
     height: 4px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #007bff;
     border-radius: 2px;
-    margin-top: 5px;
-    position: relative;
+}
+
+/* Skill Item */
+.skill-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.skill-item:hover {
+    background-color: #e9ecef;
+    transform: scale(1.02);
+}
+
+/* Skill Icon */
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f8f9fa, #dee2e6);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
+
+/* Skill Name */
+.skill-name {
+    flex-grow: 1;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Skill Progress Bar */
+.skill-progress {
+    width: 160px;
+    height: 12px;
+    background-color: #dee2e6;
+    border-radius: 6px;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-.fill {
+.skill-progress-bar {
     height: 100%;
-    border-radius: 2px;
-    width: 0%;
-    transition: width 1s ease-in-out;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    width: var(--progress-width);
+    transition: width 1.5s ease-in-out;
 }
 
-/* Text below the percentage bar */
-.percentage-below {
-    display: block;
-    margin-top: 4px;
-    font-weight: 500;
-    font-size: 0.75rem;
-    color: #444;
+/* Skill Percentage */
+.skill-percentage {
+    margin-left: 15px;
+    font-weight: 600;
+    color: #6c757d;
 }
 
-/* Hexagon grid layout */
-.hex-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 1.2rem;
-    justify-items: center;
-    padding: 0.8rem;
-}
-
-/* Specific styles for frontend hexagons */
-#frontend .hex {
-    border-color: blue;
-}
-
-/* Specific styles for backend hexagons */
-#backend .hex {
-    border-color: #6A0DAD;
-}
-
-/* Specific styles for tools hexagons */
-#tools .hex {
-    border-color: #FF8C00;
-}
-
-/* Specific styles for database hexagons */
-#db .hex {
-    border-color: #2E8B57;
-}
-
-/* Animation for fade-in effect */
-@keyframes fade-in {
+/* Animation for Progress Bars */
+@keyframes fill-progress {
     from {
-        opacity: 0;
-        transform: translateY(10px);
+        width: 0%;
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        width: var(--progress-width);
     }
 }
 
-/* Add animation delay for each category */
-#frontend { animation-delay: 0.1s; }
-#backend { animation-delay: 0.2s; }
-#db { animation-delay: 0.3s; }
-#tools { animation-delay: 0.4s; }
+.skill-progress-bar.animate {
+    animation: fill-progress 1.5s ease-in-out forwards;
+}
 
-/* Responsive adjustments for medium screens */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .skill-category {
-        flex: 1 1 100%;
+    .skill-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
     }
-    .hex {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .hex-in {
-        font-size: 0.75rem;
-    }
-    
-    .percentage-bar {
-        width: 60px;
-        height: 3px;
-    }
-}
 
-/* Responsive adjustments for medium screens */
-@media (max-width: 992px) {
-    /* Add any specific styles for this breakpoint if needed */
-}
+    .skill-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 
-/* Responsive adjustments for small screens */
-@media (max-width: 768px) {
-    .skill-category {
-        flex: 1 1 100%; 
-        height: 100%;
-    }
-    #frontend, #tools {
-        min-height: 22rem;
-    }
-    #db, #backend {
-        min-height: 15rem;
-    }
-    .skills-section {
-        padding: 0;
-    }
-    .skill-category li {
-        padding: 5px;
-    }
-    .hex-wrapper {
-        width: 80px; /* Reduce hex size */
-        height: 80px;
-    }
-    .hex {
-        width: 80px;
-        height: 80px;
-    }
-    .percentage-bar {
-        width: 80px;
-    }
-}
-
-/* Responsive adjustments for extra small screens */
-@media screen and (max-width: 576px) {
-    .skill-category {
-        flex: 1 1 100%; /* Full width on smaller screens */
-    }
-    .skills-section {
-        padding: 0;
-    }
-    .skill-category ul li {
-        padding: 0;
-    }
-    #frontend, #tools {
-        min-height: 18rem;
-    }
-    #db, #backend {
-        min-height: 12rem;
-    }
-    .hex-wrapper {
-        width: 60px; /* Smaller hexagons for small screens */
-        height: 60px;
-    }
-    .hex {
-        width: 60px;
-        height: 60px;
-    }
-    .hex-in {
-        font-size: 0.9rem;
-    }
-    .percentage-bar {
-        width: 60px;
-        height: 6px;
-    }
-    .percentage-below {
-        font-size: 0.8rem;
-    }
-}
-
-/* Responsive adjustments for very small screens */
-@media screen and (max-width: 400px) {
-    .skill-category {
-        flex: 1 1 100%; /* Full width on smaller screens */
-    }
-    .skills-section {
-        padding: 0;
-    }
-    .skill-category ul li {
-        padding: 0;
-    }
-    #frontend {
-        margin: 0;
-        padding: 0;
-        min-height: 15vh;
-        height: 100%;
-    }
-    #backend, #db, #tools {
-        min-height: 12vh;
-        height: 100%;
-    }
-    .hex {
-        width: 55px;
-        height: 55px;
-    }
-    .hex-in {
-        font-size: 0.8rem;
-    }
-    .percentage-bar {
-        width: 50px;
-        height: 7.5px;
-    }
-    .percentage-below {
-        font-size: 0.75rem;
-    }
-    #frontend .hex-grid .hex-wrapper {
-        width: auto;
-        height: auto;
+    .skill-progress {
+        width: 100%;
     }
 }

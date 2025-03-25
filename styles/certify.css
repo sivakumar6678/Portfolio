@@ -1,35 +1,95 @@
 /* Container for the achievements section */
 #achievements {
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 20px;
+  margin: 2rem auto;
+  width: 100%;
+  /* background: rgba(255, 255, 255, 0.24); */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Heading styles for the achievements section */
 #achievements h2 {
   text-align: center;
   color: #333;
-  padding: 1rem;
+  padding: 1.5rem;
   margin: 1rem;
-  font-weight: bold;
+  font-weight: 800;
+  font-size: 2.8rem;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(45deg, #333, #666);
+  -webkit-text-fill-color: transparent;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 0 10px rgba(250, 90, 58, 0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 177, 68, 0.5);
+  }
+}
+
+#achievements h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(45deg, #fa5a3a, #ffb144, #ff7053);
+  border-radius: 4px;
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Card styles for the certification section */
 .card-certify {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: transform 0.3s ease;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Heading styles for the certification section */
 .certification-section h3 {
-  margin-top: 1rem;
-  padding: 1rem 0;
-  font-size: 1.7rem;
-  font-weight: bold;
+  margin: 2.5rem 0 2rem;
+  padding: 1.2rem 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.certification-section h3 i {
+  font-size: 2rem;
+  color: #fa5a3a;
+  animation: iconPulse 2s infinite;
+}
+
+@keyframes iconPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 /* Container for the certification cards */
@@ -37,31 +97,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-x: auto;
+  overflow-x: hidden;
+  padding: 1.5rem;
 }
 
 /* Box styles for each certification card */
 .card_box-certify {
-  width: 98%;
-  height: fit-content;
+  width: 100%;
   position: relative;
   cursor: pointer;
-  transition: all 0.3s;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 /* Decorative span for the certification card */
 .card_box-certify span {
   position: absolute;
   overflow: hidden;
-  width: 150px;
-  height: 150px;
-  top: -10px;
-  left: -10px;
+  width: 200px;
+  height: 200px;
+  top: -20px;
+  left: -20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+  animation: ribbonFloat 3s ease-in-out infinite;
+}
+
+@keyframes ribbonFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 /* Text inside the decorative span */
@@ -69,58 +136,85 @@
   content: 'Certificates';
   position: absolute;
   width: 150%;
-  height: 40px;
+  height: 50px;
   background-image: linear-gradient(45deg, #fa5a3a 0%, #ffb144 51%, #ff7053 100%);
   transform: rotate(-45deg) translateY(-20px);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000000;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
-}
-
-/* Decorative shadow for the span */
-.card_box-certify span::after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  bottom: 0;
-  left: 0;
-  height: 10px;
-  z-index: -1;
-  box-shadow: 140px -140px #cc3f47;
-  background-image: linear-gradient(45deg, #ff522fca 0%, #f09619ad 51%, #ff522fac 100%);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Container for the certification cards */
 .card-container-certify {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
-  padding: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2.5rem;
+  margin-top: 2.5rem;
+  width: 100%;
 }
 
 /* Individual certification card styles */
 .card-cert {
-  background: linear-gradient(170deg, rgba(253, 200, 27, 0.22) 0%, #ff522f3d 10%);
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  background: linear-gradient(170deg, rgba(253, 200, 27, 0.15) 0%, #ff522f1a 10%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  width: 100%;
+}
+
+/* Featured certification styles */
+.card-cert.featured {
+  background: linear-gradient(170deg, rgba(250, 90, 58, 0.15) 0%, #ffb1441a 10%);
+  border: 2px solid rgba(250, 90, 58, 0.2);
+}
+
+/* Internship certification styles */
+.card-cert.internship {
+  background: linear-gradient(170deg, rgba(0, 123, 255, 0.15) 0%, #00c6ff1a 10%);
+  border: 2px solid rgba(0, 123, 255, 0.2);
+}
+
+/* Achievement certification styles */
+.card-cert.achievement {
+  background: linear-gradient(170deg, rgba(255, 193, 7, 0.15) 0%, #ffd7001a 10%);
+  border: 2px solid rgba(255, 193, 7, 0.2);
+}
+
+.card-cert::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+.card-cert:hover::before {
+  transform: translateX(100%);
 }
 
 /* Hover effect for certification cards */
 .card-cert:hover {
-  transform: translateY(-5px);
-  background-color: #ff522f3e;
-  border: 1px solid black;
-  box-shadow: 0 0 5px 1px gray inset;
-  transition: background-color 3s linear, border 3s linear;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 /* Heading styles for individual certification cards */
@@ -128,63 +222,211 @@
   margin: 0;
   font-size: 1.2rem;
   color: #222121;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.card-cert h4 i {
+  font-size: 1.4rem;
+  color: #fa5a3a;
+  transition: transform 0.3s ease;
+}
+
+.card-cert:hover h4 i {
+  transform: scale(1.2);
 }
 
 /* Paragraph styles for individual certification cards */
 .card-cert p {
-  margin: 10px 0 0;
+  margin: 0;
   font-size: 1rem;
-  color: rgb(16, 34, 118);
+  color: #666;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
+.card-cert p i {
+  color: #ffb144;
+}
+
+/* Certificate badge styles */
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card-cert.featured .cert-badge {
+  background: linear-gradient(45deg, #fa5a3a, #ffb144);
+  color: white;
+}
+
+.card-cert.internship .cert-badge {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: white;
+}
+
+.card-cert.achievement .cert-badge {
+  background: linear-gradient(45deg, #ffc107, #ffd700);
+  color: #333;
+}
+
+.cert-badge i {
+  font-size: 0.9rem;
+}
+
+/* Notable Achievements section */
+.bg {
+  background: linear-gradient(170deg, rgba(253, 200, 27, 0.15) 0%, #ff522f1a 10%);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bg h3 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bg h3 i {
+  color: #fa5a3a;
+  animation: iconPulse 2s infinite;
+}
+
+.bg ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bg ul li {
+  padding: 1rem 1.2rem;
+  margin: 0.8rem 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bg ul li i {
+  font-size: 1.2rem;
+  color: #fa5a3a;
+  transition: transform 0.3s ease;
+}
+
+.bg ul li:hover {
+  transform: translateX(8px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.bg ul li:hover i {
+  transform: scale(1.2);
+}
+
+.bg ul li strong {
+  color: #fa5a3a;
+  font-weight: 600;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
   .card-container-certify {
     grid-template-columns: repeat(2, 1fr);
-    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #achievements {
+    padding: 1.5rem;
+    margin: 1.5rem;
   }
 
-  .card-certify .bg ul li {
-    font-size: 1rem;
+  #achievements h2 {
+    font-size: 2.2rem;
+    padding: 1rem;
+  }
+
+  .card-container-certify {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .card-cert {
+    padding: 1.5rem;
+  }
+
+  .card-cert h4 {
+    font-size: 1.1rem;
+  }
+
+  .card-cert p {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 576px) {
   #achievements {
-    margin: 0;
-    padding: 0;
+    margin: 1rem;
+    padding: 1rem;
   }
 
   #achievements h2 {
-    padding: 10px 0;
-    margin: 10px 0;
-    font-size: 1.75rem;
+    font-size: 2rem;
+    padding: 0.8rem;
   }
 
   .certification-section h3 {
-    padding: 1rem 0;
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
   }
 
   .card-container-certify {
-    grid-template-columns: repeat(5, minmax(100%, 1fr));
-    overflow-x: auto;
-    padding: 10px;
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
-  .card-certify .bg ul li {
-    list-style-type: square;
-    font-size: 0.8rem;
+  .bg {
+    padding: 1.5rem;
   }
 
-  .card-certify {
-    height: auto;
+  .bg h3 {
+    font-size: 1.6rem;
   }
 
-  .card-cert h4 {
+  .bg ul li {
+    padding: 0.8rem 1rem;
     font-size: 1rem;
-  }
-
-  .card-cert p {
-    font-size: 0.8rem;
   }
 }

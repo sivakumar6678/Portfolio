@@ -100,5 +100,96 @@
     
     
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize GSAP
+            gsap.registerPlugin(ScrollTrigger);
+        
+            // Function to handle icon transitions
+            function handleIconTransition(category, isExpanding) {
+                const icons = category.querySelectorAll('.category-icons i');
+                const skillIcons = category.querySelectorAll('.skill-icon i');
+                
+                if (isExpanding) {
+                    // Show skill icons immediately
+                    skillIcons.forEach(icon => {
+                        icon.style.display = 'block';
+                    });
+                    
+                    // Animate skill items
+                    gsap.fromTo(category.querySelectorAll('.skill-item'),
+                        { opacity: 0, y: 20 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.5,
+                            stagger: 0.1
+                        }
+                    );
+                } else {
+                    // Hide skill icons
+                    skillIcons.forEach(icon => {
+                        icon.style.display = 'none';
+                    });
+                    
+                    // Fade out skill items
+                    gsap.to(category.querySelectorAll('.skill-item'), {
+                        opacity: 0,
+                        y: 20,
+                        duration: 0.3
+                    });
+                }
+            }
+        
+            // Function to handle smooth scroll
+            function smoothScrollTo(element) {
+                const headerOffset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        
+            // Add event listeners to all skill categories
+            document.querySelectorAll('.skill-category').forEach(category => {
+                const collapse = category.querySelector('.collapse');
+                const header = category.querySelector('.skill-header');
+        
+                // Handle expand/collapse events
+                collapse.addEventListener('show.bs.collapse', function() {
+                    handleIconTransition(category, true);
+                    smoothScrollTo(category);
+                });
+        
+                collapse.addEventListener('hide.bs.collapse', function() {
+                    handleIconTransition(category, false);
+                });
+            });
+        
+            // Initialize skill progress bars
+            function initProgressBars() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const progressBar = entry.target;
+                            const width = progressBar.style.getPropertyValue('--progress-width');
+                            progressBar.style.width = width;
+                            observer.unobserve(progressBar);
+                        }
+                    });
+                }, { threshold: 0.5 });
+        
+                document.querySelectorAll('.skill-progress-bar').forEach(bar => {
+                    observer.observe(bar);  
+                });
+            }
+        
+            // Initialize progress bars when the page loads
+            initProgressBars();
+        }); 
+    </script>
 </body>
 </html>

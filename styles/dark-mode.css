@@ -261,9 +261,15 @@ body.dark-mode .skill-category li {
 
 .dark-mode .card-certify {
     border: none;
+    color:black;
     background: linear-gradient(170deg, rgba(253, 200, 27, 0.22) 0%, #ff522f3d 10%);
 }
-
+.dark-mode .card-certify h3{
+    color:white;
+}
+.dark-mode .certification-section h3{
+    color : white;
+}
 .dark-mode .container-certify {
     color: #f5f5f5;
 }

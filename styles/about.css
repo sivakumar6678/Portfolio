@@ -1,30 +1,39 @@
 /* Container for the about section */
 #about {
-    justify-content: center; /* Center align */
-    align-items: center; /* Center vertically */
-    margin: 0 -8px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     color: #1a1a2e;
+    min-height: 100vh;
 }
 
 /* Padding for the about section */
 .about {
-    padding: 3rem 0;
+    padding: 5rem 0;
 }
 
 /* Container for the about section content */
 .aboutsection {
-    margin: 2rem 10rem 0rem 10rem;
+    margin: 2rem 10rem;
     display: flex;
-    justify-items: center;
-    align-content: center;
-    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-direction: row;
 }
 
 /* Styles for the profile image */
 .aboutsection img {
-    width: 23vw;
+    width: 25vw;
     max-width: 450px;
-    height: 60vh;
+    height: 65vh;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.aboutsection img:hover {
+    transform: scale(1.02) translateY(-10px);
 }
 
 /* Container for the profile image */
@@ -32,142 +41,140 @@
     position: relative;
     display: inline-block;
     max-width: 100%;
-    
 }
 
 /* Updated border-radius for images */
 .aboutsection img, .img-style, #imgbg {
-    border-radius: 25% 80% 45% 45%; 
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transition: border-radius 0.5s ease;
 }
 
-/* Styles for the image */
-.img-style {
-    transition: transform 0.3s ease-in-out;
+.aboutsection img:hover {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
 }
 
 /* Background for the profile image */
 .profileimg::after {
-    width: 100%;
-    height: 100%;
-    background-image: url('../images/laptop.webp'); /* Your tech-related image (e.g., laptop, code, gadgets) */
-    background-position: center;
-    background-size: cover;
-    filter: blur(1.1px); /* Blur the background */
-    border-radius: 25% 75% 50% 50%; 
-    border: 5px solid rgba(255, 255, 255, 0.6); /* Semi-transparent border */
-    overflow: hidden; 
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 80%;
-    z-index: -1; 
-    /* background: radial-gradient(circle, #00eaff, #0033cc); */
-    /* background: linear-gradient(135deg, #00aaff, #00ffaa); */
-    transition: border 3s linear;
+    background-position: center;
+    background-size: cover;
+    filter: blur(1.1px);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border: 5px solid rgba(255, 255, 255, 0.8);
+    z-index: -1;
+    transition: all 0.5s ease;
 }
 
 /* Hover effect for the profile image background */
 .profileimg:hover::after {
-    box-shadow: 0 0 20px rgba(4, 0, 253, 0.959);
+    box-shadow: 0 0 30px rgba(4, 0, 253, 0.3);
+    transform: scale(1.05);
 }
 
 /* Container for the about me text */
 .aboutme {
-    padding-top: 10%;
-    text-align: center;
-    vertical-align: center;
-    margin: 1rem;
-    flex-grow: 1;
+    padding: 2rem;
+    text-align: left;
+    flex: 1;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 /* Styles for the first heading in about me */
 .aboutme h2:first-child {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 300;
-    color: #555555;
+    color: #666;
+    margin-bottom: 1rem;
 }
 
 /* Styles for the main heading in about me */
 .aboutme h1 {
-    color: #333333;
-    padding-left: 50px;
-    text-align: start;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
+    color: #333;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+    margin: 0 0 1.5rem 0;
 }
 
 /* Styles for the secondary heading in about me */
 .aboutme h2 {
-    font-size: 1.75rem;
-    color: #555555;
-    font-weight: bolder;
-    padding-left: 50px;
-    text-align: start;
-    margin: 0 0 15px 0;
+    font-size: 1.8rem;
+    color: #444;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
 }
 
 /* Styles for the about content paragraph */
 .aboutcontent p {
-    text-align: right;
-    font-size: 1.2rem;
-    font-weight: 550;
-    line-height: 1.6;
-    margin: 0 0 10px 0;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.8;
+    color: #555;
+    margin: 0 0 1rem 0;
 }
 
 /* Container for the get in touch section */
 .get-in-touch {
     text-align: center;
-    margin: 0 5rem;
+    margin: 4rem 10rem;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 /* Styles for the heading in get in touch */
 .get-in-touch h2 {
-    font-size: 1.75rem;
-    color: #555555;
-    font-weight: bolder;
-    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
 }
 
 /* Styles for the paragraph in get in touch */
-.aboutme .get-in-touch p {
-    text-align: center;
+.get-in-touch p {
     font-size: 1.2rem;
-    font-weight: 550;
-    line-height: 1.6;
-    margin: 0 0 10px 0;
-}
-
-/* Styles for dynamic text */
-#dynamic-text {
-    color: #2b00ff;
+    font-weight: 500;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
 }
 
 /* Container for the additional about section */
 .aboutmore {
-    margin: 0 2rem;
-    text-align: right;
-    font-size: 1.25rem;
-    font-weight: 900;
+    margin: 4rem 10rem;
+    text-align: left;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 /* Styles for the heading in additional about section */
 .aboutmore h2 {
-    font-size: 2rem;
-    font-weight: 900;
-    color: #333333;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 /* Styles for the paragraph in additional about section */
 .aboutmore p {
-    font-size: 1.25rem;
-    font-weight: 900;
-    color: #4d4d4d;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
 }
 
 /* Container for the connect with me section */
@@ -417,91 +424,66 @@ button {
     background: #545FE5;
 }
 
-/* Animation for the second wave menu list item */
+/* Wave menu animations */
 .wave-menu li:nth-child(2) {
     animation-name: wave2;
     animation-delay: 0.2s;
 }
 
-/* Animation for the third wave menu list item */
 .wave-menu li:nth-child(3) {
     animation-name: wave3;
     animation-delay: 0.23s;
     animation-duration: 0.4s;
 }
 
-/* Animation for the fourth wave menu list item */
 .wave-menu li:nth-child(4) {
     animation-name: wave4;
     animation-delay: 0.1s;
     animation-duration: 0.3s;
 }
 
-/* Animation for the fifth wave menu list item */
 .wave-menu li:nth-child(5) {
     animation-delay: 0.5s;
 }
 
-/* Animation for the sixth wave menu list item */
 .wave-menu li:nth-child(6) {
     animation-name: wave2;
     animation-duration: 0.5s;
 }
 
-/* Animation for the eighth wave menu list item */
 .wave-menu li:nth-child(8) {
     animation-name: wave4;
     animation-delay: 0.4s;
     animation-duration: 0.25s;
 }
 
-/* Animation for the ninth wave menu list item */
 .wave-menu li:nth-child(9) {
     animation-name: wave3;
     animation-delay: 0.15s;
 }
 
-/* Keyframes for the first wave animation */
+/* Wave animation keyframes */
 @keyframes wave1 {
-    from {
-        transform: scaleY(1);
-    }
-    to {
-        transform: scaleY(0.5);
-    }
+    from { transform: scaleY(1); }
+    to { transform: scaleY(0.5); }
 }
 
-/* Keyframes for the second wave animation */
 @keyframes wave2 {
-    from {
-        transform: scaleY(0.3);
-    }
-    to {
-        transform: scaleY(0.6);
-    }
+    from { transform: scaleY(0.3); }
+    to { transform: scaleY(0.6); }
 }
 
-/* Keyframes for the third wave animation */
 @keyframes wave3 {
-    from {
-        transform: scaleY(1.5);
-    }
-    to {
-        transform: scaleY(0.8);
-    }
+    from { transform: scaleY(1.5); }
+    to { transform: scaleY(0.8); }
 }
 
-/* Keyframes for the fourth wave animation */
 @keyframes wave4 {
-    from {
-        transform: scaleY(0.2);
-    }
-    to {
-        transform: scaleY(1);
-    }
+    from { transform: scaleY(0.2); }
+    to { transform: scaleY(1); }
 }
 
-/* Responsive styles for about section */
+/* Responsive styles */
 @media (min-width: 768px) and (max-width: 1200px) {
     .aboutsection {
         margin: 5rem;
@@ -513,7 +495,6 @@ button {
 }
 
 @media (max-width: 768px) {
-    
     .aboutsection {
         margin: 0 2rem;
         flex-direction: column;
@@ -527,16 +508,15 @@ button {
     }
     .profileimg {
         text-align: center;
-        position: relative; /* Ensure relative positioning for child elements */
+        position: relative;
     }
     .profileimg::after {
         content: ""; 
         position: absolute;
         bottom: 0;
-        left: 50%; /* Start from the left center */
-        transform: translateX(-50%); /* Center it horizontally */
-        width: 19rem; /* Adjust width */
-        
+        left: 50%;
+        transform: translateX(-50%);
+        width: 19rem;
     }
     .aboutsection .aboutme {
         margin: 1rem 0;
@@ -548,7 +528,6 @@ button {
         text-align: center;
     }
 }
-
 
 @media (max-width: 576px) {
     .aboutsection {

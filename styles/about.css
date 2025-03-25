@@ -1,3 +1,4 @@
+
 /* Container for the about section */
 #about {
     justify-content: center;
@@ -32,9 +33,6 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.aboutsection img:hover {
-    transform: scale(1.02) translateY(-10px);
-}
 
 /* Container for the profile image */
 .profileimg {
@@ -49,9 +47,7 @@
     transition: border-radius 0.5s ease;
 }
 
-.aboutsection img:hover {
-    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-}
+
 
 /* Background for the profile image */
 .profileimg::after {
@@ -61,20 +57,17 @@
     left: 0;
     width: 100%;
     height: 80%;
+    /* background-image: url('../images/laptop.webp'); */
     background-position: center;
     background-size: cover;
     filter: blur(1.1px);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    border: 5px solid rgba(255, 255, 255, 0.8);
+    /* border: 5px solid rgba(255, 255, 255, 0.8); */
     z-index: -1;
     transition: all 0.5s ease;
 }
 
-/* Hover effect for the profile image background */
-.profileimg:hover::after {
-    box-shadow: 0 0 30px rgba(4, 0, 253, 0.3);
-    transform: scale(1.05);
-}
+
 
 /* Container for the about me text */
 .aboutme {
@@ -102,6 +95,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0 0 1.5rem 0;
+   
 }
 
 /* Styles for the secondary heading in about me */
@@ -175,6 +169,226 @@
     line-height: 1.8;
     color: #555;
     margin-bottom: 1.5rem;
+}
+
+/* Wave menu styles */
+.wave-menu {
+    border: 4px solid #545FE5;
+    border-radius: 50px;
+    width: 200px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 2rem auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-menu:hover {
+    background: #545FE5;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(84, 95, 229, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .aboutsection {
+        margin: 2rem 5rem;
+        gap: 2rem;
+    }
+    
+    .get-in-touch, .aboutmore {
+        margin: 3rem 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutsection {
+        margin: 2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .aboutsection img {
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+    
+    .aboutme, .get-in-touch, .aboutmore {
+        margin: 2rem;
+        padding: 2rem;
+    }
+    
+    .aboutme h1 {
+        text-align: center;
+    }
+    
+    .aboutcontent p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .aboutsection {
+        margin: 1rem;
+    }
+    
+    .aboutme, .get-in-touch, .aboutmore {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .aboutme h1 {
+        font-size: 2rem;
+    }
+    
+    .aboutme h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Padding for the about section */
+.about {
+    padding: 3rem 0;
+}
+
+/* Container for the about section content */
+.aboutsection {
+    margin: 2rem 10rem 0rem 10rem;
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    flex-direction: row; 
+}
+
+/* Styles for the profile image */
+.aboutsection img {
+    width: 23vw;
+    max-width: 450px;
+    height: 60vh;
+}
+
+/* Container for the profile image */
+.profileimg {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    
+}
+
+/* Updated border-radius for images */
+.aboutsection img, .img-style, #imgbg {
+    border-radius: 25% 80% 45% 45%; 
+}
+
+/* Styles for the image */
+.img-style {
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+/* Container for the about me text */
+.aboutme {
+    padding-top: 10%;
+    text-align: center;
+    vertical-align: center;
+    margin: 1rem;
+    flex-grow: 1;
+}
+
+/* Styles for the first heading in about me */
+.aboutme h2:first-child {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #555555;
+}
+
+/* Styles for the main heading in about me */
+.aboutme h1 {
+    color: #333333;
+    padding-left: 50px;
+    text-align: start;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 20px 0;
+}
+
+/* Styles for the secondary heading in about me */
+.aboutme h2 {
+    font-size: 1.75rem;
+    color: #555555;
+    font-weight: bolder;
+    padding-left: 50px;
+    text-align: start;
+    margin: 0 0 15px 0;
+}
+
+/* Styles for the about content paragraph */
+.aboutcontent p {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 550;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+}
+
+/* Container for the get in touch section */
+.get-in-touch {
+    text-align: center;
+    margin: 0 5rem;
+}
+
+/* Styles for the heading in get in touch */
+.get-in-touch h2 {
+    font-size: 1.75rem;
+    color: #555555;
+    font-weight: bolder;
+    text-align: center;
+}
+
+/* Styles for the paragraph in get in touch */
+.aboutme .get-in-touch p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 550;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+}
+
+/* Styles for dynamic text */
+#dynamic-text {
+    color: #2b00ff;
+}
+
+/* Container for the additional about section */
+.aboutmore {
+    margin: 0 2rem;
+    text-align: right;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+/* Styles for the heading in additional about section */
+.aboutmore h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #333333;
+}
+
+/* Styles for the paragraph in additional about section */
+.aboutmore p {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #4d4d4d;
 }
 
 /* Container for the connect with me section */
@@ -424,66 +638,91 @@ button {
     background: #545FE5;
 }
 
-/* Wave menu animations */
+/* Animation for the second wave menu list item */
 .wave-menu li:nth-child(2) {
     animation-name: wave2;
     animation-delay: 0.2s;
 }
 
+/* Animation for the third wave menu list item */
 .wave-menu li:nth-child(3) {
     animation-name: wave3;
     animation-delay: 0.23s;
     animation-duration: 0.4s;
 }
 
+/* Animation for the fourth wave menu list item */
 .wave-menu li:nth-child(4) {
     animation-name: wave4;
     animation-delay: 0.1s;
     animation-duration: 0.3s;
 }
 
+/* Animation for the fifth wave menu list item */
 .wave-menu li:nth-child(5) {
     animation-delay: 0.5s;
 }
 
+/* Animation for the sixth wave menu list item */
 .wave-menu li:nth-child(6) {
     animation-name: wave2;
     animation-duration: 0.5s;
 }
 
+/* Animation for the eighth wave menu list item */
 .wave-menu li:nth-child(8) {
     animation-name: wave4;
     animation-delay: 0.4s;
     animation-duration: 0.25s;
 }
 
+/* Animation for the ninth wave menu list item */
 .wave-menu li:nth-child(9) {
     animation-name: wave3;
     animation-delay: 0.15s;
 }
 
-/* Wave animation keyframes */
+/* Keyframes for the first wave animation */
 @keyframes wave1 {
-    from { transform: scaleY(1); }
-    to { transform: scaleY(0.5); }
+    from {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(0.5);
+    }
 }
 
+/* Keyframes for the second wave animation */
 @keyframes wave2 {
-    from { transform: scaleY(0.3); }
-    to { transform: scaleY(0.6); }
+    from {
+        transform: scaleY(0.3);
+    }
+    to {
+        transform: scaleY(0.6);
+    }
 }
 
+/* Keyframes for the third wave animation */
 @keyframes wave3 {
-    from { transform: scaleY(1.5); }
-    to { transform: scaleY(0.8); }
+    from {
+        transform: scaleY(1.5);
+    }
+    to {
+        transform: scaleY(0.8);
+    }
 }
 
+/* Keyframes for the fourth wave animation */
 @keyframes wave4 {
-    from { transform: scaleY(0.2); }
-    to { transform: scaleY(1); }
+    from {
+        transform: scaleY(0.2);
+    }
+    to {
+        transform: scaleY(1);
+    }
 }
 
-/* Responsive styles */
+/* Responsive styles for about section */
 @media (min-width: 768px) and (max-width: 1200px) {
     .aboutsection {
         margin: 5rem;
@@ -495,6 +734,7 @@ button {
 }
 
 @media (max-width: 768px) {
+    
     .aboutsection {
         margin: 0 2rem;
         flex-direction: column;
@@ -508,15 +748,16 @@ button {
     }
     .profileimg {
         text-align: center;
-        position: relative;
+        position: relative; /* Ensure relative positioning for child elements */
     }
     .profileimg::after {
         content: ""; 
         position: absolute;
         bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 19rem;
+        left: 50%; /* Start from the left center */
+        transform: translateX(-50%); /* Center it horizontally */
+        width: 19rem; /* Adjust width */
+        
     }
     .aboutsection .aboutme {
         margin: 1rem 0;
@@ -528,6 +769,260 @@ button {
         text-align: center;
     }
 }
+
+
+@media (max-width: 576px) {
+    .aboutsection {
+        margin: 0 1rem;
+    }
+    .aboutme h1 {
+        font-size: 2rem;
+    }
+    #connectwithme .links li {
+        padding: 0.5rem 0rem;
+    }
+    .img-style {
+        border-radius: 30% 15% 10% 35% / 35% 25% 25% 15%;
+    }
+    .aboutsection .aboutme {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 505px) {
+    .aboutme h1 {
+        font-size: 1.5rem;
+    }
+    ul {
+        list-style: none;
+    }
+    .example-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .example-2 .icon-content {
+        margin: 0 10px;
+        position: relative;
+    }
+    .example-2 .icon-content .tooltip {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 5px;
+        opacity: 0;
+        visibility: hidden;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+    .example-2 .icon-content:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+        top: -50px;
+    }
+    .example-2 .icon-content a {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: #4d4d4d;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+    .example-2 .icon-content a:hover {
+        box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+    }
+    .example-2 .icon-content a svg {
+        position: relative;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+    }
+    .example-2 .icon-content a:hover {
+        color: white;
+    }
+    .example-2 .icon-content a .filled {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: #000;
+        transition: all 0.3s ease-in-out;
+    }
+    .example-2 .icon-content a:hover .filled {
+        height: 100%;
+    }
+    .example-2 .icon-content a[data-social="linkedin"] .filled,
+    .example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+        background-color: #0274b3;
+    }
+    .example-2 .icon-content a[data-social="github"] .filled,
+    .example-2 .icon-content a[data-social="github"] ~ .tooltip {
+        background-color: #24262a;
+    }
+    .example-2 .icon-content a[data-social="instagram"] .filled,
+    .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+        background: linear-gradient(45deg, #405de6, #5b51db, #b33ab4, #c135b4, #e1306c, #fd1f1f);
+    }
+    .example-2 .icon-content a[data-social="youtube"] .filled,
+    .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+        background-color: #ff0000;
+    }
+}
+
+    
+
+/* Hover effect for the wave menu list items */
+.wave-menu:hover > li {
+    background: #fff;
+}
+
+/* Hover effect for the wave menu */
+.wave-menu:hover {
+    background: #545FE5;
+}
+
+/* Animation for the second wave menu list item */
+.wave-menu li:nth-child(2) {
+    animation-name: wave2;
+    animation-delay: 0.2s;
+}
+
+/* Animation for the third wave menu list item */
+.wave-menu li:nth-child(3) {
+    animation-name: wave3;
+    animation-delay: 0.23s;
+    animation-duration: 0.4s;
+}
+
+/* Animation for the fourth wave menu list item */
+.wave-menu li:nth-child(4) {
+    animation-name: wave4;
+    animation-delay: 0.1s;
+    animation-duration: 0.3s;
+}
+
+/* Animation for the fifth wave menu list item */
+.wave-menu li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Animation for the sixth wave menu list item */
+.wave-menu li:nth-child(6) {
+    animation-name: wave2;
+    animation-duration: 0.5s;
+}
+
+/* Animation for the eighth wave menu list item */
+.wave-menu li:nth-child(8) {
+    animation-name: wave4;
+    animation-delay: 0.4s;
+    animation-duration: 0.25s;
+}
+
+/* Animation for the ninth wave menu list item */
+.wave-menu li:nth-child(9) {
+    animation-name: wave3;
+    animation-delay: 0.15s;
+}
+
+/* Keyframes for the first wave animation */
+@keyframes wave1 {
+    from {
+        transform: scaleY(1);
+    }
+    to {
+        transform: scaleY(0.5);
+    }
+}
+
+/* Keyframes for the second wave animation */
+@keyframes wave2 {
+    from {
+        transform: scaleY(0.3);
+    }
+    to {
+        transform: scaleY(0.6);
+    }
+}
+
+/* Keyframes for the third wave animation */
+@keyframes wave3 {
+    from {
+        transform: scaleY(1.5);
+    }
+    to {
+        transform: scaleY(0.8);
+    }
+}
+
+/* Keyframes for the fourth wave animation */
+@keyframes wave4 {
+    from {
+        transform: scaleY(0.2);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* Responsive styles for about section */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .aboutsection {
+        margin: 5rem;
+        justify-content: center;
+    }
+    .aboutsection img {
+        width: 35vw;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .aboutsection {
+        margin: 0 2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .aboutsection img {
+        width: 20rem;
+        height: 50vh;
+        max-width: 500px;
+        margin-bottom: 1rem;
+    }
+    .profileimg {
+        text-align: center;
+        position: relative; /* Ensure relative positioning for child elements */
+    }
+    .profileimg::after {
+        content: ""; 
+        position: absolute;
+        bottom: 0;
+        left: 50%; /* Start from the left center */
+        transform: translateX(-50%); /* Center it horizontally */
+        width: 19rem; /* Adjust width */
+        
+    }
+    .aboutsection .aboutme {
+        margin: 1rem 0;
+    }
+    .aboutme h1 {
+        font-size: 2.5rem;
+    }
+    .aboutmore {
+        text-align: center;
+    }
+}
+
 
 @media (max-width: 576px) {
     .aboutsection {

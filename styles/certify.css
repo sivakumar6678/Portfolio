@@ -396,8 +396,9 @@
 
 @media (max-width: 576px) {
   #achievements {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0;
+    padding: 0;
+    width: auto;
   }
 
   #achievements h2 {
@@ -409,7 +410,16 @@
     font-size: 1.8rem;
     margin: 1.5rem 0;
   }
-
+  .certify{
+    padding: 0;
+  }
+  .card-certify{
+    margin: 0;
+    padding: 0;
+  }
+  .container-certify{
+    padding: 0;
+  }
   .card-container-certify {
     grid-template-columns: 1fr;
     padding: 1rem;

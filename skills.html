@@ -99,18 +99,18 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
-    <script>
-        $(document).ready(function() {
-            // When the collapse is shown
-            $('.collapse').on('show.bs.collapse', function() {
-                $(this).prev().find('.skills-icon-title').addClass('hidden'); // Hide icon title
-            });
-            // When the collapse is hidden
-            $('.collapse').on('hide.bs.collapse', function() {
-                $(this).prev().find('.skills-icon-title').removeClass('hidden'); // Show icon title
-            });
-    
+<script>
+    document.querySelectorAll('.skill-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const iconTitle = card.querySelector('.skills-icon-title');
+            const isCollapsed = card.querySelector('.collapse').classList.contains('show');
+            if (isCollapsed) {
+                iconTitle.classList.remove('hidden');
+            } else {
+                iconTitle.classList.add('hidden');
+            }
         });
-    </script>
+    });
+</script>
 </body>
 </html>

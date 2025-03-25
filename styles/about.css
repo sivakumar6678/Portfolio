@@ -117,14 +117,6 @@
 }
 
 /* Container for the get in touch section */
-.get-in-touch {
-    text-align: center;
-    margin: 4rem 10rem;
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-}
 
 /* Styles for the heading in get in touch */
 .get-in-touch h2 {
@@ -194,64 +186,7 @@
     box-shadow: 0 10px 20px rgba(84, 95, 229, 0.3);
 }
 
-/* Responsive styles */
-@media (max-width: 1200px) {
-    .aboutsection {
-        margin: 2rem 5rem;
-        gap: 2rem;
-    }
-    
-    .get-in-touch, .aboutmore {
-        margin: 3rem 5rem;
-    }
-}
 
-@media (max-width: 768px) {
-    .aboutsection {
-        margin: 2rem;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .aboutsection img {
-        width: 80%;
-        max-width: 300px;
-        height: auto;
-        margin-bottom: 2rem;
-    }
-    
-    .aboutme, .get-in-touch, .aboutmore {
-        margin: 2rem;
-        padding: 2rem;
-    }
-    
-    .aboutme h1 {
-        text-align: center;
-    }
-    
-    .aboutcontent p {
-        text-align: center;
-    }
-}
-
-@media (max-width: 576px) {
-    .aboutsection {
-        margin: 1rem;
-    }
-    
-    .aboutme, .get-in-touch, .aboutmore {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-    
-    .aboutme h1 {
-        font-size: 2rem;
-    }
-    
-    .aboutme h2 {
-        font-size: 1.5rem;
-    }
-}
 
 /* Padding for the about section */
 .about {
@@ -344,7 +279,7 @@
 /* Container for the get in touch section */
 .get-in-touch {
     text-align: center;
-    margin: 0 5rem;
+    margin: 1rem 5rem;
 }
 
 /* Styles for the heading in get in touch */
@@ -790,6 +725,10 @@ button {
 }
 
 @media (max-width: 505px) {
+    .aboutmore{
+        margin: 0 ;
+        padding: 0 10px;
+    }
     .aboutme h1 {
         font-size: 1.5rem;
     }

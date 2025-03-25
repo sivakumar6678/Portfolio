@@ -84,7 +84,9 @@ nav{
   border-bottom: 1px solid blue;
 }
 
-
+.navbar-toggler{
+  margin-left:1rem;
+}
 button#theme-toggle {
   margin: 20px;
   padding: 10px;
@@ -93,6 +95,8 @@ button#theme-toggle {
   color: #fff;
   border: none;
   border-radius: 5px;
+  margin-right: 1rem;
+
 }
 .switch {
   font-size: 17px;
@@ -100,11 +104,12 @@ button#theme-toggle {
   display: inline-block;
   width: 3.5em;
   height: 2em;
-  right: 1rem;
+  right: 0.1rem;
   top: 1rem; /* Adjusted top positioning */
   z-index: 1050; 
   transform-style: preserve-3d;
   perspective: 500px;
+  margin-right: 1rem;
 }
 
   

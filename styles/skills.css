@@ -185,7 +185,20 @@
         padding: 0.25rem;
     }
 }
-
+@media  (max-width: 576px) {
+ 
+    .skill-list{
+        padding: 0;
+    }
+    .skill-item .skill-icon{
+        width: 5px;
+        height: 5px;
+    }
+    .skill-item .skill-name{
+        font-size: 1rem;
+    }
+   
+}
     
 /* Add this to your existing CSS */
 

@@ -81,7 +81,7 @@
     
             <!-- Footer Right Section (More Interactive) -->
             <div class="col-md-12 footer-right text-center">
-                <p>Let’s collaborate! <a href="mailto:chandragarisivakumar@gmail.com" class="interactive-link">Contact me</a></p>
+                <p>Let's collaborate! <a href="mailto:chandragarisivakumar@gmail.com" class="interactive-link">Contact me</a></p>
                 <p>Connect with me: 
                     <a href="https://github.com/sivakumar6678" target="_blank" class="social-link">
                         <i class="fa fa-github"></i> GitHub
@@ -103,43 +103,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize GSAP
-            gsap.registerPlugin(ScrollTrigger);
-        
-            // Function to handle icon transitions
-            function handleIconTransition(category, isExpanding) {
-                const icons = category.querySelectorAll('.category-icons i');
-                const skillIcons = category.querySelectorAll('.skill-icon i');
-                
-                if (isExpanding) {
-                    // Show skill icons immediately
-                    skillIcons.forEach(icon => {
-                        icon.style.display = 'block';
-                    });
-                    
-                    // Animate skill items
-                    gsap.fromTo(category.querySelectorAll('.skill-item'),
-                        { opacity: 0, y: 20 },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.5,
-                            stagger: 0.1
-                        }
-                    );
-                } else {
-                    // Hide skill icons
-                    skillIcons.forEach(icon => {
-                        icon.style.display = 'none';
-                    });
-                    
-                    // Fade out skill items
-                    gsap.to(category.querySelectorAll('.skill-item'), {
-                        opacity: 0,
-                        y: 20,
-                        duration: 0.3
-                    });
-                }
-            }
+           
         
             // Function to handle smooth scroll
             function smoothScrollTo(element) {

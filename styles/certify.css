@@ -20,8 +20,6 @@
   position: relative;
   text-transform: uppercase;
   letter-spacing: 3px;
-  background: linear-gradient(45deg, #333, #666);
-  -webkit-text-fill-color: transparent;
   animation: titleGlow 2s ease-in-out infinite alternate;
 }
 

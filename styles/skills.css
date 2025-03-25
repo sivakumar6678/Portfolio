@@ -1,12 +1,11 @@
 /* General Section Styling */
 .skills-section {
     padding: 5rem 0;
-    background-color: #f8f9fa;
 }
 
 /* Container */
 .skills-container {
-    max-width: 1200px;
+    max-width: 100;
     margin: 0 auto;
 }
 
@@ -25,11 +24,22 @@
     transform: translateY(-8px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
-
+.skill-card div{
+    cursor: pointer;
+}
+.skills-icon-title{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+.skill-icon-title:hover{
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
 /* Skill Category Title */
 .skill-category-title {
     color: #333;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     font-weight: 700;
     position: relative;
     padding-bottom: 10px;
@@ -46,6 +56,37 @@
     height: 4px;
     background-color: #007bff;
     border-radius: 2px;
+}
+
+/* Collapse Button */
+.btn-link {
+    color: #007bff;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #0056b3;
+}
+
+.btn-link i {
+    transition: transform 0.3s ease;
+}
+
+[aria-expanded="false"] .btn-link i {
+    transform: rotate(-180deg);
+}
+
+/* Collapse Animation */
+.collapse {
+    transition: all 0.3s ease-in-out;
+}
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
 }
 
 /* Skill Item */
@@ -137,5 +178,13 @@
 
     .skill-progress {
         width: 100%;
+    }
+
+    .skill-category-title {
+        font-size: 1.1rem;
+    }
+
+    .btn-link {
+        padding: 0.25rem;
     }
 }

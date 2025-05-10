@@ -14,8 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/about-new.css">
+    <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/dark-mode.css">
     
     <!-- Preload critical assets -->
@@ -31,17 +30,7 @@
     <meta property="og:type" content="website">
 </head>
 <body class="light-mode about-new-typography">
-    <!-- Theme Toggle Switch -->
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider">
-                <i class="fas fa-sun slider-icon sun-icon"></i>
-                <i class="fas fa-moon slider-icon moon-icon"></i>
-            </div>
-        </label>
-    </div>
-    
+   
     <!-- Scroll to top button -->
     <button id="scrollToTop" class="scroll-to-top">
         <i class="fas fa-arrow-up"></i>
@@ -69,7 +58,7 @@
                     <span class="greeting-line"></span>
                 </div>
                 
-                <h1>I am C. SIVA KUMAR</h1>
+                <h1 class="text-center">I am C. SIVA KUMAR</h1>
                 
                 <div class="dynamic-text-container">
                     <span id="dynamic-text" class="dynamic-text">Full Stack Developer</span>
@@ -176,91 +165,6 @@
     </section>
     
     <!-- Scripts -->
-    <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Cache DOM elements
-            const body = document.body;
-            const toggleSwitch = document.querySelector('#checkbox');
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            const contactCard = document.querySelector('.contact-card');
-            
-            // Initialize typing effect with about page roles
-            const aboutPageRoles = ['Full Stack Developer', 'UI/UX Designer', 'Problem Solver', 'Creative Thinker'];
-            createTypingEffect('dynamic-text', aboutPageRoles);
-            
-            // Initialize theme
-            initializeTheme();
-            
-            // Event listener for theme switch
-            toggleSwitch.addEventListener('change', function(e) {
-                toggleTheme();
-            });
-            
-            // Intersection Observer for animations
-            if ('IntersectionObserver' in window) {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -50px 0px'
-                };
-                
-                // Interest section has been removed
-                
-                // Observer for contact card
-                const contactObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                            contactObserver.unobserve(entry.target);
-                        }
-                    });
-                }, observerOptions);
-                
-                if (contactCard) {
-                    contactObserver.observe(contactCard);
-                }
-            }
-            
-            // Scroll to top functionality
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    scrollToTopBtn.classList.add('visible');
-                } else {
-                    scrollToTopBtn.classList.remove('visible');
-                }
-            });
-            
-            scrollToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Enhanced parallax effect for hero shapes
-            const shapes = document.querySelectorAll('.hero-shape');
-            
-            window.addEventListener('mousemove', function(e) {
-                const x = e.clientX / window.innerWidth;
-                const y = e.clientY / window.innerHeight;
-                
-                shapes.forEach((shape, index) => {
-                    const speed = (index + 1) * 25;
-                    const xOffset = (x - 0.5) * speed;
-                    const yOffset = (y - 0.5) * speed;
-                    
-                    shape.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-                });
-            });
-            
-            // Add some animation to the skill tags
-            const skillTags = document.querySelectorAll('.skill-tag');
-            skillTags.forEach((tag, index) => {
-                tag.style.animationDelay = `${index * 0.1}s`;
-                tag.classList.add('animate-pop');
-            });
-        });
-    </script>
+   
 </body>
 </html>

@@ -89,6 +89,17 @@ body.dark-mode .aboutmore p:last-child {
     font-family: 'Times New Roman', Times, serif;
 }
 
+
+body.dark-mode .philosophy-card p {
+    color: var(--bg-tertiary);
+}
+
+body.dark-mode .contact-message{
+    color : var(---bg-secondary)
+}
+body.dark-mode .social-section .social-heading{
+    color: rgb(212, 206, 206);
+}
 /* Profile image background styles for dark mode */
 .dark-mode #imgbg {
     background-color: rgba(7, 234, 234, 0.6);

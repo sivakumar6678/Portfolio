@@ -1,17 +1,11 @@
 $(document).ready(function () {
-    // Theme toggle button
+    // Initialize theme based on saved preference or system preference
+    initializeTheme();
+    
+    // Theme toggle button (for main page)
     $('#theme-toggle').click(function () {
-        $('body').toggleClass('light-mode');
-        $('body').toggleClass('dark-mode');
+        toggleTheme();
     });
-
-    // Set default mode based on system preference
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (prefersDarkScheme) {
-        $('body').addClass('dark-mode');
-    } else {
-        $('body').addClass('light-mode');
-    }
 
     function loadContent(file, target) {
         $.ajax({
@@ -76,53 +70,115 @@ $(document).ready(function () {
     type();
 });
 
-// Ensure `typingState` is declared only once
-const roles = ["Aspiring Full Stack Web Developer", "Tech Enthusiast", "LifeTime Learner"];
-const typingState = {
-    index: 0,
-    letterIndex: 0,
-    currentRole: '',
-    isDeleting: false,
-    typingInterval: null
-};
+// Shared typing effect function that can be used across pages
+function createTypingEffect(elementId, rolesList, options = {}) {
+    const defaults = {
+        typingSpeed: 150,
+        deletingSpeed: 80,
+        pauseTime: 1500,
+        startDelay: 1000
+    };
+    
+    const settings = { ...defaults, ...options };
+    
+    const state = {
+        index: 0,
+        charIndex: 0,
+        isDeleting: false,
+        typingInterval: null
+    };
+    
+    function typeEffect() {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+        
+        const currentRole = rolesList[state.index];
+        
+        if (state.isDeleting) {
+            // Deleting text
+            element.textContent = currentRole.substring(0, state.charIndex - 1);
+            state.charIndex--;
+            typingDelay = settings.deletingSpeed;
+        } else {
+            // Typing text
+            element.textContent = currentRole.substring(0, state.charIndex + 1);
+            state.charIndex++;
+            typingDelay = settings.typingSpeed;
+        }
+        
+        // If word is complete, start deleting after delay
+        if (!state.isDeleting && state.charIndex === currentRole.length) {
+            state.isDeleting = true;
+            typingDelay = settings.pauseTime;
+        } 
+        // If deletion is complete, move to next word
+        else if (state.isDeleting && state.charIndex === 0) {
+            state.isDeleting = false;
+            state.index = (state.index + 1) % rolesList.length;
+            typingDelay = settings.pauseTime / 3;
+        }
+        
+        state.typingInterval = setTimeout(typeEffect, typingDelay);
+    }
+    
+    // Start the typing effect with a delay
+    setTimeout(typeEffect, settings.startDelay);
+    
+    return {
+        stop: function() {
+            if (state.typingInterval) {
+                clearTimeout(state.typingInterval);
+            }
+        }
+    };
+}
 
-const typingSpeed = 200; // Speed for typing
-const deletingSpeed = 100; // Speed for deleting
-const pauseTime = 1000; // Pause before starting deletion
+// Default roles for the main page
+const mainPageRoles = ["Aspiring Full Stack Web Developer", "Tech Enthusiast", "LifeTime Learner"];
 
+// Initialize typing effect when called
 function type() {
-    // Clear any existing typing interval
-    if (typingState.typingInterval) {
-        clearTimeout(typingState.typingInterval);
-    }
+    createTypingEffect('dynamic-text', mainPageRoles, {
+        typingSpeed: 200,
+        deletingSpeed: 100,
+        pauseTime: 1000
+    });
+}
 
-    const dynamicTextElement = document.getElementById('dynamic-text');
-    if (!dynamicTextElement) return; // Exit if the element is not found
-
-    const currentFullRole = roles[typingState.index];
-
-    if (typingState.isDeleting) {
-        typingState.currentRole = currentFullRole.substring(0, typingState.letterIndex--);
+// Shared theme functions
+function toggleTheme() {
+    const body = document.body;
+    const isDark = body.classList.contains('light-mode');
+    
+    if (isDark) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
     } else {
-        typingState.currentRole = currentFullRole.substring(0, typingState.letterIndex++);
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
     }
+    
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
 
-    dynamicTextElement.innerHTML = typingState.currentRole;
-
-    // Adjust the typing/deleting speed
-    let timeout = typingState.isDeleting ? deletingSpeed : typingSpeed;
-
-    // If the entire role is typed, pause, then start deleting
-    if (!typingState.isDeleting && typingState.letterIndex === currentFullRole.length) {
-        timeout = pauseTime;
-        typingState.isDeleting = true;
+function initializeTheme() {
+    const body = document.body;
+    const currentTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    const shouldBeDark = currentTheme === 'dark' || (!currentTheme && prefersDark);
+    
+    if (shouldBeDark) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
     }
-    // If the role is fully deleted, switch to the next role
-    else if (typingState.isDeleting && typingState.letterIndex < 0) {
-        typingState.isDeleting = false;
-        typingState.index = (typingState.index + 1) % roles.length;
-        timeout = pauseTime;
+    
+    // If there's a checkbox toggle, update its state
+    const toggleSwitch = document.querySelector('#checkbox');
+    if (toggleSwitch) {
+        toggleSwitch.checked = shouldBeDark;
     }
-
-    typingState.typingInterval = setTimeout(type, timeout);
 }

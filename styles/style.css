@@ -3,7 +3,6 @@
   --transition-timing-function: ease-in;
 }
 body *{
-
   transition: color var(--transition-duration) var(--transition-timing-function);
 }
 body {
@@ -11,7 +10,6 @@ body {
     background: linear-gradient(to bottom, #fff9c4, #ffe0b2,#fff9c4,#ffe0b2); 
     transition: background-color 3s ease;
     animation: colorfade1 5s ease;
-
 }
 @keyframes colorfade1 {
   0% {
@@ -279,6 +277,5 @@ radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
   }
   .footer-content .footer-left h2{
     font-size: 1.5em;
-    
   }
 }

@@ -30,6 +30,18 @@ body.dark-mode button.navbar-toggler {
     color: gold;
 }
 
+body.dark-mode .navbar-brand .logo-text {
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar-brand .logo-dot {
+    background-color: #ff6b6b;
+}
+
+body.dark-mode .nav-icon {
+    color: rgb(0, 206, 172);
+}
+
 body.dark-mode #navbar-item {
     color: rgb(0, 206, 172);
     border-bottom: 3px solid transparent;
@@ -38,7 +50,10 @@ body.dark-mode #navbar-item {
 
 body.dark-mode #navbar-item:hover {
     color: rgb(0, 206, 172);
-    border-bottom: 1px solid rgb(17, 255, 0);
+}
+
+body.dark-mode #navbar-item::after {
+    background-color: rgb(17, 255, 0);
 }
 
 /* About section styles for dark mode */
@@ -99,6 +114,85 @@ body.dark-mode .contact-message{
 }
 body.dark-mode .social-section .social-heading{
     color: rgb(212, 206, 206);
+}
+
+/* Footer styles for dark mode */
+body.dark-mode .footer-wave path {
+    fill: #1a1a2e;
+}
+
+body.dark-mode .footer-content {
+    background-color: #1a1a2e;
+}
+
+body.dark-mode .footer-name {
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-name::after {
+    background-color: #ff6b6b;
+}
+
+body.dark-mode .footer-goals {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-left-color: #7a288a;
+}
+
+body.dark-mode .footer-goals h4 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer-goals-list li i {
+    color: #3de8c6;
+}
+
+body.dark-mode .footer-passion-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .interactive-quote {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-left-color: #7a288a;
+}
+
+body.dark-mode .interactive-quote:hover {
+    background-color: rgba(122, 40, 138, 0.2);
+}
+
+body.dark-mode .quote-icon {
+    color: #3de8c6;
+}
+
+body.dark-mode .contact-card {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+body.dark-mode .contact-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .contact-item i {
+    color: #3de8c6;
+}
+
+body.dark-mode .interactive-link {
+    color: #3de8c6;
+}
+
+body.dark-mode .interactive-link:hover {
+    color: #7fffd4;
+}
+
+body.dark-mode .social-link {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .copyright {
+    color: #888;
 }
 /* Profile image background styles for dark mode */
 .dark-mode #imgbg {

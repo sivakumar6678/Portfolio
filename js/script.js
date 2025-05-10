@@ -2,8 +2,8 @@ $(document).ready(function () {
     // Initialize theme based on saved preference or system preference
     initializeTheme();
     
-    // Theme toggle button (for main page)
-    $('#theme-toggle').click(function () {
+    // Theme toggle buttons (for both desktop and mobile)
+    $('.slider').click(function () {
         toggleTheme();
     });
 
@@ -176,9 +176,11 @@ function initializeTheme() {
         body.classList.add('light-mode');
     }
     
-    // If there's a checkbox toggle, update its state
-    const toggleSwitch = document.querySelector('#checkbox');
-    if (toggleSwitch) {
-        toggleSwitch.checked = shouldBeDark;
+    // Update all theme toggle switches
+    const toggleSwitches = document.querySelectorAll('.input__check');
+    if (toggleSwitches.length > 0) {
+        toggleSwitches.forEach(toggleSwitch => {
+            toggleSwitch.checked = shouldBeDark;
+        });
     }
 }

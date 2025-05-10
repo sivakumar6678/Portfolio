@@ -33,15 +33,27 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar fixed-top navbar-expand-md navbar-light">
-            <a class="navbar-brand" href="#" data-aos="fade-right" data-aos-duration="1000">
+            <!-- Mobile View Container (Only visible on small screens) -->
+            <div class="mobile-navbar-container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand mobile-brand" href="#" data-aos="fade-right" data-aos-duration="1000">
+                    <span class="logo-text">CSK</span>
+                    <span class="logo-dot"></span>
+                </a>
+                <label class="switch mobile-switch" data-aos="fade-left" data-aos-duration="1000">
+                    <input type="checkbox" class="input__check">
+                    <span id="theme-toggle" class="slider"></span>
+                </label>
+            </div>
+            
+            <!-- Desktop View (Hidden on small screens) -->
+            <a class="navbar-brand desktop-brand" href="#" data-aos="fade-right" data-aos-duration="1000">
                 <span class="logo-text">CSK</span>
                 <span class="logo-dot"></span>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon">
-                    <i class="fas fa-bars"></i>
-                </span>
-            </button> 
+            
             <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item" data-aos="fade-down" data-aos-delay="100">
@@ -76,10 +88,11 @@
                     </li>
                 </ul>
             </div>
-            <label class="switch" data-aos="fade-left" data-aos-duration="1000">
+            
+            <!-- Desktop Switch (Hidden on small screens) -->
+            <label class="switch desktop-switch" data-aos="fade-left" data-aos-duration="1000">
                 <input type="checkbox" class="input__check">
-                <span id="theme-toggle" class="slider">
-                </span>
+                <span id="theme-toggle" class="slider"></span>
             </label>
         </nav>
     </div>
@@ -166,7 +179,7 @@
                 
                 <div class="footer-bottom">
                     <div class="copyright">
-                        <p>&copy; <span id="current-year">2023</span> Chandragari Sivakumar. All Rights Reserved.</p>
+                        <p>&copy; <span id="current-year">2023</span> <span></span>Chandragari Sivakumar</span>. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

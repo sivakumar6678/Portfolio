@@ -11,6 +11,8 @@ $(document).ready(function () {
         $.ajax({
             url: file,
             method: 'GET',
+            async: true,
+            cache: true,
             success: function (data) {
                 $(target).html(data);
                 

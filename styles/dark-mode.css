@@ -335,10 +335,37 @@ body.dark-mode .skill-category li {
     background: rgb(18, 42, 129);
 }
 
+.dark-mode .modal {
+    z-index: 1060 !important;
+}
+
+.dark-mode .modal-backdrop {
+    z-index: 1050 !important;
+}
+
+.dark-mode .modal-dialog {
+    z-index: 1070 !important;
+}
+
 .dark-mode .modal-content {
     background: linear-gradient(135deg, #2f4f7f, #2f4f7f, #6b207a);
     color: #e0e0e0;
     border-color: #3a3a3a;
+    position: relative;
+    z-index: 1080 !important;
+}
+
+.dark-mode .modal-content .modal-header .close {
+    color: #e0e0e0;
+    opacity: 1;
+    text-shadow: none;
+    position: relative;
+    z-index: 1100 !important;
+}
+
+.dark-mode .modal-content .modal-header .close:hover {
+    color: #ff5722;
+    opacity: 1;
 }
 
 .dark-mode .modal-header,

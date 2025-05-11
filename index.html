@@ -3,27 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Stack Web Developer | C Siva Kumar</title>
-    <!-- Meta tags for SEO -->
-    <meta name="description" content="Portfolio of C Siva Kumar, Full Stack Web Developer specializing in modern web technologies">
-    <meta name="keywords" content="web developer, full stack, portfolio, developer, programming">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
+    <title>Full Stack Web Developer | C Siva Kumar
+
+    </title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/dark-mode.css">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <style>
         html {
             scroll-behavior: smooth;
@@ -31,185 +18,93 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <nav class="navbar fixed-top navbar-expand-md navbar-light">
-            <!-- Mobile View Container (Only visible on small screens) -->
-            <div class="mobile-navbar-container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand mobile-brand" href="#" data-aos="fade-right" data-aos-duration="1000">
-                    <span class="logo-text">CSK</span>
-                    <span class="logo-dot"></span>
-                </a>
-                <label class="switch mobile-switch" data-aos="fade-left" data-aos-duration="1000">
-                    <input type="checkbox" class="input__check">
-                    <span id="theme-toggle" class="slider"></span>
-                </label>
-            </div>
-            
-            <!-- Desktop View (Hidden on small screens) -->
-            <a class="navbar-brand desktop-brand" href="#" data-aos="fade-right" data-aos-duration="1000">
-                <span class="logo-text">CSK</span>
-                <span class="logo-dot"></span>
-            </a>
-            
-            <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+    <div class="container-fluid" >
+        <nav class="navbar fixed-top navbar-expand-md  navbar-light ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-tggler-icon">
+                    <i class="fa fa-bars"></i>
+                </span>
+            </button> 
+            <div class="collapse navbar-collapse justify-content-center " id="collapsibleNavbar">
+                <!-- <a class="navbar-brand" href="#">CSK</a> -->
                 <ul class="navbar-nav">
-                    <li class="nav-item" data-aos="fade-down" data-aos-delay="100">
-                        <a id="navbar-item" href="#about" class="nav-link" data-file="about.html">
-                            <i class="fas fa-user-alt nav-icon"></i> About Me
-                        </a>
-                    </li>
-                    <li class="nav-item" data-aos="fade-down" data-aos-delay="200">
-                        <a id="navbar-item" href="#skills" class="nav-link" data-file="skills.html">
-                            <i class="fas fa-code nav-icon"></i> Skills
-                        </a>
-                    </li>
-                    <li class="nav-item" data-aos="fade-down" data-aos-delay="300">
-                        <a id="navbar-item" href="#projects" class="nav-link" data-file="projects.html">
-                            <i class="fas fa-laptop-code nav-icon"></i> Projects
-                        </a>
-                    </li>
-                    <li class="nav-item" data-aos="fade-down" data-aos-delay="400">
-                        <a id="navbar-item" href="#experience" class="nav-link" data-file="experience.html">
-                            <i class="fas fa-briefcase nav-icon"></i> Experiences
-                        </a>
-                    </li>
-                    <li class="nav-item" data-aos="fade-down" data-aos-delay="500">
-                        <a id="navbar-item" href="#certify" class="nav-link" data-file="certify.html">
-                            <i class="fas fa-certificate nav-icon"></i> Certifications
-                        </a>
-                    </li>
-                    <li class="nav-item" data-aos="fade-down" data-aos-delay="600">
-                        <a id="navbar-item" href="#passionandint" class="nav-link" data-file="passionandint.html">
-                            <i class="fas fa-heart nav-icon"></i> Interests & Goals
-                        </a>
-                    </li>
+                    <li class="nav-item "><a id="navbar-item" href="#about" class="nav-link" data-file="about.html">About Me</a></li>
+                    <li class="nav-item "><a id="navbar-item" href="#skills" class="nav-link" data-file="skills.html">Skills</a></li>
+                    <li class="nav-item "><a id="navbar-item" href="#projects" class="nav-link" data-file="projects.html">Projects</a></li>
+                    <li class="nav-item "><a id="navbar-item" href="#experience" class="nav-link" data-file="experience.html">Experiences</a></li>
+                    <li class="nav-item "><a id="navbar-item" href="#certify" class="nav-link" data-file="certify.html">Certifications</a></li>
+                    <li class="nav-item "><a id="navbar-item" href="#passionandint" class="nav-link" data-file="passionandint.html">Interests & Future Goals</a></li>
                 </ul>
+                <!-- <button id="toggle-mode" class="btn btn-outline-dark">Toggle </button> -->
             </div>
-            
-            <!-- Desktop Switch (Hidden on small screens) -->
-            <label class="switch desktop-switch" data-aos="fade-left" data-aos-duration="1000">
+            <label class="switch">
                 <input type="checkbox" class="input__check">
-                <span id="theme-toggle" class="slider"></span>
+                    <span id="theme-toggle" class="slider">
+                    </span>
             </label>
         </nav>
+        
     </div>
 
     <main id="content">
         <div class="container-fluid main">
-            <div class="sections" id="about" data-aos="fade-up" data-aos-duration="800"></div>
-            <div class="sections" id="skills" data-aos="fade-up" data-aos-duration="800"></div>
-            <div class="sections" id="projects" data-aos="fade-up" data-aos-duration="800"></div>
-            <div class="sections" id="experience" data-aos="fade-up" data-aos-duration="800"></div>
-            <div class="sections" id="certify" data-aos="fade-up" data-aos-duration="800"></div>
-            <div class="sections" id="passionandint" data-aos="fade-up" data-aos-duration="800"></div>
+            <div class="sections" id="about"></div>
+            <div class="sections" id="skills"></div>
+            <div class="sections" id="projects"></div>
+            <div class="sections" id="experience"></div>
+            <div class="sections" id="certify"></div>
+            <div class="sections" id="passionandint"></div>
         </div>
     </main>
     <footer class="footer" id="footer">
-        <div class="footer-wave-container">
-            <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#333" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,197.3C384,203,480,181,576,165.3C672,149,768,139,864,154.7C960,171,1056,213,1152,218.7C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
-        </div>
-        
         <div class="footer-content">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Left Section -->
-                    <div class="col-md-5 footer-left" data-aos="fade-right" data-aos-duration="1000">
-                        <h2 class="footer-name">CHANDRAGARI SIVAKUMAR</h2>
-                        <div class="footer-title">
-                            <span class="badge badge-primary">Full Stack Developer</span>
-                            <span class="badge badge-info">B.Tech Student</span>
-                        </div>
-                        <p class="mt-3">Focused on crafting efficient web applications and user-friendly solutions.</p>
-                        <div class="footer-goals">
-                            <h4><i class="fas fa-rocket"></i> Future Goals</h4>
-                            <ul class="footer-goals-list">
-                                <li><i class="fas fa-check-circle"></i> Continue learning and growing in web development</li>
-                                <li><i class="fas fa-check-circle"></i> Contribute to impactful projects</li>
-                                <li><i class="fas fa-check-circle"></i> Explore innovative technologies</li>
-                            </ul>
-                        </div>
-                    </div>
-        
-                    <!-- Footer Center Section -->
-                    <div class="col-md-4 footer-center" data-aos="fade-up" data-aos-duration="1000">
-                        <h4 class="footer-passion-title"><i class="fas fa-heart"></i> Passionate about</h4>
-                        <p>Solving real-world problems through web technologies and open-source contributions.</p>
-                        <div class="quote-container">
-                            <blockquote class="interactive-quote">
-                                <i class="fas fa-quote-left quote-icon"></i>
-                                <em>Creativity blooms from imagination and exploration. Use every tool, ask questions, and let ideas flow freely.</em>
-                            </blockquote>
-                            <blockquote class="interactive-quote mt-3">
-                                <i class="fas fa-quote-left quote-icon"></i>
-                                <em>When stress hits, dive into your passions. Let them guide you out of the darkness and back into the light.</em>
-                            </blockquote>
-                        </div>
-                    </div>
-                    
-                    <!-- Footer Right Section -->
-                    <div class="col-md-3 footer-right" data-aos="fade-left" data-aos-duration="1000">
-                        <div class="contact-card">
-                            <h4 class="contact-title"><i class="fas fa-paper-plane"></i> Get In Touch</h4>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:chandragarisivakumar@gmail.com" class="interactive-link">chandragarisivakumar@gmail.com</a>
-                            </div>
-                            <div class="social-links">
-                                <a href="https://github.com/sivakumar6678" target="_blank" class="social-link" title="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://linkedin.com/in/sivakumar-chandragari" target="_blank" class="social-link" title="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="social-link" title="Twitter">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="social-link" title="Instagram">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row">
+                <!-- Footer Left Section -->
+                <div class="col-md-7 footer-left">
+                    <h2>CHANDRAGARI SIVAKUMAR</h2>
+                    <p>Aspiring Full Stack Developer | Final Year B.Tech Student</p>
+                    <p>Focused on crafting efficient web applications and user-friendly solutions.</p>
+                    <p><strong>Future Goals:</strong> Continue learning and growing in web development, contribute to impactful projects, and explore innovative technologies to drive positive change.</p>
                 </div>
-                
-                <div class="footer-bottom">
-                    <div class="copyright">
-                        <p>&copy; <span id="current-year">2023</span> <span></span>Chandragari Sivakumar</span>. All Rights Reserved.</p>
-                    </div>
+    
+                <!-- Footer Center Section -->
+                <div class="col-md-5 footer-center">
+                    <p><strong>Passionate about:</strong> Solving real-world problems through web technologies and open-source contributions.</p>
+                    <blockquote class="interactive-quote">
+                        <em>"Creativity blooms from imagination and exploration. Use every tool, ask questions, and let ideas flow freely."</em>
+                    </blockquote>
+                    <blockquote class="interactive-quote">
+                        <em>"When stress hits, dive into your passions. Let them guide you out of the darkness and back into the light."</em>
+                    </blockquote>
                 </div>
+            </div>
+    
+            <!-- Footer Right Section (More Interactive) -->
+            <div class="col-md-12 footer-right text-center">
+                <p>Let's collaborate! <a href="mailto:chandragarisivakumar@gmail.com" class="interactive-link">Contact me</a></p>
+                <p>Connect with me: 
+                    <a href="https://github.com/sivakumar6678" target="_blank" class="social-link">
+                        <i class="fa fa-github"></i> GitHub
+                    </a> |
+                    <a href="https://linkedin.com/in/sivakumar-chandragari" target="_blank" class="social-link">
+                        <i class="fa fa-linkedin"></i> LinkedIn
+                    </a>
+                </p>
             </div>
         </div>
     </footer>
     
 
-    <!-- Core JS Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-    <!-- Custom Scripts -->
     <script src="js/script.js"></script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS animations
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                mirror: false
-            });
-            
-            // Set current year in footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-            
+            // Initialize GSAP
+           
+        
             // Function to handle smooth scroll
             function smoothScrollTo(element) {
                 const headerOffset = 80;
@@ -220,7 +115,6 @@
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
-                
             }
         
             // Add event listeners to all skill categories
@@ -228,22 +122,15 @@
                 const collapse = category.querySelector('.collapse');
                 const header = category.querySelector('.skill-header');
         
-                
                 // Handle expand/collapse events
-                if (collapse && header) {
-                    collapse.addEventListener('show.bs.collapse', function() {
-                        if (typeof handleIconTransition === 'function') {
-                            handleIconTransition(category, true);
-                        }
-                        smoothScrollTo(category);
-                    });
-            
-                    collapse.addEventListener('hide.bs.collapse', function() {
-                        if (typeof handleIconTransition === 'function') {
-                            handleIconTransition(category, false);
-                        }
-                    });
-                }
+                collapse.addEventListener('show.bs.collapse', function() {
+                    handleIconTransition(category, true);
+                    smoothScrollTo(category);
+                });
+        
+                collapse.addEventListener('hide.bs.collapse', function() {
+                    handleIconTransition(category, false);
+                });
             });
         
             // Initialize skill progress bars

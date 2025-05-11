@@ -422,6 +422,86 @@ img {
   box-shadow: var(--shadow-md);
 }
 
+/* ===== Theme Switch ===== */
+.theme-switch-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: var(--bg-tertiary);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: var(--transition-normal);
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: white;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: var(--transition-normal);
+  width: 26px;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  transition: opacity var(--transition-normal);
+}
+
+.sun-icon {
+  left: 10px;
+  color: #f1c40f;
+  opacity: 1;
+}
+
+.moon-icon {
+  right: 10px;
+  color: #f1c40f;
+  opacity: 0;
+}
+
+input:checked + .slider .sun-icon {
+  opacity: 0;
+}
+
+input:checked + .slider .moon-icon {
+  opacity: 1;
+}
 
 /* ===== Scroll to Top Button ===== */
 .scroll-to-top {

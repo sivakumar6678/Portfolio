@@ -30,18 +30,6 @@ body.dark-mode button.navbar-toggler {
     color: gold;
 }
 
-body.dark-mode .navbar-brand .logo-text {
-    color: #e0e0e0;
-}
-
-body.dark-mode .navbar-brand .logo-dot {
-    background-color: #ff6b6b;
-}
-
-body.dark-mode .nav-icon {
-    color: rgb(0, 206, 172);
-}
-
 body.dark-mode #navbar-item {
     color: rgb(0, 206, 172);
     border-bottom: 3px solid transparent;
@@ -50,10 +38,7 @@ body.dark-mode #navbar-item {
 
 body.dark-mode #navbar-item:hover {
     color: rgb(0, 206, 172);
-}
-
-body.dark-mode #navbar-item::after {
-    background-color: rgb(17, 255, 0);
+    border-bottom: 1px solid rgb(17, 255, 0);
 }
 
 /* About section styles for dark mode */
@@ -114,154 +99,6 @@ body.dark-mode .contact-message{
 }
 body.dark-mode .social-section .social-heading{
     color: rgb(212, 206, 206);
-}
-
-/* Footer styles for dark mode */
-body.dark-mode .footer-wave path {
-    fill: #1a1a2e;
-}
-
-body.dark-mode .footer-content {
-    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%);
-}
-
-body.dark-mode .footer-content::before {
-    opacity: 0.3;
-}
-
-body.dark-mode .footer-name {
-    background: linear-gradient(to right, #7a288a, #e0e0e0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-body.dark-mode .footer-name::after {
-    background: linear-gradient(to right, #7a288a, transparent);
-}
-
-body.dark-mode .footer-title .badge-primary {
-    background: linear-gradient(135deg, #7a288a, #2f4f7f);
-}
-
-body.dark-mode .footer-title .badge-info {
-    background: linear-gradient(135deg, #2f4f7f, #3de8c6);
-}
-
-body.dark-mode .footer-goals {
-    background: linear-gradient(135deg, rgba(47, 79, 127, 0.1), rgba(122, 40, 138, 0.1));
-    border-left-color: #7a288a;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-body.dark-mode .footer-goals:hover {
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(135deg, rgba(47, 79, 127, 0.15), rgba(122, 40, 138, 0.15));
-}
-
-body.dark-mode .footer-goals h4 {
-    color: #e0e0e0;
-}
-
-body.dark-mode .footer-goals h4 i {
-    background: linear-gradient(135deg, #7a288a, #2f4f7f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 4px rgba(122, 40, 138, 0.3));
-}
-
-body.dark-mode .footer-goals-list li i {
-    color: #3de8c6;
-    filter: drop-shadow(0 2px 4px rgba(61, 232, 198, 0.3));
-}
-
-body.dark-mode .footer-passion-title {
-    color: #e0e0e0;
-}
-
-body.dark-mode .footer-passion-title::after {
-    background: linear-gradient(to right, #7a288a, transparent);
-}
-
-body.dark-mode .interactive-quote {
-    background: linear-gradient(135deg, rgba(47, 79, 127, 0.1), rgba(122, 40, 138, 0.1));
-    border-left-color: #7a288a;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-body.dark-mode .interactive-quote:hover {
-    background: linear-gradient(135deg, rgba(122, 40, 138, 0.15), rgba(47, 79, 127, 0.15));
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-body.dark-mode .quote-icon {
-    color: #3de8c6;
-    filter: drop-shadow(0 2px 4px rgba(61, 232, 198, 0.3));
-}
-
-body.dark-mode .contact-card {
-    background: linear-gradient(135deg, rgba(47, 79, 127, 0.7), rgba(30, 30, 40, 0.7));
-    border: 1px solid rgba(122, 40, 138, 0.2);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-}
-
-body.dark-mode .contact-card:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-}
-
-body.dark-mode .contact-title {
-    color: #e0e0e0;
-}
-
-body.dark-mode .contact-title::after {
-    background: linear-gradient(to right, #7a288a, transparent);
-}
-
-body.dark-mode .contact-title i {
-    color: #3de8c6;
-    filter: drop-shadow(0 0 5px rgba(61, 232, 198, 0.5));
-}
-
-body.dark-mode .contact-item i {
-    color: #3de8c6;
-    filter: drop-shadow(0 2px 4px rgba(61, 232, 198, 0.3));
-}
-
-body.dark-mode .interactive-link {
-    color: #e0e0e0;
-}
-
-body.dark-mode .interactive-link::before {
-    background: linear-gradient(to right, #7a288a, transparent);
-}
-
-body.dark-mode .interactive-link:hover {
-    color: #fff;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-}
-
-body.dark-mode .social-link {
-    background: linear-gradient(135deg, rgba(47, 79, 127, 0.2), rgba(122, 40, 138, 0.2));
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-body.dark-mode .social-link:hover {
-    transform: translateY(-8px) rotate(360deg);
-}
-
-body.dark-mode .footer-bottom {
-    border-top-color: rgba(255, 255, 255, 0.05);
-}
-
-body.dark-mode .footer-bottom::before {
-    background: linear-gradient(to right, transparent, rgba(122, 40, 138, 0.3), transparent);
-}
-
-body.dark-mode .copyright {
-    color: rgba(255, 255, 255, 0.4);
-}
-
-body.dark-mode .copyright span {
-    color: #3de8c6;
 }
 /* Profile image background styles for dark mode */
 .dark-mode #imgbg {
@@ -335,37 +172,10 @@ body.dark-mode .skill-category li {
     background: rgb(18, 42, 129);
 }
 
-.dark-mode .modal {
-    z-index: 1060 !important;
-}
-
-.dark-mode .modal-backdrop {
-    z-index: 1050 !important;
-}
-
-.dark-mode .modal-dialog {
-    z-index: 1070 !important;
-}
-
 .dark-mode .modal-content {
     background: linear-gradient(135deg, #2f4f7f, #2f4f7f, #6b207a);
     color: #e0e0e0;
     border-color: #3a3a3a;
-    position: relative;
-    z-index: 1080 !important;
-}
-
-.dark-mode .modal-content .modal-header .close {
-    color: #e0e0e0;
-    opacity: 1;
-    text-shadow: none;
-    position: relative;
-    z-index: 1100 !important;
-}
-
-.dark-mode .modal-content .modal-header .close:hover {
-    color: #ff5722;
-    opacity: 1;
 }
 
 .dark-mode .modal-header,

@@ -158,65 +158,169 @@ body.dark-mode .skill-category li {
 }
 
 /* Projects section styles for dark mode */
-.dark-mode #minor-projects .card {
-    background: #2f4f7f;
-    box-shadow: 1px 1px 3px 1px #ffcc80 inset, 0 0 1px 1px gray;
+/* Main container and background */
+body.dark-mode .projects-container {
+    background: linear-gradient(to bottom, #2f4f7f, #7a288a);
+    color: #f5f5f5;
+    transition: background var(--transition-duration) var(--transition-timing-function);
 }
 
-.dark-mode #projects ul li a {
-    color: wheat;
+body.dark-mode .projects-header {
+    background: linear-gradient(to bottom, #2f4f7f, #7a288a);
+    color: #f5f5f5;
+    transition: background var(--transition-duration) var(--transition-timing-function);
 }
 
-.dark-mode .nav-tabs .nav-item.show .nav-link,
-.dark-mode .nav-tabs .nav-link.active {
-    background: rgb(18, 42, 129);
-}
-
-.dark-mode .modal-content {
-    background: linear-gradient(135deg, #2f4f7f, #2f4f7f, #6b207a);
+body.dark-mode .section-title,
+body.dark-mode .projects-header h1 {
     color: #e0e0e0;
-    border-color: #3a3a3a;
 }
 
-.dark-mode .modal-header,
-.dark-mode .modal-footer {
-    border-bottom: 1px solid #444;
-    border-top: 1px solid #444;
+body.dark-mode .projects-header p {
+    color: #dad8d8bc;
 }
 
-.dark-mode .modal-title {
+/* Navigation tabs */
+body.dark-mode .project-nav .nav-link {
+    color: lightcyan;
+    background-color: rgba(47, 79, 127, 0.2);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .project-nav .nav-link:hover {
+    background-color: rgba(122, 40, 138, 0.3);
     color: #ffffff;
 }
 
-.dark-mode .btn-primary {
+body.dark-mode .project-nav .nav-link.active {
+    background-color: #7a288a;
+    color: #ffffff;
+}
+
+/* Project cards */
+body.dark-mode .project-card {
+    background-color: rgba(76, 97, 128, 0.442);
+    box-shadow: 0 0 0px wheat, 0 0 5px 3px #7a288a inset;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .project-content {
+    background-color: transparent;
+    color: #e0e0e0;
+}
+
+body.dark-mode .project-title {
+    color: #f3a916;
+}
+
+body.dark-mode .project-description {
+    color: rgba(245, 245, 245, 0.819);
+}
+
+body.dark-mode .features-title {
+    color: wheat;
+}
+
+body.dark-mode .feature-badge {
+    background-color: rgba(78, 18, 118, 0.528);
+    color: white;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 2px;
+    display: inline-block;
+}
+
+body.dark-mode .image-overlay {
+    background-color: rgba(47, 79, 127, 0.7);
+}
+
+body.dark-mode .image-overlay .btn-light {
+    background-color: #7a288a;
+    color: #ffffff;
+    border-color: #e1dfdf;
+}
+
+body.dark-mode .image-overlay .btn-light:hover {
+    background-color: #2f4f7f;
+}
+
+/* Carousel controls */
+body.dark-mode .carousel-control-prev,
+body.dark-mode .carousel-control-next {
+    background-color: rgba(122, 40, 138, 0.5);
+}
+
+body.dark-mode .carousel-indicators li {
+    background-color: #2f4f7f;
+}
+
+body.dark-mode .carousel-indicators li.active {
+    background-color: #7a288a;
+}
+
+/* Buttons */
+body.dark-mode .btn-primary {
     background-color: #4caf50;
     border-color: #4caf50;
     color: #ffffff;
 }
 
-.dark-mode .btn-primary:hover {
+body.dark-mode .btn-primary:hover {
     background-color: #66bb6a;
     border-color: #66bb6a;
+    box-shadow: 0 0 10px rgba(102, 187, 106, 0.5);
 }
 
-.dark-mode .btn-secondary {
+body.dark-mode .btn-secondary {
     background-color: #9b2222;
     border-color: #9a2121;
     color: #ffffff;
 }
 
-.dark-mode .btn-secondary:hover {
+body.dark-mode .btn-secondary:hover {
     background-color: #c81414;
     border-color: #cc1818;
     transition: background-color 1s ease-in-out;
 }
 
-.dark-mode .modal-body a {
+/* Modal styles */
+body.dark-mode .modal-content {
+    background: linear-gradient(135deg, #2f4f7f, #2f4f7f, #6b207a);
+    color: #e0e0e0;
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .modal-header,
+body.dark-mode .modal-footer {
+    border-bottom: 1px solid #444;
+    border-top: 1px solid #444;
+}
+
+body.dark-mode .modal-title {
     color: #f7a500;
 }
 
-.dark-mode .modal-content .modal-header h5 {
-    color: #f7a500;
+body.dark-mode .modal-body {
+    color: #dad8d8bc;
+}
+
+body.dark-mode .modal-body a {
+    color: rgb(0, 206, 172);
+}
+
+body.dark-mode .close {
+    color: #ffffff;
+    text-shadow: none;
+}
+
+body.dark-mode .close:hover {
+    color: gold;
+}
+
+/* Language icons */
+body.dark-mode .language-icons .languages {
+    background-color: #2f4f7f;
+    border: 2px solid #7a288a;
 }
 
 /* Experience section styles for dark mode */
@@ -232,7 +336,7 @@ body.dark-mode .skill-category li {
 }
 
 .dark-mode #experience-education .nav li a {
-    color: lightcyan;
+    color: black;
 }
 
 .dark-mode #experience-education .timeline .timeline-panel {

@@ -73,6 +73,17 @@ body.dark-mode nav {
 body.dark-mode button.navbar-toggler {
     background-color: #7a288a;
     border-color: #e1dfdf;
+    z-index: 1100;
+    position: relative;
+}
+
+body.dark-mode .navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(122, 40, 138, 0.5);
+}
+
+body.dark-mode .navbar-toggler i {
+    color: #e1dfdf;
 }
 
 body.dark-mode .aboutmore h2 {

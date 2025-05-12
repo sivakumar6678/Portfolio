@@ -300,6 +300,9 @@ radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
 @media screen and (max-width: 768px) {
   .switch {
       position: absolute;
+      top: 0.8rem;
+      right: 1rem;
+      z-index: 1100;
   }
   .navbar-brand{
     margin:1rem 0;
@@ -313,6 +316,22 @@ radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
     width:fit-content;
     background-color: #ffac40a5; /* Soft orange */
     border-color: #ff6f43d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    z-index: 1100;
+    position: relative;
+  }
+  
+  .navbar-toggler i {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(255, 172, 64, 0.5);
   }
   #collapsibleNavbar{
       text-align: center;

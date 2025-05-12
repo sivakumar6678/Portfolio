@@ -6,6 +6,9 @@ $(document).ready(function () {
     $('#theme-toggle').click(function () {
         toggleTheme();
     });
+    
+    // Ensure navbar is properly initialized
+    $('.navbar-collapse').collapse({toggle: false});
 
     function loadContent(file, target) {
         $.ajax({
@@ -34,16 +37,13 @@ $(document).ready(function () {
     loadContent('passionandint.html', '#passionandint');
     loadContent('experience.html', '#experience');
 
-    // Toggle between hamburger and "X" icon
-    $('.navbar-toggler').on('click', function () {
-        // Check if the navbar is already expanded
-        if ($('.navbar-collapse').hasClass('show')) {
-            // Change to hamburger icon
-            $(this).find('i').removeClass('fa-times').addClass('fa-bars');
-        } else {
-            // Change to "X" icon
-            $(this).find('i').removeClass('fa-bars').addClass('fa-times');
-        }
+    
+    // Direct click handler for the navbar-toggler
+    $('.navbar-toggler').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('#collapsibleNavbar').collapse('toggle');
+        $('.navbar-toggler i').toggleClass('fa-bars fa-times');
     });
 
     // Event handler for navigation links
@@ -60,10 +60,8 @@ $(document).ready(function () {
             scrollTop: $(target).offset().top
         }, 1000); // Adjust the duration as needed
 
-        if ($('.navbar-collapse').hasClass('show')) {
-            $('.navbar-collapse').collapse('hide');
-            $('.navbar-toggler').find('i').removeClass('fa-times').addClass('fa-bars'); // Reset to hamburger icon
-        }
+        // Always hide the navbar when a nav link is clicked
+        $('#collapsibleNavbar').collapse('hide');
     });
 
     // Initialize typing animation only once when the page loads
@@ -148,17 +146,17 @@ function type() {
 // Shared theme functions
 function toggleTheme() {
     const body = document.body;
-    const isDark = body.classList.contains('light-mode');
+    const isLight = body.classList.contains('light-mode');
     
-    if (isDark) {
+    if (isLight) {
         body.classList.remove('light-mode');
         body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
     } else {
         body.classList.remove('dark-mode');
         body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
     }
-    
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
 function initializeTheme() {

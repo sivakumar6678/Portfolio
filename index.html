@@ -3,49 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of C Siva Kumar - Full Stack Web Developer and B.Tech Student">
+    <meta name="keywords" content="web developer, full stack, portfolio, Siva Kumar, developer">
     <title>Full Stack Web Developer | C Siva Kumar</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/dark-mode.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+   
 </head>
 <body>
-    <div class="container-fluid" >
-        <nav class="navbar fixed-top navbar-expand-md navbar-light">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-expanded="false" aria-controls="collapsibleNavbar">
-                    <i class="fas fa-bars"></i>
-                </button> 
-                <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
-                    <!-- <a class="navbar-brand" href="#">CSK</a> -->
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a id="navbar-item" href="#about" class="nav-link" data-file="about.html">About Me</a></li>
-                        <li class="nav-item"><a id="navbar-item" href="#skills" class="nav-link" data-file="skills.html">Skills</a></li>
-                        <li class="nav-item"><a id="navbar-item" href="#projects" class="nav-link" data-file="projects.html">Projects</a></li>
-                        <li class="nav-item"><a id="navbar-item" href="#experience" class="nav-link" data-file="experience.html">Experiences</a></li>
-                        <li class="nav-item"><a id="navbar-item" href="#certify" class="nav-link" data-file="certify.html">Certifications</a></li>
-                        <li class="nav-item"><a id="navbar-item" href="#passionandint" class="nav-link" data-file="passionandint.html">Interests & Future Goals</a></li>
-                    </ul>
-                </div>
-                <label class="switch">
-                    <input type="checkbox" class="input__check">
-                    <span id="theme-toggle" class="slider"></span>
-                </label>
-            </div>
-        </nav>
+    <header class="header-area">
+        <!-- Circular Progress Indicator -->
+        <div class="circular-progress-container">
+            <svg class="circular-progress" viewBox="0 0 100 100">
+                <circle class="circular-progress-background" cx="50" cy="50" r="45"></circle>
+                <circle class="circular-progress-bar" cx="50" cy="50" r="45" id="circularProgress"></circle>
+            </svg>
+        </div>
         
-    </div>
+        <!-- Modern Split Navbar -->
+        <div class="split-navbar">
+            <!-- Left Side - Branding -->
+            <div class="navbar-branding">
+                <div class="brand-container">
+                    <div class="brand-logo">
+                        <span class="brand-initial">C</span>
+                    </div>
+                    <div class="brand-text">
+                        <h1 class="brand-name">Siva Kumar</h1>
+                        <p class="brand-title">Full Stack Developer</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Navigation -->
+            <div class="navbar-navigation">
+                <!-- Mobile Menu Button -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                    <div class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="nav-menu" id="navMenu">
+                    <div class="nav-menu-inner">
+                        <div class="nav-header d-md-none">
+                            <div class="nav-brand">
+                                <span class="nav-brand-initial">C</span>
+                                <span class="nav-brand-text">Siva Kumar</span>
+                            </div>
+                            <button class="nav-close" id="navClose" aria-label="Close menu">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <ul class="nav-list">
+                            <li class="nav-item" data-index="1">
+                                <a class="nav-link" href="#about" data-file="about.html">
+                                    <span class="nav-number">01</span>
+                                    <span class="nav-text">About</span>
+                                </a>
+                            </li>
+                            <li class="nav-item" data-index="2">
+                                <a class="nav-link" href="#skills" data-file="skills.html">
+                                    <span class="nav-number">02</span>
+                                    <span class="nav-text">Skills</span>
+                                </a>
+                            </li>
+                            <li class="nav-item" data-index="3">
+                                <a class="nav-link" href="#projects" data-file="projects.html">
+                                    <span class="nav-number">03</span>
+                                    <span class="nav-text">Projects</span>
+                                </a>
+                            </li>
+                            <li class="nav-item" data-index="4">
+                                <a class="nav-link" href="#experience" data-file="experience.html">
+                                    <span class="nav-number">04</span>
+                                    <span class="nav-text">Experience</span>
+                                </a>
+                            </li>
+                            <li class="nav-item" data-index="5">
+                                <a class="nav-link" href="#certify" data-file="certify.html">
+                                    <span class="nav-number">05</span>
+                                    <span class="nav-text">Certifications</span>
+                                </a>
+                            </li>
+                            <li class="nav-item" data-index="6">
+                                <a class="nav-link" href="#passionandint" data-file="passionandint.html">
+                                    <span class="nav-number">06</span>
+                                    <span class="nav-text">Interests</span>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <!-- Social Links in Navigation -->
+                        <div class="nav-social d-md-none">
+                            <a href="https://github.com/sivakumar6678" target="_blank" class="social-icon" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/sivakumar-chandragari" target="_blank" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Mobile Theme Toggle -->
+                        <div class="nav-theme-toggle d-md-none">
+                            <label class="theme-switch" aria-label="Toggle dark mode">
+                                <input type="checkbox" class="input__check">
+                                <div class="theme-slider">
+                                    <i class="fas fa-sun theme-icon-light"></i>
+                                    <i class="fas fa-moon theme-icon-dark"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desktop Theme Toggle -->
+                <div class="theme-toggle-desktop d-none d-md-flex">
+                    <label class="theme-switch" aria-label="Toggle dark mode">
+                        <input type="checkbox" class="input__check">
+                        <div class="theme-slider">
+                            <i class="fas fa-sun theme-icon-light"></i>
+                            <i class="fas fa-moon theme-icon-dark"></i>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <main id="content">
         <div class="container-fluid main">
+            <!-- Hero Section -->
+           
+            
+            <!-- Content Sections -->
             <div class="sections" id="about"></div>
             <div class="sections" id="skills"></div>
             <div class="sections" id="projects"></div>
@@ -54,55 +163,220 @@
             <div class="sections" id="passionandint"></div>
         </div>
     </main>
+
     <footer class="footer" id="footer">
         <div class="footer-content">
-            <div class="row">
-                <!-- Footer Left Section -->
-                <div class="col-md-7 footer-left">
-                    <h2>CHANDRAGARI SIVAKUMAR</h2>
-                    <p>Aspiring Full Stack Developer | Final Year B.Tech Student</p>
-                    <p>Focused on crafting efficient web applications and user-friendly solutions.</p>
-                    <p><strong>Future Goals:</strong> Continue learning and growing in web development, contribute to impactful projects, and explore innovative technologies to drive positive change.</p>
-                </div>
-    
-                <!-- Footer Center Section -->
-                <div class="col-md-5 footer-center">
-                    <p><strong>Passionate about:</strong> Solving real-world problems through web technologies and open-source contributions.</p>
-                    <blockquote class="interactive-quote">
-                        <em>"Creativity blooms from imagination and exploration. Use every tool, ask questions, and let ideas flow freely."</em>
-                    </blockquote>
-                    <blockquote class="interactive-quote">
-                        <em>"When stress hits, dive into your passions. Let them guide you out of the darkness and back into the light."</em>
-                    </blockquote>
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Left Section -->
+                    <div class="col-lg-5 col-md-6 footer-left">
+                        <h2 class="footer-name">CHANDRAGARI SIVAKUMAR</h2>
+                        <p class="footer-title">Full Stack Developer | B.Tech Student</p>
+                        <p class="footer-description">Focused on crafting efficient web applications and user-friendly solutions.</p>
+                        <p class="footer-goals"><strong>Future Goals:</strong> Continue learning and growing in web development, contribute to impactful projects, and explore innovative technologies.</p>
+                    </div>
+            
+                    <!-- Footer Center Section -->
+                    <div class="col-lg-4 col-md-6 footer-center">
+                        <p class="footer-passion"><strong>Passionate about:</strong> Solving real-world problems through web technologies and open-source contributions.</p>
+                        <blockquote class="interactive-quote">
+                            <em>"Creativity blooms from imagination and exploration. Use every tool, ask questions, and let ideas flow freely."</em>
+                        </blockquote>
+                        <blockquote class="interactive-quote">
+                            <em>"When stress hits, dive into your passions. Let them guide you out of the darkness and back into the light."</em>
+                        </blockquote>
+                    </div>
+                
+                    <!-- Footer Right Section -->
+                    <div class="col-lg-3 col-md-12 footer-right">
+                        <div class="contact-section">
+                            <h3 class="contact-heading">Get In Touch</h3>
+                            <p class="contact-text">Let's collaborate on your next project!</p>
+                            <a href="mailto:chandragarisivakumar@gmail.com" class="contact-link">
+                                <i class="fas fa-envelope"></i> chandragarisivakumar@gmail.com
+                            </a>
+                            <div class="social-links">
+                                <a href="https://github.com/sivakumar6678" target="_blank" class="social-link" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/sivakumar-chandragari" target="_blank" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-    
-            <!-- Footer Right Section (More Interactive) -->
-            <div class="col-md-12 footer-right text-center">
-                <p>Let's collaborate! <a href="mailto:chandragarisivakumar@gmail.com" class="interactive-link">Contact me</a></p>
-                <p>Connect with me: 
-                    <a href="https://github.com/sivakumar6678" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a> |
-                    <a href="https://linkedin.com/in/sivakumar-chandragari" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </p>
+            <div class="footer-bottom">
+                <div class="container">
+                    <p class="copyright">© 2024 C Siva Kumar. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
-    
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    
     <script src="js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize GSAP
-           
-        
+            // Modern navbar elements
+            const splitNavbar = document.querySelector('.split-navbar');
+            const circularProgressContainer = document.querySelector('.circular-progress-container');
+            const circularProgressBar = document.getElementById('circularProgress');
+            
+            // Add animation classes to nav items on page load
+            document.querySelectorAll('.nav-item').forEach((item, index) => {
+                item.style.animationDelay = `${0.1 * (index + 1)}s`;
+                item.classList.add('animate__animated', 'animate__fadeInDown');
+            });
+            
+            // Add keyframes for circular progress pulse animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes pulse {
+                    0% { filter: drop-shadow(0 0 2px var(--primary-color)); }
+                    50% { filter: drop-shadow(0 0 8px var(--primary-color)); }
+                    100% { filter: drop-shadow(0 0 2px var(--primary-color)); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            window.addEventListener('scroll', function() {
+                // Navbar scroll effect
+                if (window.scrollY > 50) {
+                    if (!splitNavbar.classList.contains('scrolled')) {
+                        splitNavbar.classList.add('scrolled');
+                    }
+                    
+                    // Show circular progress indicator
+                    if (!circularProgressContainer.classList.contains('visible')) {
+                        circularProgressContainer.classList.add('visible');
+                    }
+                } else {
+                    if (splitNavbar.classList.contains('scrolled')) {
+                        splitNavbar.classList.remove('scrolled');
+                    }
+                    
+                    // Hide circular progress indicator
+                    if (circularProgressContainer.classList.contains('visible')) {
+                        circularProgressContainer.classList.remove('visible');
+                    }
+                }
+                
+                // Update circular progress indicator
+                if (circularProgressBar) {
+                    const scrollPosition = window.scrollY;
+                    const totalHeight = document.body.scrollHeight - window.innerHeight;
+                    const scrollPercentage = (scrollPosition / totalHeight) * 100;
+                    
+                    // Calculate stroke-dashoffset based on scroll percentage
+                    // 283 is the circumference of the circle (2 * PI * radius)
+                    const circumference = 283;
+                    const dashOffset = circumference - (circumference * scrollPercentage / 100);
+                    
+                    // Apply the dash offset
+                    circularProgressBar.style.strokeDashoffset = dashOffset;
+                    
+                    // Add pulse effect when reaching bottom
+                    if (scrollPercentage > 95) {
+                        circularProgressBar.style.animation = 'pulse 1.5s infinite';
+                    } else {
+                        circularProgressBar.style.animation = 'none';
+                    }
+                }
+                
+                // Highlight active nav item based on scroll position
+                highlightNavOnScroll();
+            });
+            
+            // Function to highlight active nav item based on scroll position
+            function highlightNavOnScroll() {
+                const sections = document.querySelectorAll('.sections');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.clientHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentSection = sectionId;
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Add hover effect interaction between nav items
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    navLinks.forEach(otherLink => {
+                        if (otherLink !== this && !otherLink.classList.contains('active')) {
+                            otherLink.style.opacity = '0.7';
+                            otherLink.style.transform = 'scale(0.98)';
+                        }
+                    });
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    navLinks.forEach(otherLink => {
+                        if (otherLink !== this) {
+                            otherLink.style.opacity = '';
+                            otherLink.style.transform = '';
+                        }
+                    });
+                });
+            });
+            
+            // Function to highlight active nav item based on scroll position
+            function highlightNavOnScroll() {
+                const scrollPosition = window.scrollY + 100;
+                
+                // Check each section's position
+                document.querySelectorAll('.sections').forEach(function(section) {
+                    const target = section.getAttribute('id');
+                    if (!target) return;
+                    
+                    const offset = section.offsetTop;
+                    const height = section.offsetHeight;
+                    
+                    if (scrollPosition >= offset && scrollPosition < offset + height) {
+                        document.querySelectorAll('.nav-link').forEach(function(link) {
+                            link.classList.remove('active');
+                            link.removeAttribute('aria-current');
+                        });
+                        
+                        const activeLink = document.querySelector(`.nav-link[href="#${target}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                            activeLink.setAttribute('aria-current', 'page');
+                            
+                            // Animate the active indicator
+                            const indicator = activeLink.querySelector('.nav-indicator');
+                            if (indicator) {
+                                indicator.style.animation = 'none';
+                                // Trigger reflow
+                                void indicator.offsetWidth;
+                                indicator.style.animation = '';
+                            }
+                        }
+                    }
+                });
+            }
+            
             // Function to handle smooth scroll
             function smoothScrollTo(element) {
                 const headerOffset = 80;
@@ -118,40 +392,37 @@
             // Add event listeners to all skill categories
             document.querySelectorAll('.skill-category').forEach(category => {
                 const collapse = category.querySelector('.collapse');
-                const header = category.querySelector('.skill-header');
-        
-                // Handle expand/collapse events
-                collapse.addEventListener('show.bs.collapse', function() {
-                    handleIconTransition(category, true);
-                    smoothScrollTo(category);
-                });
-        
-                collapse.addEventListener('hide.bs.collapse', function() {
-                    handleIconTransition(category, false);
-                });
+                
+                if (collapse) {
+                    // Handle expand/collapse events
+                    collapse.addEventListener('show.bs.collapse', function() {
+                        if (typeof handleIconTransition === 'function') {
+                            handleIconTransition(category, true);
+                        }
+                        smoothScrollTo(category);
+                    });
+            
+                    collapse.addEventListener('hide.bs.collapse', function() {
+                        if (typeof handleIconTransition === 'function') {
+                            handleIconTransition(category, false);
+                        }
+                    });
+                }
             });
         
             // Initialize skill progress bars
-            function initProgressBars() {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const progressBar = entry.target;
-                            const width = progressBar.style.getPropertyValue('--progress-width');
-                            progressBar.style.width = width;
-                            observer.unobserve(progressBar);
-                        }
-                    });
-                }, { threshold: 0.5 });
-        
-                document.querySelectorAll('.skill-progress-bar').forEach(bar => {
-                    observer.observe(bar);  
-                });
-            }
-        
-            // Initialize progress bars when the page loads
-            initProgressBars();
-        }); 
+         
+            
+          
+            
+          
+           
+            
+           
+        });
+            // Enhanced desktop hover effects
+           
+              
     </script>
 </body>
 </html>

@@ -1,397 +1,640 @@
-/* Dark Mode Styles */
+/* 
+ * Dark Mode Stylesheet
+ * Author: C Siva Kumar
+ * Version: 2.0
+ */
 
-/* Root variables for transition effects */
+/* ======================================
+ * 1. Dark Mode Variables
+ * ====================================== */
 :root {
-    --transition-duration: 2s;
-    --transition-timing-function: ease-in-out;
+  /* Dark Theme Colors */
+  --dark-primary: #2f4f7f;
+  --dark-secondary: #7a288a;
+  --dark-text-primary: #f5f5f5;
+  --dark-text-secondary: #e0e0e0;
+  --dark-text-tertiary: #dad8d8;
+  --dark-accent: #f3a916;
+  --dark-accent-2: #00ceac;
+  --dark-accent-3: #11ff00;
+  --dark-gradient: linear-gradient(to bottom, #2f4f7f, #7a288a, #2f4f7f, #7a288a);
+  --dark-gradient-alt: linear-gradient(45deg, #2f4f7f, #7a288a, #2f4f7f, #7a288a);
+  --dark-bg-primary-rgb: 25, 25, 35;
+  
+  /* Component Colors */
+  --dark-card-bg: rgba(76, 97, 128, 0.442);
+  --dark-badge-bg: rgba(78, 18, 118, 0.528);
+  --dark-border: #e1dfdf;
+  
+  /* Skill Category Colors */
+  --dark-frontend-border: #20B2AA;
+  --dark-backend-border: #9370DB;
+  --dark-db-border: #3CB371;
+  --dark-tools-border: #FFA07A;
+  
+  /* Button Colors */
+  --dark-btn-primary-bg: #4caf50;
+  --dark-btn-primary-hover: #66bb6a;
+  --dark-btn-secondary-bg: #9b2222;
+  --dark-btn-secondary-hover: #c81414;
 }
 
-/* General body styles for dark mode */
+/* ======================================
+ * 2. Base Dark Mode Styles
+ * ====================================== */
 body.dark-mode {
-    background: linear-gradient(to bottom, #2f4f7f, #7a288a, #2f4f7f, #7a288a);
-    transition: color var(--transition-duration) var(--transition-timing-function);
-    color: #f5f5f5;
-    animation: colorfade 1.5s ease;
+  background: var(--dark-gradient);
+  color: var(--dark-text-primary);
+  animation: darkModeFadeIn 0.8s ease;
+  --bg-primary-rgb: var(--dark-bg-primary-rgb);
 }
 
-/* Keyframes for color fade animation */
-@keyframes colorfade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-        background: linear-gradient(to bottom, #2f4f7f, #7a288a, #2f4f7f, #7a288a);
-    }
+@keyframes darkModeFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Navbar styles for dark mode */
-body.dark-mode button.navbar-toggler {
-    color: gold;
+/* ======================================
+ * 3. Navigation & Header
+ * ====================================== */
+/* Modern Split Navbar - Dark Mode Styles */
+body.dark-mode .split-navbar {
+  background: rgba(25, 25, 35, 0.85);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-body.dark-mode #navbar-item {
-    color: rgb(0, 206, 172);
-    border-bottom: 3px solid transparent;
-    transition: border 1s ease-in-out, color 0.5s ease-in-out;
+body.dark-mode .split-navbar.scrolled {
+  background: rgba(25, 25, 35, 0.95);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode #navbar-item:hover {
-    color: rgb(0, 206, 172);
-    border-bottom: 1px solid rgb(17, 255, 0);
+/* Circular Progress in Dark Mode */
+body.dark-mode .circular-progress-background {
+  stroke: rgba(255, 255, 255, 0.1);
 }
 
-/* About section styles for dark mode */
-body.dark-mode .aboutme h2 {
-    color: #b0b0b0;
+body.dark-mode .circular-progress-bar {
+  stroke: var(--dark-accent);
+  filter: drop-shadow(0 0 3px var(--dark-accent));
 }
 
+/* Brand Styling in Dark Mode */
+body.dark-mode .brand-logo {
+  background: linear-gradient(135deg, var(--dark-primary), var(--dark-secondary));
+  box-shadow: 0 4px 15px rgba(122, 40, 138, 0.4);
+}
+
+body.dark-mode .brand-logo:hover {
+  box-shadow: 0 6px 20px rgba(122, 40, 138, 0.6);
+}
+
+body.dark-mode .brand-initial {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .brand-name {
+  background: linear-gradient(to right, var(--dark-text-primary), var(--dark-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode .brand-title {
+  color: var(--dark-text-tertiary);
+}
+
+/* Menu Toggle in Dark Mode */
+body.dark-mode .menu-icon span {
+  background: var(--dark-text-secondary);
+}
+
+body.dark-mode .menu-toggle.active .menu-icon span {
+  background: var(--dark-accent);
+}
+
+/* Navigation Menu in Dark Mode */
+body.dark-mode .nav-menu {
+  background: rgba(25, 25, 35, 0.98);
+  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .nav-link {
+  color: var(--dark-text-secondary);
+}
+
+body.dark-mode .nav-number {
+  color: var(--dark-accent);
+}
+
+body.dark-mode .nav-link::before {
+  background: linear-gradient(to right, var(--dark-accent-2), var(--dark-accent));
+}
+
+body.dark-mode .nav-link::after {
+  background: linear-gradient(to right, rgba(0, 206, 172, 0.1), rgba(243, 169, 22, 0.05));
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: var(--dark-accent);
+}
+
+body.dark-mode .nav-brand-initial {
+  color: var(--dark-accent);
+}
+
+body.dark-mode .nav-brand-text {
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .nav-close {
+  color: var(--dark-text-tertiary);
+}
+
+body.dark-mode .nav-close:hover {
+  color: var(--dark-accent);
+}
+
+/* Mobile Nav Links in Dark Mode */
+body.dark-mode .nav-link {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Theme Switch in Dark Mode */
+body.dark-mode .theme-slider {
+  background-color: #2c3e50;
+}
+
+body.dark-mode .theme-slider:before {
+  background-color: #f3f3f3;
+}
+
+body.dark-mode .theme-icon-light {
+  color: #f39c12;
+}
+
+body.dark-mode .theme-icon-dark {
+  color: #ecf0f1;
+}
+
+body.dark-mode .input__check:checked + .theme-slider {
+  background-color: #34495e;
+}
+
+body.dark-mode .theme-label {
+  color: var(--dark-text-secondary);
+}
+
+/* Social Icons in Dark Mode */
+body.dark-mode .social-icon {
+  background: rgba(243, 169, 22, 0.15);
+  color: var(--dark-accent);
+}
+
+body.dark-mode .social-icon:hover {
+  background: var(--dark-accent);
+  color: #1a1a2e;
+  box-shadow: 0 5px 15px rgba(243, 169, 22, 0.3);
+}
+
+/* ======================================
+ * 4. About Section
+ * ====================================== */
 body.dark-mode .aboutme h1 {
-    color: #e0e0e0;
+  color: var(--dark-text-secondary);
+}
+
+body.dark-mode .aboutme h2 {
+  color: #b0b0b0;
 }
 
 body.dark-mode #dynamic-text {
-    color: #87ceeb;
+  color: #87ceeb;
 }
 
 body.dark-mode .aboutcontent > p {
-    color: #dad8d8bc;
+  color: var(--dark-text-tertiary);
 }
 
 body.dark-mode .get-in-touch > h2 {
-    color: #f2f1f1fb;
+  color: #f2f1f1;
 }
 
 body.dark-mode .get-in-touch > p {
-    color: #eeeeeebc;
-}
-
-body.dark-mode nav {
-    background: linear-gradient(to bottom, #2f4f7f, #7a288a);
-}
-
-body.dark-mode button.navbar-toggler {
-    background-color: #7a288a;
-    border-color: #e1dfdf;
-    z-index: 1100;
-    position: relative;
-}
-
-body.dark-mode .navbar-toggler:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(122, 40, 138, 0.5);
-}
-
-body.dark-mode .navbar-toggler i {
-    color: #e1dfdf;
+  color: #eeeeee;
 }
 
 body.dark-mode .aboutmore h2 {
-    color: #d1c4ff;
+  color: #d1c4ff;
 }
 
 body.dark-mode .aboutmore p {
-    color: #b0a1cc;
+  color: #b0a1cc;
 }
 
 body.dark-mode .aboutmore p:last-child {
-    color: #d0c2e9;
-    font-size: 1.5rem;
-    font-family: 'Times New Roman', Times, serif;
+  color: #d0c2e9;
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
 }
-
 
 body.dark-mode .philosophy-card p {
-    color: var(--bg-tertiary);
+  color: var(--bg-tertiary);
 }
 
-body.dark-mode .contact-message{
-    color : var(---bg-secondary)
+body.dark-mode .contact-message {
+  color: var(--bg-secondary);
 }
-body.dark-mode .social-section .social-heading{
-    color: rgb(212, 206, 206);
+
+body.dark-mode .social-section .social-heading {
+  color: rgb(212, 206, 206);
 }
-/* Profile image background styles for dark mode */
+
+/* Profile image styles */
 .dark-mode #imgbg {
-    background-color: rgba(7, 234, 234, 0.6);
+  background-color: rgba(7, 234, 234, 0.6);
 }
 
 .dark-mode .profileimg:hover #imgbg {
-    background-color: rgba(0, 255, 255, 0.7);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  background-color: rgba(0, 255, 255, 0.7);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
 }
 
-/* Skills section styles for dark mode */
+/* ======================================
+ * 5. Skills Section
+ * ====================================== */
 body.dark-mode .skill-category h3 {
-    color: wheat;
+  color: wheat;
 }
 
 body.dark-mode .skill-category {
-    background: none;
-    box-shadow: 0 0 0px wheat, 0 0 5px 3px #7a288a inset;
+  background: none;
+  box-shadow: 0 0 0px wheat, 0 0 5px 3px var(--dark-secondary) inset;
 }
 
 body.dark-mode .skill-category li {
-    background-color: rgba(78, 18, 118, 0.528);
-    color: white;
+  background-color: var(--dark-badge-bg);
+  color: white;
 }
 
 .dark-mode #frontend {
-    border-color: #20B2AA;
+  border-color: var(--dark-frontend-border);
 }
 
 .dark-mode #backend {
-    border-color: #9370DB;
+  border-color: var(--dark-backend-border);
 }
 
 .dark-mode #db {
-    border-color: #3CB371;
+  border-color: var(--dark-db-border);
 }
 
 .dark-mode #tools {
-    border-color: #FFA07A;
+  border-color: var(--dark-tools-border);
 }
 
 .dark-mode #frontend .hex {
-    border-color: #f25d00;
+  border-color: #f25d00;
 }
 
 .dark-mode #backend .hex {
-    border-color: #77f708;
+  border-color: #77f708;
 }
 
 .dark-mode #tools .hex {
-    border-color: #FFBF00;
+  border-color: #FFBF00;
 }
 
 .dark-mode #db .hex {
-    border-color: #00FFFF;
+  border-color: #00FFFF;
 }
 
-/* Projects section styles for dark mode */
-/* Main container and background */
-body.dark-mode .projects-container {
-    background: linear-gradient(to bottom, #2f4f7f, #7a288a);
-    color: #f5f5f5;
-    transition: background var(--transition-duration) var(--transition-timing-function);
-}
-
+/* ======================================
+ * 6. Projects Section
+ * ====================================== */
+body.dark-mode .projects-container,
 body.dark-mode .projects-header {
-    background: linear-gradient(to bottom, #2f4f7f, #7a288a);
-    color: #f5f5f5;
-    transition: background var(--transition-duration) var(--transition-timing-function);
+  background: var(--dark-gradient);
+  color: var(--dark-text-primary);
+  transition: background 0.3s ease;
 }
 
 body.dark-mode .section-title,
 body.dark-mode .projects-header h1 {
-    color: #e0e0e0;
+  color: var(--dark-text-secondary);
 }
 
 body.dark-mode .projects-header p {
-    color: #dad8d8bc;
+  color: var(--dark-text-tertiary);
 }
 
 /* Navigation tabs */
 body.dark-mode .project-nav .nav-link {
-    color: lightcyan;
-    background-color: rgba(47, 79, 127, 0.2);
-    transition: all 0.3s ease;
+  color: lightcyan;
+  background-color: rgba(47, 79, 127, 0.2);
+  transition: all 0.3s ease;
 }
 
 body.dark-mode .project-nav .nav-link:hover {
-    background-color: rgba(122, 40, 138, 0.3);
-    color: #ffffff;
+  background-color: rgba(122, 40, 138, 0.3);
+  color: #ffffff;
 }
 
 body.dark-mode .project-nav .nav-link.active {
-    background-color: #7a288a;
-    color: #ffffff;
+  background-color: var(--dark-secondary);
+  color: #ffffff;
 }
 
 /* Project cards */
 body.dark-mode .project-card {
-    background-color: rgba(76, 97, 128, 0.442);
-    box-shadow: 0 0 0px wheat, 0 0 5px 3px #7a288a inset;
-    transition: all 0.3s ease;
+  background-color: var(--dark-card-bg);
+  box-shadow: 0 0 0px wheat, 0 0 5px 3px var(--dark-secondary) inset;
+  transition: all 0.3s ease;
 }
 
 body.dark-mode .project-content {
-    background-color: transparent;
-    color: #e0e0e0;
+  background-color: transparent;
+  color: var(--dark-text-secondary);
 }
 
 body.dark-mode .project-title {
-    color: #f3a916;
+  color: var(--dark-accent);
 }
 
 body.dark-mode .project-description {
-    color: rgba(245, 245, 245, 0.819);
+  color: rgba(245, 245, 245, 0.819);
 }
 
 body.dark-mode .features-title {
-    color: wheat;
+  color: wheat;
 }
 
 body.dark-mode .feature-badge {
-    background-color: rgba(78, 18, 118, 0.528);
-    color: white;
-    border-radius: 4px;
-    padding: 4px 8px;
-    margin: 2px;
-    display: inline-block;
+  background-color: var(--dark-badge-bg);
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 2px;
+  display: inline-block;
 }
 
 body.dark-mode .image-overlay {
-    background-color: rgba(47, 79, 127, 0.7);
+  background-color: rgba(47, 79, 127, 0.7);
 }
 
 body.dark-mode .image-overlay .btn-light {
-    background-color: #7a288a;
-    color: #ffffff;
-    border-color: #e1dfdf;
+  background-color: var(--dark-secondary);
+  color: #ffffff;
+  border-color: var(--dark-border);
 }
 
 body.dark-mode .image-overlay .btn-light:hover {
-    background-color: #2f4f7f;
+  background-color: var(--dark-primary);
 }
 
 /* Carousel controls */
 body.dark-mode .carousel-control-prev,
 body.dark-mode .carousel-control-next {
-    background-color: rgba(122, 40, 138, 0.5);
+  background-color: rgba(122, 40, 138, 0.5);
 }
 
 body.dark-mode .carousel-indicators li {
-    background-color: #2f4f7f;
+  background-color: var(--dark-primary);
 }
 
 body.dark-mode .carousel-indicators li.active {
-    background-color: #7a288a;
+  background-color: var(--dark-secondary);
 }
 
-/* Buttons */
+/* ======================================
+ * 7. Buttons
+ * ====================================== */
 body.dark-mode .btn-primary {
-    background-color: #4caf50;
-    border-color: #4caf50;
-    color: #ffffff;
+  background-color: var(--dark-btn-primary-bg);
+  border-color: var(--dark-btn-primary-bg);
+  color: #ffffff;
 }
 
 body.dark-mode .btn-primary:hover {
-    background-color: #66bb6a;
-    border-color: #66bb6a;
-    box-shadow: 0 0 10px rgba(102, 187, 106, 0.5);
+  background-color: var(--dark-btn-primary-hover);
+  border-color: var(--dark-btn-primary-hover);
+  box-shadow: 0 0 10px rgba(102, 187, 106, 0.5);
 }
 
 body.dark-mode .btn-secondary {
-    background-color: #9b2222;
-    border-color: #9a2121;
-    color: #ffffff;
+  background-color: var(--dark-btn-secondary-bg);
+  border-color: var(--dark-btn-secondary-bg);
+  color: #ffffff;
 }
 
 body.dark-mode .btn-secondary:hover {
-    background-color: #c81414;
-    border-color: #cc1818;
-    transition: background-color 1s ease-in-out;
+  background-color: var(--dark-btn-secondary-hover);
+  border-color: var(--dark-btn-secondary-hover);
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Modal styles */
+/* ======================================
+ * 8. Modals
+ * ====================================== */
 body.dark-mode .modal-content {
-    background: linear-gradient(135deg, #2f4f7f, #2f4f7f, #6b207a);
-    color: #e0e0e0;
-    border-color: #3a3a3a;
+  background: linear-gradient(135deg, var(--dark-primary), var(--dark-primary), #6b207a);
+  color: var(--dark-text-secondary);
+  border-color: #3a3a3a;
 }
 
 body.dark-mode .modal-header,
 body.dark-mode .modal-footer {
-    border-bottom: 1px solid #444;
-    border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  border-top: 1px solid #444;
 }
 
 body.dark-mode .modal-title {
-    color: #f7a500;
+  color: #f7a500;
 }
 
 body.dark-mode .modal-body {
-    color: #dad8d8bc;
+  color: var(--dark-text-tertiary);
 }
 
 body.dark-mode .modal-body a {
-    color: rgb(0, 206, 172);
+  color: var(--dark-accent-2);
 }
 
 body.dark-mode .close {
-    color: #ffffff;
-    text-shadow: none;
+  color: #ffffff;
+  text-shadow: none;
 }
 
 body.dark-mode .close:hover {
-    color: gold;
+  color: gold;
 }
 
 /* Language icons */
 body.dark-mode .language-icons .languages {
-    background-color: #2f4f7f;
-    border: 2px solid #7a288a;
+  background-color: var(--dark-primary);
+  border: 2px solid var(--dark-secondary);
 }
 
-/* Experience section styles for dark mode */
+/* ======================================
+ * 9. Experience Section
+ * ====================================== */
 .dark-mode #experience-education {
-    color: #dad8d8bc;
-    background: linear-gradient(45deg, #2f4f7f, #7a288a, #2f4f7f, #7a288a);
+  color: var(--dark-text-tertiary);
+  background: var(--dark-gradient-alt);
 }
 
 .dark-mode .sections h2.text-center,
 .dark-mode #experience-education h2,
 .dark-mode #achievements h2 {
-    color: wheat;
+  color: wheat;
 }
 
 .dark-mode #experience-education .nav li a {
-    color: black;
+  color: black;
 }
 
 .dark-mode #experience-education .timeline .timeline-panel {
-    background-color: rgba(76, 97, 128, 0.442);
-    border-left: 3px solid rgba(122, 40, 138, 0.7);
-    color: #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: var(--dark-card-bg);
+  border-left: 3px solid rgba(122, 40, 138, 0.7);
+  color: var(--dark-text-secondary);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode #experience-education .timeline .timeline-panel h4 {
-    color: #f3a916;
+  color: var(--dark-accent);
 }
 
 .dark-mode #experience-education .timeline .timeline-panel p {
-    color: rgba(245, 245, 245, 0.819);
+  color: rgba(245, 245, 245, 0.819);
 }
 
 .dark-mode #experience-education .timeline .timeline-panel #mutedtext {
-    color: rgb(190, 182, 182);
+  color: rgb(190, 182, 182);
 }
 
 .dark-mode .timeline:before {
-    background: linear-gradient(to bottom, #7f8c8d, #f1c40f, #7f8c8d, #f1c40f);
+  background: linear-gradient(to bottom, #7f8c8d, #f1c40f, #7f8c8d, #f1c40f);
 }
 
-/* Certification and achievements section styles for dark mode */
+/* ======================================
+ * 10. Certifications Section
+ * ====================================== */
 .dark-mode #achievements {
-    background: linear-gradient(to bottom, #2f4f7f, #7a288a);
-    color: #f5f5f5;
+  background: var(--dark-gradient);
+  color: var(--dark-text-primary);
 }
 
 .dark-mode #achievements h1 {
-    color: #e0e0e0;
+  color: var(--dark-text-secondary);
 }
 
 .dark-mode .card-certify {
-    border: none;
-    color:black;
-    background: linear-gradient(170deg, rgba(253, 200, 27, 0.22) 0%, #ff522f3d 10%);
+  border: none;
+  color: black;
+  background: linear-gradient(170deg, rgba(253, 200, 27, 0.22) 0%, rgba(255, 82, 47, 0.24) 10%);
 }
-.dark-mode .card-certify h3{
-    color:white;
+
+.dark-mode .card-certify h3,
+.dark-mode .certification-section h3 {
+  color: white;
+}
+
+.dark-mode .container-certify {
+  color: var(--dark-text-primary);
+}
+
+.dark-mode .card-cert h4 {
+  color: #ebe6e6;
+}
+
+.dark-mode .card-cert p {
+  color: rgb(144, 240, 247);
+}
+
+/* ======================================
+ * 11. Interests Section
+ * ====================================== */
+.dark-mode .interest-card {
+  background: none;
+  border: 1px solid var(--dark-text-primary);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .passionandint h2 {
+  color: rgba(250, 247, 247, 0.74);
+}
+
+.dark-mode .interest-card h4 {
+  color: rgba(240, 236, 236, 0.74);
+}
+
+.dark-mode .interest-card p {
+  color: rgba(244, 240, 240, 0.93);
+}
+
+.dark-mode .interest-card h4 i {
+  color: #ff5722;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .interest-card h4 i:hover {
+  color: var(--dark-primary);
+}
+
+.dark-mode .interest-card:hover {
+  background-color: var(--dark-primary);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* ======================================
+ * 12. Loader Animations
+ * ====================================== */
+.dark-mode .loader-lifestyle {
+  background-image: 
+    linear-gradient(#ff3333 50px, transparent 0),
+    linear-gradient(#77ff33 50px, transparent 0),
+    linear-gradient(#33aaff 50px, transparent 0),
+    linear-gradient(#ff44ff 50px, transparent 0),
+    radial-gradient(circle 14px, #ffcc00 100%, transparent 0);
+  background-size: 48px 15px, 15px 35px, 15px 35px, 25px 15px, 28px 28px;
+  background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
+}
+
+.dark-mode .loader-lifestyle::after,
+.dark-mode .loader-lifestyle::before {
+  background-image: 
+    linear-gradient(#ff9933 64px, transparent 0),
+    linear-gradient(#99ff66 66px, transparent 0),
+    radial-gradient(circle 4px, #66ccff 100%, transparent 0);
+}
+
+.dark-mode .timeline:before {
+  background: linear-gradient(to bottom, #7f8c8d, #f1c40f, #7f8c8d, #f1c40f);
+}
+
+body.dark-mode .image-overlay .btn-light:hover {
+  background-color: var(--dark-primary);
+}
+
+/* Carousel controls */
+body.dark-mode .carousel-control-prev,
+body.dark-mode .carousel-control-next {
+  background-color: rgba(122, 40, 138, 0.5);
+}
+
+body.dark-mode .carousel-indicators li {
+  background-color: var(--dark-primary);
+}
+
+body.dark-mode .carousel-indicators li.active {
+  background-color: var(--dark-secondary);
 }
 .dark-mode .certification-section h3{
     color : white;

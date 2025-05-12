@@ -59,7 +59,7 @@ body.dark-mode {
  * ====================================== */
 /* Modern Split Navbar - Dark Mode Styles */
 body.dark-mode .split-navbar {
-  background: rgba(25, 25, 35, 0.85);
+  /* background: rgba(25, 25, 35, 0.85); */
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -67,7 +67,6 @@ body.dark-mode .split-navbar {
 }
 
 body.dark-mode .split-navbar.scrolled {
-  background: rgba(25, 25, 35, 0.95);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
@@ -117,10 +116,7 @@ body.dark-mode .menu-toggle.active .menu-icon span {
 }
 
 /* Navigation Menu in Dark Mode */
-body.dark-mode .nav-menu {
-  background: rgba(25, 25, 35, 0.98);
-  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
-}
+
 
 body.dark-mode .nav-link {
   color: var(--dark-text-secondary);

@@ -116,7 +116,25 @@ body.dark-mode .menu-toggle.active .menu-icon span {
 }
 
 /* Navigation Menu in Dark Mode */
+@media screen and (max-width: 568px) {
+  
+  body.dark-mode .nav-menu {
+    background: #1a1a2e;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
 
+body.dark-mode .nav-menu.active {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+body.dark-mode .nav-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
 
 body.dark-mode .nav-link {
   color: var(--dark-text-secondary);
@@ -160,9 +178,27 @@ body.dark-mode .nav-link {
   border-bottom-color: rgba(255, 255, 255, 0.05);
 }
 
+body.dark-mode .nav-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+body.dark-mode .nav-menu-inner {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /* Theme Switch in Dark Mode */
 body.dark-mode .theme-slider {
   background-color: #2c3e50;
+}
+
+/* Mobile Theme Toggle in Dark Mode */
+body.dark-mode .mobile-theme-toggle .theme-switch {
+  box-shadow: 0 0 10px rgba(243, 169, 22, 0.3);
 }
 
 body.dark-mode .theme-slider:before {
@@ -195,6 +231,15 @@ body.dark-mode .social-icon:hover {
   background: var(--dark-accent);
   color: #1a1a2e;
   box-shadow: 0 5px 15px rgba(243, 169, 22, 0.3);
+}
+
+/* Nav Social Icons in Dark Mode */
+body.dark-mode .nav-social {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
 }
 
 /* ======================================
@@ -489,9 +534,7 @@ body.dark-mode .language-icons .languages {
   color: wheat;
 }
 
-.dark-mode #experience-education .nav li a {
-  color: black;
-}
+
 
 .dark-mode #experience-education .timeline .timeline-panel {
   background-color: var(--dark-card-bg);

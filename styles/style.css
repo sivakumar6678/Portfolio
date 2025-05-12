@@ -412,6 +412,13 @@ body {
   margin-left: 20px;
 }
 
+/* Mobile Theme Toggle (Outside Menu) */
+.mobile-theme-toggle {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
 .theme-switch input {
   opacity: 0;
   width: 0;
@@ -562,6 +569,8 @@ body.menu-open::after {
     display: block;
     z-index: 1100;
     visibility: hidden; /* Hide when not active */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
   
   .nav-menu.active {
@@ -576,6 +585,9 @@ body.menu-open::after {
     padding: 2rem;
     height: 100%;
     overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1200;
   }
   
   .nav-header {
@@ -626,6 +638,11 @@ body.menu-open::after {
     margin: 5px 0;
     width: 100%;
     opacity: 1 !important; /* Ensure items are visible */
+    visibility: visible !important;
+  }
+  
+  .nav-menu.active .nav-item {
+    display: block;
   }
   
   .nav-link {

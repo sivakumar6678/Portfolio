@@ -39,7 +39,7 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).toggleClass('active');
         $('#navMenu').toggleClass('active');
-        $('body').toggleClass('menu-open');
+        // $('body').toggleClass('menu-open');
     });
     
     // Close menu when clicking the close button

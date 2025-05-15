@@ -534,7 +534,16 @@ body.dark-mode .language-icons .languages {
   color: wheat;
 }
 
-
+.dark-mode #experience-education .nav .nav-item .nav-link {
+  background: none;
+}
+.dark-mode .timeline-body .time-body-content{
+  color:wheat;
+  
+}
+.dark-mode  .skill-tag{
+  color:white
+}
 
 .dark-mode #experience-education .timeline .timeline-panel {
   background-color: var(--dark-card-bg);

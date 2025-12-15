@@ -6,7 +6,7 @@ Welcome to my personal portfolio website, which showcases my **skills, projects,
 
 ## 📌 About Me
 
-I am a **Full Stack Developer & Final-Year B.Tech Student**, passionate about **building web applications** that solve real-world problems. I specialize in **frontend and backend development**, with a keen interest in UI/UX design.  
+I am a **Full Stack Developer & Passed out B.Tech Student**, passionate about **building web applications** that solve real-world problems. I specialize in **frontend and backend development**, with a keen interest in UI/UX design.  
 
 ## 🔥 Website Sections
 
@@ -26,11 +26,11 @@ I am a **Full Stack Developer & Final-Year B.Tech Student**, passionate about **
 
 ### ⚙️ Backend  
 - PHP, MySQL  
-- Django, Flask  
+- Python, Django, Flask  
 
 ### 🎨 Design & Tools  
 - Adobe Photoshop, Canva  
-- Git, GitHub, Postman  
+- Git, GitHub, Postman api  
 
 ## 🛠 How to Run Locally
 

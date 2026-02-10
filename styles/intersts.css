@@ -1,82 +1,41 @@
-/* Container for the passion and interests section */
-#passionandint {
-  margin-top: 2rem;
-  padding: 40px 20px;
-  border-radius: 10px;
-}
+/* 
+ * Portfolio - Interests Section Styles
+ */
 
-/* Styles for the section heading */
-h2.text-center {
-  font-family: 'Pirata One', cursive;
-  font-size: 3rem;
-  color: #333;
-  /* margin-bottom: 30px; */
-}
-
-/* Card styles for individual interests */
 .interest-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 20px;
-  min-height: 40vh;
-  height: max-content;
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    height: 100%;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
 }
 
-/* Hover effect for interest cards */
 .interest-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-  background-color: #f2f2f2;
-  cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-300);
 }
 
-/* Styles for the interest card titles */
-.interest-card h4 {
-  font-family: 'Pirata One', cursive;
-  font-size: 2rem;
-  color: #444;
-}
-
-/* Styles for the icons within the interest card titles */
-.interest-card h4 i {
-  margin-right: 10px;
-  color: #ff5722;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-/* Hover effect for the icons within the interest card titles */
-.interest-card h4 i:hover {
-  color: #2f4f7f;
-}
-
-/* Styles for the interest card descriptions */
-.interest-card p {
-  font-size: 1.1rem;
-  color: #666;
-  margin-top: 10px;
-}
-
-/* Responsive styles for medium to large screens */
-@media (min-width: 992px) and (max-width: 1500px) {
-  .interest-card {
-    flex-ext-center {
-      font-size: 2.5rem;
-    }
-  }
-
-  .interest-card h4 {
+.interest-header i {
     font-size: 1.5rem;
-  }
+}
 
-  .interest-card p {
+.interest-card p {
+    line-height: 1.7;
     font-size: 1rem;
-  }
+    margin-bottom: 0;
+}
 
-  .col-md-6 {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
+/* Dark Mode Adjustments */
+body.dark-mode .interest-card {
+    background: var(--slate-900);
+    border-color: var(--slate-800);
+}
+
+body.dark-mode .interest-card:hover {
+    border-color: var(--primary-500);
 }

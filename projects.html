@@ -1,985 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Portfolio</title>
-    <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/projects.css">
-    <!-- Dark Mode CSS -->
-    <link rel="stylesheet" href="styles/dark-mode.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="All Projects - C Siva Kumar - Full Stack Web Developer">
+  <title>All Projects | C Siva Kumar</title>
+
+  <!-- Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Modern Design System -->
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+
+  <!-- Legacy Styles (To be refactored) -->
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/dark-mode.css">
+
+  <style>
+    .project-card-horizontal {
+      border: 1px solid var(--border-color);
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card-horizontal:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card-horizontal .img-col {
+      position: relative;
+      overflow: hidden;
+      min-height: 250px;
+    }
+
+    .project-card-horizontal img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card-horizontal:hover img {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
+
 <body>
-    <div class="projects-container" id="projects">
-        <header class="projects-header">
-            <div class="container">
-                <div class="d-flex justify-content-end mb-3">
-                   
-                </div>
-                <h1 class="display-4 text-center mb-5">My Projects</h1>
-                <p class="lead text-center mb-5">Explore my portfolio of web development and software engineering projects</p>
-            </div>
-        </header>
-        
-        <div class="container">
-            <ul class="nav nav-pills project-nav mb-5" id="projectTabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="major-tab" data-toggle="tab" href="#major-projects" role="tab" aria-controls="major-projects" aria-selected="true">
-                        <i class="fas fa-star mr-2"></i>Major Projects
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="minor-tab" data-toggle="tab" href="#minor-projects" role="tab" aria-controls="minor-projects" aria-selected="false">
-                        <i class="fas fa-code mr-2"></i>Minor Projects
-                    </a>
-                </li>
-            </ul>
+  <!-- Header / Navbar -->
+  <header class="header">
+    <nav class="navbar" role="navigation" aria-label="Primary Navigation">
+      <div class="brand">
+        <a href="index.html" class="text-decoration-none">
+          <div class="brand__logo">S</div>
+        </a>
+        <div class="brand__info">
+          <span class="brand__name">C Siva Kumar</span>
+          <span class="brand__title">Full Stack Developer</span>
         </div>
-        
-        <div class="tab-content" id="projectTabsContent">
-            <!-- Major Projects Section -->
-            <div class="tab-pane fade show active" id="major-projects" role="tabpanel" aria-labelledby="major-tab">
-                <div class="container">
-                    <h2 class="section-title text-center mb-5">Major Projects</h2>
-                    <div id="projectCarousel" class="carousel slide shadow-lg" data-ride="carousel">
-                        <!-- Carousel Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#projectCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#projectCarousel" data-slide-to="1"></li>
-                            <li data-target="#projectCarousel" data-slide-to="2"></li>
-                            <li data-target="#projectCarousel" data-slide-to="3"></li>
-                            <li data-target="#projectCarousel" data-slide-to="4"></li>
-                        </ol>
-                        
-                        <div class="carousel-inner rounded-4 overflow-hidden">
-                            
-                            <!-- JVD Payment Data Storing System -->
-                            <div class="carousel-item">
-                                <div class="project-card">
-                                    <div class="row g-0">
-                                        <div class="col-lg-6">
-                                            <div class="project-image-container">
-                                                <img src="images/jdvsite.png" class="project-image img-fluid" alt="JVD Payment Storing Site" data-toggle="modal" data-target="#projectModal2">
-                                                <div class="image-overlay">
-                                                    <button class="btn btn-light" data-toggle="modal" data-target="#projectModal2">
-                                                        <i class="fas fa-search-plus"></i> View Details
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="project-content p-4 p-lg-5">
-                                                <h3 class="project-title mb-3">JVD Payment Data Storing System</h3>
-                                                <div class="project-description mb-4">
-                                                    <p>A comprehensive web-based solution designed for efficient management and storage of payment data. This system caters to both students and administrators by providing a secure, easy-to-use platform for viewing and managing payment information.</p>
-                                                </div>
-                                                <h5 class="features-title mb-3"><i class="fas fa-cogs me-2"></i>Key Features</h5>
-                                                <div class="features-container mb-4">
-                                                    <span class="feature-badge">Student Login</span>
-                                                    <span class="feature-badge">Admin Login</span>
-                                                    <span class="feature-badge">CSV Upload</span>
-                                                    <span class="feature-badge">Results Management</span>
-                                                    <span class="feature-badge">Secure Access</span>
-                                                    <span class="feature-badge">Responsive Design</span>
-                                                </div>
-                                                <div class="project-actions">
-                                                    <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal2">
-                                                        <i class="fas fa-info-circle mr-2"></i>More Details
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+      </div>
 
-                            <!-- Project 2 Exam Results -->
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-5 proj-image d-flex align-items-center">
-                                        <img src="images/resutsdeclaration.png" data-toggle="modal" data-target="#projectModal3" class="d-block w-100 img-thumbnail" alt="Results Declaration Image">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="project-content">
-                                            <h3 class="card-title mt-3">Exam Results Declaration</h3>
-                                            <p class="card-text"><b>Description:</b> The Exam Results Declaration system is a web-based application developed to streamline the process of releasing and managing examination results. This platform provides a seamless experience for both students and administrators.</p>
-                                            <p class="card-text">Students can access their examination results via secure institution-provided links formatted for specific exams, such as "I B.Tech I Sem (R23) Supplementary Examination." The admin panel allows for the efficient generation of result links, management of student data, and bulk uploading of results through CSV files. Additionally, administrators can view and analyze overall student performance based on roll numbers, ensuring a comprehensive overview of academic results.</p>
-                                            <p><b>Key Features:</b></p>
-                                            <div class="btn-group-horizantal">
-                                                <button type="button" class="btn btn-info">Student Portal</button>
-                                                <button type="button" class="btn btn-info">Admin Panel</button>
-                                                <button type="button" class="btn btn-info">Generate Result Links</button>
-                                                <button type="button" class="btn btn-info">Manage Student Data</button>
-                                                <button type="button" class="btn btn-info">CSV Upload</button>
-                                                <button type="button" class="btn btn-info">View Performance</button>
-                                            </div>
-                                            
-                                            <!-- <div class="site_links">
-                                                <b>Github Repository:</b> <a class="card-link" href="https://github.com/sivakumar6678/Results_Declaration.git">https://github.com/sivakumar6678/Results_Declaration.git</a>
-                                            </div> -->
-                                            <div class="justify-content-center" id="morebutton">
-                                                <button class="button btn btn-primary" data-toggle="modal" data-target="#projectModal3">More Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1"></div>
-                                </div>
-                            </div>
+      <!-- Mobile Toggle -->
+      <button class="nav-toggle" id="menuToggle" aria-label="Toggle navigation" aria-controls="navMenu"
+        aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
 
-                            <!-- Project 3 EduHub  -->
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-5 proj-image d-flex align-items-center">
-                                        <img src="images/Eduhub.png" data-toggle="modal" data-target="#projectModal4" class="d-block w-100 img-thumbnail" alt="EduHub Image">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="project-content">
-                                            <h3 class="card-title mt-3">EduHub - Online Learning Platform</h3>
-                                            <p class="card-text"><b>Description:</b> EduHub is a robust online learning platform designed to offer a diverse range of courses and learning resources. It caters to learners of various disciplines by providing a flexible, interactive, and user-friendly educational environment.</p>
-                                            <p class="card-text">Developed as a collaborative project during an internship at Infosys, EduHub features functionalities such as course enrollment, progress tracking, and interactive quizzes. The platform is designed to enhance the learning experience with its intuitive interface and seamless navigation, allowing users to manage their learning journey effectively.</p>                                        <p><b>Key Features:</b></p>
-                                            <div class="btn-group-horizantal">
-                                                <button type="button" class="btn btn-info">Course Catalog</button>
-                                                <button type="button" class="btn btn-info">Progress Tracking</button>
-                                                <button type="button" class="btn btn-info">Authentication</button>
-                                                <button type="button" class="btn btn-info">User Profiles</button>
-                                                <button type="button" class="btn btn-info">Course Management</button>
-                                                <button type="button" class="btn btn-info">Enrollment Section</button>
-                                            </div>
-                                            
-                                            <!-- <div class="site_links">
-                                                <b>Github Repository:</b> <a class="card-link" href="https://github.com/sivakumar6678/Eduhub.git">https://github.com/sivakumar6678/Eduhub.git</a>
-                                            </div> -->
-                                            <div class="justify-content-center" id="morebutton">
-                                                <button class="button btn btn-primary" data-toggle="modal" data-target="#projectModal4">More Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1"></div>
-                                </div>
-                            </div>
-
-                            <!-- Project 5 - Spend Smart -->
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-5 proj-image d-flex align-items-center">
-                                        <img src="images/spendsmart.png" data-toggle="modal" data-target="#projectModal5" class="img-thumbnail" alt="Spend Smart Image">
-                                    </div>
-                                    <div class="col-md-5 align-items-center">
-                                        <div class="project-content">
-                                            <h3 class="card-title mt-3">Spend Smart</h3>
-                                            <p class="card-text">Spend Smart is a comprehensive expense management tool designed to help users track, manage, and optimize their spending. With intuitive dashboards and smart analytics, users can monitor financial health, set budgets, and receive actionable insights for smarter decision-making.</p>
-                                            <p><b>Key Features:</b></p>
-                                            <div class="btn-group-horizantal">
-                                                <button type="button" class="btn btn-info">Budget Tracking</button>
-                                                <button type="button" class="btn btn-info">Expense Categorization</button>
-                                                <button type="button" class="btn btn-info">Insightful Analytics</button>
-                                                <button type="button" class="btn btn-info">Mobile & Desktop Compatibility</button>
-                                            </div>
-                                            <div class="justify-content-center" id="morebutton">
-                                                <button class="button btn btn-primary" data-toggle="modal" data-target="#projectModal5">
-                                                    More Details
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1"></div>
-                                </div>
-                            </div>
-
-                            <!-- Project 6 - Advanced Attendance Management System -->
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-5 proj-image d-flex align-items-center">
-                                        <img src="images/attendance.png" data-toggle="modal" data-target="#projectModal-finalyear" class="d-block w-100 img-thumbnail" alt="Attendance Management Image">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="project-content">
-                                            <h3 class="card-title mt-3">Advanced Attendance Management System</h3>
-                                            <p class="card-text"><b>Description:</b> A comprehensive web-based platform designed to automate and streamline attendance tracking for educational institutions. It simplifies faculty scheduling, student attendance management, and class coordination with real-time monitoring.</p>
-                                            <p class="card-text">The system ensures secure attendance marking using GPS-based verification, prevents multiple logins, and enables CRCs (Class Responsibility Coordinators) to efficiently assign and manage timetables. Faculty members can view their assigned subjects, mark attendance, and track student participation seamlessly.</p>
-                                            <p><b>Key Features:</b></p>
-                                            <div class="btn-group-horizantal">
-                                                <button type="button" class="btn btn-info">Faculty Dashboard</button>
-                                                <button type="button" class="btn btn-info">Student Attendance</button>
-                                                <button type="button" class="btn btn-info">Timetable Management</button>
-                                                <button type="button" class="btn btn-info">GPS-based Verification</button>
-                                                <button type="button" class="btn btn-info">Multi-User Authentication</button>
-                                                <button type="button" class="btn btn-info">Detailed Attendance Reports</button>
-                                            </div>
-                                            <div class="project-details mt-3">
-                                                
-                                                <!-- <p><b>Status:</b> <span class="badge badge-success">Completed : Ready to collebrate to improve it</span></p> -->
-                                            </div>
-                                            <div class="justify-content-center" id="morebutton">
-                                                <button class="button btn btn-primary" data-toggle="modal" data-target="#projectModal-finalyear">More Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1"></div>
-                                </div>
-                            </div>
-
-                            <!-- Project 7 - Frontend Developer Toolbox -->
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-5 proj-image d-flex align-items-center">
-                                        <img src="images/frontendtoolbox.png" data-toggle="modal" data-target="#projectModal-finalmini" class="d-block w-100 img-thumbnail" alt="Frontend Toolbox Image">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="project-content">
-                                            <h3 class="card-title mt-3">Frontend Developer Toolbox</h3>
-                                            <p class="card-text"><b>Description:</b> A collection of essential tools designed to assist frontend developers in creating visually appealing and optimized websites. This toolbox includes various generators, AI-powered suggestions, and project planning assistants.</p>
-                                            <p class="card-text">The toolbox provides AI-powered features for generating color palettes, box shadows, project suggestions, and more. It helps frontend developers speed up their workflow by offering smart recommendations and easy-to-use utilities.</p>
-                                            <p><b>Key Features:</b></p>
-                                            <div class="btn-group-horizantal">
-                                                <button type="button" class="btn btn-info">Color Palette Generator</button>
-                                                <button type="button" class="btn btn-info">Gradient Generator</button>
-                                                <button type="button" class="btn btn-info">Box Shadow Generator</button>
-                                                <button type="button" class="btn btn-info">AI-Powered Project Ideas</button>
-                                                <button type="button" class="btn btn-info">Image Suggestion Tool</button>
-                                                <button type="button" class="btn btn-info">Project Brainstorming Assistant</button>
-                                            </div>
-                                            <!-- <p><b>Status:</b> <span class="badge badge-info">Under Development : Ready for collebration </span></p> -->
-
-                                            
-                                            <div class="justify-content-center" id="morebutton">
-                                                <button class="button btn btn-primary" data-toggle="modal" data-target="#projectModal-finalmini">More Details</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Carousel Controls -->
-                        <a class="carousel-control-prev" href="#projectCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#projectCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    
-                    
-                    
-                    <!-- Modal for Project 2 -->
-                    <!-- Modal for JVD Payment Data Storing System -->
-                    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2" aria-hidden="true">
-                        <div class="modal-dialog modal-xl modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="projectModalLabel2">JVD Payment Data Storing System - Detailed Overview</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <h6><b>Project Overview:</b></h6>
-                                    <p>The JVD Payment Data Storing System is an advanced web-based application developed to efficiently manage and store student payment data for educational institutions. This system is designed to streamline the process of recording, tracking, and accessing payment information, ensuring accuracy and transparency in fee management.</p>
-
-                                    <h6><b>Key Functionalities:</b></h6>
-                                    <ul>
-                                        <li><b>Student Portal:</b> Secure login for students to access their payment history, view details of transactions, and check fees for the current and previous academic years.</li>
-                                        <li><b>Admin Dashboard:</b> Provides comprehensive tools for administrators to manage student data, including the ability to add or update records, assign fee structures for new academic years, and manage bulk data uploads through CSV files.</li>
-                                        <li><b>CSV Upload:</b> Simplifies the process of adding student data and payment records by allowing bulk uploads in CSV format, reducing manual data entry errors.</li>
-                                        <li><b>Payment Tracking:</b> Admins can track payments by various categories, such as academic fees, special fees, and more, ensuring all payments are accurately recorded and easily retrievable.</li>
-                                        <li><b>Reports & Analytics:</b> Generate detailed reports and export student payment data in Excel format, with options to filter data by student, date, or payment type.</li>
-                                        <li><b>Responsive Design:</b> The system is designed to be fully responsive, ensuring that both students and administrators can access the platform from any device, whether it's a desktop, tablet, or smartphone.</li>
-                                    </ul>
-
-                                    <h6><b>Technical Specifications:</b></h6>
-                                    <ul>
-                                        <li><b>Front-End:</b> Built using HTML, CSS, JavaScript, and Bootstrap for a clean and responsive user interface.</li>
-                                        <li><b>Back-End:</b> Utilizes MySQL for database management, ensuring secure and efficient storage of payment data.</li>
-                                        <li><b>Security:</b> Implements robust authentication mechanisms to ensure that only authorized users have access to sensitive payment data.</li>
-                                    </ul>
-                                    <p><b>Languages Used:</b></p>
-                                    <div class="language-icons">
-                                        <img src="images/html.png" alt="HTML" class="languages">
-                                        <img src="images/css.png" alt="CSS" class="languages">
-                                        <img src="images/javascript.png" alt="JavaScript" class="languages">
-                                        <img src="images/bootstrap-framework.png" alt="Bootstrap" class="languages">
-                                        <img src="images/mysql.png" alt="MySQL" class="languages">
-                                    </div>
-                                    <h6><b>Project Challenges:</b></h6>
-                                    <p>During the development of the JVD Payment Data Storing System, several challenges were encountered, including the integration of the CSV upload feature, ensuring data integrity during bulk uploads, and implementing secure authentication for multiple user roles. These challenges were successfully addressed through careful planning, testing, and the use of best practices in web development and data management.</p>
-
-                                    <h6><b>Future Enhancements:</b></h6>
-                                    <p>Plans for future enhancements include adding automated notifications for payment deadlines, integrating online payment gateways for seamless fee collection, and implementing advanced data analytics tools to provide more insights into payment trends and student financial behavior.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a class="btn btn-primary" href="https://github.com/sivakumar6678/JVD-Payment-Data-Storing.git" target="_blank">
-                                        <i class="fab fa-github mr-2"></i>View Repository
-                                    </a>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                    <!-- Modal for Project 3  Reulst portal -->
-                    <div class="modal fade" id="projectModal3" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel3" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="projectModalLabel3">Exam Results Declaration</h5>
-                                    
-                                </div>
-                                <div class="modal-body">
-                                    <p>A web-based application for managing and announcing examination results efficiently, designed with a secure admin dashboard and a student portal.</p>
-                                    <p>The Results Declaration System is an efficient platform for educational institutions to release examination results online. Students can easily access their results via institution-provided links formatted for specific exams, such as "I B.Tech I Sem (R23) Supplementary Examination." The system also includes an admin panel where administrators can generate result links, manage student data, and upload results via CSV files. Additionally, the system features a student performance block for viewing overall performance based on roll number.</p>
-                                    <p><b>Features:</b></p>
-                                    <ul>
-                                        <li><b>Student Portal:</b>
-                                            <ul>
-                                                <li>Access examination results via specific institution-generated links.</li>
-                                                <li>View results for different academic years and courses.</li>
-                                            </ul>
-                                        </li>
-                                        <li><b>Admin Panel:</b>
-                                            <ul>
-                                                <li>Generate result links based on examination type and format.</li>
-                                                <li>Manage student data, including name, date of birth, and phone number.</li>
-                                                <li>Upload student results using CSV files.</li>
-                                                <li>View overall student performance by entering the roll number.</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <p><b>Languages Used:</b></p>
-                                    <div class="language-icons">
-                                        <img src="images/html.png" alt="HTML" class="languages">
-                                        <img src="images/css.png" alt="CSS" class="languages">
-                                        <img src="images/javascript.png" alt="JavaScript" class="languages">
-                                        <img src="images/bootstrap-framework.png" alt="Bootstrap" class="languages">
-                                        <img src="images/mysql.png" alt="MySQL" class="languages">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <a class="btn btn-primary" href="https://github.com/sivakumar6678/Results-Declaration-System.git" target="_blank">Github Repository</a>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Modal for Project 4 Eduhub platform -->
-                    <div class="modal fade" id="projectModal4" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel4" aria-hidden="true">
-                        <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="projectModalLabel4">Eduhub</h5>
-                                    
-                                </div>
-                                <div class="modal-body">
-                                    <p>Eduhub is an online learning platform designed to offer a comprehensive learning experience through features like course enrollment, progress tracking, and interactive quizzes. Developed as a collaborative project during an internship at Infosys, I contributed 85% of the frontend development.</p>
-                                    <p>Eduhub provides a flexible and interactive learning environment with a user-friendly interface. Key features include:</p>
-                                    <ul>
-                                        <li><b>Course Catalog:</b> Explore and enroll in various courses across different industries.</li>
-                                        <li><b>Progress Tracking:</b> Keep track of your progress and completion status for enrolled courses.</li>
-                                        <li><b>User Profiles:</b> Create and manage your user profile with personalized settings.</li>
-                                        <li><b>Authentication:</b> Secure sign-up, login, verification, and session management.</li>
-                                        <li><b>Category Management:</b> Courses are organized into categories for easy navigation.</li>
-                                        <li><b>Course Management:</b> Includes structured modules and content with progress tracking.</li>
-                                        <li><b>Enrollment System:</b> Allows students to enroll in courses and track their progress.</li>
-                                    </ul>
-                                    <p><b>Website Structure:</b></p>
-                                    <ul>
-                                        <li><b>Home Page:</b> Menu options for easy navigation, About section, footer with social media links, contact information, and more.</li>
-                                        <li><b>Category Page:</b> Displays course categories for users to search and select from.</li>
-                                        <li><b>Enrollment Page:</b> Shows available modules for each course; enrollment restricted to logged-in users.</li>
-                                        <li><b>Dashboard Page:</b> Displays all courses a user has enrolled in and completed.</li>
-                                        <li><b>Register & Login Pages:</b> Handles user registration and login, ensuring secure access.</li>
-                                        <li><b>Reset Password Page:</b> Allows users to update their password if forgotten.</li>
-                                    </ul>
-                                    <p><b>Languages Used:</b></p>
-                                    <div class="language-icons">
-                                        <img src="images/angular.png" alt="Angular" class="languages">
-                                        <img src="images/typescript.png" alt="TypeScript" class="languages">
-                                        <img src="images/java.png" alt="Java" class="languages">
-                                        <img src="images/springboot.png" alt="Spring Boot" class="languages">
-                                        <img src="images/mysql.png" alt="MySQL" class="languages">
-                                        <img src="images/github.png" alt="Git" class="languages">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <a class="btn btn-primary" href="https://github.com/sivakumar6678/Eduhub.git" target="_blank">Github Repository</a>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal for Project 5 Spend Smart -->
-                    <div class="modal fade" id="projectModal5" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="projectModalLabel2">Spend Smart</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Spend Smart is an intuitive expense management tool designed to help users track, manage, and optimize their spending habits. By providing detailed analytics and budget tracking features, it empowers users to take control of their financial health.</p>
-                                    <p>The application offers a user-friendly interface and insightful visualizations, making it easy for users to categorize expenses, set financial goals, and make informed decisions. With a focus on simplicity and practicality, Spend Smart is an essential tool for better financial management.</p>
-                                    <p><b>Features:</b></p>                                    
-                                    <ul>
-                                        <li>Comprehensive budget tracking with customizable spending categories.</li>
-                                        <li>Insightful analytics and visualizations for smarter financial decisions.</li>
-                                        <li>Responsive design ensuring compatibility with mobile and desktop devices.</li>
-                                        <li>Secure and simple user experience for efficient expense management.</li>
-                                    </ul>
-                                    <p><b>Languages and Technologies Used:</b></p>
-                                    <div class="language-icons">
-                                        <img src="images/react.png" alt="React" class="languages">
-                                        <img src="images/css.png" alt="CSS" class="languages">
-                                        <img src="images/javascript.png" alt="JavaScript" class="languages">
-                                        <img src="images/MaterialUI.png" alt="MaterialUI" class="languages">
-                                        <img src="images/python.png" alt="Python" class="languages">
-                                        <img src="images/mysql.png" alt="MYSQL" class="languages">
-                                    </div>
-                                    <p><b>Github Repository:</b> <a href="https://github.com/sivakumar6678/SpendSmart.git">https://github.com/sivakumar6678/Spend-Smart.git</a></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a class="btn btn-primary" href="https://github.com/sivakumar6678/SpendSmart.git" target="_blank">Github Repository</a>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal for Project 6 Advanced Attendance Management System -->
-                    <div class="modal fade" id="projectModal-finalyear" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel4" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="projectModalLabel4">Advanced Attendance Management System</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <p>A robust web application designed to automate attendance tracking in colleges and universities. The system provides an efficient way for faculty to manage class attendance while ensuring security through GPS verification.</p>
-                                    <p>This platform supports CRCs for timetable management, faculty for subject tracking, and students for attendance marking. It prevents multiple logins and provides a seamless experience across roles.</p>
-                                    <p><b>Features:</b></p>                                    
-                                    <ul>
-                                        <li>Role-based authentication (CRC, Faculty, Student).</li>
-                                        <li>GPS-based location verification for attendance marking.</li>
-                                        <li>Automated timetable scheduling for faculty.</li>
-                                        <li>Attendance reports with real-time analysis.</li>
-                                        <li>Prevents multi-device login for students.</li>
-                                        <li>Real-time attendance tracking and notifications.</li>
-                                        <li>Customizable attendance rules and policies.</li>
-                                        <li>Export attendance data in various formats.</li>
-                                    </ul>
-                                    <div class="project-details mt-3">
-                                        <p><b>Additional Features:</b></p>
-                                        <ul class="feature-list">
-                                            <li>Real-time attendance tracking and notifications</li>
-                                            <li>Customizable attendance rules and policies</li>
-                                            <li>Export attendance data in various formats</li>
-                                            <li>Automated report generation</li>
-                                            <li>Mobile-responsive design</li>
-                                        </ul>
-                                    </div>
-                                    <p><b>Languages & Technologies Used:</b></p>
-                                    <div class="language-icons">
-                                        <img src="images/angular.png" alt="Angular" class="languages">
-                                        <img src="images/django.png" alt="Django" class="languages">
-                                        <img src="images/mysql.png" alt="MYSQL" class="languages">
-                                        <img src="images/typescript.png" alt="TypeScript" class="languages">
-                                        <img src="images/python.png" alt="Python" class="languages">
-                                        <img src="images/postman.png" alt="Postman" class="languages">
-                                        <img src="images/primeng.png" alt="PrimeNG" class="languages">
-                                    </div>
-                                    <p><b>Github Repository:</b> <a href="https://github.com/sivakumar6678/Advanced-Attendence-management-system.git">https://github.com/sivakumar6678/Advanced-Attendence-management-system.git</a></p>
-                                    <p><b>View Website:</b> <a href="https://advanced-attendence-management-system.vercel.app/"> Click here :  Need assistance to use it contact My Mail </a></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a class="btn btn-primary" href="https://github.com/sivakumar6678/Advanced-Attendence-management-system.git" target="_blank">Github Repository</a>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Modal for Project 7 Frontend Developer Toolbox -->
-                    <div class="modal fade" id="projectModal-finalmini" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel5" aria-hidden="true">
-                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="projectModalLabel5">Frontend Developer Toolbox</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <p>An all-in-one frontend development toolkit that provides essential utilities for designing and building modern web applications. It includes AI-powered suggestions, design generators, and smart utilities to enhance the development process.</p>
-                                    <p><b>Features:</b></p>                                    
-                                    <ul>
-                                        <li>Color palette generator with AI-powered suggestions using Gemini API.</li>
-                                        <li>Gradient generator for smooth backgrounds.</li>
-                                        <li>Box shadow generator for better UI styling.</li>
-                                        <li>Project brainstorming assistant with AI-powered recommendations.</li>
-                                        <li>Image suggestion tool to help choose relevant assets.</li>
-                                        <li>Code snippet generator for common UI patterns.</li>
-                                        <li>Accessibility checker and suggestions.</li>
-                                        <li>Performance optimization recommendations.</li>
-                                    </ul>
-                                    <p><b>AI Integration:</b></p>
-                                    <ul>
-                                        <li>Gemini API integration for intelligent suggestions.</li>
-                                        <li>AI-powered color scheme recommendations.</li>
-                                        <li>Smart project structure suggestions.</li>
-                                        <li>Automated code optimization tips.</li>
-                                    </ul>
-                                    <div class="project-details mt-3">
-                                        
-                                        <p><b>Additional Tools:</b></p>
-                                        <ul class="feature-list">
-                                            <li>Code snippet generator for common UI patterns</li>
-                                            <li>Accessibility checker and suggestions</li>
-                                            <li>Performance optimization recommendations</li>
-                                            <li>Cross-browser compatibility checker</li>
-                                            <li>Responsive design validator</li>
-                                        </ul>
-                                    </div>
-                                    <p><b>Languages & Technologies Used:</b></p>
-                                    <div class="language-icons">
-                                        <img src="images/react.png" alt="React" class="languages">
-                                        <img src="images/scss.png" alt="SCSS" class="languages">
-                                        <img src="images/javascript.png" alt="JavaScript" class="languages">
-                                        <img src="images/gemini.png" alt="Gemini API" class="languages">
-                                        
-                                    </div> <br>
-                                    <p><b>Status:</b> Under Development : Ready for Collebration </p>
-                                    <p><b>Github Repository:</b> <a href="https://github.com/sivakumar6678/CodeCanvas.git">https://github.com/sivakumar6678/CodeCanvas.git</a></p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a class="btn btn-primary" href="https://github.com/sivakumar6678/CodeCanvas.git" target="_blank">Github Repository</a>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    
-                </div>
-                <!-- Modal for Project 1 -->
-                <div class="modal fade" id="projectModal1" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel1" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <div id="projectImagesCarousel1" class="carousel slide" data-ride="carousel">
-                                    <div class="carousel-inner">
-                                        
-                                        <!-- Add more images if needed -->
-                                    </div>
-                                    <a class="carousel-control-prev" href="#projectImagesCarousel1" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-
-                                    </a>
-                                    <a class="carousel-control-next" href="#projectImagesCarousel1" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Minor Projects Section -->
-            <div class="tab-pane fade" id="minor-projects" role="tabpanel" aria-labelledby="minor-tab">
-                <div class="container">
-                    <h2 class="section-title text-center mb-5">Minor Projects</h2>
-                    
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="project-card h-100">
-                                <div class="project-image-container" style="height: 200px;">
-                                    <img src="images/resugen.png" class="project-image img-fluid" alt="Resume Generator Image">
-                                    <div class="image-overlay">
-                                        <button class="btn btn-light" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Online Resume Generator"
-                                            data-description="A web application designed to help users create professional resumes effortlessly. By offering a range of customizable templates, this tool allows users to input their personal details, choose a preferred template, and download their resume in PDF format. The application emphasizes simplicity and user-friendliness, ensuring a smooth experience for users of all skill levels."
-                                            data-image="images/resugen.png"
-                                            data-technologies="HTML, CSS, JavaScript" 
-                                            data-projectlink="https://github.com/sivakumar6678/Resume-Generator.git">
-                                            <i class="fas fa-search-plus"></i> View Details
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">Online Resume Generator</h3>
-                                    <div class="project-description">
-                                        <p>A web application that helps users create professional resumes with customizable templates and PDF downloads.</p>
-                                    </div>
-                                    <div class="features-container">
-                                        <span class="feature-badge">HTML</span>
-                                        <span class="feature-badge">CSS</span>
-                                        <span class="feature-badge">JavaScript</span>
-                                    </div>
-                                    <div class="project-actions">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Online Resume Generator"
-                                            data-description="A web application designed to help users create professional resumes effortlessly. By offering a range of customizable templates, this tool allows users to input their personal details, choose a preferred template, and download their resume in PDF format. The application emphasizes simplicity and user-friendliness, ensuring a smooth experience for users of all skill levels."
-                                            data-image="images/resugen.png"
-                                            data-technologies="HTML, CSS, JavaScript" 
-                                            data-projectlink="https://github.com/sivakumar6678/Resume-Generator.git">
-                                            <i class="fas fa-info-circle mr-2"></i>More Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="project-card h-100">
-                                <div class="project-image-container" style="height: 200px;">
-                                    <img src="images/todo.jpg" class="project-image img-fluid" alt="To-Do List">
-                                    <div class="image-overlay">
-                                        <button class="btn btn-light" data-toggle="modal" data-target="#projectModal"
-                                            data-title="To-Do List"
-                                            data-description="A simple yet effective task management tool designed to help users organize their daily activities. This application allows users to create, update, and delete tasks, ensuring that nothing is overlooked. With its intuitive interface, users can easily prioritize tasks, set deadlines, and categorize them for better management. Developed using React and CSS, the To-Do List offers a responsive design, making it accessible on various devices."
-                                            data-image="images/todo.jpg"
-                                            data-technologies="React, CSS" 
-                                            data-projectlink="https://github.com/sivakumar6678/TO-DO.git">
-                                            <i class="fas fa-search-plus"></i> View Details
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">To-Do List</h3>
-                                    <div class="project-description">
-                                        <p>A simple yet effective task management tool.</p>
-                                    </div>
-                                    <div class="features-container">
-                                        <span class="feature-badge">React</span>
-                                        <span class="feature-badge">CSS</span>
-                                    </div>
-                                    <div class="project-actions">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal"
-                                            data-title="To-Do List"
-                                            data-description="A simple yet effective task management tool designed to help users organize their daily activities. This application allows users to create, update, and delete tasks, ensuring that nothing is overlooked. With its intuitive interface, users can easily prioritize tasks, set deadlines, and categorize them for better management. Developed using React and CSS, the To-Do List offers a responsive design, making it accessible on various devices."
-                                            data-image="images/todo.jpg"
-                                            data-technologies="React, CSS" 
-                                            data-projectlink="https://github.com/sivakumar6678/TO-DO.git">
-                                            <i class="fas fa-info-circle mr-2"></i>More Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="project-card h-100">
-                                <div class="project-image-container" style="height: 200px;">
-                                    <img src="images/crypto.png" class="project-image img-fluid" alt="Cryptocurrency Price Tracker">
-                                    <div class="image-overlay">
-                                        <button class="btn btn-light" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Cryptocurrency Price Tracker"
-                                            data-description="Part of the Slash Mark internship, this tool tracks live cryptocurrency prices. A dynamic web application that tracks live cryptocurrency prices. It offers real-time data updates, allowing users to monitor the fluctuating values of various cryptocurrencies. This project was part of an internship and was built with a focus on responsive design and API integration."
-                                            data-image="images/crypto.png"
-                                            data-technologies="React, CSS" 
-                                            data-projectlink="https://github.com/sivakumar6678/CryptoApp.git">
-                                            <i class="fas fa-search-plus"></i> View Details
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">Cryptocurrency Price Tracker</h3>
-                                    <div class="project-description">
-                                        <p>This tool tracks live cryptocurrency prices.</p>
-                                    </div>
-                                    <div class="features-container">
-                                        <span class="feature-badge">React</span>
-                                        <span class="feature-badge">CSS</span>
-                                        <span class="feature-badge">API Integration</span>
-                                    </div>
-                                    <div class="project-actions">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Cryptocurrency Price Tracker"
-                                            data-description="Part of the Slash Mark internship, this tool tracks live cryptocurrency prices. A dynamic web application that tracks live cryptocurrency prices. It offers real-time data updates, allowing users to monitor the fluctuating values of various cryptocurrencies. This project was part of an internship and was built with a focus on responsive design and API integration."
-                                            data-image="images/crypto.png"
-                                            data-technologies="React, CSS" 
-                                            data-projectlink="https://github.com/sivakumar6678/CryptoApp.git">
-                                            <i class="fas fa-info-circle mr-2"></i>More Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="project-card h-100">
-                                <div class="project-image-container" style="height: 200px;">
-                                    <img src="images/password.png" class="project-image img-fluid" alt="Password Generator">
-                                    <div class="image-overlay">
-                                        <button class="btn btn-light" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Password Generator"
-                                            data-description="Generated secure passwords with customizable criteria. Developed as a learning project.<br>A secure password generation tool that allows users to create strong, customizable passwords. The application includes options for adjusting the complexity, length, and criteria of the passwords, making it a valuable tool for enhancing online security. Developed as a learning project, it emphasizes user-friendly interface and reliable functionality."
-                                            data-image="images/password.png"
-                                            data-technologies="React, CSS" 
-                                            data-projectlink="https://github.com/sivakumar6678/Password_generator.git">
-                                            <i class="fas fa-search-plus"></i> View Details
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">Password Generator</h3>
-                                    <div class="project-description">
-                                        <p>Generated secure passwords with customizable criteria. Developed as a learning project.</p>
-                                    </div>
-                                    <div class="features-container">
-                                        <span class="feature-badge">React</span>
-                                        <span class="feature-badge">CSS</span>
-                                    </div>
-                                    <div class="project-actions">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Password Generator"
-                                            data-description="PGenerated secure passwords with customizable criteria. Developed as a learning project.<br>A secure password generation tool that allows users to create strong, customizable passwords. The application includes options for adjusting the complexity, length, and criteria of the passwords, making it a valuable tool for enhancing online security. Developed as a learning project, it emphasizes user-friendly interface and reliable functionality."
-                                            data-image="images/crypto.png"
-                                            data-technologies="React, CSS" 
-                                            data-projectlink="https://github.com/sivakumar6678/Password_generator.git">
-                                            <i class="fas fa-info-circle mr-2"></i>More Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                        <div class="col-md-4 mb-4">
-                            <div class="project-card h-100">
-                                <div class="project-image-container" style="height: 200px;">
-                                    <img src="images/netflix.png" class="project-image img-fluid" alt="Simple Netflix Homepage">
-                                    <div class="image-overlay">
-                                        <button class="btn btn-light" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Simple Netflix Homepage"
-                                            data-description="A Netflix homepage clone developed as part of the Bharat Intern internship. A front-end clone of the Netflix homepage, designed to replicate the layout, styling, and responsiveness of the original site. This project showcases proficiency in HTML, CSS and was developed during an internship to demonstrate an understanding of modern web design practices."
-                                            data-image="images/netflixhome.png"
-                                            data-technologies="HTML, CSS" 
-                                            data-projectlink="https://github.com/sivakumar6678/netflixhomepageclone">
-                                            <i class="fas fa-search-plus"></i> View Details
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">Simple Netflix Homepage</h3>
-                                    <div class="project-description">
-                                        <p>A Netflix homepage clone developed as part of the Bharat Intern internship.</p>
-                                    </div>
-                                    <div class="features-container">
-                                        <span class="feature-badge">HTML</span>
-                                        <span class="feature-badge">CSS</span>
-                                    </div>
-                                    <div class="project-actions">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Simple Netflix Homepage"
-                                            data-description="A Netflix homepage clone developed as part of the Bharat Intern internship. A front-end clone of the Netflix homepage, designed to replicate the layout, styling, and responsiveness of the original site. This project showcases proficiency in HTML, CSS and was developed during an internship to demonstrate an understanding of modern web design practices."
-                                            data-image="images/netflixhome.png"
-                                            data-technologies="HTML, CSS" 
-                                            data-projectlink="https://github.com/sivakumar6678/netflixhomepageclone">
-                                            <i class="fas fa-info-circle mr-2"></i>More Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4 mb-4">
-                            <div class="project-card h-100">
-                                <div class="project-image-container" style="height: 200px;">
-                                    <img src="images/portfolio.png" class="project-image img-fluid" alt="Personal Portfolio">
-                                    <div class="image-overlay">
-                                        <button class="btn btn-light" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Personal Portfolio"
-                                            data-description="A personal portfolio showcasing my projects and skills, developed during an internship. A minimalist personal portfolio that presents my projects, skills, and experiences. This portfolio was built to showcase web development capabilities and is designed with simplicity and clarity in mind. It was developed during an internship and serves as a professional online presence."
-                                            data-image="images/portfolio.png"
-                                            data-technologies="HTML, CSS" 
-                                            data-projectlink="https://github.com/sivakumar6678/portfolio-bharatintern">
-                                            <i class="fas fa-search-plus"></i> View Details
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">Personal Portfolio</h3>
-                                    <div class="project-description">
-                                        <p>A personal portfolio showcasing my projects and skills, developed during an internship.</p>
-                                    </div>
-                                    <div class="features-container">
-                                        <span class="feature-badge">HTML</span>
-                                        <span class="feature-badge">CSS</span>
-                                    </div>
-                                    <div class="project-actions">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Personal Portfolio"
-                                            data-description="A personal portfolio showcasing my projects and skills, developed during an internship. A minimalist personal portfolio that presents my projects, skills, and experiences. This portfolio was built to showcase web development capabilities and is designed with simplicity and clarity in mind. It was developed during an internship and serves as a professional online presence."
-                                            data-image="images/portfolio.png"
-                                            data-technologies="HTML, CSS" 
-                                            data-projectlink="https://github.com/sivakumar6678/portfolio-bharatintern">
-                                            <i class="fas fa-info-circle mr-2"></i>More Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="project-card h-100">
-                                <div class="project-image-container" style="height: 200px;">
-                                    <img src="images/learningjourney.png" class="project-image img-fluid" alt="Our Learning Journey">
-                                    <div class="image-overlay">
-                                        <button class="btn btn-light" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Our Learning Journey"
-                                            data-description="A digital diary that documents the learning experiences and projects undertaken during the course of my studies and internships. This project includes detailed accounts of challenges faced, skills acquired, and the evolution of my knowledge in web development. It is both a reflective and informative piece, aimed at illustrating growth and dedication to continuous learning."
-                                            data-image="images/learningjourney.png"
-                                            data-technologies="HTML, CSS, JavaScript" 
-                                            data-projectlink="https://github.com/sivakumar6678/Notesbycse"
-                                            data-comment="Note: It is just my personal Website where I store my professional details and simple commands and notes which I have learned">
-                                            <i class="fas fa-search-plus"></i> View Details
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">Our Learning Journey</h3>
-                                    <div class="project-description">
-                                        <p>A professional diary documenting my learning experiences and projects.</p>
-                                    </div>
-                                    <div class="features-container">
-                                        <span class="feature-badge">HTML</span>
-                                        <span class="feature-badge">CSS</span>
-                                        <span class="feature-badge">JavaScript</span>
-                                    </div>
-                                    <div class="project-actions">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#projectModal"
-                                            data-title="Our Learning Journey"
-                                            data-description="A digital diary that documents the learning experiences and projects undertaken during the course of my studies and internships. This project includes detailed accounts of challenges faced, skills acquired, and the evolution of my knowledge in web development. It is both a reflective and informative piece, aimed at illustrating growth and dedication to continuous learning."
-                                            data-image="images/learningjourney.png"
-                                            data-technologies="HTML, CSS, JavaScript" 
-                                            data-projectlink="https://github.com/sivakumar6678/Notesbycse"
-                                            data-comment="Note: It is just my personal Website where I store my professional details and simple commands and notes which I have learned">
-                                            <i class="fas fa-info-circle mr-2"></i>More Details
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add more project cards as needed -->
-                    </div>
-                </div>
-            </div>
+      <!-- Navigation Menu -->
+      <div class="nav-menu" id="navMenu" role="menu" aria-hidden="true">
+        <div class="d-flex justify-content-between align-items-center d-xl-none mb-4">
+          <span class="fw-bold text-dark">Menu</span>
+          <button class="btn-close" id="navClose" aria-label="Close"></button>
         </div>
+
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html#about"><span class="nav-number">01</span>About</a></li>
+          <li><a class="nav-link" href="index.html#skills"><span class="nav-number">02</span>Skills</a></li>
+          <li><a class="nav-link active" href="#" aria-current="page"><span class="nav-number">03</span>Projects</a>
+          </li>
+          <li><a class="nav-link" href="index.html#experience"><span class="nav-number">04</span>Experience</a></li>
+          <li><a class="nav-link" href="index.html#certify"><span class="nav-number">05</span>Certifications</a></li>
+          <li><a class="nav-link" href="index.html#passionandint"><span class="nav-number">06</span>Beyond Coding</a>
+          </li>
+          <li><a class="nav-link" href="index.html#contact"><span class="nav-number">07</span>Contact</a></li>
+        </ul>
+
+        <!-- Theme Switch -->
+        <div class="theme-switch ms-lg-4">
+          <label class="theme-label" for="theme-toggle">
+            <input type="checkbox" id="theme-toggle" class="input__check">
+            <span class="theme-slider">
+              <i class="fas fa-sun theme-icon-light"></i>
+              <i class="fas fa-moon theme-icon-dark"></i>
+            </span>
+          </label>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main pt-5 mt-5">
+    <div class="container py-5">
+      <!-- Page Header -->
+      <div class="text-center mb-5 animate__animated animate__fadeInDown">
+        <h1 class="display-4 fw-bold">All Projects</h1>
+        <p class="lead text-secondary">A comprehensive collection of my professional work and technical achievements</p>
+        <div class="mt-3">
+          <a href="index.html" class="btn btn-outline-secondary rounded-pill">
+            <i class="fas fa-arrow-left me-2"></i>Back to Home
+          </a>
+        </div>
+      </div>
+
+      <!-- Major Projects Section -->
+      <div class="major-projects mb-5 pb-5 border-bottom animate__animated animate__fadeInUp">
+        <h3 class="subsection-title mb-4">
+          <i class="fas fa-star me-2 text-warning"></i>Major Projects
+        </h3>
+
+        <div class="d-flex flex-column gap-5">
+
+          <!-- 1. Result Declaration Portal -->
+          <div class="project-card-horizontal">
+            <div class="row g-0 align-items-center">
+              <div class="col-lg-5 img-col">
+                <img src="images/resutsdeclaration.png" alt="Result Declaration Portal">
+              </div>
+              <div class="col-lg-7">
+                <div class="card-body p-4 p-lg-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="card-title fw-bold mb-0">Result Declaration Web Application</h3>
+                    <span
+                      class="badge bg-primary-subtle text-primary border border-primary-subtle fs-6 rounded-pill px-3">Major</span>
+                  </div>
+                  <p class="card-text text-secondary mb-4">A high-traffic web portal designed to securely manage and
+                    declare examination results. This system reduced manual distribution time by 80% while ensuring data
+                    integrity through robust authentication and encryption protocols. It serves hundreds of students
+                    simultaneously during result announcements.</p>
+
+                  <div class="card-tech mb-4">
+                    <span class="badge badge-tech mb-2">PHP</span>
+                    <span class="badge badge-tech mb-2">MySQL</span>
+                    <span class="badge badge-tech mb-2">AJAX</span>
+                    <span class="badge badge-tech mb-2">Bootstrap</span>
+                    <span class="badge badge-tech mb-2">Security</span>
+                  </div>
+
+                  <div class="d-flex gap-3">
+                    <a href="https://github.com/sivakumar6678/Results-Declaration-System.git"
+                      class="btn btn-primary px-4 rounded-pill" target="_blank">
+                      <i class="fab fa-github me-2"></i>View Code
+                    </a>
+                    <a href="#" class="btn btn-outline-secondary px-4 rounded-pill" target="_blank">
+                      <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Geo-Fenced Attendance System -->
+          <div class="project-card-horizontal">
+            <div class="row g-0 align-items-center">
+              <div class="col-lg-5 img-col order-lg-2">
+                <img src="images/attendance.png" alt="Geo-Fenced Attendance System">
+              </div>
+              <div class="col-lg-7 order-lg-1">
+                <div class="card-body p-4 p-lg-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="card-title fw-bold mb-0">Advanced Attendance Management</h3>
+                    <span
+                      class="badge bg-primary-subtle text-primary border border-primary-subtle fs-6 rounded-pill px-3">Major</span>
+                  </div>
+                  <p class="card-text text-secondary mb-4">A smart attendance solution leveraging GPS geo-fencing
+                    technology to ensure presence. The system features role-based access control (RBAC), real-time
+                    location verification, and automated analytics for HR and management. Use of Google Maps API allows
+                    for precise location tracking.</p>
+
+                  <div class="card-tech mb-4">
+                    <span class="badge badge-tech mb-2">Django</span>
+                    <span class="badge badge-tech mb-2">Angular</span>
+                    <span class="badge badge-tech mb-2">PostgreSQL</span>
+                    <span class="badge badge-tech mb-2">Google Maps API</span>
+                    <span class="badge badge-tech mb-2">REST API</span>
+                  </div>
+
+                  <div class="d-flex gap-3">
+                    <a href="https://github.com/sivakumar6678/Advanced-Attendence-management-system.git"
+                      class="btn btn-primary px-4 rounded-pill" target="_blank">
+                      <i class="fab fa-github me-2"></i>View Code
+                    </a>
+                    <a href="#" class="btn btn-outline-secondary px-4 rounded-pill" target="_blank">
+                      <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Eduhub -->
+          <div class="project-card-horizontal">
+            <div class="row g-0 align-items-center">
+              <div class="col-lg-5 img-col">
+                <img src="images/eduhub.jpg" alt="EduHub Learning Platform">
+              </div>
+              <div class="col-lg-7">
+                <div class="card-body p-4 p-lg-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="card-title fw-bold mb-0">EduHub Learning Management</h3>
+                    <span
+                      class="badge bg-primary-subtle text-primary border border-primary-subtle fs-6 rounded-pill px-3">Enterprise</span>
+                  </div>
+                  <p class="card-text text-secondary mb-4">An integrated enterprise learning portal developed during my
+                    Infosys internship. It facilitates comprehensive course tracking, resource management, and team
+                    collaboration. The architecture supports scalable user management and secure content delivery.</p>
+
+                  <div class="card-tech mb-4">
+                    <span class="badge badge-tech mb-2">Angular</span>
+                    <span class="badge badge-tech mb-2">Spring Boot</span>
+                    <span class="badge badge-tech mb-2">MySQL</span>
+                    <span class="badge badge-tech mb-2">Microservices</span>
+                  </div>
+
+                  <div class="d-flex gap-3">
+                    <a href="https://github.com/sivakumar6678" class="btn btn-primary px-4 rounded-pill"
+                      target="_blank">
+                      <i class="fab fa-github me-2"></i>View Code
+                    </a>
+                    <a href="#" class="btn btn-outline-secondary px-4 rounded-pill" target="_blank">
+                      <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. SpendSmart -->
+          <div class="project-card-horizontal">
+            <div class="row g-0 align-items-center">
+              <div class="col-lg-5 img-col order-lg-2">
+                <img src="images/spendsmart.png" alt="SpendSmart Expense Manager">
+              </div>
+              <div class="col-lg-7 order-lg-1">
+                <div class="card-body p-4 p-lg-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="card-title fw-bold mb-0">SpendSmart Expense Manager</h3>
+                    <span
+                      class="badge bg-primary-subtle text-primary border border-primary-subtle fs-6 rounded-pill px-3">Major</span>
+                  </div>
+                  <p class="card-text text-secondary mb-4">A full-stack personal finance application that helps users
+                    take control of their financial health. Users can track income and expenses, set monthly budgets,
+                    and visualize spending habits through interactive charts and dashboards.</p>
+
+                  <div class="card-tech mb-4">
+                    <span class="badge badge-tech mb-2">React</span>
+                    <span class="badge badge-tech mb-2">Node.js</span>
+                    <span class="badge badge-tech mb-2">MySQL</span>
+                    <span class="badge badge-tech mb-2">Chart.js</span>
+                    <span class="badge badge-tech mb-2">Express</span>
+                  </div>
+
+                  <div class="d-flex gap-3">
+                    <a href="https://github.com/sivakumar6678" class="btn btn-primary px-4 rounded-pill"
+                      target="_blank">
+                      <i class="fab fa-github me-2"></i>View Code
+                    </a>
+                    <a href="#" class="btn btn-outline-secondary px-4 rounded-pill" target="_blank">
+                      <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. JVD Payment Management System -->
+          <div class="project-card-horizontal">
+            <div class="row g-0 align-items-center">
+              <div class="col-lg-5 img-col">
+                <img src="images/jdvsite.png" alt="JVD Payment Management System">
+              </div>
+              <div class="col-lg-7">
+                <div class="card-body p-4 p-lg-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="card-title fw-bold mb-0">JVD Payment Management System</h3>
+                    <span
+                      class="badge bg-primary-subtle text-primary border border-primary-subtle fs-6 rounded-pill px-3">Major</span>
+                  </div>
+                  <p class="card-text text-secondary mb-4">A comprehensive fee reimbursement tracking system. Students
+                    can securely log in to access payment history, transaction details, and academic fee tracking.
+                    Administrators have a robust dashboard to manage student data, update payment records, and handle
+                    bulk data via CSV uploads.</p>
+
+                  <div class="card-tech mb-4">
+                    <span class="badge badge-tech mb-2">PHP</span>
+                    <span class="badge badge-tech mb-2">MySQL</span>
+                    <span class="badge badge-tech mb-2">Bootstrap</span>
+                    <span class="badge badge-tech mb-2">CSV Parsing</span>
+                  </div>
+
+                  <div class="d-flex gap-3">
+                    <a href="https://github.com/sivakumar6678" class="btn btn-primary px-4 rounded-pill"
+                      target="_blank">
+                      <i class="fab fa-github me-2"></i>View Code
+                    </a>
+                    <a href="#" class="btn btn-outline-secondary px-4 rounded-pill" target="_blank">
+                      <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Frontend Tool Box -->
+          <div class="project-card-horizontal">
+            <div class="row g-0 align-items-center">
+              <div class="col-lg-5 img-col order-lg-2">
+                <img src="images/frontendtoolbox.png" alt="Frontend Toolkit">
+              </div>
+              <div class="col-lg-7 order-lg-1">
+                <div class="card-body p-4 p-lg-5">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h3 class="card-title fw-bold mb-0">Frontend Toolkit</h3>
+                    <span
+                      class="badge bg-primary-subtle text-primary border border-primary-subtle fs-6 rounded-pill px-3">Major</span>
+                  </div>
+                  <p class="card-text text-secondary mb-4">A productivity suite for frontend developers containing
+                    essential generators and utilities. It includes AI-powered tools for color palette generation, CSS
+                    box-shadows, and project planning suggestions. Designed to streamline the web development workflow.
+                  </p>
+
+                  <div class="card-tech mb-4">
+                    <span class="badge badge-tech mb-2">HTML5</span>
+                    <span class="badge badge-tech mb-2">Advanced CSS3</span>
+                    <span class="badge badge-tech mb-2">JavaScript</span>
+                    <span class="badge badge-tech mb-2">AI Integration</span>
+                  </div>
+
+                  <div class="d-flex gap-3">
+                    <a href="https://github.com/sivakumar6678" class="btn btn-primary px-4 rounded-pill"
+                      target="_blank">
+                      <i class="fab fa-github me-2"></i>View Code
+                    </a>
+                    <a href="#" class="btn btn-outline-secondary px-4 rounded-pill" target="_blank">
+                      <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Minor Projects Section -->
+      <div class="minor-projects animate__animated animate__fadeInUp">
+        <h3 class="subsection-title mb-4 text-secondary">
+          <i class="fas fa-project-diagram me-2 text-primary"></i>Additional Technical Work
+        </h3>
+        <div class="row g-4">
+          <!-- 1. Resume Builder -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card project-card h-100">
+              <div class="project-img-container">
+                <img src="images/resugen.png" class="card-img-top" alt="Resume Builder">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Resume Builder</h5>
+                <p class="card-text flex-grow-1 small">Dynamic builder with PDF export and multiple professional
+                  templates.</p>
+                <div class="card-tech mb-3">
+                  <span class="badge badge-tech">React</span>
+                  <span class="badge badge-tech">Firebase</span>
+                </div>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="https://github.com/sivakumar6678/Resume-Generator.git"
+                    class="btn btn-sm btn-outline-primary flex-grow-1" target="_blank">
+                    <i class="fab fa-github me-1"></i>GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Netflix Clone -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card project-card h-100">
+              <div class="project-img-container">
+                <img src="images/netflixhome.png" class="card-img-top" alt="Netflix Clone">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Netflix Clone</h5>
+                <p class="card-text flex-grow-1 small">Premium UI clone featuring TMDB API integration and responsive
+                  slider layout.</p>
+                <div class="card-tech mb-3">
+                  <span class="badge badge-tech">React</span>
+                  <span class="badge badge-tech">API</span>
+                </div>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="https://github.com/sivakumar6678" class="btn btn-sm btn-outline-primary flex-grow-1"
+                    target="_blank">
+                    <i class="fab fa-github me-1"></i>GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. CrypTo Tracker -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card project-card h-100">
+              <div class="project-img-container">
+                <img src="images/crypto.png" class="card-img-top" alt="CrypTo Tracker">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">CrypTo Tracker</h5>
+                <p class="card-text flex-grow-1 small">Real-time cryptocurrency monitoring with live price charts and
+                  market analytics.</p>
+                <div class="card-tech mb-3">
+                  <span class="badge badge-tech">JS</span>
+                  <span class="badge badge-tech">CoinGecko API</span>
+                </div>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="https://github.com/sivakumar6678" class="btn btn-sm btn-outline-primary flex-grow-1"
+                    target="_blank">
+                    <i class="fab fa-github me-1"></i>GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. To-Do List Application -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card project-card h-100">
+              <div class="project-img-container">
+                <img src="images/todo.jpg" class="card-img-top" alt="To-Do List Application">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">To-Do List Application</h5>
+                <p class="card-text flex-grow-1 small">Efficiency tool with local persistence and drag-and-drop task
+                  management.</p>
+                <div class="card-tech mb-3">
+                  <span class="badge badge-tech">React</span>
+                  <span class="badge badge-tech">localStorage</span>
+                </div>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="https://github.com/sivakumar6678/TO-DO.git"
+                    class="btn btn-sm btn-outline-primary flex-grow-1" target="_blank">
+                    <i class="fab fa-github me-1"></i>GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Netflix Home Page -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card project-card h-100">
+              <div class="project-img-container">
+                <img src="images/netflix.png" class="card-img-top" alt="Netflix Home Page">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Netflix Home Page</h5>
+                <p class="card-text flex-grow-1 small">A pixel-perfect responsive recreation of the Netflix landing page
+                  interface.</p>
+                <div class="card-tech mb-3">
+                  <span class="badge badge-tech">HTML5</span>
+                  <span class="badge badge-tech">CSS3</span>
+                </div>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="https://github.com/sivakumar6678" class="btn btn-sm btn-outline-primary flex-grow-1"
+                    target="_blank">
+                    <i class="fab fa-github me-1"></i>GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Personal Portfolio Website -->
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card project-card h-100">
+              <div class="project-img-container">
+                <img src="images/portfolio.png" class="card-img-top" alt="Personal Portfolio Website">
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Personal Portfolio Website</h5>
+                <p class="card-text flex-grow-1 small">Highly scalable, accessible portfolio designed with performance &
+                  UI excellence.</p>
+                <div class="card-tech mb-3">
+                  <span class="badge badge-tech">HTML5</span>
+                  <span class="badge badge-tech">Bootstrap 5</span>
+                </div>
+                <div class="d-flex gap-2 mt-auto">
+                  <a href="https://github.com/sivakumar6678/Portfolio.git"
+                    class="btn btn-sm btn-outline-primary flex-grow-1" target="_blank">
+                    <i class="fab fa-github me-1"></i>GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </main>
 
-    <!-- Single Modal for All Projects -->
-    <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModalLabel"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="" id="projectImage" class="img-fluid rounded mb-4" alt="Project Image">
-                    <div class="project-details">
-                        <p id="projectDescription" class="mb-4"></p>
-                        <div class="tech-stack mb-3">
-                            <h6 class="font-weight-bold"><i class="fas fa-code mr-2"></i>Technologies:</h6>
-                            <p id="projectTechnologies"></p>
-                        </div>
-                        <div class="project-link mb-3">
-                            <h6 class="font-weight-bold"><i class="fas fa-link mr-2"></i>Project Link:</h6>
-                            <a href="" id="projectlink" class="text-decoration-none"></a>
-                        </div>
-                        <div class="additional-info">
-                            <p id="comment" class="font-italic text-muted"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="#" class="btn btn-primary" id="projectLink">
-                        <i class="fas fa-external-link-alt mr-2"></i>View Project
-                    </a>
-                </div>
-            </div>
+  <!-- Footer -->
+  <footer class="footer mt-auto">
+    <div class="container">
+      <div class="footer-bottom mt-5">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0 text-secondary small">© 2026 C Siva Kumar. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+            <p class="mb-0 text-secondary small">
+              Designed & Built with <i class="fas fa-heart text-danger mx-1"></i> and Code
+            </p>
+          </div>
         </div>
+      </div>
     </div>
+  </footer>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap 4 JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
-    
-    <script>
-        $(document).ready(function() {
-            // Initialize the carousel
-            $('#projectCarousel').carousel({
-                interval: 5000,
-                wrap: true
-            });
-            
-            // Modal functionality
-            $('#projectModal').on('show.bs.modal', function(event) {
-                var button = $(event.relatedTarget);
-                var title = button.data('title');
-                var description = button.data('description');
-                var image = button.data('image');
-                var technologies = button.data('technologies');
-                var projectlink = button.data('projectlink');
-                var comment = button.data('comment');
-                
-                var modal = $(this);
-                modal.find('.modal-title').text(title);
-                modal.find('#projectDescription').text(description);
-                modal.find('#projectImage').attr('src', image);
-                modal.find('#projectTechnologies').text(technologies);
-                modal.find('#projectLink').attr('href', projectlink);
-                modal.find('#projectlink').text(projectlink);
-                modal.find('#projectlink').attr('href', projectlink);
-                modal.find('#comment').text(comment);
-            });
-            
-            // Dark Mode Toggle Functionality
-            const darkModeToggle = $('#darkModeToggle');
-            const body = $('body');
-            
-            // Check for saved dark mode preference
-            if (localStorage.getItem('theme') === 'dark') {
-                body.addClass('dark-mode');
-                body.removeClass('light-mode');
-                darkModeToggle.prop('checked', true);
-            } else {
-                body.removeClass('dark-mode');
-                body.addClass('light-mode');
-                darkModeToggle.prop('checked', false);
-            }
-            
-            // Toggle dark mode
-            darkModeToggle.on('change', function() {
-                if ($(this).is(':checked')) {
-                    body.removeClass('light-mode');
-                    body.addClass('dark-mode');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    body.removeClass('dark-mode');
-                    body.addClass('light-mode');
-                    localStorage.setItem('theme', 'light');
-                }
-            });
-        });
-    </script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

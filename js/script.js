@@ -17,18 +17,19 @@ const state = {
 /**
  * Initialize application components
  */
-function init() {
+async function init() {
     initializeTheme();
-    loadAllSections();
+    await loadAllSections();
     setupMobileMenu();
     setupHighlighting();
     setupSpotlight();
+    setupSkillFilter(); // Ensure skill filter is setup if skills loaded
 }
 
 /**
  * Load all content sections
  */
-function loadAllSections() {
+async function loadAllSections() {
     const sections = [
         { file: 'about.html', targetId: 'about' },
         { file: 'skills.html', targetId: 'skills' },
@@ -39,7 +40,8 @@ function loadAllSections() {
         { file: 'contact.html', targetId: 'contact' }
     ];
 
-    sections.forEach(section => loadContent(section.file, section.targetId));
+    const loadPromises = sections.map(section => loadContent(section.file, section.targetId));
+    await Promise.allSettled(loadPromises);
 }
 
 /**
@@ -166,34 +168,45 @@ function setupMobileMenu() {
 /**
  * Scroll Highlighting using IntersectionObserver
  */
+/**
+ * Scroll Highlighting using IntersectionObserver
+ */
 function setupHighlighting() {
-    const sections = document.querySelectorAll('.section-container');
+    // Observe the wrapper divs that have the IDs matching nav links
+    // These are the containers like <div id="about">, <div id="skills">, etc.
+    const sectionIds = ['about', 'skills', 'projects', 'experience', 'certify', 'passionandint', 'contact'];
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(el => el !== null);
+
+    // Also grab nav links to update
     const navLinks = document.querySelectorAll('.nav-link');
 
     const observerOptions = {
-        threshold: 0.2, // Trigger when 20% of section is visible
-        rootMargin: "-20% 0px -50% 0px" // Adjust to trigger active state closer to middle/top
+        threshold: 0.15, // Trigger when 15% of section is visible
+        rootMargin: "-10% 0px -40% 0px" // Adjusted to catch sections earlier but keep focus reasonable
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Remove active class from all
+                // Get the ID of the visible section
+                const id = entry.target.getAttribute('id');
+
+                // Remove active class from all links
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     link.removeAttribute('aria-current');
                 });
 
-                // Add to current
-                const id = entry.target.getAttribute('id');
+                // Find matching link
+                // Handle special case for 'passionandint' matching 'Beyond Coding' link if needed, 
+                // but usually href="#passionandint" checks out.
                 const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
                     activeLink.setAttribute('aria-current', 'page');
+                    // Optional: Update URL hash without scrolling
+                    // history.replaceState(null, null, `#${id}`);
                 }
-
-                // Also update URL hash without scrolling
-                // history.replaceState(null, null, `#${id}`);
             }
         });
     }, observerOptions);

@@ -34,76 +34,120 @@
 }
 
 /* Glass Morphism Effect */
-.bg-glass {
-    background: rgba(255, 255, 255, 0.1) !important;
-    backdrop-filter: blur(10px) saturate(180%);
-    -webkit-backdrop-filter: blur(10px) saturate(180%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+/* Floating Pill Navbar */
+.floating-nav-container {
+    padding: 1rem 0;
+    pointer-events: none;
+    /* Allow clicking through header area */
 }
 
-body.dark-mode .bg-glass {
-    background: rgba(15, 23, 42, 0.7) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.floating-nav {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.8);
+    /* High contrast for visibility */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 0.5rem 1.5rem;
+    margin: 0 auto;
+    width: fit-content;
+    max-width: 90%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Scrolled State - Better Visibility */
-.header.scrolled {
-    padding: 0.75rem 0;
-    background: rgba(255, 255, 255, 0.95) !important;
+body.dark-mode .floating-nav {
+    background: rgba(15, 23, 42, 0.7);
+    /* Slightly more opaque for contrast */
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Scrolled State - More distinct */
+.header.scrolled .floating-nav {
+    background: rgba(255, 255, 255, 0.9) !important;
     backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
 }
 
-body.dark-mode .header.scrolled {
-    background: rgba(15, 23, 42, 0.95) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+body.dark-mode .header.scrolled .floating-nav {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Brand Logo */
+/* Brand Logo Redesign - Geometric */
 .navbar-brand .brand__logo {
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
-    color: white;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    color: var(--primary-600);
     font-weight: 800;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.4);
+    position: relative;
+    z-index: 1;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.navbar-brand .brand__logo:hover {
-    transform: rotate(5deg) scale(1.05);
-    box-shadow: 0 8px 30px rgba(var(--primary-rgb), 0.5);
+/* Geometric Background */
+.navbar-brand .brand__logo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: var(--primary-50);
+    transform: rotate(45deg) scale(0.8);
+    z-index: -1;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.brand__name {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--text-primary);
-    transition: color 0.3s ease;
+.navbar-brand:hover .brand__logo::after {
+    transform: rotate(0deg) scale(1);
+    background: var(--gradient-primary);
+    box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.3);
 }
 
+.navbar-brand:hover .brand__logo {
+    color: white;
+    transform: scale(1.05);
+}
+
+body.dark-mode .navbar-brand .brand__logo::after {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Mode Hover - Specific Override */
+body.dark-mode .navbar-brand:hover .brand__logo::after {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.5);
+    /* Enhanced Glow */
+}
+
+/* Clean up unused brand name styles if any remain, or just leave this section clean */
+
+/* Subtitle - Refined */
 .brand__title {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    opacity: 0.9;
-    transition: all 0.3s ease;
-}
-
-.header.scrolled .brand__title {
     font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--slate-500);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
-body.dark-mode .brand__name {
-    color: var(--slate-100);
+body.dark-mode .brand__title {
+    color: var(--slate-400);
 }
+
+
 
 body.dark-mode .brand__title {
     color: var(--slate-400);
@@ -128,32 +172,51 @@ body.dark-mode .navbar-nav .nav-link {
     color: var(--slate-300);
 }
 
-/* Animated Underline Effect */
+/* Pill Active State */
 .navbar-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-600), var(--secondary-600));
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 2px;
+    display: none;
+    /* Remove underline */
 }
 
-.navbar-nav .nav-link:hover::after,
-.navbar-nav .nav-link.active::after {
-    width: 100%;
+.navbar-nav .nav-link {
+    border-radius: 50px;
+    padding: 0.5rem 1.2rem !important;
 }
 
-.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: none;
+}
+
+/* Active State - High Contrast Pill */
 .navbar-nav .nav-link.active {
-    color: var(--primary-600);
-    transform: translateY(-2px);
+    background: var(--primary-600) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.4);
+    font-weight: 600;
 }
 
-body.dark-mode .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
 body.dark-mode .navbar-nav .nav-link.active {
+    background: var(--primary-600) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.4);
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-600);
+    transform: translateY(-1px);
+}
+
+.navbar-nav .nav-link.active:hover {
+    color: white !important;
+    transform: translateY(-1px);
+}
+
+body.dark-mode .navbar-nav .nav-link:hover {
     color: var(--primary-400);
 }
 
@@ -342,86 +405,14 @@ body.dark-mode .header.scrolled {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.navbar-brand .brand__logo {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    font-weight: 800;
-    font-size: 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
-}
 
-.brand__name {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--text-primary);
-}
-
-.brand__title {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-}
-
-body.dark-mode .brand__name {
-    color: var(--slate-100);
-}
 
 body.dark-mode .brand__title {
     color: var(--slate-400);
 }
 
 /* Navbar Nav & Links */
-.navbar-nav .nav-link {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    color: var(--text-secondary);
-    position: relative;
-    padding: 0.5rem 0;
-    transition: color 0.3s ease;
-    font-size: 0.95rem;
-}
-
-body.dark-mode .navbar-nav .nav-link {
-    color: var(--slate-300);
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-    color: var(--primary-600);
-}
-
-body.dark-mode .navbar-nav .nav-link:hover,
-body.dark-mode .navbar-nav .nav-link.active {
-    color: var(--primary-400);
-}
-
-/* Desktop: Underline effect */
-@media (min-width: 992px) {
-    .navbar-nav .nav-link::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: var(--primary-600);
-        transition: width 0.3s ease;
-    }
-
-    body.dark-mode .navbar-nav .nav-link::after {
-        background-color: var(--primary-400);
-    }
-
-    .navbar-nav .nav-link:hover::after,
-    .navbar-nav .nav-link.active::after {
-        width: 100%;
-    }
-}
+/* Navbar Nav & Links - Legacy styles removed to favour Floating Pill styles defined above */
 
 /* Mobile Menu Styling */
 @media (max-width: 991.98px) {
@@ -1634,5 +1625,54 @@ body.dark-mode .project-card .btn-outline-secondary:hover {
     .project-card .btn {
         padding: 0.6rem 1rem;
         font-size: 0.85rem;
+    }
+}
+
+/* Mobile Navigation Adjustments for Floating Pill */
+@media (max-width: 991px) {
+    .floating-nav {
+        border-radius: var(--radius-xl);
+        padding: 0.5rem 1rem;
+        width: 95%;
+        max-width: 95%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        margin-top: 1rem;
+        background: transparent;
+    }
+
+    .header.scrolled .floating-nav {
+        border-radius: var(--radius-xl);
+        width: 100%;
+        max-width: 100%;
+        padding: 0.5rem 1rem;
+        top: 0;
+        margin: 0;
+        transform: none;
+    }
+
+    .navbar-nav .nav-link {
+        border-radius: var(--radius-md);
+        padding: 0.75rem 1rem !important;
+        margin-bottom: 0.25rem;
+    }
+
+    .navbar-nav .nav-link.active {
+        background: rgba(var(--primary-rgb), 0.1);
+        color: var(--primary-600) !important;
+        box-shadow: none;
+    }
+
+    body.dark-mode .navbar-nav .nav-link.active {
+        background: rgba(var(--primary-rgb), 0.2);
+        color: var(--primary-400) !important;
+    }
+
+    .floating-nav-container {
+        padding: 0.5rem;
     }
 }

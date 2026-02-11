@@ -518,65 +518,163 @@ body.dark-mode .brand__title {
     align-items: center;
 }
 
-/* -------------------------
-   Footer
-   ------------------------- */
-/* -------------------------
-   Footer
-   ------------------------- */
 .footer {
-    background-color: var(--slate-900);
+    background-color: var(--slate-950);
     color: var(--slate-300);
-    padding: var(--space-16) 0 var(--space-8);
-    margin-top: var(--space-24);
-    border-top: 1px solid var(--slate-800);
+    padding: clamp(4rem, 8vw, 6rem) 0 3rem;
+    margin-top: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.footer-links li {
-    margin-bottom: var(--space-2);
+.footer-glow {
+    position: absolute;
+    top: -150px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
 }
 
-.footer-link {
+.footer-brand {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 45px;
+    height: 45px;
+    font-size: 1.25rem;
+}
+
+.border-white-10 {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.footer-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 360px;
+}
+
+.footer-heading {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.footer-nav-link {
     color: var(--slate-400);
-    transition: color var(--transition-fast);
     text-decoration: none;
     font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+    width: fit-content;
 }
 
-.footer-link:hover {
-    color: var(--primary-400);
-    padding-left: 4px;
+.footer-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-500);
+    transition: width 0.3s ease;
+}
+
+.footer-nav-link:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-nav-link:hover::after {
+    width: 100%;
+}
+
+.glass-btn {
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .social-btn {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--slate-800);
     color: var(--slate-300);
-    border-radius: var(--radius-full);
-    transition: all var(--transition-fast);
+    border-radius: 12px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-decoration: none;
-    border: 1px solid var(--slate-700);
 }
 
 .social-btn:hover {
-    background-color: var(--primary-600);
+    background-color: var(--primary-600) !important;
     color: white;
-    transform: translateY(-3px);
-    border-color: var(--primary-500);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.3);
+    border-color: var(--primary-400) !important;
+}
+
+.footer-contact-info li span {
+    font-size: 0.95rem;
+}
+
+.contact-icon-sm {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05rem;
 }
 
 .footer-bottom {
-    padding-top: var(--space-8);
-    border-top: 1px solid var(--slate-800);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 @media (max-width: 768px) {
     .footer {
-        padding: var(--space-12) 0 var(--space-6);
+        padding: 4rem 0 2rem;
+        text-align: center;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .brand__info {
+        border-left: none !important;
+        padding-left: 0 !important;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-nav-link {
+        margin: 0 auto 0.75rem;
+    }
+
+    .footer-contact-info li {
+        justify-content: center;
     }
 }
 
@@ -827,6 +925,11 @@ body.dark-mode .highlight-item {
 /* -------------------------
    Skills Section Styles
    ------------------------- */
+
+#skills {
+    margin: 5rem;
+}
+
 .skill-stack-card {
     background: var(--color-bg-surface);
     border: 1px solid var(--color-border);

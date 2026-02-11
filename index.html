@@ -122,77 +122,86 @@
     </main>
 
     <!-- Footer intentionally left as is for now, will refactor in Phase 3 -->
-    <footer class="footer">
-        <div class="container">
+    <footer class="footer position-relative overflow-hidden">
+        <!-- Decorative Glow -->
+        <div class="footer-glow"></div>
+
+        <div class="container position-relative z-1">
             <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <div class="brand mb-4">
-                        <div class="brand__logo">S</div>
-                        <div class="brand__info">
-                            <span class="brand__name text-white">C Siva Kumar</span>
-                            <span class="brand__title text-white-50">Full Stack Developer</span>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer-brand mb-4">
+                        <div class="brand__logo footer-logo">S</div>
+                        <div class="brand__info ps-3 border-start border-white-10">
+                            <span class="brand__name text-white h4 d-block mb-0">C Siva Kumar</span>
+                            <span class="brand__title text-white-50 small text-uppercase tracking-wider">Full Stack
+                                Developer</span>
                         </div>
                     </div>
-                    <p class="text-secondary mb-4">
-                        Focused on crafting efficient web applications and user-friendly solutions. Let's build
-                        something amazing together.
+                    <p class="text-secondary mb-4 footer-desc">
+                        Engineering digital experiences that combine scalability with aesthetic precision.
+                        Let’s transform your vision into a high-performance reality.
                     </p>
                     <div class="d-flex gap-3 social-links">
-                        <a href="https://github.com/sivakumar6678" target="_blank" class="social-btn"
+                        <a href="https://github.com/sivakumar6678" target="_blank" class="social-btn glass-btn"
                             aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/sivakumar-chandragari/" target="_blank" class="social-btn"
-                            aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/sivakumar-chandragari/" target="_blank"
+                            class="social-btn glass-btn" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="mailto:chandragarisivakumar@gmail.com" class="social-btn" aria-label="Email">
+                        <a href="mailto:chandragarisivakumar@gmail.com" class="social-btn glass-btn" aria-label="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-3 col-6">
-                    <h5 class="fw-bold text-white mb-3">Navigation</h5>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-heading text-white mb-4">Navigation</h6>
                     <ul class="list-unstyled footer-links">
-                        <li><a href="#about" class="footer-link">About</a></li>
-                        <li><a href="#skills" class="footer-link">Skills</a></li>
-                        <li><a href="#projects" class="footer-link">Projects</a></li>
-                        <li><a href="#experience" class="footer-link">Experience</a></li>
+                        <li><a href="#about" class="footer-nav-link">About</a></li>
+                        <li><a href="#skills" class="footer-nav-link">Skills</a></li>
+                        <li><a href="#projects" class="footer-nav-link">Projects</a></li>
+                        <li><a href="#experience" class="footer-nav-link">Experience</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-2 col-md-3 col-6">
-                    <h5 class="fw-bold text-white mb-3">More</h5>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <h6 class="footer-heading text-white mb-4">Discover</h6>
                     <ul class="list-unstyled footer-links">
-                        <li><a href="#certify" class="footer-link">Certifications</a></li>
-                        <li><a href="#passionandint" class="footer-link">Beyond Coding</a></li>
-                        <li><a href="#contact" class="footer-link">Contact Me</a></li>
+                        <li><a href="#certify" class="footer-nav-link">Certifications</a></li>
+                        <li><a href="#passionandint" class="footer-nav-link">Interests</a></li>
+                        <li><a href="#contact" class="footer-nav-link">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-4 col-md-12">
-                    <h5 class="fw-bold text-white mb-3">Get in Touch</h5>
-                    <p class="text-secondary mb-3">
-                        <i class="fas fa-map-marker-alt me-2 text-primary"></i> Rajampet , Andhra Pradesh, India
-                    </p>
-                    <p class="text-secondary mb-3">
-                        <i class="fas fa-envelope me-2 text-primary"></i> chandragarisivakumar@gmail.com
-                    </p>
-                    <!-- <p class="text-secondary">
-                        <i class="fas fa-phone-alt me-2 text-primary"></i> +91 939-266-9460
-                    </p> -->
+                <div class="col-lg-4 col-md-4">
+                    <h6 class="footer-heading text-white mb-4">Contact Detail</h6>
+                    <ul class="list-unstyled footer-contact-info">
+                        <li class="mb-3 d-flex align-items-center gap-3 text-secondary">
+                            <div class="contact-icon-sm"><i class="fas fa-map-marker-alt"></i></div>
+                            <span>Rajampet, Andhra Pradesh</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center gap-3 text-secondary">
+                            <div class="contact-icon-sm"><i class="fas fa-envelope text-primary"></i></div>
+                            <span>chandragarisivakumar@gmail.com</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3 text-secondary">
+                            <div class="contact-icon-sm"><i class="fas fa-clock text-primary"></i></div>
+                            <span>Available for new projects</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="footer-bottom mt-5">
+            <div class="footer-bottom mt-5 pt-4">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start">
-                        <p class="mb-0 text-secondary small">© 2026 C Siva Kumar. All rights reserved.</p>
+                        <p class="mb-0 text-secondary small opacity-75">© 2026 C Siva Kumar. Crafted with precision.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-                        <p class="mb-0 text-secondary small">
-                            Designed & Built with <i class="fas fa-heart text-danger mx-1"></i> and Code
+                        <p class="mb-0 text-secondary small opacity-75">
+                            Built with <i class="fas fa-bolt text-warning mx-1"></i> and Code
                         </p>
                     </div>
                 </div>

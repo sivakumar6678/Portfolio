@@ -1,0 +1,438 @@
+/* 
+ * Portfolio - Reusable Components
+ * Buttons, Cards, Inputs, Badges
+ */
+
+/* -------------------------
+   Buttons
+   ------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: 1px solid transparent;
+    line-height: 1.2;
+}
+
+.btn-primary {
+    background-color: var(--primary-600);
+    color: white;
+    box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+    color: white;
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Project toggle buttons */
+.project-toggle {
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    transition: all 200ms ease;
+}
+
+.project-toggle.active,
+.project-toggle:hover {
+    background: var(--primary-600);
+    color: #fff;
+    border-color: var(--primary-600);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-text-primary);
+    background-color: var(--slate-50);
+}
+
+body.dark-mode .btn-outline:hover {
+    background-color: var(--slate-800);
+    color: white;
+}
+
+/* -------------------------
+   Cards
+   ------------------------- */
+.card-modern {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-modern:hover {
+    border-color: var(--color-border-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    background-color: var(--color-bg-card-hover);
+}
+
+body.dark-mode .card-modern:hover {
+    border-color: var(--primary-700);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* -------------------------
+   Section Titles
+   ------------------------- */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-2);
+}
+
+.section-subtitle {
+    color: var(--primary-500);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    display: block;
+}
+
+/* -------------------------
+   Badges / Tags
+   ------------------------- */
+.badge-modern {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: var(--slate-100);
+    color: var(--slate-700);
+    border: 1px solid var(--slate-200);
+}
+
+body.dark-mode .badge-modern {
+    background-color: var(--slate-800);
+    color: var(--slate-300);
+    border-color: var(--slate-700);
+}
+
+.badge-primary {
+    background-color: var(--primary-50);
+    color: var(--primary-700);
+    border-color: var(--primary-200);
+    padding: 0.35rem 0.85rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: inline-block;
+    border-radius: var(--radius-full);
+}
+
+body.dark-mode .badge-primary {
+    background-color: rgba(249, 115, 22, 0.15);
+    color: var(--primary-300);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+/* -------------------------
+   Project Cards
+   ------------------------- */
+.card-project {
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.card-project:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-300);
+}
+
+.project-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 240px;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-project:hover .project-image {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.card-project:hover .image-overlay {
+    opacity: 1;
+}
+
+.overlay-description {
+    color: var(--slate-100);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    transform: translateY(20px);
+    transition: transform 0.4s ease 0.1s;
+}
+
+.card-project:hover .overlay-description {
+    transform: translateY(0);
+}
+
+/* -------------------------
+   Timeline (Experience)
+   ------------------------- */
+.timeline-modern {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid var(--color-border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2.6rem;
+    top: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--color-bg-surface);
+    border: 2px solid var(--primary-500);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-content {
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: all var(--transition-normal);
+}
+
+.timeline-content:hover {
+    border-color: var(--primary-300);
+    box-shadow: var(--shadow-md);
+    transform: translateX(5px);
+}
+
+/* -------------------------
+   Achievements / Certs
+   ------------------------- */
+.card-achievement {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-normal);
+}
+
+.card-achievement:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-300);
+}
+
+.achievement-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--slate-50);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    color: var(--primary-600);
+    transition: all var(--transition-normal);
+}
+
+.card-achievement:hover .achievement-icon {
+    background-color: var(--primary-50);
+    transform: scale(1.1);
+}
+
+/* -------------------------
+   Feature Cards (Beyond Coding)
+   ------------------------- */
+.card-feature {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid var(--color-border);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+body.dark-mode .card-feature::before {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.card-feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+}
+
+body.dark-mode .card-feature:hover {
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.4);
+}
+
+.card-feature:hover::before {
+    opacity: 1;
+}
+
+/* Gradient Borders on Hover */
+.card-feature::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: var(--radius-xl);
+    padding: 1px;
+    background: linear-gradient(135deg, var(--primary-400), var(--secondary-400));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.card-feature:hover::after {
+    opacity: 1;
+}
+
+.feature-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background-color: var(--slate-50);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+body.dark-mode .feature-icon-wrapper {
+    background-color: var(--slate-800);
+}
+
+.card-feature:hover .feature-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    background-color: white;
+    box-shadow: var(--shadow-md);
+}
+
+body.dark-mode .card-feature:hover .feature-icon-wrapper {
+    background-color: var(--slate-700);
+}
+
+.feature-tags {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.badge-subtle {
+    background-color: transparent;
+    border: 1px solid currentColor;
+    opacity: 0.7;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+}
+
+.card-feature:hover .badge-subtle {
+    opacity: 1;
+}
+
+/* Hover Overlay for subtle glow */
+.hover-overlay {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.card-feature:hover .hover-overlay {
+    opacity: 1;
+    transform: scale(1);
+}

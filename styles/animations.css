@@ -1,4 +1,3 @@
-
 /* 
  * Animations Stylesheet
  * Author: C Siva Kumar
@@ -9,52 +8,63 @@
 /* ======================================
  * 1. Web Development Loader Animation
  * ====================================== */
-#loader-img {
+.loader-img {
   display: block;
   width: 100%;
-} 
+  will-change: transform;
+  /* optimizing for potential transforms */
+}
 
 @keyframes square-animation {
-  0%, 10.5% {
+
+  0%,
+  10.5% {
     left: 0;
     top: 0;
   }
-  
-  12.5%, 23% {
+
+  12.5%,
+  23% {
     left: 32px;
     top: 0;
   }
-  
-  25%, 35.5% {
+
+  25%,
+  35.5% {
     left: 64px;
     top: 0;
   }
-  
-  37.5%, 48% {
+
+  37.5%,
+  48% {
     left: 64px;
     top: 32px;
   }
-  
-  50%, 60.5% {
+
+  50%,
+  60.5% {
     left: 32px;
     top: 32px;
   }
-  
-  62.5%, 73% {
+
+  62.5%,
+  73% {
     left: 32px;
     top: 64px;
   }
-  
-  75%, 85.5% {
+
+  75%,
+  85.5% {
     left: 0;
     top: 64px;
   }
-  
-  87.5%, 98% {
+
+  87.5%,
+  98% {
     left: 0;
     top: 32px;
   }
-  
+
   100% {
     left: 0;
     top: 0;
@@ -62,7 +72,7 @@
 }
 
 .loader {
-  margin-left: 40%;
+  margin: 0 auto;
   position: relative;
   width: 96px;
   height: 96px;
@@ -84,23 +94,56 @@
   background-size: cover;
   background-position: center;
   animation: square-animation 10s ease-in-out infinite both;
+  will-change: left, top;
 }
 
-.loader-square:nth-of-type(0) { animation-delay: 0s; }
-.loader-square:nth-of-type(1) { animation-delay: -1.4285714286s; }
-.loader-square:nth-of-type(2) { animation-delay: -2.8571428571s; }
-.loader-square:nth-of-type(3) { animation-delay: -4.2857142857s; }
-.loader-square:nth-of-type(4) { animation-delay: -5.7142857143s; }
-.loader-square:nth-of-type(5) { animation-delay: -7.1428571429s; }
-.loader-square:nth-of-type(6) { animation-delay: -8.5714285714s; }
-.loader-square:nth-of-type(7) { animation-delay: -10s; }
-  
+.loader-square:nth-of-type(0) {
+  animation-delay: 0s;
+}
+
+.loader-square:nth-of-type(1) {
+  animation-delay: -1.4285714286s;
+}
+
+.loader-square:nth-of-type(2) {
+  animation-delay: -2.8571428571s;
+}
+
+.loader-square:nth-of-type(3) {
+  animation-delay: -4.2857142857s;
+}
+
+.loader-square:nth-of-type(4) {
+  animation-delay: -5.7142857143s;
+}
+
+.loader-square:nth-of-type(5) {
+  animation-delay: -7.1428571429s;
+}
+
+.loader-square:nth-of-type(6) {
+  animation-delay: -8.5714285714s;
+}
+
+.loader-square:nth-of-type(7) {
+  animation-delay: -10s;
+}
+
 /* ======================================
  * 2. Tech Enthusiast Animation
  * ====================================== */
+/* Container for tech animation to enforce layout height */
+.container-tech {
+  position: relative;
+  height: 150px;
+  /* Space for the animation */
+  width: 100%;
+}
+
 .loader-tech {
   position: absolute;
-  top: 75%;
+  top: 50%;
+  /* Center vertically in the container */
   left: 50%;
   z-index: 10;
   width: 160px;
@@ -110,6 +153,7 @@
   border-radius: 5px;
   background: #1e3f57;
   animation: dot1_ 3s cubic-bezier(0.55, 0.3, 0.24, 0.99) infinite;
+  will-change: width, height, margin;
 }
 
 .loader-tech:nth-child(2) {
@@ -135,21 +179,25 @@
 }
 
 @keyframes dot1_ {
-  3%, 97% {
+
+  3%,
+  97% {
     width: 160px;
     height: 100px;
     margin-top: -50px;
     margin-left: -80px;
   }
 
-  30%, 36% {
+  30%,
+  36% {
     width: 80px;
     height: 120px;
     margin-top: -60px;
     margin-left: -40px;
   }
 
-  63%, 69% {
+  63%,
+  69% {
     width: 40px;
     height: 80px;
     margin-top: -40px;
@@ -158,21 +206,25 @@
 }
 
 @keyframes dot2_ {
-  3%, 97% {
+
+  3%,
+  97% {
     height: 90px;
     width: 150px;
     margin-left: -75px;
     margin-top: -45px;
   }
 
-  30%, 36% {
+  30%,
+  36% {
     width: 70px;
     height: 96px;
     margin-left: -35px;
     margin-top: -48px;
   }
 
-  63%, 69% {
+  63%,
+  69% {
     width: 32px;
     height: 60px;
     margin-left: -16px;
@@ -181,14 +233,17 @@
 }
 
 @keyframes dot3_ {
-  3%, 97% {
+
+  3%,
+  97% {
     height: 20px;
     width: 40px;
     margin-left: -20px;
     margin-top: 50px;
   }
 
-  30%, 36% {
+  30%,
+  36% {
     width: 8px;
     height: 8px;
     margin-left: -5px;
@@ -196,7 +251,8 @@
     border-radius: 8px;
   }
 
-  63%, 69% {
+  63%,
+  69% {
     width: 16px;
     height: 4px;
     margin-left: -8px;
@@ -204,7 +260,7 @@
     border-radius: 10px;
   }
 }
-  
+
 /* ======================================
  * 3. Continuous Learning Animation
  * ====================================== */
@@ -218,10 +274,10 @@
   width: 200px;
   height: 140px;
   position: relative;
-  margin-left: 35%;
+  margin: 0 auto;
 }
 
-.loader-continuous:before, 
+.loader-continuous:before,
 .loader-continuous:after {
   --r: -6deg;
   content: "";
@@ -324,13 +380,18 @@
     transform: rotateY(180deg);
     opacity: 0;
   }
+
   20% {
     opacity: 1;
   }
-  35%, 100% {
+
+  35%,
+  100% {
     opacity: 0;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     transform: rotateY(0deg);
   }
 }
@@ -340,13 +401,18 @@
     transform: rotateY(180deg);
     opacity: 0;
   }
+
   35% {
     opacity: 1;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     opacity: 0;
   }
-  65%, 100% {
+
+  65%,
+  100% {
     transform: rotateY(0deg);
   }
 }
@@ -356,13 +422,18 @@
     transform: rotateY(180deg);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
-  65%, 100% {
+
+  65%,
+  100% {
     opacity: 0;
   }
-  80%, 100% {
+
+  80%,
+  100% {
     transform: rotateY(0deg);
   }
 }
@@ -372,27 +443,33 @@
     transform: rotateY(180deg);
     opacity: 0;
   }
+
   65% {
     opacity: 1;
   }
-  80%, 100% {
+
+  80%,
+  100% {
     opacity: 0;
   }
-  95%, 100% {
+
+  95%,
+  100% {
     transform: rotateY(0deg);
   }
 }
+
 /* ======================================
  * 4. Problem Solving Mindset Animation
  * ====================================== */
 .socket {
   width: 200px;
   height: 200px;
-  position: absolute;
-  left: 50%;
-  margin-left: -100px;
-  top: 70%;
-  margin-top: -100px;
+  position: relative;
+  left: auto;
+  margin: 0 auto;
+  top: auto;
+  margin-top: 20px;
 }
 
 .hex-brick {
@@ -404,11 +481,11 @@
   animation: fade 2s infinite;
 }
 
-.h2 {
+.socket .h2 {
   transform: rotate(60deg);
 }
 
-.h3 {
+.socket .h3 {
   transform: rotate(-60deg);
 }
 
@@ -426,405 +503,416 @@
   margin-top: -15px;
   animation: pulse 2s infinite;
 }
-  
-  .c1 {
-    content: "aa";
-    margin-left: -47px;
-    margin-top: -15px;
+
+.c1 {
+  content: "aa";
+  margin-left: -47px;
+  margin-top: -15px;
+}
+
+.c2 {
+  margin-left: -31px;
+  margin-top: -43px;
+}
+
+.c3 {
+  margin-left: 1px;
+  margin-top: -43px;
+}
+
+.c4 {
+  margin-left: 17px;
+  margin-top: -15px;
+}
+
+.c5 {
+  margin-left: -31px;
+  margin-top: 13px;
+}
+
+.c6 {
+  margin-left: 1px;
+  margin-top: 13px;
+}
+
+.c7 {
+  margin-left: -63px;
+  margin-top: -43px;
+}
+
+.c8 {
+  margin-left: 33px;
+  margin-top: -43px;
+}
+
+.c9 {
+  margin-left: -15px;
+  margin-top: 41px;
+}
+
+.c10 {
+  margin-left: -63px;
+  margin-top: 13px;
+}
+
+.c11 {
+  margin-left: 33px;
+  margin-top: 13px;
+}
+
+.c12 {
+  margin-left: -15px;
+  margin-top: -71px;
+}
+
+.c13 {
+  margin-left: -47px;
+  margin-top: -71px;
+}
+
+.c14 {
+  margin-left: 17px;
+  margin-top: -71px;
+}
+
+.c15 {
+  margin-left: -47px;
+  margin-top: 41px;
+}
+
+.c16 {
+  margin-left: 17px;
+  margin-top: 41px;
+}
+
+.c17 {
+  margin-left: -79px;
+  margin-top: -15px;
+}
+
+.c18 {
+  margin-left: 49px;
+  margin-top: -15px;
+}
+
+.c19 {
+  margin-left: -63px;
+  margin-top: -99px;
+}
+
+.c20 {
+  margin-left: 33px;
+  margin-top: -99px;
+}
+
+.c21 {
+  margin-left: 1px;
+  margin-top: -99px;
+}
+
+.c22 {
+  margin-left: -31px;
+  margin-top: -99px;
+}
+
+.c23 {
+  margin-left: -63px;
+  margin-top: 69px;
+}
+
+.c24 {
+  margin-left: 33px;
+  margin-top: 69px;
+}
+
+.c25 {
+  margin-left: 1px;
+  margin-top: 69px;
+}
+
+.c26 {
+  margin-left: -31px;
+  margin-top: 69px;
+}
+
+.c27 {
+  margin-left: -79px;
+  margin-top: -15px;
+}
+
+.c28 {
+  margin-left: -95px;
+  margin-top: -43px;
+}
+
+.c29 {
+  margin-left: -95px;
+  margin-top: 13px;
+}
+
+.c30 {
+  margin-left: 49px;
+  margin-top: 41px;
+}
+
+.c31 {
+  margin-left: -79px;
+  margin-top: -71px;
+}
+
+.c32 {
+  margin-left: -111px;
+  margin-top: -15px;
+}
+
+.c33 {
+  margin-left: 65px;
+  margin-top: -43px;
+}
+
+.c34 {
+  margin-left: 65px;
+  margin-top: 13px;
+}
+
+.c35 {
+  margin-left: -79px;
+  margin-top: 41px;
+}
+
+.c36 {
+  margin-left: 49px;
+  margin-top: -71px;
+}
+
+.c37 {
+  margin-left: 81px;
+  margin-top: -15px;
+}
+
+.r1 {
+  animation-name: pulse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: .5s;
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay: .5s;
+}
+
+.r2 {
+  animation-name: pulse;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: .5s;
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay: .5s;
+}
+
+.r3 {
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-delay: .3s;
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay: .3s;
+}
+
+.r1>.hex-brick {
+  animation-name: fade;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: .5s;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay: .5s;
+}
+
+.r2>.hex-brick {
+  animation-name: fade;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: .5s;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay: .5s;
+}
+
+.r3>.hex-brick {
+  animation-name: fade;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-delay: .6s;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay: .6s;
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  
-  .c2 {
-    margin-left: -31px;
-    margin-top: -43px;
+
+  50% {
+    -webkit-transform: scale(0.01);
+    transform: scale(0.01);
   }
-  
-  .c3 {
-    margin-left: 1px;
-    margin-top: -43px;
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  
-  .c4 {
-    margin-left: 17px;
-    margin-top: -15px;
+}
+
+@keyframes fade {
+  0% {
+    background: #052eff;
   }
-  
-  .c5 {
-    margin-left: -31px;
-    margin-top: 13px;
+
+  50% {
+    background: #424fca;
   }
-  
-  .c6 {
-    margin-left: 1px;
-    margin-top: 13px;
+
+  100% {
+    background: #0856ff;
   }
-  
-  .c7 {
-    margin-left: -63px;
-    margin-top: -43px;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  
-  .c8 {
-    margin-left: 33px;
-    margin-top: -43px;
+
+  50% {
+    -webkit-transform: scale(0.01);
+    transform: scale(0.01);
   }
-  
-  .c9 {
-    margin-left: -15px;
-    margin-top: 41px;
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  
-  .c10 {
-    margin-left: -63px;
-    margin-top: 13px;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    background: #ABF8FF;
   }
-  
-  .c11 {
-    margin-left: 33px;
-    margin-top: 13px;
+
+  50% {
+    background: #389CA6;
   }
-  
-  .c12 {
-    margin-left: -15px;
-    margin-top: -71px;
+
+  100% {
+    background: #ABF8FF;
   }
-  
-  .c13 {
-    margin-left: -47px;
-    margin-top: -71px;
-  }
-  
-  .c14 {
-    margin-left: 17px;
-    margin-top: -71px;
-  }
-  
-  .c15 {
-    margin-left: -47px;
-    margin-top: 41px;
-  }
-  
-  .c16 {
-    margin-left: 17px;
-    margin-top: 41px;
-  }
-  
-  .c17 {
-    margin-left: -79px;
-    margin-top: -15px;
-  }
-  
-  .c18 {
-    margin-left: 49px;
-    margin-top: -15px;
-  }
-  
-  .c19 {
-    margin-left: -63px;
-    margin-top: -99px;
-  }
-  
-  .c20 {
-    margin-left: 33px;
-    margin-top: -99px;
-  }
-  
-  .c21 {
-    margin-left: 1px;
-    margin-top: -99px;
-  }
-  
-  .c22 {
-    margin-left: -31px;
-    margin-top: -99px;
-  }
-  
-  .c23 {
-    margin-left: -63px;
-    margin-top: 69px;
-  }
-  
-  .c24 {
-    margin-left: 33px;
-    margin-top: 69px;
-  }
-  
-  .c25 {
-    margin-left: 1px;
-    margin-top: 69px;
-  }
-  
-  .c26 {
-    margin-left: -31px;
-    margin-top: 69px;
-  }
-  
-  .c27 {
-    margin-left: -79px;
-    margin-top: -15px;
-  }
-  
-  .c28 {
-    margin-left: -95px;
-    margin-top: -43px;
-  }
-  
-  .c29 {
-    margin-left: -95px;
-    margin-top: 13px;
-  }
-  
-  .c30 {
-    margin-left: 49px;
-    margin-top: 41px;
-  }
-  
-  .c31 {
-    margin-left: -79px;
-    margin-top: -71px;
-  }
-  
-  .c32 {
-    margin-left: -111px;
-    margin-top: -15px;
-  }
-  
-  .c33 {
-    margin-left: 65px;
-    margin-top: -43px;
-  }
-  
-  .c34 {
-    margin-left: 65px;
-    margin-top: 13px;
-  }
-  
-  .c35 {
-    margin-left: -79px;
-    margin-top: 41px;
-  }
-  
-  .c36 {
-    margin-left: 49px;
-    margin-top: -71px;
-  }
-  
-  .c37 {
-    margin-left: 81px;
-    margin-top: -15px;
-  }
-  
-  .r1 {
-    animation-name: pulse;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-delay: .5s;
-    -webkit-animation-name: pulse;
-    -webkit-animation-duration: 5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .5s;
-  }
-  
-  .r2 {
-    animation-name: pulse;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-delay: .5s;
-    -webkit-animation-name: pulse;
-    -webkit-animation-duration: 5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .5s;
-  }
-  
-  .r3 {
-    animation-name: pulse;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-delay: .3s;
-    -webkit-animation-name: pulse;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .3s;
-  }
-  
-  .r1 > .hex-brick {
-    animation-name: fade;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-delay: .5s;
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .5s;
-  }
-  
-  .r2 > .hex-brick {
-    animation-name: fade;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-delay: .5s;
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 5s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .5s;
-  }
-  
-  .r3 > .hex-brick {
-    animation-name: fade;
-    animation-duration: 6s;
-    animation-iteration-count: infinite;
-    animation-delay: .6s;
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 6s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-delay: .6s;
-  }
-  
-  @keyframes pulse {
-    0% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  
-    50% {
-      -webkit-transform: scale(0.01);
-      transform: scale(0.01);
-    }
-  
-    100% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes fade {
-    0% {
-      background: #052eff;
-    }
-  
-    50% {
-      background: #424fca;
-    }
-  
-    100% {
-      background: #0856ff;
-    }
-  }
-  
-  @-webkit-keyframes pulse {
-    0% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  
-    50% {
-      -webkit-transform: scale(0.01);
-      transform: scale(0.01);
-    }
-  
-    100% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-  }
-  
-  @-webkit-keyframes fade {
-    0% {
-      background: #ABF8FF;
-    }
-  
-    50% {
-      background: #389CA6;
-    }
-  
-    100% {
-      background: #ABF8FF;
-    }
-  }
-/* For Creative exploration */ 
+}
+
+/* For Creative exploration */
 .loader-creative {
-    margin-left:35%;
-    position: relative;
-    width: 216px;
-    display: flex;
-    justify-content: space-between;
+  margin: 0 auto;
+  position: relative;
+  width: 216px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.loader-creative::after,
+.loader-creative::before {
+  content: "";
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+  background-color: #e5e8df;
+  background-image: radial-gradient(circle 20px, #060606 100%, transparent 0);
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  animation: eyeMove 10s infinite, blink 10s infinite;
+}
+
+@keyframes eyeMove {
+
+  0%,
+  10% {
+    background-position: 0px 0px;
 
   }
-  .loader-creative::after,
-  .loader-creative::before {
-    content: "";
-    display: inline-block;
-    width: 96px;
+
+  13%,
+  40% {
+    background-position: -30px 0px;
+  }
+
+  43%,
+  70% {
+    background-position: 30px 0px;
+  }
+
+  73%,
+  90% {
+    background-position: 0px 30px;
+  }
+
+  93%,
+  100% {
+    background-position: 0px 0px;
+
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  10%,
+  12%,
+  20%,
+  22%,
+  40%,
+  42%,
+  60%,
+  62%,
+  70%,
+  72%,
+  90%,
+  92%,
+  98%,
+  100% {
     height: 96px;
-    background-color: #e5e8df;
-    background-image: radial-gradient(circle 20px, #060606 100%, transparent 0);
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    animation: eyeMove 10s infinite, blink 10s infinite;
   }
-  @keyframes eyeMove {
-    0%,
-    10% {
-      background-position: 0px 0px;
 
-    }
-    13%,
-    40% {
-      background-position: -30px 0px;
-    }
-    43%,
-    70% {
-      background-position: 30px 0px;
-    }
-    73%,
-    90% {
-      background-position: 0px 30px;
-    }
-    93%,
-    100% {
-      background-position: 0px 0px;
+  11%,
+  21%,
+  41%,
+  61%,
+  71%,
+  91%,
+  99% {
+    height: 36px;
+  }
+}
 
-    }
-  }
-  @keyframes blink {
-    0%,
-    10%,
-    12%,
-    20%,
-    22%,
-    40%,
-    42%,
-    60%,
-    62%,
-    70%,
-    72%,
-    90%,
-    92%,
-    98%,
-    100% {
-      height: 96px;
-    }
-    11%,
-    21%,
-    41%,
-    61%,
-    71%,
-    91%,
-    99% {
-      height: 36px;
-    }
-  }
-  
-/* For active lifestyle */ 
+/* For active lifestyle */
 .loader-lifestyle {
   width: 125px;
   height: 65px;
   display: block;
   margin: 40px auto;
-  background-image: linear-gradient(#ff8a00 50px, transparent 0), 
-                    linear-gradient(#5dcf70 50px, transparent 0), 
-                    linear-gradient(#00c4ff 50px, transparent 0), 
-                    linear-gradient(#ff7cbf 50px, transparent 0), 
-                    radial-gradient(circle 14px, #ffa400 100%, transparent 0);
+  background-image: linear-gradient(#ff8a00 50px, transparent 0),
+    linear-gradient(#5dcf70 50px, transparent 0),
+    linear-gradient(#00c4ff 50px, transparent 0),
+    linear-gradient(#ff7cbf 50px, transparent 0),
+    radial-gradient(circle 14px, #ffa400 100%, transparent 0);
   background-size: 48px 15px, 15px 35px, 15px 35px, 25px 15px, 28px 28px;
   background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
   background-repeat: no-repeat;
@@ -845,9 +933,9 @@
   left: -45px;
   top: -10px;
   background-repeat: no-repeat;
-  background-image: linear-gradient(#ff4444 64px, transparent 0), 
-                    linear-gradient(#d4fc00 66px, transparent 0), 
-                    radial-gradient(circle 4px, #0080ff 100%, transparent 0);
+  background-image: linear-gradient(#ff4444 64px, transparent 0),
+    linear-gradient(#d4fc00 66px, transparent 0),
+    radial-gradient(circle 4px, #0080ff 100%, transparent 0);
   background-size: 40px 1px, 1px 40px, 8px 8px;
   background-position: center center;
   box-sizing: border-box;
@@ -858,31 +946,33 @@
   left: 25px;
   top: 60px;
 }
-  
-  @keyframes bike {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
-  } 
+
+@keyframes bike {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 @media screen and (max-width:992px) {
-  .interest-card{
+  .interest-card {
     height: 100%;
   }
 
-  .interest-card.creative{
-    margin:0;
+  .interest-card.creative {
+    margin: 0;
     min-height: 50vh;
   }
-  .problemsolving{
+
+  .problemsolving {
     min-height: 60vh;
   }
-  
+
 }
+
 @media screen and (max-width:768px) {
   .interest-card {
     flex-basis: 100%;
@@ -890,44 +980,38 @@
     height: 55vh;
   }
 
-  
+
 }
-  @media (max-width: 575px) {
-    .interest-card{
-      height:max-content;
-      /* min-height:; */
-    }
-    .techenthutiash{
-      min-height: 65vh;
-    }
-    .interest-card.creative{
-      min-height: 45vh;
-    }
-    .problemsolving{
-      min-height: 55vh;
-    }
-    .loader-creative{
-      margin-left:15%;
-    }
-    .loader {
-        margin-left:30%;
-    }
-    .loader-continuous {
-      margin-left:17.5%;
-    }
-    #passionandint{
-      padding: 0px;
-    }
+
+@media (max-width: 575px) {
+  .interest-card {
+    height: max-content;
+    /* min-height:; */
   }
-  @media (max-width:400px) {
-    .techenthutiash{
-      min-height: 85vh;
-    }
-    .interest-card.creative{
-      min-height: 55vh;
-    }
-    .interest-card.problemsolving {
-      min-height: 70vh;
-    }
-    
+
+  .techenthutiash {
+    min-height: 65vh;
   }
+
+  .interest-card.creative {
+    min-height: 45vh;
+  }
+
+  .problemsolving {
+    min-height: 55vh;
+  }
+
+  .interest-card.problemsolving {
+    min-height: 55vh;
+  }
+
+  /* Margins handled by auto centering now */
+
+  #passionandint {
+    padding: 0px;
+  }
+}
+
+@media (max-width:400px) {
+  /* Height handled by content flow */
+}

@@ -1,170 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | C. Siva Kumar</title>
-    
-    <!-- Preconnect to critical domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Modern Typography Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/about.css">
-    <link rel="stylesheet" href="styles/dark-mode.css">
-    
-    <!-- Preload critical assets -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Meta description for SEO -->
-    <meta name="description" content="Professional portfolio and about page of C. Siva Kumar, showcasing skills, experience, and contact information in a classic, colorful design.">
-    
-    <!-- Open Graph tags for better social sharing -->
-    <meta property="og:title" content="About Me | C. Siva Kumar">
-    <meta property="og:description" content="Full Stack Developer passionate about creating innovative web solutions">
-    <meta property="og:type" content="website">
-</head>
-<body class="light-mode about-new-typography">
-   
-    <!-- Scroll to top button -->
-    <button id="scrollToTop" class="scroll-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="hero-shape shape-3"></div>
-            <div class="hero-shape shape-4"></div>
-        </div>
-        
-        <div class="container">
-            <div class="hero-content animate-fade-in">
-                <div class="profile-container">
-                    <div class="profile-bg"></div>
-                    <img src="images/profilepic.png" alt="C. Siva Kumar" class="profile-image">
+<!-- Scroll to top button
+<button id="scrollToTop" class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+</button> -->
+
+<!-- Hero Section (kept as per user design, though index has one too - maybe this is specific to About?) -->
+<!-- The user wanted Hero in index.html. The About.html has a "Welcome to my world" hero. 
+         I will keep it as the "About Me" specific hero if it fits, or maybe this was the OLD hero?
+         The content says "I am C. SIVA KUMAR". 
+         If I look at task.md "Refactor about.html (Content only)", and previous summary "Removed the original Hero section content".
+         It seems this file might still have the old hero. 
+         However, the user wants "About Me" content. 
+         I will keep the sections.
+    -->
+
+<!-- Hero Section -->
+<section class="hero position-relative overflow-hidden section-container d-flex align-items-center hero-gradient"
+    style="min-height: 90vh;">
+    <!-- Background Elements -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 z-0">
+        <div class="position-absolute bg-primary-subtle rounded-circle opacity-20 blur-3xl animate-float-slow"
+            style="width: 500px; height: 500px; top: -100px; right: -100px; filter: blur(80px);"></div>
+        <div class="position-absolute bg-secondary-subtle rounded-circle opacity-20 blur-3xl animate-float-reverse-slow"
+            style="width: 400px; height: 400px; bottom: 10%; left: -50px; filter: blur(60px);"></div>
+    </div>
+
+    <div class="container position-relative z-1">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0 text-center">
+                <div class="position-relative d-inline-block">
+                    <div class="position-absolute top-50 start-50 translate-middle w-100 h-100 bg-gradient-primary rounded-circle blur-xl opacity-50 animate-pulse-slow"
+                        style="transform: scale(1.1);"></div>
+                    <img src="images/profilepic.png" alt="C. Siva Kumar"
+                        class="position-relative rounded-circle shadow-lg border border-4 border-white hero-image"
+                        style="width: 280px; height: 280px; object-fit: cover;">
                 </div>
-                
-                <div class="greeting">
-                    <span class="greeting-line"></span>
-                    <span>Welcome to my world</span>
-                    <span class="greeting-line"></span>
+            </div>
+
+            <div class="col-lg-6 order-lg-1 text-center text-lg-start animate__animated animate__fadeInLeft">
+                <span
+                    class="d-inline-block py-1 px-3 rounded-pill bg-white text-primary fw-bold mb-3 small tracking-wider shadow-sm border border-primary-subtle">
+                    WELCOME TO MY WORLD
+                </span>
+                <h1 class="display-3 fw-bolder mb-3 text-animated-gradient">I am C. Siva Kumar</h1>
+
+                <div class="h3 text-secondary mb-4 font-monospace">
+                    <span id="dynamic-text" class="text-primary fw-bold">Full Stack Developer</span>
+                    <span class="cursor-blink">|</span>
                 </div>
-                
-                <h1 class="text-center">I am C. SIVA KUMAR</h1>
-                
-                <div class="dynamic-text-container">
-                    <span id="dynamic-text" class="dynamic-text">Full Stack Developer</span>
-                    <span class="cursor"></span>
-                </div>
-                
-                <p class="intro-text">
-                    I'm an aspiring full stack web developer passionate about coding and technology, with a keen eye for detail and a commitment to excellence.
+
+                <p class="lead text-secondary mb-5" style="max-width: 500px;">
+                    <!-- Aspiring <strong>Full Stack Engineer</strong> crafting scalable web applications with
+                    <strong>Python, Django</strong>, <strong>React & Angular</strong>. -->
+
+                    <b> Full-Stack Developer </b> building scalable platforms using <b>Python, Django</b>, <b>React &
+                        Angular</b>.
                 </p>
-                
-                <div class="skill-tags">
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React JS</span>
-                    <span class="skill-tag">Angular</span>
-                    <span class="skill-tag">Django</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Git</span>
+
+                <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
+                    <span class="badge-modern">Python & Django</span>
+                    <span class="badge-modern">React & Angular</span>
+                    <span class="badge-modern">REST APIs</span>
+                    <span class="badge-modern">SQL</span>
+                    <span class="badge-modern">Git/GitHub</span>
+                </div>
+
+                <div class="mt-5 d-flex gap-3 justify-content-center justify-content-lg-start">
+                    <a href="#projects" class="btn btn-primary btn-lg shadow-lg">
+                        View Projects <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-lg">
+                        Contact Me
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section section-container py-5" id="about">
+    <div class="container-fluid px-0">
+        <div class="text-center mb-5">
             <h2 class="section-title">About Me</h2>
-            
-            <div class="about-content animate-fade-in">
-                <p class="about-text">
-                    Hello! I'm Siva Kumar, a passionate and dedicated full stack developer with a love for creating beautiful, functional websites and applications. With a strong foundation in both front-end and back-end technologies, I strive to build digital experiences that are not only visually appealing but also intuitive and user-friendly.
-                </p>
-                
-                <div class="philosophy-card">
-                    <h3>My Philosophy</h3>
-                    <p>"I believe in writing clean, efficient code that solves real problems. Technology should make life easier and more enjoyable - that's the principle that guides all my work. Every project is an opportunity to learn something new and push my boundaries further."</p>
-                </div>
-                
-                <p class="about-text">
-                    My journey in web development began with curiosity and has evolved into a passion for crafting digital solutions. I enjoy the challenge of staying current with rapidly evolving technologies and implementing best practices in my work. When I'm not coding, you'll find me exploring new tech trends, contributing to open-source projects, or sharing knowledge with the developer community.
-                </p>
-            </div>
+            <p class="text-secondary fs-5 mt-3">Full Stack Developer passionate about building scalable solutions</p>
         </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            
-            <div class="contact-card animate-fade-in">
-                <p class="contact-message">
-                    <i class="fas fa-quote-left quote-icon left-quote"></i>
-                    Ready to bring your ideas to life? Let's collaborate and create something amazing together. Whether you have a project in mind or just want to connect, I'd love to hear from you!
-                    <i class="fas fa-quote-right quote-icon right-quote"></i>
-                </p>
-                
-                <div class="contact-options">
-                    <a href="mailto:chandragarisivakumar@gmail.com" class="contact-option">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+
+        <div class="about-content w-100">
+            <!-- Main About Card -->
+            <div class="card-modern mb-5 border-0 rounded-0">
+                <div class="row g-5 align-items-center justify-content-center">
+                    <div class="col-md-4 text-center">
+                        <div class="position-relative d-inline-block">
+                            <div class="position-absolute top-50 start-50 translate-middle w-100 h-100 bg-gradient-primary rounded-circle blur-xl opacity-30"
+                                style="transform: scale(1.15);"></div>
+                            <img src="images/profilepic.png" alt="C. Siva Kumar"
+                                class="position-relative rounded-circle shadow-lg border border-4 border-white"
+                                style="width: 220px; height: 220px; object-fit: cover;">
                         </div>
-                        <div class="contact-info">
-                            <h4>Email Me</h4>
-                            <span>chandragarisivakumar@gmail.com</span>
+                    </div>
+                    <div class="col-md-8">
+                        <h3 class="h4 fw-bold mb-4">Driven by Innovation</h3>
+                        <p class="about-text mb-4">
+                            I'm a Full Stack Developer passionate about creating seamless digital experiences that solve
+                            real business problems. With expertise spanning from robust backend systems in
+                            <strong>Python
+                                & Django</strong> and <strong>Flask</strong> to dynamic frontends in
+                            <strong>React</strong> and <strong>Angular</strong>, I deliver comprehensive solutions that
+                            combine technical excellence with user-centric design.
+                        </p>
+
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <h5 class="h6 text-primary fw-bold mb-3"><i class="fas fa-cog me-2"></i>Technical Focus
+                                </h5>
+                                <ul class="list-unstyled about-text small d-flex flex-column gap-2">
+                                    <li><i class="fas fa-check-circle text-success me-2"></i> Full-Stack Development
+                                    </li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i> Scalable Architecture</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i> Cloud Integration</li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="h6 text-primary fw-bold mb-3"><i class="fas fa-lightbulb me-2"></i>Core
+                                    Values</h5>
+                                <ul class="list-unstyled about-text small d-flex flex-column gap-2">
+                                    <li><i class="fas fa-star text-warning me-2"></i> Continuous Learning</li>
+                                    <li><i class="fas fa-star text-warning me-2"></i> Clean Code</li>
+                                    <li><i class="fas fa-star text-warning me-2"></i> Innovation</li>
+                                </ul>
+                            </div>
                         </div>
-                    </a>
-                    
-                    <a href="tel:+1234567890" class="contact-option">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h4>Call Me</h4>
-                            <span>+123 456 7890</span>
-                        </div>
-                    </a>
+                    </div>
                 </div>
-                
-                <div class="social-section">
-                    <h3 class="social-heading">Connect With Me</h3>
-                    
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/sivakumar-chandragari/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        
-                        <a href="https://github.com/sivakumar6678" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        
-                        <a href="https://www.instagram.com/sivakumar_csk66/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        
-                        <a href="https://www.youtube.com/@SIVAKUMAR-iy3xp" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+            </div>
+
+            <!-- Professional Highlights -->
+            <div>
+                <h4 class="h5 fw-bold mb-4 text-center">By The Numbers</h4>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-number">3+</span>
+                        <span class="highlight-label">Years Coding</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">10+</span>
+                        <span class="highlight-label">Projects Built</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">5+</span>
+                        <span class="highlight-label">Technologies</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-number">3</span>
+                        <span class="highlight-label">Certifications</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Scripts -->
-   
-</body>
-</html>
+    </div>
+</section>

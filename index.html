@@ -1,428 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of C Siva Kumar - Full Stack Web Developer and B.Tech Student">
-    <meta name="keywords" content="web developer, full stack, portfolio, Siva Kumar, developer">
-    <title>Full Stack Web Developer | C Siva Kumar</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Google Fonts -->
+    <meta name="description" content="Portfolio of C Siva Kumar - Full Stack Web Developer">
+    <title>C Siva Kumar | Full Stack Developer</title>
+
+    <!-- Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- Animate.css for animations -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Custom CSS -->
+
+    <!-- Modern Design System -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+
+    <!-- Legacy Styles (To be refactored) -->
+    <!-- <link rel="stylesheet" href="styles/skills.css"> -->
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/interests.css">
+    <!-- Keeping strict subset of legacy files that might still be needed for specific sections until refactored -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/dark-mode.css">
-   
+    <!-- ... other legacy files ... -->
 </head>
+
 <body>
-    <header class="header-area">
-        <!-- Circular Progress Indicator -->
-        <div class="circular-progress-container">
-            <svg class="circular-progress" viewBox="0 0 100 100">
-                <circle class="circular-progress-background" cx="50" cy="50" r="45"></circle>
-                <circle class="circular-progress-bar" cx="50" cy="50" r="45" id="circularProgress"></circle>
-            </svg>
-        </div>
-        
-        <!-- Modern Split Navbar -->
-        <div class="split-navbar">
-            <!-- Left Side - Branding -->
-            <div class="navbar-branding">
-                <div class="brand-container">
-                    <div class="brand-logo">
-                        <span class="brand-initial">C</span>
-                    </div>
-                    <div class="brand-text">
-                        <h1 class="brand-name">Siva Kumar</h1>
-                        <p class="brand-title">Full Stack Developer</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Right Side - Navigation -->
-            <div class="navbar-navigation">
-                <!-- Mobile Theme Toggle (Outside Menu) -->
-                <div class="mobile-theme-toggle d-md-none">
-                    <label class="theme-switch" aria-label="Toggle dark mode">
-                        <input type="checkbox" class="input__check">
-                        <div class="theme-slider">
-                            <i class="fas fa-sun theme-icon-light"></i>
-                            <i class="fas fa-moon theme-icon-dark"></i>
-                        </div>
-                    </label>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-                    <div class="menu-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+    <!-- Skip link for accessibility -->
+    <!-- <a href="#about" class="skip-link">Skip to content</a> -->
+    <!-- Scroll Progress Indicator -->
+    <div class="circular-progress-container">
+        <svg class="circular-progress" viewBox="0 0 100 100">
+            <circle class="circular-progress-background" cx="50" cy="50" r="45"></circle>
+            <circle class="circular-progress-bar" id="circularProgress" cx="50" cy="50" r="45"></circle>
+        </svg>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header fixed-top floating-nav-container">
+        <nav class="navbar navbar-expand-lg navbar-dark floating-nav" role="navigation" aria-label="Primary Navigation">
+            <div class="container-fluid px-2">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                    <div class="brand__logo">S</div>
+                </a>
+
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
                 </button>
-                
+
                 <!-- Navigation Menu -->
-                <div class="nav-menu" id="navMenu">
-                    <div class="nav-menu-inner">
-                        <div class="nav-header d-md-none">
-                            <div class="nav-brand">
-                                <span class="nav-brand-initial">C</span>
-                                <span class="nav-brand-text">Siva Kumar</span>
-                            </div>
-                           
-                        </div>
-                        
-                        <ul class="nav-list">
-                            <li class="nav-item" data-index="1">
-                                <a class="nav-link" href="#about" data-file="about.html">
-                                    <span class="nav-number">01</span>
-                                    <span class="nav-text">About</span>
-                                </a>
-                            </li>
-                            <li class="nav-item" data-index="2">
-                                <a class="nav-link" href="#skills" data-file="skills.html">
-                                    <span class="nav-number">02</span>
-                                    <span class="nav-text">Skills</span>
-                                </a>
-                            </li>
-                            <li class="nav-item" data-index="3">
-                                <a class="nav-link" href="#projects" data-file="projects.html">
-                                    <span class="nav-number">03</span>
-                                    <span class="nav-text">Projects</span>
-                                </a>
-                            </li>
-                            <li class="nav-item" data-index="4">
-                                <a class="nav-link" href="#experience" data-file="experience.html">
-                                    <span class="nav-number">04</span>
-                                    <span class="nav-text">Experience</span>
-                                </a>
-                            </li>
-                            <li class="nav-item" data-index="5">
-                                <a class="nav-link" href="#certify" data-file="certify.html">
-                                    <span class="nav-number">05</span>
-                                    <span class="nav-text">Certifications</span>
-                                </a>
-                            </li>
-                            <li class="nav-item" data-index="6">
-                                <a class="nav-link" href="#passionandint" data-file="passionandint.html">
-                                    <span class="nav-number">06</span>
-                                    <span class="nav-text">Interests</span>
-                                </a>
-                            </li>
-                        </ul>
-                        
-                        <!-- Social Links in Navigation -->
-                        <div class="nav-social d-md-none">
-                            <a href="https://github.com/sivakumar6678" target="_blank" class="social-icon" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://linkedin.com/in/sivakumar-chandragari" target="_blank" class="social-icon" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#" class="social-icon" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
-                        
-                        <!-- Mobile Theme Toggle Removed (Now Outside) -->
+                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                    <div class="d-flex justify-content-between align-items-center d-lg-none mb-4 mt-3">
+                        <span class="fw-bold text-white">Menu</span>
+                        <button class="btn-close btn-close-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navMenu" aria-label="Close"></button>
+                    </div>
+
+                    <ul class="navbar-nav align-items-lg-center gap-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="#about" data-file="about.html"><span
+                                    class="nav-number d-lg-none me-2">01</span>About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills" data-file="skills.html"><span
+                                    class="nav-number d-lg-none me-2">02</span>Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects" data-file="projects.html"><span
+                                    class="nav-number d-lg-none me-2">03</span>Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experience" data-file="experience.html"><span
+                                    class="nav-number d-lg-none me-2">04</span>Experience</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certify" data-file="certify.html"><span
+                                    class="nav-number d-lg-none me-2">05</span>Certifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#passionandint"
+                                data-file="passionandint.html"><span class="nav-number d-lg-none me-2">06</span>Beyond
+                                Coding</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact" data-file="contact.html"><span
+                                    class="nav-number d-lg-none me-2">07</span>Contact</a></li>
+                    </ul>
+
+                    <!-- Theme Switch -->
+                    <div class="theme-switch ms-lg-4 mt-3 mt-lg-0">
+                        <label class="theme-label" for="theme-toggle" aria-label="Toggle Dark Mode">
+                            <input type="checkbox" id="theme-toggle" class="input__check">
+                            <span class="theme-slider">
+                                <i class="fas fa-sun theme-icon-light"></i>
+                                <i class="fas fa-moon theme-icon-dark"></i>
+                            </span>
+                        </label>
                     </div>
                 </div>
-                
-                <!-- Desktop Theme Toggle -->
-                <div class="theme-toggle-desktop d-none d-md-flex">
-                    <label class="theme-switch" aria-label="Toggle dark mode">
-                        <input type="checkbox" class="input__check">
-                        <div class="theme-slider">
-                            <i class="fas fa-sun theme-icon-light"></i>
-                            <i class="fas fa-moon theme-icon-dark"></i>
-                        </div>
-                    </label>
-                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <main id="content">
-        <div class="container-fluid main">
-            <!-- Hero Section -->
-           
-            
-            <!-- Content Sections -->
-            <div class="sections" id="about"></div>
-            <div class="sections" id="skills"></div>
-            <div class="sections" id="projects"></div>
-            <div class="sections" id="experience"></div>
-            <div class="sections" id="certify"></div>
-            <div class="sections" id="passionandint"></div>
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container-fluid p-0">
+            <!-- Sections are loaded dynamically via AJAX -->
+            <div id="about"></div>
+            <div id="skills"></div>
+            <div id="projects"></div>
+            <div id="experience"></div>
+            <div id="certify"></div>
+            <div id="passionandint"></div>
+            <div id="contact"></div>
         </div>
     </main>
 
-    <footer class="footer" id="footer">
-        <div class="footer-content">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Left Section -->
-                    <div class="col-lg-5 col-md-6 footer-left">
-                        <h2 class="footer-name">CHANDRAGARI SIVAKUMAR</h2>
-                        <p class="footer-title">Full Stack Developer | B.Tech Student</p>
-                        <p class="footer-description">Focused on crafting efficient web applications and user-friendly solutions.</p>
-                        <p class="footer-goals"><strong>Future Goals:</strong> Continue learning and growing in web development, contribute to impactful projects, and explore innovative technologies.</p>
-                    </div>
-            
-                    <!-- Footer Center Section -->
-                    <div class="col-lg-4 col-md-6 footer-center">
-                        <p class="footer-passion"><strong>Passionate about:</strong> Solving real-world problems through web technologies and open-source contributions.</p>
-                        <blockquote class="interactive-quote">
-                            <em>"Creativity blooms from imagination and exploration. Use every tool, ask questions, and let ideas flow freely."</em>
-                        </blockquote>
-                        <blockquote class="interactive-quote">
-                            <em>"When stress hits, dive into your passions. Let them guide you out of the darkness and back into the light."</em>
-                        </blockquote>
-                    </div>
-                
-                    <!-- Footer Right Section -->
-                    <div class="col-lg-3 col-md-12 footer-right">
-                        <div class="contact-section">
-                            <h3 class="contact-heading">Get In Touch</h3>
-                            <p class="contact-text">Let's collaborate on your next project!</p>
-                            <a href="mailto:chandragarisivakumar@gmail.com" class="contact-link">
-                                <i class="fas fa-envelope"></i> chandragarisivakumar@gmail.com
-                            </a>
-                            <div class="social-links">
-                                <a href="https://github.com/sivakumar6678" target="_blank" class="social-link" aria-label="GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://linkedin.com/in/sivakumar-chandragari" target="_blank" class="social-link" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                                <a href="#" class="social-link" aria-label="Twitter">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </div>
+    <!-- Footer intentionally left as is for now, will refactor in Phase 3 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="brand mb-4">
+                        <div class="brand__logo">S</div>
+                        <div class="brand__info">
+                            <span class="brand__name text-white">C Siva Kumar</span>
+                            <span class="brand__title text-white-50">Full Stack Developer</span>
                         </div>
                     </div>
+                    <p class="text-secondary mb-4">
+                        Focused on crafting efficient web applications and user-friendly solutions. Let's build
+                        something amazing together.
+                    </p>
+                    <div class="d-flex gap-3 social-links">
+                        <a href="https://github.com/sivakumar6678" target="_blank" class="social-btn"
+                            aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sivakumar-chandragari/" target="_blank" class="social-btn"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:chandragarisivakumar@gmail.com" class="social-btn" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="fw-bold text-white mb-3">Navigation</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#about" class="footer-link">About</a></li>
+                        <li><a href="#skills" class="footer-link">Skills</a></li>
+                        <li><a href="#projects" class="footer-link">Projects</a></li>
+                        <li><a href="#experience" class="footer-link">Experience</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="fw-bold text-white mb-3">More</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#certify" class="footer-link">Certifications</a></li>
+                        <li><a href="#passionandint" class="footer-link">Beyond Coding</a></li>
+                        <li><a href="#contact" class="footer-link">Contact Me</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <h5 class="fw-bold text-white mb-3">Get in Touch</h5>
+                    <p class="text-secondary mb-3">
+                        <i class="fas fa-map-marker-alt me-2 text-primary"></i> Rajampet , Andhra Pradesh, India
+                    </p>
+                    <p class="text-secondary mb-3">
+                        <i class="fas fa-envelope me-2 text-primary"></i> chandragarisivakumar@gmail.com
+                    </p>
+                    <!-- <p class="text-secondary">
+                        <i class="fas fa-phone-alt me-2 text-primary"></i> +91 939-266-9460
+                    </p> -->
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <p class="copyright">© 2024 C Siva Kumar. All rights reserved.</p>
+
+            <div class="footer-bottom mt-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0 text-secondary small">© 2026 C Siva Kumar. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                        <p class="mb-0 text-secondary small">
+                            Designed & Built with <i class="fas fa-heart text-danger mx-1"></i> and Code
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap 5 Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Modern navbar elements
-            const splitNavbar = document.querySelector('.split-navbar');
-            const circularProgressContainer = document.querySelector('.circular-progress-container');
-            const circularProgressBar = document.getElementById('circularProgress');
-            
-            // Add animation classes to nav items on page load
-            document.querySelectorAll('.nav-item').forEach((item, index) => {
-                item.style.animationDelay = `${0.1 * (index + 1)}s`;
-                item.classList.add('animate__animated', 'animate__fadeInDown');
-            });
-            
-            // Add keyframes for circular progress pulse animation
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes pulse {
-                    0% { filter: drop-shadow(0 0 2px var(--primary-color)); }
-                    50% { filter: drop-shadow(0 0 8px var(--primary-color)); }
-                    100% { filter: drop-shadow(0 0 2px var(--primary-color)); }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            window.addEventListener('scroll', function() {
-                // Navbar scroll effect
-                if (window.scrollY > 50) {
-                    if (!splitNavbar.classList.contains('scrolled')) {
-                        splitNavbar.classList.add('scrolled');
-                    }
-                    
-                    // Show circular progress indicator
-                    if (!circularProgressContainer.classList.contains('visible')) {
-                        circularProgressContainer.classList.add('visible');
-                    }
-                } else {
-                    if (splitNavbar.classList.contains('scrolled')) {
-                        splitNavbar.classList.remove('scrolled');
-                    }
-                    
-                    // Hide circular progress indicator
-                    if (circularProgressContainer.classList.contains('visible')) {
-                        circularProgressContainer.classList.remove('visible');
-                    }
-                }
-                
-                // Update circular progress indicator
-                if (circularProgressBar) {
-                    const scrollPosition = window.scrollY;
-                    const totalHeight = document.body.scrollHeight - window.innerHeight;
-                    const scrollPercentage = (scrollPosition / totalHeight) * 100;
-                    
-                    // Calculate stroke-dashoffset based on scroll percentage
-                    // 283 is the circumference of the circle (2 * PI * radius)
-                    const circumference = 283;
-                    const dashOffset = circumference - (circumference * scrollPercentage / 100);
-                    
-                    // Apply the dash offset
-                    circularProgressBar.style.strokeDashoffset = dashOffset;
-                    
-                    // Add pulse effect when reaching bottom
-                    if (scrollPercentage > 95) {
-                        circularProgressBar.style.animation = 'pulse 1.5s infinite';
-                    } else {
-                        circularProgressBar.style.animation = 'none';
-                    }
-                }
-                
-                // Highlight active nav item based on scroll position
-                highlightNavOnScroll();
-            });
-            
-            // Function to highlight active nav item based on scroll position
-            function highlightNavOnScroll() {
-                const sections = document.querySelectorAll('.sections');
-                const navLinks = document.querySelectorAll('.nav-link');
-                
-                let currentSection = '';
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 100;
-                    const sectionHeight = section.clientHeight;
-                    const sectionId = section.getAttribute('id');
-                    
-                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                        currentSection = sectionId;
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${currentSection}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-            
-            // Add hover effect interaction between nav items
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('mouseenter', function() {
-                    navLinks.forEach(otherLink => {
-                        if (otherLink !== this && !otherLink.classList.contains('active')) {
-                            otherLink.style.opacity = '0.7';
-                            otherLink.style.transform = 'scale(0.98)';
-                        }
-                    });
-                });
-                
-                link.addEventListener('mouseleave', function() {
-                    navLinks.forEach(otherLink => {
-                        if (otherLink !== this) {
-                            otherLink.style.opacity = '';
-                            otherLink.style.transform = '';
-                        }
-                    });
-                });
-            });
-            
-            // Function to highlight active nav item based on scroll position
-            function highlightNavOnScroll() {
-                const scrollPosition = window.scrollY + 100;
-                
-                // Check each section's position
-                document.querySelectorAll('.sections').forEach(function(section) {
-                    const target = section.getAttribute('id');
-                    if (!target) return;
-                    
-                    const offset = section.offsetTop;
-                    const height = section.offsetHeight;
-                    
-                    if (scrollPosition >= offset && scrollPosition < offset + height) {
-                        document.querySelectorAll('.nav-link').forEach(function(link) {
-                            link.classList.remove('active');
-                            link.removeAttribute('aria-current');
-                        });
-                        
-                        const activeLink = document.querySelector(`.nav-link[href="#${target}"]`);
-                        if (activeLink) {
-                            activeLink.classList.add('active');
-                            activeLink.setAttribute('aria-current', 'page');
-                            
-                            // Animate the active indicator
-                            const indicator = activeLink.querySelector('.nav-indicator');
-                            if (indicator) {
-                                indicator.style.animation = 'none';
-                                // Trigger reflow
-                                void indicator.offsetWidth;
-                                indicator.style.animation = '';
-                            }
-                        }
-                    }
-                });
-            }
-            
-            // Function to handle smooth scroll
-            function smoothScrollTo(element) {
-                const headerOffset = 80;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        
-            // Add event listeners to all skill categories
-            document.querySelectorAll('.skill-category').forEach(category => {
-                const collapse = category.querySelector('.collapse');
-                
-                if (collapse) {
-                    // Handle expand/collapse events
-                    collapse.addEventListener('show.bs.collapse', function() {
-                        if (typeof handleIconTransition === 'function') {
-                            handleIconTransition(category, true);
-                        }
-                        smoothScrollTo(category);
-                    });
-            
-                    collapse.addEventListener('hide.bs.collapse', function() {
-                        if (typeof handleIconTransition === 'function') {
-                            handleIconTransition(category, false);
-                        }
-                    });
-                }
-            });
-        
-            // Initialize skill progress bars
-         
-            
-          
-            
-          
-           
-            
-           
-        });
-            // Enhanced desktop hover effects
-           
-              
-    </script>
 </body>
+
 </html>

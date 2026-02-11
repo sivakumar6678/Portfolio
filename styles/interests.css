@@ -1,0 +1,698 @@
+/* 
+ * Interests Section - Bento Grid Layout (Expanded)
+ * Ultra polished, glassmorphism, animated, spotlight effect
+ */
+
+#passionandint {
+    padding: var(--space-12) 0;
+    position: relative;
+    overflow: hidden;
+    /* Noise texture for premium feel */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Background ambient glow for the section */
+#passionandint::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.section-header {
+    margin-bottom: var(--space-8);
+}
+
+.section-title {
+    font-family: 'Pirata One', cursive;
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--color-text-primary) 30%, var(--primary-500));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.section-subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    margin-top: var(--space-2);
+}
+
+/* Bento Grid Container - Expanded to 4 columns for flexibility */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-auto-rows: minmax(260px, auto); */
+    grid-template-rows: repeat(3, minmax(240px, auto));
+    gap: var(--space-4);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Base Card Styles */
+.bento-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .bento-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effects */
+.bento-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    /* Border color handled by spotlight if active, else fallback */
+    border-color: var(--primary-300);
+}
+
+body.dark-mode .bento-card:hover {
+    border-color: var(--primary-600);
+    box-shadow: 0 20px 40px -10px rgba(249, 115, 22, 0.15);
+}
+
+/* Card Content */
+.card-content {
+    z-index: 2;
+    position: relative;
+}
+
+.card-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    background: var(--primary-100);
+    color: var(--primary-600);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-4);
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .card-icon-wrapper {
+    background: rgba(234, 88, 12, 0.2);
+    color: var(--primary-400);
+}
+
+.bento-card:hover .card-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    background: var(--primary-500);
+    color: white;
+}
+
+.card-title {
+    font-family: 'Pirata One', cursive;
+    font-size: 1.5rem;
+    margin-bottom: var(--space-2);
+    color: var(--color-text-primary);
+}
+
+.card-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+/* --- Grid Positioning (4 Column Layout) --- */
+/*
+ Row 1: Web Dev (2x2), Tech (1x1), Goals (1x1 -> NO make 2x1 vertical? or keep 1x1?)
+ Let's try:
+ R1: Web (2w, 2h), Tech (1), Goals (1)
+ R2:               Solve (1), Location (1)
+ R3: Creative (1), Active (1), Learn (2w)
+ Wait, Logic:
+ Web: Col 1-2, Row 1-2
+ Tech: Col 3, Row 1
+ Goals: Col 4, Row 1
+ Solve: Col 3, Row 2
+ Location: Col 4, Row 2
+ Creative: Col 1, Row 3
+ Active: Col 2, Row 3
+ Learn: Col 3-4, Row 3
+ Languages: fits where? Maybe make Goals 2-wide?
+ Let's revise for 9 items:
+ Web (2x2)
+ Learn (2x1) 
+ Goals (2x1)
+ Location (1x1)
+ Tech (1x1)
+ Solve (1x1)
+ Creative (1x1)
+ Active (1x1)
+ Lang (1x1)
+ 
+ Improved Layout:
+ R1: Web (span 2, row 2), Tech (1), Goals (span 1, row 1? no make it distinct)
+ Actually:
+ R1 C1-2: Web Dev (2x2)
+ R1 C3: Tech (1x1)
+ R1 C4: Location (1x1)
+ 
+ R2 C3: Goals (span 2? No, let's span 2 cols for Goals) -> Goals (2x1)
+ 
+ R3: Creative(1), Active(1), Solve(1), Lang(1) - 4 items
+ 
+ R4: Learn (span 2 or 4?)
+ 
+ Let's do a dense pack.
+ */
+
+.web-dev-card {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.tech-card {
+    grid-column: span 1;
+}
+
+.location-card {
+    grid-column: span 1;
+}
+
+.goals-card {
+    grid-column: span 2;
+}
+
+/* Spans under Tech/Loc */
+
+/* Row 3 ish */
+.solve-card {
+    grid-column: span 1;
+}
+
+.creative-card {
+    grid-column: span 1;
+}
+
+.active-card {
+    grid-column: span 1;
+}
+
+.lang-card {
+    grid-column: span 1;
+}
+
+/* Row 4 */
+.learn-card {
+    grid-column: span 2;
+}
+
+/* Maybe center this or span 4? span 2 puts it left/right */
+/* To fill gaps:
+   We have used:
+   R1-2: Web (2x2)
+   R1: Tech(1), Loc(1)
+   R2: Goals(2)
+   
+   R3: Solve, Creative, Active, Lang (4 cols) -> Perfect
+   
+   R4: Learn (2) -> creates holes.
+   Let's make Learn span 4 (Full width bottom) OR span 2 and verify others match.
+   Let's ensure responsiveness handles it.
+*/
+.learn-card {
+    grid-column: span 4;
+}
+
+/* Full width footer card */
+
+
+/* --- Visuals & Specifics --- */
+
+.card-visual {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* Web Dev Visual */
+.code-editor-mockup {
+    background: var(--slate-900);
+    border-radius: var(--radius-lg) 0 0 0;
+    padding: var(--space-4);
+    width: 250px;
+    box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.1);
+    transform: translate(20px, 20px) rotate(-5deg);
+    transition: transform 0.4s ease;
+}
+
+.bento-card:hover .code-editor-mockup {
+    transform: translate(10px, 10px) rotate(0deg);
+}
+
+.editor-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.editor-body {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #e2e8f0;
+}
+
+.keyword {
+    color: #f472b6;
+}
+
+.variable {
+    color: #60a5fa;
+}
+
+.string {
+    color: #facc15;
+}
+
+.function {
+    color: #a78bfa;
+}
+
+/* Tech Visual */
+.tech-visual {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.device-icon {
+    position: absolute;
+    font-size: 3rem;
+    color: var(--slate-200);
+    opacity: 0.2;
+    filter: blur(1px);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .device-icon {
+    color: var(--slate-700);
+}
+
+.float-1 {
+    top: 10%;
+    right: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.float-2 {
+    bottom: 20%;
+    right: 20%;
+    animation: float 8s ease-in-out infinite reverse;
+    font-size: 2rem;
+}
+
+.float-3 {
+    top: 40%;
+    right: -5%;
+    animation: float 7s ease-in-out infinite 1s;
+    font-size: 4rem;
+}
+
+.bento-card:hover .device-icon {
+    opacity: 0.4;
+    filter: blur(0);
+    color: var(--primary-300);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Goal Visual */
+.goals-visual {
+    right: 20px;
+    bottom: 20px;
+    font-size: 4rem;
+    opacity: 0.1;
+    transition: all 0.3s;
+}
+
+.bento-card:hover .goals-visual {
+    transform: scale(1.2);
+    opacity: 0.3;
+    color: var(--primary-500);
+}
+
+/* Location Card Special */
+.location-card {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    border: none;
+    color: white;
+}
+
+.card-bg-image.map-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg');
+    /* Simplified generic map */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+    z-index: 1;
+    filter: grayscale(100%) invert(1);
+}
+
+body.light-mode .card-bg-image.map-bg {
+    filter: grayscale(100%);
+    opacity: 0.2;
+}
+
+.map-marker-container {
+    position: relative;
+    display: inline-block;
+}
+
+.map-marker {
+    color: #ef4444;
+    font-size: 2.5rem;
+    z-index: 2;
+    position: relative;
+    animation: bounce 2s infinite;
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #ef4444;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 60px;
+        height: 60px;
+        opacity: 0;
+    }
+}
+
+/* Puzzle Visual */
+.puzzle-visual {
+    right: -20px;
+    bottom: -20px;
+}
+
+.puzzle-svg {
+    width: 120px;
+    height: 120px;
+    fill: var(--primary-100);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body.dark-mode .puzzle-svg {
+    fill: var(--slate-700);
+}
+
+.bento-card:hover .puzzle-svg {
+    transform: rotate(15deg) scale(1.1);
+    fill: var(--primary-500);
+}
+
+/* Creative Visual */
+.creative-visual {
+    right: 10px;
+    bottom: 10px;
+}
+
+.color-palette {
+    display: flex;
+    flex-direction: column;
+    gap: -10px;
+    transform: rotate(15deg);
+}
+
+.swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode .swatch {
+    border-color: var(--slate-800);
+}
+
+.s1 {
+    background: #f43f5e;
+}
+
+.s2 {
+    background: #8b5cf6;
+    transform: translateX(10px);
+}
+
+.s3 {
+    background: #10b981;
+}
+
+.bento-card:hover .s1 {
+    transform: translateX(-5px);
+}
+
+.bento-card:hover .s2 {
+    transform: translateX(20px) scale(1.1);
+}
+
+.bento-card:hover .s3 {
+    transform: translateX(5px);
+}
+
+/* Active Visual */
+.active-card:hover .fa-running {
+    animation: run 1s infinite linear;
+}
+
+@keyframes run {
+    0% {
+        transform: skewX(0deg);
+    }
+
+    25% {
+        transform: skewX(-10deg) translateY(-2px);
+    }
+
+    50% {
+        transform: skewX(0deg);
+    }
+
+    75% {
+        transform: skewX(10deg) translateY(-2px);
+    }
+
+    100% {
+        transform: skewX(0deg);
+    }
+}
+
+/* Learn Visual */
+.learn-visual {
+    width: 300px;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.progress-bar-mini {
+    height: 6px;
+    background: var(--slate-200);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+body.dark-mode .progress-bar-mini {
+    background: var(--slate-700);
+}
+
+.progress-bar-mini::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 40%;
+    background: var(--primary-500);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+.progress-bar-mini:nth-child(2)::after {
+    width: 65%;
+    background: var(--secondary-500);
+}
+
+.bento-card:hover .progress-bar-mini::after {
+    width: 80%;
+}
+
+.bento-card:hover .progress-bar-mini:nth-child(2)::after {
+    width: 90%;
+}
+
+/* Spotlight Effect specific */
+.bento-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--radius-xl);
+    padding: 1.5px;
+    /* Border width */
+    background: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+            rgba(255, 255, 255, 0.4),
+            transparent 40%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    /* JS will toggle opacity on hover */
+    transition: opacity 0.3s;
+}
+
+body.dark-mode .bento-card::after {
+    background: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+            rgba(249, 115, 22, 0.5),
+            transparent 40%);
+}
+
+.bento-card:hover::after {
+    opacity: 1;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .web-dev-card {
+        grid-column: span 2;
+    }
+
+    .learn-card {
+        grid-column: span 2;
+    }
+
+    .goals-card {
+        grid-column: span 2;
+    }
+
+    .tech-card,
+    .location-card,
+    .solve-card,
+    .creative-card,
+    .active-card,
+    .lang-card {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-card {
+        grid-column: span 1 !important;
+        grid-row: auto !important;
+    }
+}

@@ -35,9 +35,17 @@
     font-size: 1.5rem;
 }
 
-.bg-primary-soft { background-color: rgba(79, 70, 229, 0.1); }
-.bg-success-soft { background-color: rgba(16, 185, 129, 0.1); }
-.bg-warning-soft { background-color: rgba(245, 158, 11, 0.1); }
+.bg-primary-soft {
+    background-color: rgba(79, 70, 229, 0.1);
+}
+
+.bg-success-soft {
+    background-color: rgba(16, 185, 129, 0.1);
+}
+
+.bg-warning-soft {
+    background-color: rgba(245, 158, 11, 0.1);
+}
 
 .skill-badge-group {
     display: flex;
@@ -88,6 +96,14 @@ body.dark-mode .skill-tag:hover {
     color: var(--primary-400);
 }
 
-body.dark-mode .bg-primary-soft { background-color: rgba(99, 102, 241, 0.15); }
-body.dark-mode .bg-success-soft { background-color: rgba(52, 211, 153, 0.15); }
-body.dark-mode .bg-warning-soft { background-color: rgba(251, 191, 36, 0.15); }
+body.dark-mode .bg-primary-soft {
+    background-color: rgba(99, 102, 241, 0.15);
+}
+
+body.dark-mode .bg-success-soft {
+    background-color: rgba(52, 211, 153, 0.15);
+}
+
+body.dark-mode .bg-warning-soft {
+    background-color: rgba(251, 191, 36, 0.15);
+}

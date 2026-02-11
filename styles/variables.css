@@ -33,6 +33,10 @@
     --secondary-800: #92400e;
     --secondary-900: #78350f;
 
+    /* RGB values for transparent glow effects */
+    --primary-rgb: 234, 88, 12;
+    --secondary-rgb: 245, 158, 11;
+
     /* Neutrals (Slate) */
     --slate-50: #f8fafc;
     --slate-100: #f1f5f9;

@@ -75,7 +75,7 @@ body.dark-mode .btn-outline:hover {
    Cards
    ------------------------- */
 .card-modern {
-    background-color: var(--color-bg-surface);
+    background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
@@ -85,9 +85,10 @@ body.dark-mode .btn-outline:hover {
 }
 
 .card-modern:hover {
-    border-color: var(--primary-300);
+    border-color: var(--color-border-hover);
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
+    background-color: var(--color-bg-card-hover);
 }
 
 body.dark-mode .card-modern:hover {

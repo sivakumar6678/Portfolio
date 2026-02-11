@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/projects.css">
 
   <!-- Legacy Styles (To be refactored) -->
   <link rel="stylesheet" href="styles/style.css">
@@ -69,52 +70,54 @@
 
 <body>
   <!-- Header / Navbar -->
-  <header class="header">
-    <nav class="navbar" role="navigation" aria-label="Primary Navigation">
-      <div class="brand">
-        <a href="index.html" class="text-decoration-none">
+  <header class="header fixed-top floating-nav-container">
+    <nav class="navbar navbar-expand-lg navbar-dark floating-nav" role="navigation" aria-label="Primary Navigation">
+      <div class="container-fluid px-2">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
           <div class="brand__logo">S</div>
         </a>
-        <div class="brand__info">
-          <span class="brand__name">C Siva Kumar</span>
-          <span class="brand__title">Full Stack Developer</span>
-        </div>
-      </div>
 
-      <!-- Mobile Toggle -->
-      <button class="nav-toggle" id="menuToggle" aria-label="Toggle navigation" aria-controls="navMenu"
-        aria-expanded="false">
-        <i class="fas fa-bars"></i>
-      </button>
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+          aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
 
-      <!-- Navigation Menu -->
-      <div class="nav-menu" id="navMenu" role="menu" aria-hidden="true">
-        <div class="d-flex justify-content-between align-items-center d-xl-none mb-4">
-          <span class="fw-bold text-dark">Menu</span>
-          <button class="btn-close" id="navClose" aria-label="Close"></button>
-        </div>
+        <!-- Navigation Menu -->
+        <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+          <div class="d-flex justify-content-between align-items-center d-lg-none mb-4 mt-3">
+            <span class="fw-bold text-white">Menu</span>
+            <button class="btn-close btn-close-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-label="Close"></button>
+          </div>
 
-        <ul class="nav-list">
-          <li><a class="nav-link" href="index.html#about"><span class="nav-number">01</span>About</a></li>
-          <li><a class="nav-link" href="index.html#skills"><span class="nav-number">02</span>Skills</a></li>
-          <li><a class="nav-link active" href="#" aria-current="page"><span class="nav-number">03</span>Projects</a>
-          </li>
-          <li><a class="nav-link" href="index.html#experience"><span class="nav-number">04</span>Experience</a></li>
-          <li><a class="nav-link" href="index.html#certify"><span class="nav-number">05</span>Certifications</a></li>
-          <li><a class="nav-link" href="index.html#passionandint"><span class="nav-number">06</span>Beyond Coding</a>
-          </li>
-          <li><a class="nav-link" href="index.html#contact"><span class="nav-number">07</span>Contact</a></li>
-        </ul>
+          <ul class="navbar-nav align-items-lg-center gap-lg-4">
+            <li class="nav-item"><a class="nav-link" href="index.html#about"><span
+                  class="nav-number d-lg-none me-2">01</span>About</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#skills"><span
+                  class="nav-number d-lg-none me-2">02</span>Skills</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#" aria-current="page"><span
+                  class="nav-number d-lg-none me-2">03</span>Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#experience"><span
+                  class="nav-number d-lg-none me-2">04</span>Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#certify"><span
+                  class="nav-number d-lg-none me-2">05</span>Certifications</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#passionandint"><span
+                  class="nav-number d-lg-none me-2">06</span>Beyond Coding</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact"><span
+                  class="nav-number d-lg-none me-2">07</span>Contact</a></li>
+          </ul>
 
-        <!-- Theme Switch -->
-        <div class="theme-switch ms-lg-4">
-          <label class="theme-label" for="theme-toggle">
-            <input type="checkbox" id="theme-toggle" class="input__check">
-            <span class="theme-slider">
-              <i class="fas fa-sun theme-icon-light"></i>
-              <i class="fas fa-moon theme-icon-dark"></i>
-            </span>
-          </label>
+          <!-- Theme Switch -->
+          <div class="theme-switch ms-lg-4 mt-3 mt-lg-0">
+            <label class="theme-label" for="theme-toggle" aria-label="Toggle Dark Mode">
+              <input type="checkbox" id="theme-toggle" class="input__check">
+              <span class="theme-slider">
+                <i class="fas fa-sun theme-icon-light"></i>
+                <i class="fas fa-moon theme-icon-dark"></i>
+              </span>
+            </label>
+          </div>
         </div>
       </div>
     </nav>
@@ -240,7 +243,6 @@
 
                   <div class="card-tech mb-4">
                     <span class="badge badge-tech mb-2">Angular</span>
-                    <span class="badge badge-tech mb-2">Spring Boot</span>
                     <span class="badge badge-tech mb-2">MySQL</span>
                     <span class="badge badge-tech mb-2">Microservices</span>
                   </div>
@@ -534,8 +536,65 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer mt-auto">
+  <footer class="footer">
     <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <div class="brand mb-4">
+            <div class="brand__logo">S</div>
+            <div class="brand__info">
+              <span class="brand__name text-white">C Siva Kumar</span>
+              <span class="brand__title text-white-50">Full Stack Developer</span>
+            </div>
+          </div>
+          <p class="text-secondary mb-4">
+            Focused on crafting efficient web applications and user-friendly solutions. Let's build
+            something amazing together.
+          </p>
+          <div class="d-flex gap-3 social-links">
+            <a href="https://github.com/sivakumar6678" target="_blank" class="social-btn" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sivakumar-chandragari/" target="_blank" class="social-btn"
+              aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:chandragarisivakumar@gmail.com" class="social-btn" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="fw-bold text-white mb-3">Navigation</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="index.html#about" class="footer-link">About</a></li>
+            <li><a href="index.html#skills" class="footer-link">Skills</a></li>
+            <li><a href="#" class="footer-link">Projects</a></li>
+            <li><a href="index.html#experience" class="footer-link">Experience</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="fw-bold text-white mb-3">More</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="index.html#certify" class="footer-link">Certifications</a></li>
+            <li><a href="index.html#passionandint" class="footer-link">Beyond Coding</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contact Me</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h5 class="fw-bold text-white mb-3">Get in Touch</h5>
+          <p class="text-secondary mb-3">
+            <i class="fas fa-map-marker-alt me-2 text-primary"></i> Rajampet , Andhra Pradesh, India
+          </p>
+          <p class="text-secondary mb-3">
+            <i class="fas fa-envelope me-2 text-primary"></i> chandragarisivakumar@gmail.com
+          </p>
+        </div>
+      </div>
+
       <div class="footer-bottom mt-5">
         <div class="row align-items-center">
           <div class="col-md-6 text-center text-md-start">

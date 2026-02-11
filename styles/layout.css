@@ -1663,7 +1663,7 @@ body.dark-mode .project-card .btn-outline-secondary:hover {
 
     .navbar-nav .nav-link.active {
         background: rgba(var(--primary-rgb), 0.1);
-        color: var(--primary-600) !important;
+        color: var(--color-link) !important;
         box-shadow: none;
     }
 
@@ -1675,4 +1675,60 @@ body.dark-mode .project-card .btn-outline-secondary:hover {
     .floating-nav-container {
         padding: 0.5rem;
     }
+}
+
+/* Dark Mode Utilities Overrides */
+body.dark-mode .text-secondary {
+    color: var(--slate-400) !important;
+}
+
+body.dark-mode .bg-light {
+    background-color: var(--slate-800) !important;
+}
+
+body.dark-mode .border-primary-subtle {
+    border-color: rgba(var(--primary-rgb), 0.3) !important;
+}
+
+body.dark-mode .border-secondary-subtle {
+    border-color: var(--slate-700) !important;
+}
+
+body.dark-mode .border-info-subtle {
+    border-color: rgba(14, 165, 233, 0.3) !important;
+}
+
+body.dark-mode .text-dark {
+    color: var(--slate-200) !important;
+}
+
+/* Hero Section Dark Mode Text */
+body.dark-mode .lead {
+    color: var(--slate-300) !important;
+}
+
+/* Timeline Content Dark Mode */
+body.dark-mode .timeline-content {
+    background-color: var(--slate-800);
+    border-color: var(--slate-700);
+}
+
+body.dark-mode .timeline-content .text-muted {
+    color: var(--slate-400) !important;
+}
+
+/* Achievement Icons Dark Mode */
+body.dark-mode .icon-box.bg-light {
+    background-color: var(--slate-800) !important;
+    color: var(--slate-200) !important;
+}
+
+/* Card Modern Dark Mode Fix */
+body.dark-mode .card-modern {
+    background-color: var(--slate-900);
+    border-color: var(--slate-800);
+}
+
+body.dark-mode .card-modern .bg-light {
+    background-color: var(--slate-800) !important;
 }

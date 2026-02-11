@@ -50,6 +50,8 @@
     --color-bg-body: var(--slate-50);
     --color-bg-surface: #ffffff;
     --color-bg-surface-alt: var(--slate-50);
+    --color-bg-card: #ffffff;
+    --color-bg-card-hover: var(--slate-50);
 
     --color-text-primary: var(--slate-900);
     --color-text-secondary: var(--slate-600);
@@ -60,6 +62,9 @@
 
     --color-accent: var(--primary-600);
     --color-accent-hover: var(--primary-700);
+
+    --color-link: var(--primary-600);
+    --color-link-hover: var(--primary-700);
 
     /* gradients */
     --gradient-primary: linear-gradient(135deg, var(--primary-500), var(--secondary-500));

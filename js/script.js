@@ -255,7 +255,7 @@ function typeEffect() {
     const element = document.getElementById('dynamic-text');
     if (!element) return;
 
-    const roles = ["Scalable Web Solutions", "Interactive User Interfaces", "Robust Backend Systems", "Cloud-Native Applications"];
+    const roles = ["Python Full Stack", "Django Developer", "Angular & React", "Scalable Web Solutions"];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;

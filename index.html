@@ -51,54 +51,60 @@
     </div>
 
     <!-- Header / Navbar -->
-    <header class="header">
-        <nav class="navbar" role="navigation" aria-label="Primary Navigation">
-            <div class="brand">
-                <div class="brand__logo">S</div>
-                <div class="brand__info">
-                    <span class="brand__name">C Siva Kumar</span>
-                    <span class="brand__title">Full Stack Developer</span>
-                </div>
-            </div>
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-glass" role="navigation" aria-label="Primary Navigation">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                    <div class="brand__logo">S</div>
+                    <div class="brand__info d-flex flex-column">
+                        <span class="brand__name lh-1">C Siva Kumar</span>
+                        <span class="brand__title lh-1 small text-white-50">Full Stack Developer</span>
+                    </div>
+                </a>
 
-            <!-- Mobile Toggle -->
-            <button class="nav-toggle" id="menuToggle" aria-label="Toggle navigation" aria-controls="navMenu" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-            <!-- Navigation Menu -->
-            <div class="nav-menu" id="navMenu" role="menu" aria-hidden="true">
-                <div class="d-flex justify-content-between align-items-center d-xl-none mb-4">
-                    <span class="fw-bold text-dark">Menu</span>
-                    <button class="btn-close" id="navClose" aria-label="Close"></button>
-                </div>
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                    <div class="d-flex justify-content-between align-items-center d-lg-none mb-4 mt-3">
+                        <span class="fw-bold text-white">Menu</span>
+                        <button class="btn-close btn-close-white" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navMenu" aria-label="Close"></button>
+                    </div>
 
-                <ul class="nav-list">
-                    <li><a class="nav-link" href="#about" data-file="about.html"><span
-                                class="nav-number">01</span>About</a></li>
-                    <li><a class="nav-link" href="#skills" data-file="skills.html"><span
-                                class="nav-number">02</span>Skills</a></li>
-                    <li><a class="nav-link" href="#projects" data-file="projects.html"><span
-                                class="nav-number">03</span>Projects</a></li>
-                    <li><a class="nav-link" href="#experience" data-file="experience.html"><span
-                                class="nav-number">04</span>Experience</a></li>
-                    <li><a class="nav-link" href="#certify" data-file="certify.html"><span
-                                class="nav-number">05</span>Certifications</a></li>
-                    <li><a class="nav-link" href="#passionandint" data-file="passionandint.html"><span
-                                class="nav-number">06</span>Beyond Coding</a></li>
-                    <li><a class="nav-link" href="#contact" data-file="contact.html"><span
-                                class="nav-number">07</span>Contact</a></li>
-                </ul>
+                    <ul class="navbar-nav align-items-lg-center gap-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="#about" data-file="about.html"><span
+                                    class="nav-number d-lg-none me-2">01</span>About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills" data-file="skills.html"><span
+                                    class="nav-number d-lg-none me-2">02</span>Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects" data-file="projects.html"><span
+                                    class="nav-number d-lg-none me-2">03</span>Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experience" data-file="experience.html"><span
+                                    class="nav-number d-lg-none me-2">04</span>Experience</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certify" data-file="certify.html"><span
+                                    class="nav-number d-lg-none me-2">05</span>Certifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#passionandint"
+                                data-file="passionandint.html"><span class="nav-number d-lg-none me-2">06</span>Beyond
+                                Coding</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact" data-file="contact.html"><span
+                                    class="nav-number d-lg-none me-2">07</span>Contact</a></li>
+                    </ul>
 
-                <!-- Theme Switch -->
-                <div class="theme-switch ms-lg-4">
-                    <label class="theme-label" for="theme-toggle">
-                        <input type="checkbox" id="theme-toggle" class="input__check">
-                        <span class="theme-slider">
-                            <i class="fas fa-sun theme-icon-light"></i>
-                            <i class="fas fa-moon theme-icon-dark"></i>
-                        </span>
-                    </label>
+                    <!-- Theme Switch -->
+                    <div class="theme-switch ms-lg-4 mt-3 mt-lg-0">
+                        <label class="theme-label" for="theme-toggle" aria-label="Toggle Dark Mode">
+                            <input type="checkbox" id="theme-toggle" class="input__check">
+                            <span class="theme-slider">
+                                <i class="fas fa-sun theme-icon-light"></i>
+                                <i class="fas fa-moon theme-icon-dark"></i>
+                            </span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </nav>

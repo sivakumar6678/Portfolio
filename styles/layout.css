@@ -6,295 +6,157 @@
 /* -------------------------
    Header / Navbar
    ------------------------- */
+/* -------------------------
+   Header / Navbar (Refactored)
+   ------------------------- */
 .header {
-    --header-height: 72px; /* used for scroll offsets and spacing */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2000; /* Raised to stay above content and UI elements */
-    transition: all var(--transition-normal);
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    z-index: 1030;
+    padding: 1rem 0;
+    background: transparent;
+    /* Rely on bg-glass or scrolled state */
 }
 
 .header.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: var(--shadow-sm);
-    border-bottom-color: rgba(249, 115, 22, 0.2);
-}
-
-body.dark-mode .header {
-    background: rgba(15, 23, 42, 0.8);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .header.scrolled {
-    background: rgba(15, 23, 42, 0.95);
-    border-bottom-color: rgba(249, 115, 22, 0.2);
+    background: rgba(15, 23, 42, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem var(--space-4);
-    /* Reduced vertical padding for sleek look */
-    width: 95%;
-    max-width: 1280px;
-    /* Standard wide container */
-    margin: 0 auto;
-}
-
-/* Brand */
-.brand {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-    text-decoration: none;
-}
-
-.brand__logo {
+.navbar-brand .brand__logo {
     width: 40px;
-    /* Slightly smaller for better proportion */
     height: 40px;
-    border-radius: var(--radius-lg);
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-weight: 800;
+    font-size: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-weight: 800;
-    font-size: 1.4rem;
-    box-shadow: var(--shadow-md);
-    position: relative;
-    overflow: hidden;
-}
-
-.brand__info {
-    display: flex;
-    flex-direction: column;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
 }
 
 .brand__name {
-    font-weight: 800;
+    font-weight: 700;
     font-size: 1.1rem;
-    color: var(--color-text-primary);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
+    color: var(--text-primary);
 }
 
 .brand__title {
-    font-size: 0.75rem;
-    color: var(--primary-600);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
 }
 
-/* Navigation Menu */
-.nav-toggle {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--color-text-primary);
-    cursor: pointer;
-    z-index: 2010;
-    padding: var(--space-2);
+body.dark-mode .brand__name {
+    color: var(--slate-100);
 }
 
-.nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 85%;
-    max-width: 340px;
-    height: 100vh;
-    background: var(--color-bg-surface);
-    padding: var(--space-8) var(--space-6);
-    transition: right var(--transition-normal);
-    z-index: 2005;
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--shadow-xl);
-    border-left: 1px solid var(--color-border);
+body.dark-mode .brand__title {
+    color: var(--slate-400);
 }
 
-.nav-menu.active {
-    right: 0;
-}
-
-/* Prevent body scroll when mobile menu open */
-body.menu-open {
-    overflow: hidden;
-    touch-action: none;
-}
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Ensure anchored sections are offset below the fixed header */
-/* Targets elements with an id (sections are injected into divs with ids) */
-[id] {
-    scroll-margin-top: calc(var(--header-height) + 12px);
-}
-
-/* Add top padding to the main content so header doesn't cover it */
-.main {
-    padding-top: var(--header-height);
-}
-
-/* Skip link styles */
-.skip-link {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 8px;
-    background: var(--primary-600);
-    color: #fff;
-    padding: 0.35rem 0.75rem;
-    border-radius: 6px;
-    z-index: 3000;
-    opacity: 0;
-    transition: opacity 180ms ease, transform 180ms ease;
-    font-size: 0.9rem;
-}
-
-.skip-link:focus {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-    outline: none;
-}
-
-/* Ensure anchor targets aren't covered by header on small viewports too */
-@media (max-width: 991px) {
-    html { scroll-padding-top: calc(var(--header-height) + 8px); }
-}
-
-.nav-list {
-    list-style: none;
-    padding: 0;
-    margin: var(--space-4) 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-}
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    padding: var(--space-3) var(--space-4);
-    color: var(--color-text-secondary);
-    font-weight: 600;
-    border-radius: var(--radius-full);
-    /* Pill shape */
-    transition: all var(--transition-fast);
+/* Navbar Nav & Links */
+.navbar-nav .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--text-secondary);
     position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
 }
 
-.nav-link:hover {
+body.dark-mode .navbar-nav .nav-link {
+    color: var(--slate-300);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
     color: var(--primary-600);
-    background: var(--primary-50);
 }
 
-/* Focus styles for keyboard users */
-.nav-link:focus,
-.nav-link:focus-visible {
-    outline: 3px solid rgba(99,102,241,0.18);
-    outline-offset: 2px;
-    box-shadow: 0 6px 24px rgba(16,24,40,0.08);
-}
-
-.nav-link.active {
-    color: var(--primary-600);
-    background: var(--primary-50);
-}
-
-/* Mobile Active Indicator */
-.nav-link.active::after {
-    display: none;
-    /* Removed line indicator for mobile, using background instead */
-}
-
-body.dark-mode .nav-link:hover,
-body.dark-mode .nav-link.active {
-    background: rgba(249, 115, 22, 0.15);
+body.dark-mode .navbar-nav .nav-link:hover,
+body.dark-mode .navbar-nav .nav-link.active {
     color: var(--primary-400);
 }
 
-.nav-number {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--primary-500);
-    margin-right: var(--space-2);
-    opacity: 0.7;
+/* Desktop: Underline effect */
+@media (min-width: 992px) {
+    .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary-600);
+        transition: width 0.3s ease;
+    }
+
+    body.dark-mode .navbar-nav .nav-link::after {
+        background-color: var(--primary-400);
+    }
+
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+        width: 100%;
+    }
 }
 
-/* Desktop Navigation */
-@media (min-width: 992px) {
-    .nav-toggle {
-        display: none;
+/* Mobile Menu Styling */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 85%;
+        max-width: 300px;
+        height: 100vh;
+        background: var(--color-bg-body);
+        padding: 2rem;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto;
+        display: block;
+        /* Bootstrap override */
+        visibility: hidden;
     }
 
-    .nav-menu {
-        position: static;
-        transform: none;
-        width: auto;
-        height: auto;
-        background: transparent;
-        padding: 0;
-        box-shadow: none;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        border: none;
+    .navbar-collapse.show {
+        transform: translateX(0);
+        visibility: visible;
     }
 
-    .nav-list {
-        flex-direction: row;
-        margin: 0;
-        gap: 0.25rem;
-        /* Minimal gap */
+    body.dark-mode .navbar-collapse {
+        background: var(--slate-900);
+        border-left: 1px solid var(--slate-800);
     }
 
-    .nav-link {
-        padding: 0.5rem 0.75rem;
-        /* Reduced padding */
-        font-size: 0.85rem;
-        /* Slightly smaller text */
-        /* Re-enabling background for desktop for button-like feel */
-        background: transparent;
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid var(--color-border);
     }
 
-    .nav-link:hover {
-        background: var(--slate-100);
-        color: var(--color-text-primary);
-        transform: translateY(-1px);
+    .navbar-nav .nav-item:last-child .nav-link {
+        border-bottom: none;
     }
+}
 
-    .nav-link.active {
-        background: var(--primary-600);
-        color: white;
-        box-shadow: var(--shadow-md);
-    }
-
-    /* Remove bottom line style in favor of pill button style */
-    .nav-link::after,
-    .nav-link:hover::after,
-    .nav-link.active::after {
-        display: none;
-    }
-
-    /* Number color adjustment for active state */
-    .nav-link .nav-number {
-        display: none;
-        /* Hide numbers on desktop to prevent overflow */
-    }
+/* Theme Toggle in Navbar */
+.theme-switch {
+    display: flex;
+    align-items: center;
 }
 
 /* -------------------------
@@ -932,13 +794,13 @@ body.dark-mode .featured-projects {
 }
 
 /* CTA Section */
-.projects-section > div > .text-center {
+.projects-section>div>.text-center {
     margin-top: var(--space-12);
     padding-top: var(--space-8);
     border-top: 1px solid var(--color-border);
 }
 
-body.dark-mode .projects-section > div > .text-center {
+body.dark-mode .projects-section>div>.text-center {
     border-top-color: var(--slate-700);
 }
 

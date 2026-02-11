@@ -57,6 +57,15 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media (max-width: 991px) {
+    .floating-nav {
+        background: var(--color-bg-body) !important;
+        border-radius: 0;
+        padding: 0.75rem 1rem;
+    }
+
+}
+
 body.dark-mode .floating-nav {
     background: rgba(15, 23, 42, 0.7);
     /* Slightly more opaque for contrast */
@@ -112,6 +121,10 @@ body.dark-mode .header.scrolled .floating-nav {
     transform: rotate(0deg) scale(1);
     background: var(--gradient-primary);
     box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.3);
+}
+
+.section-title {
+    scroll-margin-top: 100px;
 }
 
 .navbar-brand:hover .brand__logo {
@@ -229,15 +242,26 @@ body.dark-mode .navbar-nav .nav-link:hover {
 
 /* Mobile Toggle Button */
 .navbar-toggler {
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    border: none;
-    transition: transform 0.3s ease;
+    padding: 0.6rem;
+    font-size: 1.25rem;
+    color: var(--slate-900);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: 0.5rem;
 }
 
 .navbar-toggler:hover {
-    transform: rotate(90deg);
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .navbar-toggler {
+    color: var(--slate-100);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .navbar-toggler:focus {
@@ -282,12 +306,14 @@ body.dark-mode .navbar-toggler {
         font-weight: 600;
         font-family: 'JetBrains Mono', 'Courier New', monospace;
         font-size: 0.9rem;
+
     }
 
     /* Mobile menu header */
     .navbar-collapse .d-lg-none {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         padding-bottom: 1rem;
+        /* color: blue; */
     }
 
     body.dark-mode .navbar-collapse .d-lg-none {
@@ -421,18 +447,21 @@ body.dark-mode .brand__title {
         top: 0;
         right: 0;
         bottom: 0;
-        width: 85%;
-        max-width: 300px;
-        height: 100vh;
-        background: var(--color-bg-body);
-        padding: 2rem;
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 320px;
+        height: 100dvh;
+        background: #121010;
+        /* Solid white for mobile */
+        backdrop-filter: blur(20px);
+        padding: 2.5rem 2rem;
+        box-shadow: -15px 0 50px rgba(0, 0, 0, 0.15);
         transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         overflow-y: auto;
         display: block;
         /* Bootstrap override */
         visibility: hidden;
+        border-left: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .navbar-collapse.show {
@@ -440,19 +469,46 @@ body.dark-mode .brand__title {
         visibility: visible;
     }
 
+    .menu-title {
+        color: var(--slate-900);
+    }
+
+    body.dark-mode .menu-title {
+        color: var(--slate-900);
+    }
+
+    body.dark-mode .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+    }
+
     body.dark-mode .navbar-collapse {
-        background: var(--slate-900);
-        border-left: 1px solid var(--slate-800);
+        background: #0f172a;
+        /* Solid dark for mobile */
+        backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .navbar-nav .nav-link {
-        padding: 10px 0;
+        padding: 1rem 1.5rem;
         font-size: 1.1rem;
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 0.5rem;
     }
 
-    .navbar-nav .nav-item:last-child .nav-link {
-        border-bottom: none;
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        background: rgba(234, 88, 12, 0.1);
+        color: var(--primary-500) !important;
+    }
+
+    .navbar-nav .nav-link.active {
+        background: var(--primary-600) !important;
+        color: white !important;
     }
 }
 
@@ -516,6 +572,12 @@ body.dark-mode .brand__title {
 .footer-bottom {
     padding-top: var(--space-8);
     border-top: 1px solid var(--slate-800);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: var(--space-12) 0 var(--space-6);
+    }
 }
 
 /* -------------------------
@@ -584,6 +646,18 @@ body.dark-mode .circular-progress-bar {
 
 body.dark-mode .hero-gradient {
     background: linear-gradient(135deg, var(--slate-950) 0%, #1e1b4b 100%);
+}
+
+.hero {
+    padding-top: clamp(100px, 15vh, 140px) !important;
+}
+
+@media (max-width: 991px) {
+    .hero {
+        padding-top: clamp(120px, 20vh, 160px) !important;
+        text-align: center;
+        min-height: auto !important;
+    }
 }
 
 .text-animated-gradient {
@@ -1105,6 +1179,12 @@ body.dark-mode .featured-projects {
 
 body.dark-mode .projects-section>div>.text-center {
     border-top-color: var(--slate-700);
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .navbar-nav {
+        gap: 0.1rem !important;
+    }
 }
 
 /* Responsive Adjustments for Projects */
@@ -1642,7 +1722,7 @@ body.dark-mode .project-card .btn-outline-secondary:hover {
     .navbar-collapse {
         width: 100%;
         margin-top: 1rem;
-        background: transparent;
+        background: whitesmoke;
     }
 
     .header.scrolled .floating-nav {

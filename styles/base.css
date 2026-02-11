@@ -15,6 +15,7 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    scroll-padding-top: 120px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -23,8 +24,9 @@ body {
     font-family: var(--font-sans);
     background-color: var(--color-bg-body);
     color: var(--color-text-primary);
-    line-height: 1.6;
+    line-height: var(--theme-line-height-normal);
     overflow-x: hidden;
+    width: 100%;
     transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
@@ -85,10 +87,39 @@ a:hover {
     position: relative;
 }
 
-.section-wrapper {
+@media (max-width: 768px) {
+    .section-container {
+        padding: clamp(var(--space-12), 15vw, var(--space-24)) 0 var(--space-12);
+    }
+}
+
+.container {
+    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-4);
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--space-6);
+    padding-left: var(--space-6);
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding-right: var(--space-4);
+        padding-left: var(--space-4);
+    }
 }
 
 .text-gradient {
